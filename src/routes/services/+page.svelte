@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-
 	type ServiceItem = {
 		id: string;
 		name: string;
@@ -14,28 +12,22 @@
 	const services: ServiceItem[] = [
 		{
 			id: 'english-study',
-			name: '영어공부 사이트',
-			summary: '시제/문장 패턴을 빠르게 반복 학습하는 트레이닝 서비스',
-			href: `${base}/tense`,
+			name: '아빠와 딸 영어공부 사이트',
+			summary:
+				'빈칸 맞추기/퀴즈/대화 학습, 영어·한국어 음성, 30분 수면모드를 지원하며 GPT+ElevenLabs로 학습 음성을 반자동 제작하는 서비스',
+			href: 'https://study.jjgo.io',
 			status: '운영중',
-			score: 4.9,
-			frequency: '매일 사용'
+			score: 5.0,
+			frequency: '매일 사용 (운전 학습 + 꾸준한 루틴)'
 		},
 		{
-			id: 'creative-prompt-lab',
-			name: 'Creative Prompt Lab',
-			summary: '아이디어를 변형해 짧은 실험 결과물로 만드는 프롬프트 실험실',
-			status: '준비중',
-			score: 4.6,
-			frequency: '주 4~5회 사용 예정'
-		},
-		{
-			id: 'story-cut-studio',
-			name: 'Story Cut Studio',
-			summary: '긴 텍스트를 카드형 스토리로 자동 압축해 공유하는 스튜디오',
-			status: '준비중',
-			score: 4.3,
-			frequency: '주 3회 사용 예정'
+			id: 'solquiz',
+			name: '귀염둥이 퀴즈',
+			summary: '아이와 함께 쓰던 퀴즈 서비스. 아이가 다 커서 지금은 거의 사용하지 않는 추억용 서비스',
+			href: 'https://jjgo.itch.io/quiz',
+			status: '운영중',
+			score: 1.0,
+			frequency: '현재 사용 안함 (아이가 다 커서 중단)'
 		},
 		{
 			id: 'voice-memory-notes',
@@ -84,7 +76,20 @@
 				</div>
 				<p class="usage">{service.frequency}</p>
 				{#if service.href}
-					<a class="service-link" href={service.href}>서비스 열기</a>
+					<a
+						class="service-link"
+						href={service.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={`${service.name} 서비스 새 창에서 열기`}
+					>
+						서비스 열기
+						<svg class="open-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+							<path d="M14 4h6v6" />
+							<path d="M10 14L20 4" />
+							<path d="M20 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4" />
+						</svg>
+					</a>
 				{:else}
 					<span class="service-link disabled" aria-disabled="true">준비중</span>
 				{/if}
@@ -224,6 +229,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		gap: 0.33rem;
 		font-size: 0.84rem;
 		font-weight: 650;
 		border: 1px solid rgba(132, 182, 228, 0.36);
@@ -251,6 +257,18 @@
 	.service-link.disabled {
 		opacity: 0.68;
 		pointer-events: none;
+	}
+
+	.open-icon {
+		width: 0.92rem;
+		height: 0.92rem;
+		flex-shrink: 0;
+		opacity: 0.92;
+		stroke: currentColor;
+		stroke-width: 2;
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
 	}
 
 	@media (max-width: 860px) {

@@ -2,7 +2,7 @@ CONTENT_SCRIPT := scripts/sync-content-to-src.mjs
 CONTENT_SOURCE := $(shell find content/posts -type f -name 'index.md' 2>/dev/null)
 CONTENT_OUTPUT := src/lib/data/stories.generated.ts
 
-.PHONY: content dev build preview deploy check sound copilot-push
+.PHONY: content dev build preview deploy check sound copilot-push git-push
 
 content: $(CONTENT_OUTPUT)
 
@@ -21,8 +21,8 @@ preview: content
 check: content
 	yarn run check
 
-deploy: content
-	yarn run deploy
+deploy: content git-push
+	yarn run deploy:gh-pages
 
 git-push:
 	@set -eu; \
