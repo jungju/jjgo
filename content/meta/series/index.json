@@ -1,0 +1,32 @@
+[
+	{
+		"id": "build-my-archive",
+		"name": "Build My Archive",
+		"description": "개인 아카이브 사이트 구축 시리즈"
+	},
+	{
+		"id": "latency-lab",
+		"name": "Latency Lab",
+		"description": "지연 최적화 실험 시리즈"
+	},
+	{
+		"id": "ui-quality",
+		"name": "UI Quality",
+		"description": "UI/UX 품질 개선 시리즈"
+	},
+	{
+		"id": "prompt-ops",
+		"name": "Prompt Ops",
+		"description": "프롬프트 운영 실험 시리즈"
+	},
+	{
+		"id": "incident-log",
+		"name": "Incident Log",
+		"description": "장애 대응 기록 시리즈"
+	},
+	{
+		"id": "small-wins",
+		"name": "Small Wins",
+		"description": "작은 개선 모음 시리즈"
+	}
+]

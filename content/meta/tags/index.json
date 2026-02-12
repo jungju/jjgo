@@ -1,0 +1,110 @@
+[
+	{
+		"id": "devlog",
+		"name": "Devlog",
+		"description": "개발 과정과 회고 기록",
+		"color": "#38bdf8"
+	},
+	{
+		"id": "sveltekit",
+		"name": "SvelteKit",
+		"description": "SvelteKit 관련 구현 기록",
+		"color": "#f97316"
+	},
+	{
+		"id": "personal-site",
+		"name": "Personal Site",
+		"description": "개인 사이트 구축 관련",
+		"color": "#22c55e"
+	},
+	{
+		"id": "rag",
+		"name": "RAG",
+		"description": "검색증강생성 아키텍처",
+		"color": "#0ea5e9"
+	},
+	{
+		"id": "performance",
+		"name": "Performance",
+		"description": "성능 개선 및 병목 분석",
+		"color": "#14b8a6"
+	},
+	{
+		"id": "retrospective",
+		"name": "Retrospective",
+		"description": "회고와 교훈 정리",
+		"color": "#8b5cf6"
+	},
+	{
+		"id": "frontend",
+		"name": "Frontend",
+		"description": "프론트엔드 구현",
+		"color": "#3b82f6"
+	},
+	{
+		"id": "a11y",
+		"name": "Accessibility",
+		"description": "접근성 개선",
+		"color": "#10b981"
+	},
+	{
+		"id": "svelte",
+		"name": "Svelte",
+		"description": "Svelte 컴포넌트 작업",
+		"color": "#f43f5e"
+	},
+	{
+		"id": "prompt",
+		"name": "Prompt",
+		"description": "프롬프트 설계",
+		"color": "#6366f1"
+	},
+	{
+		"id": "eval",
+		"name": "Evaluation",
+		"description": "평가 지표 및 실험",
+		"color": "#0ea5e9"
+	},
+	{
+		"id": "quality",
+		"name": "Quality",
+		"description": "품질 관리",
+		"color": "#22c55e"
+	},
+	{
+		"id": "incident",
+		"name": "Incident",
+		"description": "장애 대응 기록",
+		"color": "#ef4444"
+	},
+	{
+		"id": "ops",
+		"name": "Ops",
+		"description": "운영 및 배포",
+		"color": "#f59e0b"
+	},
+	{
+		"id": "postmortem",
+		"name": "Postmortem",
+		"description": "장애 사후 분석",
+		"color": "#dc2626"
+	},
+	{
+		"id": "ci-cd",
+		"name": "CI/CD",
+		"description": "지속적 통합/배포",
+		"color": "#06b6d4"
+	},
+	{
+		"id": "automation",
+		"name": "Automation",
+		"description": "자동화 작업",
+		"color": "#84cc16"
+	},
+	{
+		"id": "devops",
+		"name": "DevOps",
+		"description": "개발/운영 통합",
+		"color": "#0284c7"
+	}
+]

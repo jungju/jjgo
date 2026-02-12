@@ -1,0 +1,17 @@
+[
+	{
+		"id": "development",
+		"name": "Development",
+		"description": "개발 구현, 개선, 리팩토링 중심 기록"
+	},
+	{
+		"id": "operations",
+		"name": "Operations",
+		"description": "운영, 장애 대응, 배포 관련 기록"
+	},
+	{
+		"id": "research",
+		"name": "Research",
+		"description": "실험, 검증, 학습 노트"
+	}
+]
