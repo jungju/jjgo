@@ -238,9 +238,7 @@ const defaultStories = [
 const normalizedDefaultStories = defaultStories.map((story) => ({
 	...story,
 	category: '',
-	categoryName: '',
-	series: '',
-	seriesName: ''
+	categoryName: ''
 }));
 
 export const stories = generatedStories.length ? generatedStories : normalizedDefaultStories;
@@ -260,11 +258,9 @@ const defaultMeta = {
 			color: '',
 			count: defaultTagCount[id]
 		})),
-	categories: [],
-	series: []
+	categories: []
 };
 
 export const storyMeta = generatedStories.length ? generatedMeta : defaultMeta;
 export const storyTags = storyMeta.tags.map((tag) => tag.id);
 export const storyCategories = storyMeta.categories;
-export const storySeries = storyMeta.series;

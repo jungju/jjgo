@@ -3,65 +3,6 @@
 
 export const generatedStories = [
 	{
-		"slug": "first-dev-log",
-		"title": "첫 개발기: 내 기록 시스템 시작",
-		"summary": "개인 개발 아카이브 사이트의 첫 구조를 잡고, 기록 흐름을 정리한 날.",
-		"date": "2026-02-12",
-		"tags": [
-			"devlog",
-			"sveltekit",
-			"personal-site"
-		],
-		"category": "development",
-		"categoryName": "Development",
-		"series": "build-my-archive",
-		"seriesName": "Build My Archive",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
-		"content": [
-			{
-				"heading": "본문",
-				"body": [
-					"오늘은 개인 개발 아카이브 사이트의 뼈대를 만들었다. 목표는 단순하다.",
-					"1. 개발기는 빠르게 남긴다.",
-					"2. 생각은 짧게라도 기록한다.",
-					"3. 다시 찾기 쉽게 정리한다."
-				]
-			},
-			{
-				"heading": "오늘 한 일",
-				"body": [
-					"- `SPEC/` 기준으로 프로젝트 목적과 룰 정리",
-					"- `content/` 아래 글/사진/영상 폴더 구조 분리",
-					"- 게시글 파일 네이밍 규칙 확정 (`YYYY-MM-DD-title.md`)"
-				]
-			},
-			{
-				"heading": "왜 이렇게 했는가",
-				"body": [
-					"예전에는 글과 파일이 흩어져서 기록이 쌓일수록 찾기 어려웠다. 이번에는 처음부터 구조를 고정해서, 작성과 관리 비용을 줄이는 데 집중했다."
-				]
-			},
-			{
-				"heading": "다음 작업",
-				"body": [
-					"1. `content/posts/published/` 글 목록을 홈 화면에 연결",
-					"2. 태그 기반 필터 추가",
-					"3. 썸네일/영상 메타와 게시글 연동"
-				]
-			},
-			{
-				"heading": "한 줄 회고",
-				"body": [
-					"시작은 작게, 구조는 단단하게."
-				]
-			}
-		],
-		"links": []
-	},
-	{
 		"slug": "rag-latency-retro",
 		"title": "RAG 지연 줄이기 회고",
 		"summary": "검색과 직렬화 병목을 분리해서 응답 지연을 줄인 과정 정리.",
@@ -73,8 +14,6 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"series": "latency-lab",
-		"seriesName": "Latency Lab",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
 		"cardPoster": "/posters/story-card.svg",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -131,8 +70,6 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"series": "ui-quality",
-		"seriesName": "UI Quality",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
 		"cardPoster": "/posters/story-card.svg",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -182,8 +119,6 @@ export const generatedStories = [
 		],
 		"category": "operations",
 		"categoryName": "Operations",
-		"series": "incident-log",
-		"seriesName": "Incident Log",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
 		"cardPoster": "/posters/story-card.svg",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -238,8 +173,6 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"series": "small-wins",
-		"seriesName": "Small Wins",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
 		"cardPoster": "/posters/story-card.svg",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -289,8 +222,6 @@ export const generatedStories = [
 		],
 		"category": "research",
 		"categoryName": "Research",
-		"series": "prompt-ops",
-		"seriesName": "Prompt Ops",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
 		"cardPoster": "/posters/story-card.svg",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
@@ -332,6 +263,309 @@ export const generatedStories = [
 			}
 		],
 		"links": []
+	},
+	{
+		"slug": "shorts",
+		"title": "쇼츠생성기",
+		"summary": "처음 AI에 의존해서 개발을 한 리엑트기반 쇼츠생성기 저작도구",
+		"date": "2024-09-01",
+		"tags": [
+			"react",
+			"personal-site"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "/posts/2026-09-01-shorts/shorts-editor-teaser.mp4",
+		"cardPoster": "/posts/2026-09-01-shorts/20240901-shorts-editor-main-screenshot-01.png",
+		"bgVideoSrc": "/posts/2026-09-01-shorts/shorts-editor-teaser.mp4",
+		"bgPoster": "/posts/2026-09-01-shorts/20240901-shorts-editor-main-screenshot-01.png",
+		"content": [
+			{
+				"heading": "오직 AI만으로 끝까지 밀어붙인 첫 프로젝트",
+				"body": [
+					"이 프로젝트는 **내가 ‘혼자’ 개발했다기보다, AI와 끝없는 대화를 하면서 완성한 결과물**에 가깝다. 리액트(React) 기반의 쇼츠 생성기 저작도구를 만들면서, 레이아웃부터 컴포넌트 구조, 상태 관리, 기능 구현까지 대부분의 과정을 **챗(대화) 중심으로** 진행했다.",
+					"지금 돌이켜보면 이건 “AI가 코드를 대신 써줬다” 같은 단순한 이야기가 아니라, **AI와 함께 개발하는 방식 자체를 몸으로 익힌 기록**이었다.",
+					"---"
+				]
+			},
+			{
+				"heading": "2024년 9월 1일의 GPT: 가능성은 컸고, 맥락은 얇았다",
+				"body": [
+					"당시 GPT는 이미 코드 생성과 리팩터링에 꽤 쓸만했지만, 동시에 분명한 특징이 있었다.",
+					"- **짧은 요청엔 강하지만, 긴 맥락을 한 번에 완벽하게 잡기 어렵다**",
+					"- “전체 프로젝트” 관점보다는 “지금 붙여넣은 코드”에 강하게 반응한다",
+					"- 작은 수정 요청이 **의도치 않게 다른 기능을 깨는** 일이 생각보다 자주 생긴다",
+					"- 결과적으로, 개발 흐름은 **대화 → 코드 생성 → 복사/붙여넣기 → 에러 → 재대화**의 반복이 된다",
+					"그래서 이 프로젝트는 처음부터 끝까지 “AI가 다 해줌”이 아니라, **사람이 방향을 잡고, AI가 힘을 보태고, 다시 사람이 정리하는 협업**으로 진행될 수밖에 없었다.",
+					"---"
+				]
+			},
+			{
+				"heading": "개발 순서: PPT → HTML → React → 끝없는 챗",
+				"body": [
+					"이 프로젝트의 시작은 IDE가 아니라 **PPT**였다. 먼저 PPT에서 화면을 구성하며, 내가 만들고 싶은 저작도구의 구조를 “눈으로 보이게” 만들었다.",
+					"### 1) PPT로 레이아웃 만들기",
+					"- 좌측: 소재/리스트 영역",
+					"- 중앙: 프리뷰 영역",
+					"- 우측: 편집 패널(텍스트/타이밍/스타일)",
+					"- 상단: 저장/내보내기/프리셋 등 액션 영역",
+					"이 단계에서 중요한 건 “예쁘게”가 아니라, **사용 흐름이 자연스럽게 이어지는 화면 구조를 잡는 것**이었다.",
+					"### 2) GPT 챗으로 HTML 변환 요청 PPT 레이아웃을 바탕으로 GPT에게 화면 구조를 설명하고, 그걸 **HTML 마크업 구조로 변환**해달라고 요청했다.",
+					"아래는 그때 레이아웃을 HTML로 옮겨가던 흔적이다.",
+					"![레이아웃 HTML 스케치 01](/posts/2026-09-01-shorts/20240901-shorts-editor-layout-html-01.png)",
+					"![레이아웃 HTML 스케치 02](/posts/2026-09-01-shorts/20240901-shorts-editor-layout-html-02.png)",
+					"### 3) 리액트 코드로 변환 요청 HTML이 어느 정도 잡히면, 그 다음은 React로 옮기는 단계였다.",
+					"- 컴포넌트로 분리",
+					"- 상태(state) 설계",
+					"- 이벤트 핸들링 연결",
+					"- 편집 데이터 구조 정의",
+					"이때부터는 “화면이 보이는 것”보다 **기능이 일관되게 동작하는 것**이 목표가 됐다.",
+					"### 4) 계속 챗으로 개발 이후는 말 그대로 계속 챗이었다.",
+					"- GPT에게 코드를 받는다",
+					"- 붙여넣는다",
+					"- 에러가 난다 (혹은 의도와 다르게 동작한다)",
+					"- 에러 로그/증상/의도를 다시 설명한다",
+					"- 수정된 코드를 다시 받는다",
+					"- 다시 붙여넣는다",
+					"이 과정이 “한두 번”이 아니라, 체감상 **끝이 보이지 않을 정도로 반복**됐다. 하지만 그 반복 덕분에, 나는 단순히 기능을 구현한 게 아니라 **AI와 함께 개발이 굴러가게 만드는 감각**을 점점 더 확실히 갖게 됐다.",
+					"---"
+				]
+			},
+			{
+				"heading": "100줄이 넘어가면 무조건 쪼갰다: AI 협업에서 컴포넌트화는 생존 전략",
+				"body": [
+					"AI가 코드를 잘 뽑아줄수록 욕심이 생긴다. 한 파일에 기능을 계속 붙이다 보면 금방 100줄, 200줄을 넘는다.",
+					"그런데 어느 순간부터 확실히 느꼈다.",
+					"- 소스가 길어질수록 GPT의 수정 정확도가 떨어진다",
+					"- “부분 수정”을 부탁했는데 “전체 구조”를 흔들어버리는 일이 늘어난다",
+					"- 내가 의도한 아키텍처가 대화 중에 흐려진다",
+					"그래서 원칙을 만들었다.",
+					"> **한 파일이 100줄을 넘으면 쪼갠다.** > UI / 로직 / 유틸을 분리하고, 컴포넌트 단위로 작은 승리를 반복한다.",
+					"결과적으로 이 습관이 프로젝트를 살렸다. (그리고 이건 지금 시점에서도 여전히 유효한 방식이다.)",
+					"---"
+				]
+			},
+			{
+				"heading": "zip 업로드 + README.md + GPT.md: “AI가 프로젝트를 이해하게 만들고 싶었다”",
+				"body": [
+					"반복 대화에서 가장 힘든 순간은 매번 맥락을 다시 설명하는 일이었다.",
+					"- “이 컴포넌트는 왜 존재해?”",
+					"- “이 상태는 어디서 오고 어디로 가?”",
+					"- “이 기능은 어떤 순서로 동작해야 해?”",
+					"AI는 기본적으로 내가 지금 보여준 정보에 강하게 반응하니까, **전체 맥락을 ‘문서’로 고정해두는 장치**가 필요했다.",
+					"그래서 시도한 게:",
+					"- 프로젝트를 **zip으로 묶어서 업로드**",
+					"- `README.md`로 프로젝트 개요 제공",
+					"- `GPT.md`로 “AI에게 주는 개발 가이드”를 제공",
+					"`GPT.md`에는 예를 들면 이런 걸 적어두었다.",
+					"- 프로젝트 목표 / 주요 화면 구조",
+					"- 데이터 흐름(상태/스토어/props) 규칙",
+					"- 코딩 스타일 / 파일 분리 기준",
+					"- 수정 시 “절대 건드리면 안 되는 부분”",
+					"이건 결국 AI를 위한 문서이기도 했지만, 동시에 **나 자신을 위한 설계 문서**가 되기도 했다.",
+					"---"
+				]
+			},
+			{
+				"heading": "결과 화면: “작동하는 편집기”까지 도달했다",
+				"body": [
+					"여러 시행착오 끝에, 실제로 편집기가 돌아가는 형태까지 만들 수 있었다. 아래 스크린샷이 그 결과다.",
+					"![쇼츠 생성기 메인 화면](/posts/2026-09-01-shorts/20240901-shorts-editor-main-screenshot-01.png)",
+					"완성도의 높고 낮음을 떠나서, 이 화면은 내게 꽤 상징적이었다.",
+					"- AI가 만든 코드를 내가 조립했고",
+					"- 내가 만든 제약과 규칙이 AI의 출력을 안정시켰고",
+					"- 결국 “작동하는 도구”로 수렴했다",
+					"---"
+				]
+			},
+			{
+				"heading": "수많은 AI와 수많은 챗이 남긴 것: 개발 감각과 ‘방향 잡는 법’",
+				"body": [
+					"가장 큰 수확은 기능 자체가 아니라, **AI와 개발하는 감각**이었다.",
+					"그때 나는 수많은 AI와 수많은 챗을 반복하면서 이런 것들을 몸으로 익혔다.",
+					"- 요구사항을 “기능”이 아니라 **상태 변화와 이벤트 흐름**으로 설명하기",
+					"- 에러를 “에러 메시지”만 던지는 게 아니라 **재현 조건 + 기대 동작**까지 전달하기",
+					"- 한 번에 크게 고치지 않고, **작은 단위로 안정적으로 전진하기**",
+					"- AI가 생성한 코드를 그대로 믿지 않고, **테스트/검증 루프를 습관화**하기",
+					"- 긴 코드보다 **작은 컴포넌트/유틸 단위**가 훨씬 잘 맞는다는 것",
+					"그리고 무엇보다 확실히 알게 된 건 이거였다.",
+					"> **AI는 누구에게나 비슷한 기능이 주어지지만, 결과는 비슷하지 않다.** > 결국 차이는, 같은 도구를 쓰더라도 > **목적을 잃지 않고 같은 방향을 보게 만들 수 있느냐**에서 생긴다.",
+					"AI는 아주 똑똑하지만, 스스로 “왜 이걸 만드는지”를 끝까지 붙잡아주진 않는다. 중간에 흔들리고, 옆길로 새고, 그럴듯한 답을 내놓기도 한다.",
+					"그래서 사람 쪽에서 해야 하는 일이 있다.",
+					"- 목표를 계속 확인하고",
+					"- 지금 수정이 목표에 부합하는지 점검하고",
+					"- 중요한 기준(구조/규칙/흐름)을 문서와 코드로 고정해두고",
+					"- 끝까지 목적을 향해 방향을 잡아주는 것",
+					"이건 코드 스킬이라기보다, **개발을 끌고 가는 운영 능력**에 가까웠다.",
+					"---"
+				]
+			},
+			{
+				"heading": "지금 시기의 AI 개발도 크게 다르지 않다: 그래서 더 도움이 됐다",
+				"body": [
+					"시간이 지나 지금은 모델도 도구도 훨씬 좋아졌지만, 아이러니하게도 **AI로 개발하는 핵심 패턴은 많이 비슷하다.**",
+					"- 맥락은 여전히 관리해야 하고",
+					"- 복잡한 기능일수록 작은 단위로 쪼개야 하고",
+					"- 문서(가이드)로 의도를 고정해두면 정확도가 올라가고",
+					"- 결국 사람의 역할은 “코딩”보다 **설계/검증/정리**에 가깝다",
+					"그래서 이때 얻은 경험이 지금도 계속 도움이 된다. AI가 좋아질수록 더 빨리 만들 수는 있지만, **좋게 만드는 건 여전히 ‘사용법’의 영역**이다.",
+					"---"
+				]
+			},
+			{
+				"heading": "마무리",
+				"body": [
+					"쇼츠 생성기 저작도구는 내게 단순한 개인 프로젝트가 아니라,",
+					"- AI와 함께 개발하는 방식의 실험이었고",
+					"- 대화 기반 개발의 한계를 체험한 기록이었고",
+					"- 무엇보다 **보이지 않는 노하우를 축적한 시간**이었다",
+					"2024년 9월 1일의 나는 이 프로젝트를 통해 AI와 함께 개발할 때 결국 중요한 것은 **기술 자체보다도, 끝까지 같은 목표를 바라보게 만드는 ‘방향 잡기’**라는 걸 배웠다.",
+					"그리고 그 감각은 지금도 여전히 유효하다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "quizgame",
+		"title": "퀴즈게임",
+		"summary": "딸을 위한 퀴즈게임. 퀴즈들은 AI로 생성",
+		"date": "2023-04-09",
+		"tags": [
+			"godot",
+			"personal-site"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "/posts/2026-09-01-quizgame/quizgame-demo.mp4",
+		"cardPoster": "/posts/2026-09-01-quizgame/quizgame-demo-poster.jpg",
+		"bgVideoSrc": "/posts/2026-09-01-quizgame/quizgame-demo.mp4",
+		"bgPoster": "/posts/2026-09-01-quizgame/quizgame-demo-poster.jpg",
+		"content": [
+			{
+				"heading": "딸을 위해 만든 작은 퀴즈게임",
+				"body": [
+					"어느 날 문득, “딸이 좋아할 만한 게임을 하나 직접 만들어보자”는 마음이 들었다. 거창한 상업 프로젝트가 아니라 **정말로 ‘딸이 즐길 수 있는’** 작은 퀴즈게임.",
+					"기술적으로는 Godot을 사용했고, 콘텐츠(문제)는 **AI 도움을 받아 빠르게 생성**했다. 결과적으로 이 프로젝트는 내게 두 가지 의미가 있었다.",
+					"- **게임을 만들며 UI/리소스를 직접 다듬는 손맛**",
+					"- **AI로 콘텐츠를 뽑아내며 느낀, 새로운 생산성의 충격**",
+					"---"
+				]
+			},
+			{
+				"heading": "목표는 단순했다: “재미있고, 쉽게, 빨리”",
+				"body": [
+					"딸이 하는 게임인 만큼 기준도 명확했다.",
+					"- 어렵지 않을 것 (아이 기준)",
+					"- 텍스트가 너무 길지 않을 것",
+					"- 틀려도 스트레스 받지 않을 것",
+					"- 빠르게 다음 문제로 넘어갈 것",
+					"- 무엇보다 “한 번만 하고 끝”이 아니라 **반복 플레이가 가능**할 것",
+					"여기서 가장 큰 벽은 딱 하나였다.",
+					"> **퀴즈 문제를 얼마나, 어떻게 만들 것인가?**",
+					"게임 로직은 만들 수 있는데, 문제를 20개만 넣으면 금방 질린다. 그렇다고 사람이 수백 개를 손으로 만들기엔 시간이 너무 많이 든다.",
+					"---"
+				]
+			},
+			{
+				"heading": "퀴즈는 AI로 생성: 수백 개를 “만들 수는 있었다”",
+				"body": [
+					"이 프로젝트에서 AI는 딱 한 역할에 집중했다.",
+					"> **질문(퀴즈 문제) 생성**",
+					"AI에게 요청하니 정말로 빠르게 수십 개, 수백 개의 질문이 나왔다. 이 속도는 당시(2023년 초중반 기준) 체감상 꽤 충격적이었다.",
+					"- “이 주제로 퀴즈 30개 만들어줘”",
+					"- “난이도 쉬움/보통 섞어줘”",
+					"- “초등학생이 이해할 수 있게 바꿔줘”",
+					"- “보기 4개, 정답 1개 형태로 만들어줘”",
+					"이런 식으로 요청하면, 사람이 한참 걸려 만들 양을 **몇 분 안에 확보**할 수 있었다.",
+					"---"
+				]
+			},
+			{
+				"heading": "현실의 벽: 이상한 질문, 중복되는 질문, 결국 사람 손이 필요했다",
+				"body": [
+					"AI가 많은 문제를 만들어준 건 사실인데, 그대로 게임에 넣기엔 문제가 있었다.",
+					"- 뭔가 어색한 질문(표현이 이상하거나, 맥락이 이상함)",
+					"- 사실관계가 애매한 질문(아이에게 오히려 혼란)",
+					"- 중복되는 질문(표현만 다르고 내용은 같은 문제)",
+					"- 난이도가 들쭉날쭉(아이 기준에서 갑자기 어려워지는 문제)",
+					"결국 결론은 명확했다.",
+					"> **생성은 AI가, 최종 편집은 사람이.**",
+					"즉, “AI가 만들어 준 걸 그대로 쓰는 방식”이 아니라 **사람이 검수하고 다듬는 방식**이 필요했다.",
+					"그래도 중요한 건, 사람이 해야 할 일이 “처음부터 끝까지 창작”이 아니라 **걸러내고 정리하는 일로 바뀌었다**는 점이었다.",
+					"---"
+				]
+			},
+			{
+				"heading": "고민이 컸던 지점: “좋은 질문을 어떻게 뽑아내지?”",
+				"body": [
+					"처음엔 그냥 “퀴즈 만들어줘”로 시작했는데, 결과가 들쭉날쭉했다. 그래서 나름의 해결책을 만들었다.",
+					"- 주제를 최대한 좁게 쪼개기 (예: 동물/음식/나라/과학상식…)",
+					"- 질문 포맷을 고정하기 (문장 길이, 보기 개수, 정답 표기 규칙)",
+					"- 금지 규칙을 먼저 주기 (너무 어려운 단어 금지, 함정 문제 금지)",
+					"- 여러 번 생성해서 좋은 것만 채택하기 (샘플링 + 큐레이션)",
+					"이 흐름을 잡고 나니까, “질문을 어떻게 만들지”에 대한 고민이 한 번에 깔끔하게 정리됐다.",
+					"---"
+				]
+			},
+			{
+				"heading": "UI는 파워포인트로 만들었다: 그리고 그림을 쪼개서 구현",
+				"body": [
+					"이 프로젝트에서 UI 제작 방식도 꽤 아날로그(?)했다.",
+					"- **파워포인트로 화면을 먼저 디자인**",
+					"- 버튼/패널/배경 요소를 직접 만들고",
+					"- 필요한 단위로 이미지를 **쪼개서** 리소스로 활용",
+					"- Godot에 가져와 배치하며 실제 화면으로 조립",
+					"즉, UI를 “코드로 먼저 만들기”보다 **눈으로 보이는 형태(PPT)로 먼저 확정하고 구현**하는 방식이었다.",
+					"이 방식은 속도가 빨랐고, 무엇보다 “딸이 좋아할 만한 느낌”을 잡는 데 도움이 됐다. (게임 UI는 결국 감성의 영역이니까.)",
+					"---"
+				]
+			},
+			{
+				"heading": "그때 느낀 생산성: 질문만 AI가 도와줘도 게임이 빨라졌다",
+				"body": [
+					"재밌었던 건, AI가 개발의 모든 걸 도와준 게 아니었다는 점이다.",
+					"- 게임 로직: 내가 만들었다",
+					"- UI/리소스: 내가 만들었다",
+					"- 문제 생성: AI가 도와줬다",
+					"그런데도 프로젝트 전체 진행 속도가 확 달라졌다. “콘텐츠 생산”이 병목인 프로젝트에서 AI는 특히 강력했다.",
+					"그리고 그 순간 처음으로 확실히 느꼈다.",
+					"> 게임과 AI를 조합하면, 만들 수 있는 게 정말 많아진다.",
+					"---"
+				]
+			},
+			{
+				"heading": "게임과 AI의 조합은 무궁무진했다",
+				"body": [
+					"이 퀴즈게임은 작은 시작이었지만, 생각이 많이 확장됐다.",
+					"- 플레이어 수준에 맞춰 난이도를 조절한다든지",
+					"- 아이가 좋아하는 주제만 모아서 개인화한다든지",
+					"- 매일 새로운 문제를 자동으로 추가한다든지",
+					"- 대화형 NPC가 힌트를 준다든지",
+					"“게임은 결국 콘텐츠”인데, 그 콘텐츠를 빠르게 만들 수 있다면 아이디어의 폭이 훨씬 넓어진다.",
+					"---"
+				]
+			},
+			{
+				"heading": "플레이 링크",
+				"body": [
+					"게임은 여기서 플레이할 수 있다: `https://jjgo.itch.io/quiz`",
+					"---"
+				]
+			},
+			{
+				"heading": "영상도 남겨뒀다",
+				"body": [
+					"이 프로젝트에는 영상이 두 개 있다.",
+					"- 실행(플레이) 동영상 1개",
+					"- 딸이 직접 플레이한 영상 1개",
+					"<video controls playsinline preload=\"metadata\" src=\"/posts/2026-09-01-quizgame/quizgame-demo.mp4\"></video>",
+					"<video controls playsinline preload=\"metadata\" src=\"/posts/2026-09-01-quizgame/quizgame-daughter-play.mp4\"></video>",
+					"나중에 다시 보면, 완성도보다도 그 순간의 공기가 더 기억날 것 같다. “내가 만든 걸 딸이 직접 해본다”는 경험은 생각보다 특별했다."
+				]
+			}
+		],
+		"links": []
 	}
 ];
 export const generatedMeta = {
@@ -362,7 +596,7 @@ export const generatedMeta = {
 			"name": "Devlog",
 			"description": "개발 과정과 회고 기록",
 			"color": "#38bdf8",
-			"count": 1
+			"count": 0
 		},
 		{
 			"id": "devops",
@@ -383,6 +617,13 @@ export const generatedMeta = {
 			"name": "Frontend",
 			"description": "프론트엔드 구현",
 			"color": "#3b82f6",
+			"count": 1
+		},
+		{
+			"id": "godot",
+			"name": "godot",
+			"description": "",
+			"color": "",
 			"count": 1
 		},
 		{
@@ -411,7 +652,7 @@ export const generatedMeta = {
 			"name": "Personal Site",
 			"description": "개인 사이트 구축 관련",
 			"color": "#22c55e",
-			"count": 1
+			"count": 2
 		},
 		{
 			"id": "postmortem",
@@ -442,6 +683,13 @@ export const generatedMeta = {
 			"count": 1
 		},
 		{
+			"id": "react",
+			"name": "react",
+			"description": "",
+			"color": "",
+			"count": 1
+		},
+		{
 			"id": "retrospective",
 			"name": "Retrospective",
 			"description": "회고와 교훈 정리",
@@ -460,7 +708,7 @@ export const generatedMeta = {
 			"name": "SvelteKit",
 			"description": "SvelteKit 관련 구현 기록",
 			"color": "#f97316",
-			"count": 1
+			"count": 0
 		}
 	],
 	"categories": [
@@ -468,7 +716,7 @@ export const generatedMeta = {
 			"id": "development",
 			"name": "Development",
 			"description": "개발 구현, 개선, 리팩토링 중심 기록",
-			"count": 4
+			"count": 5
 		},
 		{
 			"id": "operations",
@@ -480,44 +728,6 @@ export const generatedMeta = {
 			"id": "research",
 			"name": "Research",
 			"description": "실험, 검증, 학습 노트",
-			"count": 1
-		}
-	],
-	"series": [
-		{
-			"id": "build-my-archive",
-			"name": "Build My Archive",
-			"description": "개인 아카이브 사이트 구축 시리즈",
-			"count": 1
-		},
-		{
-			"id": "incident-log",
-			"name": "Incident Log",
-			"description": "장애 대응 기록 시리즈",
-			"count": 1
-		},
-		{
-			"id": "latency-lab",
-			"name": "Latency Lab",
-			"description": "지연 최적화 실험 시리즈",
-			"count": 1
-		},
-		{
-			"id": "prompt-ops",
-			"name": "Prompt Ops",
-			"description": "프롬프트 운영 실험 시리즈",
-			"count": 1
-		},
-		{
-			"id": "small-wins",
-			"name": "Small Wins",
-			"description": "작은 개선 모음 시리즈",
-			"count": 1
-		},
-		{
-			"id": "ui-quality",
-			"name": "UI Quality",
-			"description": "UI/UX 품질 개선 시리즈",
 			"count": 1
 		}
 	]

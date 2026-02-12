@@ -1,10 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const CONTENT_DIR = path.resolve('content/posts/published');
+const CONTENT_DIR = path.resolve('content/posts');
+const DRAFT_PREFIX = 'draft-';
 const TAG_META_FILE = path.resolve('content/meta/tags/index.json');
 const CATEGORY_META_FILE = path.resolve('content/meta/categories/index.json');
-const SERIES_META_FILE = path.resolve('content/meta/series/index.json');
 const OUTPUT_FILE = path.resolve('src/lib/data/stories.generated.ts');
 const DEFAULT_VIDEO = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4';
 const DEFAULT_CARD_POSTER = '/posters/story-card.svg';
@@ -51,17 +51,17 @@ const toArray = (value) => {
 	return [];
 };
 
-const toSlug = (filename, value, title) => {
-	const base = filename.replace(/\.md$/i, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+const toSlug = (folderName, value, title) => {
+	const base = folderName.replace(/^draft-/, '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
 	return String(value || base || title || 'post')
 		.trim()
 		.toLowerCase()
 		.replace(/\s+/g, '-');
 };
 
-const toDate = (filename, value) => {
+const toDate = (folderName, value) => {
 	if (typeof value === 'string' && value.trim()) return value.trim();
-	const matched = filename.match(/^(\d{4}-\d{2}-\d{2})-/);
+	const matched = folderName.match(/^draft-(\d{4}-\d{2}-\d{2})-/) || folderName.match(/^(\d{4}-\d{2}-\d{2})-/);
 	return matched ? matched[1] : new Date().toISOString().slice(0, 10);
 };
 
@@ -139,52 +139,54 @@ const parseSections = (body) => {
 
 const tagMeta = readMeta(TAG_META_FILE);
 const categoryMeta = readMeta(CATEGORY_META_FILE);
-const seriesMeta = readMeta(SERIES_META_FILE);
 
 const tagMetaMap = toMetaMap(tagMeta);
 const categoryMetaMap = toMetaMap(categoryMeta);
-const seriesMetaMap = toMetaMap(seriesMeta);
 
-const files = fs.existsSync(CONTENT_DIR)
-	? fs.readdirSync(CONTENT_DIR).filter((name) => name.endsWith('.md')).sort()
+const postFolders = fs.existsSync(CONTENT_DIR)
+	? fs
+			.readdirSync(CONTENT_DIR, { withFileTypes: true })
+			.filter((entry) => entry.isDirectory())
+			.map((entry) => entry.name)
+			.filter((folderName) => !folderName.startsWith(DRAFT_PREFIX))
+			.sort()
 	: [];
 
-const stories = files.map((filename) => {
-	const raw = fs.readFileSync(path.join(CONTENT_DIR, filename), 'utf8');
-	const { meta, body } = parseFrontmatter(raw);
-	const sections = parseSections(body);
-	const title = String(meta.title || filename.replace(/\.md$/i, '')).trim();
-	const category = String(meta.category || '').trim();
-	const series = String(meta.series || '').trim();
-	return {
-		slug: toSlug(filename, meta.slug, title),
-		title,
-		summary: String(meta.summary || sections[0]?.body?.[0] || '').trim(),
-		date: toDate(filename, meta.date),
-		tags: toArray(meta.tags),
-		category,
-		categoryName: String(categoryMetaMap[category]?.name || category),
-		series,
-		seriesName: String(seriesMetaMap[series]?.name || series),
-		cardVideoSrc: String(meta.cardVideoSrc || DEFAULT_VIDEO),
-		cardPoster: String(meta.cardPoster || DEFAULT_CARD_POSTER),
-		bgVideoSrc: String(meta.bgVideoSrc || DEFAULT_VIDEO),
-		bgPoster: String(meta.bgPoster || DEFAULT_BG_POSTER),
-		content: sections,
-		links: Array.isArray(meta.links) ? meta.links : []
-	};
-});
+const stories = postFolders
+	.map((folderName) => {
+		const postFile = path.join(CONTENT_DIR, folderName, 'index.md');
+		if (!fs.existsSync(postFile)) return null;
+		const raw = fs.readFileSync(postFile, 'utf8');
+		const { meta, body } = parseFrontmatter(raw);
+		const sections = parseSections(body);
+		const title = String(meta.title || folderName).trim();
+		const category = String(meta.category || '').trim();
+		return {
+			slug: toSlug(folderName, meta.slug, title),
+			title,
+			summary: String(meta.summary || sections[0]?.body?.[0] || '').trim(),
+			date: toDate(folderName, meta.date),
+			tags: toArray(meta.tags),
+			category,
+			categoryName: String(categoryMetaMap[category]?.name || category),
+			cardVideoSrc: String(meta.cardVideoSrc || DEFAULT_VIDEO),
+			cardPoster: String(meta.cardPoster || DEFAULT_CARD_POSTER),
+			bgVideoSrc: String(meta.bgVideoSrc || DEFAULT_VIDEO),
+			bgPoster: String(meta.bgPoster || DEFAULT_BG_POSTER),
+			content: sections,
+			links: Array.isArray(meta.links) ? meta.links : []
+		};
+	})
+	.filter(Boolean);
 
 stories.sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
 
 const tagCounts = {};
 const categoryCounts = {};
-const seriesCounts = {};
 
 for (const story of stories) {
 	for (const tag of story.tags) tagCounts[tag] = (tagCounts[tag] || 0) + 1;
 	if (story.category) categoryCounts[story.category] = (categoryCounts[story.category] || 0) + 1;
-	if (story.series) seriesCounts[story.series] = (seriesCounts[story.series] || 0) + 1;
 }
 
 const tagIds = Array.from(new Set([...Object.keys(tagMetaMap), ...Object.keys(tagCounts)])).sort((a, b) =>
@@ -192,9 +194,6 @@ const tagIds = Array.from(new Set([...Object.keys(tagMetaMap), ...Object.keys(ta
 );
 const categoryIds = Array.from(new Set([...Object.keys(categoryMetaMap), ...Object.keys(categoryCounts)])).sort(
 	(a, b) => a.localeCompare(b, 'ko-KR')
-);
-const seriesIds = Array.from(new Set([...Object.keys(seriesMetaMap), ...Object.keys(seriesCounts)])).sort((a, b) =>
-	a.localeCompare(b, 'ko-KR')
 );
 
 const generatedMeta = {
@@ -210,12 +209,6 @@ const generatedMeta = {
 		name: String(categoryMetaMap[id]?.name || id),
 		description: String(categoryMetaMap[id]?.description || ''),
 		count: categoryCounts[id] || 0
-	})),
-	series: seriesIds.map((id) => ({
-		id,
-		name: String(seriesMetaMap[id]?.name || id),
-		description: String(seriesMetaMap[id]?.description || ''),
-		count: seriesCounts[id] || 0
 	}))
 };
 

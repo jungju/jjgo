@@ -1,5 +1,5 @@
 CONTENT_SCRIPT := scripts/sync-content-to-src.mjs
-CONTENT_SOURCE := $(wildcard content/posts/published/*.md)
+CONTENT_SOURCE := $(shell find content/posts -type f -name 'index.md' 2>/dev/null)
 CONTENT_OUTPUT := src/lib/data/stories.generated.ts
 
 .PHONY: content dev build preview deploy check sound

@@ -23,18 +23,21 @@
 ### 2. 작성 형식
 
 - 글은 Markdown(`.md`)을 기본 포맷으로 사용한다.
-- 게시 전 글은 `content/posts/drafts/`, 공개 글은 `content/posts/published/`에 둔다.
-- 메타 정보(태그/카테고리/시리즈)는 `content/meta/`에서 관리한다.
+- 글은 `content/posts/<post-folder>/index.md` 구조를 사용한다.
+- 드래프트 글 폴더는 `content/posts/draft-<post-folder>/` 접두 규칙을 사용한다.
+- 글에 포함되는 이미지/영상 등 리소스는 같은 글 폴더 안에 함께 둔다.
+- 메타 정보(태그/카테고리)는 `content/meta/`에서 관리한다.
 
 ### 3. 파일 네이밍 규칙
 
 - 파일명은 소문자 kebab-case를 사용한다.
 - 권장 패턴:
-  - 글: `YYYY-MM-DD-title.md`
+  - 글 폴더: `YYYY-MM-DD-title/` 또는 `draft-YYYY-MM-DD-title/`
+  - 글 본문 파일: `index.md`
   - 사진: `YYYYMMDD-topic-seq.ext`
   - 영상: `YYYYMMDD-topic-seq.ext`
 
-예시: `2026-02-12-first-dev-log.md`, `20260212-build-diary-01.jpg`
+예시: `content/posts/2026-02-12-first-dev-log/index.md`, `20260212-build-diary-01.jpg`
 
 ### 4. 미디어 관리 규칙
 

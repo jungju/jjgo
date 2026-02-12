@@ -12,6 +12,12 @@
 	let selectedCategory = 'All';
 	let view = 'cards';
 	let saveData = false;
+	const toPublicPath = (path: string) => {
+		if (!path) return path;
+		if (/^https?:\/\//.test(path)) return path;
+		if (path.startsWith('/')) return `${base}/${path.replace(/^\/+/, '')}`;
+		return path;
+	};
 
 	$: filteredStories = stories.filter((story) => {
 		const text = `${story.title} ${story.summary} ${story.tags.join(' ')}`.toLowerCase();
@@ -122,10 +128,18 @@
 						<a class="video-card glass-panel" href={`${base}/story/${story.slug}`} aria-label={`${story.title} 상세 페이지로 이동`}>
 							<div class="media-shell">
 								{#if saveData}
-									<img class="card-poster" src={story.cardPoster} alt="" loading={index < 3 ? 'eager' : 'lazy'} />
+									<img class="card-poster" src={toPublicPath(story.cardPoster)} alt="" loading={index < 3 ? 'eager' : 'lazy'} />
 								{:else}
-									<video class="card-video" muted playsinline loop autoplay preload={index < 3 ? 'auto' : 'metadata'} poster={story.cardPoster}>
-										<source src={story.cardVideoSrc} type="video/mp4" />
+									<video
+										class="card-video"
+										muted
+										playsinline
+										loop
+										autoplay
+										preload={index < 3 ? 'auto' : 'metadata'}
+										poster={toPublicPath(story.cardPoster)}
+									>
+										<source src={toPublicPath(story.cardVideoSrc)} type="video/mp4" />
 									</video>
 								{/if}
 								<span class="date-pill">
@@ -152,7 +166,7 @@
 					<li>
 						<a class="timeline-item glass-panel" href={`${base}/story/${story.slug}`} aria-label={`${story.title} 상세 보기`}>
 							<div class="thumb-wrap">
-								<img src={story.cardPoster} alt="" loading="lazy" />
+								<img src={toPublicPath(story.cardPoster)} alt="" loading="lazy" />
 							</div>
 							<div class="timeline-body">
 								<time datetime={story.date}>
