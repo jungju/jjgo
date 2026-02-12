@@ -31,10 +31,10 @@
 </script>
 
 <svelte:head>
-	<title>나의 AI 개발기 | Jungju</title>
+	<title>나의 AI 창작기 | Jungju</title>
 	<meta
 		name="description"
-		content="Svelte 기반 개인 홈페이지. AI 개발 실험 기록을 영상 카드와 상세 페이지로 탐색할 수 있습니다."
+		content="Svelte 기반 개인 홈페이지. AI를 활용해 만든 창의적이고 재미있는 결과물을 영상 카드와 상세 페이지로 소개합니다."
 	/>
 </svelte:head>
 
@@ -42,9 +42,9 @@
 	<div class="soft-grid"></div>
 
 	<header class="hero glass-panel">
-		<p class="eyebrow">PERSONAL AI DEVLOG</p>
-		<h1>나의 AI 개발기</h1>
-		<p class="intro">AI 제품을 만들며 얻은 설계 판단, 실험, 실패 복구 과정을 기록합니다.</p>
+		<p class="eyebrow">PERSONAL AI CREATIVE LOG</p>
+		<h1>나의 AI 창작기</h1>
+		<p class="intro">AI 기반으로 창조적이고 재미난 것들을 만들고, 그 결과물과 과정을 소개합니다.</p>
 
 		<div class="hero-meta">
 			<span>{stories.length} Stories</span>
@@ -67,7 +67,7 @@
 				type="search"
 				bind:value={q}
 				placeholder="제목, 요약, 태그 검색"
-				aria-label="AI 개발기 검색"
+				aria-label="AI 창작기 검색"
 				autocomplete="off"
 			/>
 		</label>
@@ -114,7 +114,7 @@
 	<main aria-live="polite">
 		{#if filteredStories.length === 0}
 			<div class="empty-state glass-panel">
-				<p>조건에 맞는 개발기가 없습니다.</p>
+				<p>조건에 맞는 창작 기록이 없습니다.</p>
 				{#if selectedTag !== 'All' || selectedCategory !== 'All' || q.trim()}
 					<button type="button" on:click={() => ((q = ''), (selectedTag = 'All'), (selectedCategory = 'All'))}>
 						필터 초기화
@@ -122,7 +122,7 @@
 				{/if}
 			</div>
 		{:else if view === 'cards'}
-			<ul class="cards-grid" aria-label="AI 개발기 카드 목록">
+			<ul class="cards-grid" aria-label="AI 창작기 카드 목록">
 				{#each filteredStories as story, index (story.slug)}
 					<li>
 						<a class="video-card glass-panel" href={`${base}/story/${story.slug}`} aria-label={`${story.title} 상세 페이지로 이동`}>
@@ -161,7 +161,7 @@
 				{/each}
 			</ul>
 		{:else}
-			<ol class="timeline" aria-label="AI 개발기 타임라인 목록">
+			<ol class="timeline" aria-label="AI 창작기 타임라인 목록">
 				{#each filteredStories as story (story.slug)}
 					<li>
 						<a class="timeline-item glass-panel" href={`${base}/story/${story.slug}`} aria-label={`${story.title} 상세 보기`}>

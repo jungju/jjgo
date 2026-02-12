@@ -16,7 +16,7 @@
 			return {
 				className: 'theme-shorts',
 				badge: 'Shorts Studio Build',
-				intro: 'AI와 대화형 반복 개발로 저작도구를 완성한 제작 로그'
+				intro: 'AI와 협업해 창작 도구를 완성한 제작 로그'
 			};
 		}
 		if (slug === 'quizgame') {
@@ -28,7 +28,7 @@
 		}
 		return {
 			className: 'theme-default',
-			badge: 'AI Dev Log',
+			badge: 'AI Creative Log',
 			intro: ''
 		};
 	};
@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.story.title} | 나의 AI 개발기</title>
+	<title>{data.story.title} | 나의 AI 창작기</title>
 	<meta name="description" content={data.story.summary} />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -94,7 +94,7 @@
 
 	<main class="story-main">
 		<header class="top-bar glass-panel">
-			<a class="back-link" href={`${base}/`} aria-label="AI 개발기 목록으로 돌아가기">← 목록으로</a>
+			<a class="back-link" href={`${base}/`} aria-label="AI 창작기 목록으로 돌아가기">← 목록으로</a>
 			<label class="switch">
 				<input type="checkbox" bind:checked={saveData} aria-label="데이터 절약 모드 켜기" />
 				<span>데이터 절약</span>
@@ -160,9 +160,9 @@
 			{/each}
 		</article>
 
-		<nav class="pager glass-panel" aria-label="이전 다음 개발기">
+		<nav class="pager glass-panel" aria-label="이전 다음 기록">
 			{#if data.prev}
-				<a href={`${base}/story/${data.prev.slug}`} aria-label={`이전 개발기: ${data.prev.title}`}>
+				<a href={`${base}/story/${data.prev.slug}`} aria-label={`이전 기록: ${data.prev.title}`}>
 					<span class="hint">Previous</span>
 					<strong>{data.prev.title}</strong>
 				</a>
@@ -174,7 +174,7 @@
 			{/if}
 
 			{#if data.next}
-				<a href={`${base}/story/${data.next.slug}`} aria-label={`다음 개발기: ${data.next.title}`}>
+				<a href={`${base}/story/${data.next.slug}`} aria-label={`다음 기록: ${data.next.title}`}>
 					<span class="hint">Next</span>
 					<strong>{data.next.title}</strong>
 				</a>
