@@ -3,6 +3,154 @@
 
 export const generatedStories = [
 	{
+		"slug": "repo-todo-service",
+		"title": "todo-service 레포 스냅샷",
+		"summary": "JavaScript 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-02-16",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/todo-service",
+					"- Visibility: public",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-02-16 03:46:27 UTC",
+					"- Last Push: 2026-02-16 03:46:29 UTC",
+					"- Last Update: 2026-02-16 03:46:32 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-test",
+		"title": "test 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-02-14",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/test",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-02-14 00:22:35 UTC",
+					"- Last Push: 2026-02-14 00:23:51 UTC",
+					"- Last Update: 2026-02-14 00:22:47 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-jgo",
+		"title": "jgo 레포 스냅샷",
+		"summary": "Go 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-02-13",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/jgo",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-02-13 03:04:07 UTC",
+					"- Last Push: 2026-02-16 11:50:13 UTC",
+					"- Last Update: 2026-02-16 11:50:17 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
 		"slug": "dad-daughter-english-study",
 		"title": "아빠와 딸을 위한 영어 공부 사이트",
 		"summary": "study.jjgo.io에서 빈칸/퀴즈/대화/한영 음성으로 꾸준히 학습하는 가족 영어 공부 사이트",
@@ -74,6 +222,56 @@ export const generatedStories = [
 				"body": [
 					"이 사이트의 큰 장점은 **내 도메인에 최적화된 영어를 공부할 수 있다는 점**이다.",
 					"실제로 자주 쓰는 문맥과 상황에 맞춰 학습할 수 있어서, 일반 예문보다 훨씬 실용적으로 쌓인다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-jjgo",
+		"title": "jjgo 레포 스냅샷",
+		"summary": "JavaScript 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-02-12",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/jjgo",
+					"- Visibility: public",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-02-12 05:32:51 UTC",
+					"- Last Push: 2026-02-13 01:17:00 UTC",
+					"- Last Update: 2026-02-13 01:17:03 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
 				]
 			}
 		],
@@ -342,6 +540,305 @@ export const generatedStories = [
 		"links": []
 	},
 	{
+		"slug": "repo-local-server",
+		"title": "local-server 레포 스냅샷",
+		"summary": "Dockerfile 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-01-26",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/local-server",
+					"- Visibility: private",
+					"- Primary Language: Dockerfile",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-01-26 09:41:40 UTC",
+					"- Last Push: 2026-02-18 04:46:42 UTC",
+					"- Last Update: 2026-02-18 04:46:45 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-jdex",
+		"title": "jdex 레포 스냅샷",
+		"summary": "Luau 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-01-19",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/jdex",
+					"- Visibility: private",
+					"- Primary Language: Luau",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-01-19 16:27:32 UTC",
+					"- Last Push: 2026-01-20 03:20:35 UTC",
+					"- Last Update: 2026-01-20 03:20:39 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-roblox-eng",
+		"title": "roblox-eng 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2026-01-02",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/roblox-eng",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2026-01-02 15:41:38 UTC",
+					"- Last Push: 2026-01-02 15:44:18 UTC",
+					"- Last Update: 2026-01-02 15:44:21 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-eng-meeting",
+		"title": "eng-meeting 레포 스냅샷",
+		"summary": "Svelte 기반 공개 레포. 영어공부",
+		"date": "2025-03-03",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/eng-meeting",
+					"- Visibility: public",
+					"- Primary Language: Svelte",
+					"- Homepage: https://study.jjgo.io/",
+					"- Description: 영어공부"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2025-03-03 03:46:07 UTC",
+					"- Last Push: 2025-12-27 06:31:40 UTC",
+					"- Last Update: 2025-12-27 07:53:21 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-allshot",
+		"title": "allshot 레포 스냅샷",
+		"summary": "JavaScript 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2024-10-10",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/allshot",
+					"- Visibility: public",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2024-10-10 13:03:02 UTC",
+					"- Last Push: 2026-02-12 09:51:14 UTC",
+					"- Last Update: 2026-02-12 10:23:21 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-allshot-editor",
+		"title": "allshot-editor 레포 스냅샷",
+		"summary": "JavaScript 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2024-10-02",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/allshot-editor",
+					"- Visibility: public",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2024-10-02 01:53:04 UTC",
+					"- Last Push: 2026-02-12 09:59:29 UTC",
+					"- Last Update: 2026-02-12 10:22:48 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
 		"slug": "shorts",
 		"title": "쇼츠생성기",
 		"summary": "처음 AI에 의존해서 개발을 한 리엑트기반 쇼츠생성기 저작도구",
@@ -504,6 +1001,164 @@ export const generatedStories = [
 		"links": []
 	},
 	{
+		"slug": "repo-gangdongcamp",
+		"title": "gangdongcamp 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2023-06-10",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/gangdongcamp",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-06-10 11:20:22 UTC",
+					"- Last Push: 2023-07-09 06:25:27 UTC",
+					"- Last Update: 2023-06-10 11:21:22 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-solquiz-server",
+		"title": "solquiz-server 레포 스냅샷",
+		"summary": "JavaScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2023-05-27",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/solquiz-server",
+					"- Visibility: private",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-05-27 17:19:00 UTC",
+					"- Last Push: 2023-05-28 13:59:51 UTC",
+					"- Last Update: 2023-05-28 13:57:55 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-deploy-sh",
+		"title": "deploy.sh 레포 스냅샷",
+		"summary": "Shell 기반 공개 레포. The most convenient CI/CD in the world.",
+		"date": "2023-05-04",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/deploy.sh",
+					"- Visibility: public",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: The most convenient CI/CD in the world."
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-05-04 17:03:36 UTC",
+					"- Last Push: 2026-02-14 09:00:51 UTC",
+					"- Last Update: 2026-02-14 09:00:55 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- automation",
+					"- cicd",
+					"- continuous-delivery",
+					"- continuous-integration",
+					"- deploy",
+					"- devops",
+					"- kubernetes",
+					"- bash",
+					"- git"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
 		"slug": "quizgame",
 		"title": "퀴즈게임",
 		"summary": "딸을 위한 퀴즈게임. 퀴즈들은 AI로 생성",
@@ -643,6 +1298,2487 @@ export const generatedStories = [
 			}
 		],
 		"links": []
+	},
+	{
+		"slug": "repo-solquiz",
+		"title": "SolQuiz 레포 스냅샷",
+		"summary": "GDScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2023-04-09",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/SolQuiz",
+					"- Visibility: private",
+					"- Primary Language: GDScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-04-09 06:52:40 UTC",
+					"- Last Push: 2023-05-29 17:06:52 UTC",
+					"- Last Update: 2023-04-09 06:56:13 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-todomd",
+		"title": "todomd 레포 스냅샷",
+		"summary": "Go 기반 공개 레포. A simple CLI tool to convert your Todo.md file into a CSV format that can be imported into Jira, written in Golang.",
+		"date": "2023-04-02",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/todomd",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: A simple CLI tool to convert your Todo.md file into a CSV format that can be imported into Jira, written in Golang."
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-04-02 14:11:28 UTC",
+					"- Last Push: 2023-05-04 17:01:10 UTC",
+					"- Last Update: 2026-02-19 14:10:49 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- jira",
+					"- todo"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-projects",
+		"title": "projects 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2023-04-01",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/projects",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2023-04-01 08:34:23 UTC",
+					"- Last Push: 2023-04-06 12:00:38 UTC",
+					"- Last Update: 2023-04-06 12:00:43 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-go-boilerplate-",
+		"title": "go-boilerplate- 레포 스냅샷",
+		"summary": "JavaScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2022-10-12",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/go-boilerplate-",
+					"- Visibility: private",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2022-10-12 13:03:03 UTC",
+					"- Last Push: 2022-10-12 13:03:50 UTC",
+					"- Last Update: 2022-10-12 13:03:56 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-buss",
+		"title": "buss 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2022-01-17",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/buss",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2022-01-17 20:58:57 UTC",
+					"- Last Push: 2022-01-17 21:32:43 UTC",
+					"- Last Update: 2022-01-17 21:02:12 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-nums",
+		"title": "nums 레포 스냅샷",
+		"summary": "GDScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2021-06-18",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/nums",
+					"- Visibility: private",
+					"- Primary Language: GDScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2021-06-18 16:28:09 UTC",
+					"- Last Push: 2021-07-10 16:01:14 UTC",
+					"- Last Update: 2021-07-10 16:01:17 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-keycloak-commento-sso",
+		"title": "keycloak-commento-sso 레포 스냅샷",
+		"summary": "Go 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2021-03-06",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/keycloak-commento-sso",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2021-03-06 16:47:25 UTC",
+					"- Last Push: 2021-03-07 02:58:05 UTC",
+					"- Last Update: 2021-03-07 02:58:07 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-sol",
+		"title": "sol 레포 스냅샷",
+		"summary": "JavaScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2020-09-26",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/sol",
+					"- Visibility: private",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2020-09-26 11:19:38 UTC",
+					"- Last Push: 2020-10-17 16:10:56 UTC",
+					"- Last Update: 2020-10-17 16:10:58 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-myrancher",
+		"title": "myrancher 레포 스냅샷",
+		"summary": "Shell 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2019-05-27",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/myrancher",
+					"- Visibility: private",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-05-27 14:43:59 UTC",
+					"- Last Push: 2019-05-27 14:46:23 UTC",
+					"- Last Update: 2019-05-27 14:46:24 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-work-nas",
+		"title": "work-nas 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2019-05-01",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/work-nas",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-05-01 14:45:56 UTC",
+					"- Last Push: 2019-05-01 14:46:13 UTC",
+					"- Last Update: 2019-05-01 14:56:33 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-awesome-check",
+		"title": "awesome-check 레포 스냅샷",
+		"summary": "Go 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2019-03-29",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/awesome-check",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-03-29 22:57:06 UTC",
+					"- Last Push: 2019-04-01 16:17:21 UTC",
+					"- Last Update: 2019-04-01 16:17:22 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-openvpn-dju",
+		"title": "openvpn-dju 레포 스냅샷",
+		"summary": "Shell 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2019-03-02",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/openvpn-dju",
+					"- Visibility: private",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-03-02 12:47:50 UTC",
+					"- Last Push: 2019-03-03 09:46:18 UTC",
+					"- Last Update: 2019-03-03 09:46:20 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-mass",
+		"title": "mass 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포. mass",
+		"date": "2019-02-24",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/mass",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: mass"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-02-24 07:50:32 UTC",
+					"- Last Push: 2019-02-24 07:54:04 UTC",
+					"- Last Update: 2019-02-24 07:54:06 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-main",
+		"title": "main 레포 스냅샷",
+		"summary": "Shell 기반 비공개 레포. Main",
+		"date": "2019-02-07",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/main",
+					"- Visibility: private",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: Main"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-02-07 15:13:31 UTC",
+					"- Last Push: 2019-02-18 12:58:20 UTC",
+					"- Last Update: 2019-02-18 12:58:21 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-readme-for-projects",
+		"title": "readme-for-projects 레포 스냅샷",
+		"summary": "Shell 기반 공개 레포. Generate readme for info of projects",
+		"date": "2019-02-07",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/readme-for-projects",
+					"- Visibility: public",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: Generate readme for info of projects"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-02-07 15:37:04 UTC",
+					"- Last Push: 2019-02-18 12:12:02 UTC",
+					"- Last Update: 2019-02-18 12:12:04 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-katacoda-scenarios",
+		"title": "katacoda-scenarios 레포 스냅샷",
+		"summary": "기술 스택 미정 공개 레포. Katacoda Scenarios",
+		"date": "2019-01-20",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/katacoda-scenarios",
+					"- Visibility: public",
+					"- Primary Language: N/A",
+					"- Homepage: https://www.katacoda.com/jjgo",
+					"- Description: Katacoda Scenarios"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-01-20 11:20:00 UTC",
+					"- Last Push: 2019-01-20 11:20:05 UTC",
+					"- Last Update: 2019-01-20 11:20:06 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-rancher-install",
+		"title": "rancher-install 레포 스냅샷",
+		"summary": "기술 스택 미정 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2019-01-12",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/rancher-install",
+					"- Visibility: public",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2019-01-12 13:20:02 UTC",
+					"- Last Push: 2019-01-12 13:20:03 UTC",
+					"- Last Update: 2019-01-12 13:20:02 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-blog",
+		"title": "blog 레포 스냅샷",
+		"summary": "Shell 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-12-27",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/blog",
+					"- Visibility: private",
+					"- Primary Language: Shell",
+					"- Homepage: https://jungju.github.io/",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-12-27 12:02:08 UTC",
+					"- Last Push: 2019-01-19 08:18:54 UTC",
+					"- Last Update: 2019-01-19 08:18:56 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-jungju-github-io",
+		"title": "jungju.github.io 레포 스냅샷",
+		"summary": "HTML 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-12-27",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/jungju.github.io",
+					"- Visibility: public",
+					"- Primary Language: HTML",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-12-27 14:09:56 UTC",
+					"- Last Push: 2018-12-27 14:16:30 UTC",
+					"- Last Update: 2018-12-27 14:16:31 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-study-english",
+		"title": "study_english 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-12-27",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/study_english",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-12-27 09:46:17 UTC",
+					"- Last Push: 2019-01-01 05:58:52 UTC",
+					"- Last Update: 2019-01-01 05:58:53 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-awesome-english",
+		"title": "awesome-english 레포 스냅샷",
+		"summary": "기술 스택 미정 공개 레포. 영어 공부 for 영어 포기자들",
+		"date": "2018-11-02",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/awesome-english",
+					"- Visibility: public",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: 영어 공부 for 영어 포기자들"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-11-02 02:52:43 UTC",
+					"- Last Push: 2018-11-12 15:24:56 UTC",
+					"- Last Update: 2018-11-12 15:24:57 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-heyeng",
+		"title": "heyeng 레포 스냅샷",
+		"summary": "기술 스택 미정 공개 레포. Microsoft Gadget(2006 Gadgets Contest)",
+		"date": "2018-10-07",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/heyeng",
+					"- Visibility: public",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: Microsoft Gadget(2006 Gadgets Contest)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-10-07 13:57:46 UTC",
+					"- Last Push: 2018-10-07 14:04:48 UTC",
+					"- Last Update: 2018-10-07 14:04:49 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-awesome-jeju",
+		"title": "awesome-jeju 레포 스냅샷",
+		"summary": "기술 스택 미정 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-10-06",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/awesome-jeju",
+					"- Visibility: public",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-10-06 15:25:07 UTC",
+					"- Last Push: 2018-10-06 15:27:55 UTC",
+					"- Last Update: 2018-10-06 15:27:56 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-aha",
+		"title": "aha 레포 스냅샷",
+		"summary": "JavaScript 기반 공개 레포. 3D diagram authoring tool",
+		"date": "2018-10-05",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/aha",
+					"- Visibility: public",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: 3D diagram authoring tool"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-10-05 15:20:28 UTC",
+					"- Last Push: 2018-10-05 15:26:29 UTC",
+					"- Last Update: 2023-01-28 19:55:31 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- threejs"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-greensmoke",
+		"title": "greensmoke 레포 스냅샷",
+		"summary": "C# 기반 공개 레포. Remote and mode control of power-line based electronic devices",
+		"date": "2018-09-25",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/greensmoke",
+					"- Visibility: public",
+					"- Primary Language: C#",
+					"- Homepage: (없음)",
+					"- Description: Remote and mode control of power-line based electronic devices"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-09-25 08:29:56 UTC",
+					"- Last Push: 2018-09-25 09:21:26 UTC",
+					"- Last Update: 2023-01-28 19:55:35 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-idea-helper",
+		"title": "idea_helper 레포 스냅샷",
+		"summary": "C# 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-09-25",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/idea_helper",
+					"- Visibility: public",
+					"- Primary Language: C#",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-09-25 08:55:32 UTC",
+					"- Last Push: 2018-09-25 09:17:22 UTC",
+					"- Last Update: 2023-01-28 19:55:35 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-timelapsemaker",
+		"title": "TimelapseMaker 레포 스냅샷",
+		"summary": "C# 기반 공개 레포. Convert Time-Lapse images to high-quality images",
+		"date": "2018-09-25",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/TimelapseMaker",
+					"- Visibility: public",
+					"- Primary Language: C#",
+					"- Homepage: (없음)",
+					"- Description: Convert Time-Lapse images to high-quality images"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-09-25 08:17:33 UTC",
+					"- Last Push: 2018-10-05 16:06:39 UTC",
+					"- Last Update: 2024-01-12 09:27:28 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- timelapse"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-tiny-server",
+		"title": "tiny-server 레포 스냅샷",
+		"summary": "Shell 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-09-25",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/tiny-server",
+					"- Visibility: public",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-09-25 13:38:23 UTC",
+					"- Last Push: 2018-09-25 13:57:33 UTC",
+					"- Last Update: 2018-09-25 13:57:35 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- server"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-gorancher",
+		"title": "gorancher 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포. rancher2 client golang",
+		"date": "2018-06-26",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/gorancher",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: rancher2 client golang"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-06-26 08:25:55 UTC",
+					"- Last Push: 2018-07-27 12:11:31 UTC",
+					"- Last Update: 2018-11-10 07:52:29 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- rancher",
+					"- golang"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-gorm-adapter",
+		"title": "gorm-adapter 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2018-06-18",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/gorm-adapter",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-06-18 11:32:59 UTC",
+					"- Last Push: 2018-06-18 11:39:05 UTC",
+					"- Last Update: 2018-11-10 07:50:55 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-circle-manager",
+		"title": "circle_manager 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포. Codeless API/Admin/Swagger Creator",
+		"date": "2018-04-12",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/circle_manager",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: Codeless API/Admin/Swagger Creator"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-04-12 15:02:19 UTC",
+					"- Last Push: 2018-10-23 09:14:41 UTC",
+					"- Last Update: 2018-11-10 07:33:11 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- beego",
+					"- golang",
+					"- gorm",
+					"- qor"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-circle",
+		"title": "circle 레포 스냅샷",
+		"summary": "JavaScript 기반 비공개 레포. circle",
+		"date": "2018-03-05",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/circle",
+					"- Visibility: private",
+					"- Primary Language: JavaScript",
+					"- Homepage: (없음)",
+					"- Description: circle"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-03-05 06:17:12 UTC",
+					"- Last Push: 2018-12-24 14:56:24 UTC",
+					"- Last Update: 2018-12-24 14:56:26 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-brainstorming",
+		"title": "brainstorming 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포. 생각해보자",
+		"date": "2018-02-10",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/brainstorming",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: 생각해보자"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2018-02-10 17:42:07 UTC",
+					"- Last Push: 2018-02-10 18:16:48 UTC",
+					"- Last Update: 2018-02-10 17:43:07 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-cloud9-docker",
+		"title": "cloud9-docker 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-12-11",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/cloud9-docker",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-12-11 02:47:21 UTC",
+					"- Last Push: 2018-02-11 15:20:22 UTC",
+					"- Last Update: 2018-11-10 07:58:27 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-allpos",
+		"title": "allpos 레포 스냅샷",
+		"summary": "PHP 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-11-18",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/allpos",
+					"- Visibility: private",
+					"- Primary Language: PHP",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-11-18 15:07:32 UTC",
+					"- Last Push: 2017-11-18 15:08:03 UTC",
+					"- Last Update: 2017-11-18 15:08:06 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-ass3",
+		"title": "ass3 레포 스냅샷",
+		"summary": "PHP 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-11-18",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/ass3",
+					"- Visibility: private",
+					"- Primary Language: PHP",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-11-18 15:08:34 UTC",
+					"- Last Push: 2017-11-18 15:09:21 UTC",
+					"- Last Update: 2017-11-18 15:09:23 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-ass4",
+		"title": "ass4 레포 스냅샷",
+		"summary": "PHP 기반 비공개 레포. ass4",
+		"date": "2017-11-18",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/ass4",
+					"- Visibility: private",
+					"- Primary Language: PHP",
+					"- Homepage: (없음)",
+					"- Description: ass4"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-11-18 15:09:39 UTC",
+					"- Last Push: 2017-11-18 16:23:09 UTC",
+					"- Last Update: 2017-11-18 15:10:30 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-awesome-idea",
+		"title": "awesome-idea 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포. 나의 아이디어 모음",
+		"date": "2017-10-28",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/awesome-idea",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: 나의 아이디어 모음"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-10-28 15:49:13 UTC",
+					"- Last Push: 2017-10-28 16:05:40 UTC",
+					"- Last Update: 2017-10-28 15:49:13 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-gorm-manager",
+		"title": "gorm_manager 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-09-22",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/gorm_manager",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-22 01:27:00 UTC",
+					"- Last Push: 2018-06-25 14:51:27 UTC",
+					"- Last Update: 2018-11-10 07:49:49 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-qor-admin-auth",
+		"title": "qor_admin_auth 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-09-21",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/qor_admin_auth",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-21 16:22:45 UTC",
+					"- Last Push: 2018-09-04 04:26:36 UTC",
+					"- Last Update: 2018-11-10 07:51:48 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-ass-auth-theme",
+		"title": "ass_auth_theme 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-09-20",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/ass_auth_theme",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-20 06:04:28 UTC",
+					"- Last Push: 2017-09-20 06:06:22 UTC",
+					"- Last Update: 2017-09-20 06:06:25 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-ahg",
+		"title": "ahg 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-09-14",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/ahg",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-14 13:40:25 UTC",
+					"- Last Push: 2017-09-14 13:41:07 UTC",
+					"- Last Update: 2017-09-14 13:41:13 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-lifelog",
+		"title": "lifelog 레포 스냅샷",
+		"summary": "Go 기반 공개 레포. Let's collect all the events",
+		"date": "2017-09-14",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/lifelog",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: Let's collect all the events"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-14 13:42:35 UTC",
+					"- Last Push: 2018-10-05 14:56:16 UTC",
+					"- Last Update: 2023-01-28 19:55:32 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- jawbone",
+					"- iot",
+					"- healthcare"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-ass-old",
+		"title": "ass-old 레포 스냅샷",
+		"summary": "HTML 기반 비공개 레포. deprecated",
+		"date": "2017-09-09",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/ass-old",
+					"- Visibility: private",
+					"- Primary Language: HTML",
+					"- Homepage: (없음)",
+					"- Description: deprecated"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-09 15:28:07 UTC",
+					"- Last Push: 2017-11-18 15:18:14 UTC",
+					"- Last Update: 2017-11-05 16:12:07 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-dju-grad",
+		"title": "dju-grad 레포 스냅샷",
+		"summary": "기술 스택 미정 비공개 레포 스냅샷과 작업 맥락 정리.",
+		"date": "2017-09-09",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/dju-grad",
+					"- Visibility: private",
+					"- Primary Language: N/A",
+					"- Homepage: (없음)",
+					"- Description: (설명 없음)"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-09-09 15:45:49 UTC",
+					"- Last Push: 2017-09-09 15:46:36 UTC",
+					"- Last Update: 2017-09-09 15:45:49 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-swagview",
+		"title": "swagview 레포 스냅샷",
+		"summary": "Go 기반 비공개 레포. swagger to admin",
+		"date": "2017-07-24",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/swagview",
+					"- Visibility: private",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: swagger to admin"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-07-24 04:52:59 UTC",
+					"- Last Push: 2017-09-14 10:37:32 UTC",
+					"- Last Update: 2023-01-28 19:55:29 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- generator",
+					"- admin",
+					"- beego"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-malhagi",
+		"title": "malhagi 레포 스냅샷",
+		"summary": "Go 기반 공개 레포. 영어 말하기 연습 게임",
+		"date": "2017-06-07",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/malhagi",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: 영어 말하기 연습 게임"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2017-06-07 16:24:33 UTC",
+					"- Last Push: 2017-06-11 12:46:49 UTC",
+					"- Last Update: 2017-10-28 15:44:59 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-apit",
+		"title": "apit 레포 스냅샷",
+		"summary": "Go 기반 공개 레포. Go tesing tool base gin",
+		"date": "2016-03-10",
+		"tags": [
+			"devlog"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/apit",
+					"- Visibility: public",
+					"- Primary Language: Go",
+					"- Homepage: (없음)",
+					"- Description: Go tesing tool base gin"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2016-03-10 04:58:10 UTC",
+					"- Last Push: 2016-04-06 13:32:14 UTC",
+					"- Last Update: 2023-01-28 19:55:28 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-environment",
+		"title": "environment 레포 스냅샷",
+		"summary": "Shell 기반 공개 레포. Environment for develop.",
+		"date": "2015-11-16",
+		"tags": [
+			"devlog",
+			"ops",
+			"devops"
+		],
+		"category": "operations",
+		"categoryName": "Operations",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/environment",
+					"- Visibility: public",
+					"- Primary Language: Shell",
+					"- Homepage: (없음)",
+					"- Description: Environment for develop."
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2015-11-16 04:53:17 UTC",
+					"- Last Push: 2016-02-03 14:42:33 UTC",
+					"- Last Update: 2016-01-30 16:20:35 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- (없음)"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
+	},
+	{
+		"slug": "repo-dosisa",
+		"title": "Dosisa 레포 스냅샷",
+		"summary": "HTML 기반 공개 레포. Simulation to be careful of mistakes",
+		"date": "2014-06-18",
+		"tags": [
+			"devlog",
+			"frontend"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "개요",
+				"body": [
+					"- Repository: https://github.com/jungju/Dosisa",
+					"- Visibility: public",
+					"- Primary Language: HTML",
+					"- Homepage: (없음)",
+					"- Description: Simulation to be careful of mistakes"
+				]
+			},
+			{
+				"heading": "메타데이터",
+				"body": [
+					"- Created: 2014-06-18 17:28:40 UTC",
+					"- Last Push: 2018-10-06 12:35:29 UTC",
+					"- Last Update: 2023-01-28 19:55:15 UTC"
+				]
+			},
+			{
+				"heading": "Topics",
+				"body": [
+					"- hackathon",
+					"- parody"
+				]
+			},
+			{
+				"heading": "메모",
+				"body": [
+					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
+					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+				]
+			}
+		],
+		"links": []
 	}
 ];
 export const generatedMeta = {
@@ -673,14 +3809,14 @@ export const generatedMeta = {
 			"name": "Devlog",
 			"description": "개발 과정과 회고 기록",
 			"color": "#38bdf8",
-			"count": 0
+			"count": 63
 		},
 		{
 			"id": "devops",
 			"name": "DevOps",
 			"description": "개발/운영 통합",
 			"color": "#0284c7",
-			"count": 1
+			"count": 10
 		},
 		{
 			"id": "elevenlabs",
@@ -708,7 +3844,7 @@ export const generatedMeta = {
 			"name": "Frontend",
 			"description": "프론트엔드 구현",
 			"color": "#3b82f6",
-			"count": 1
+			"count": 14
 		},
 		{
 			"id": "godot",
@@ -736,7 +3872,7 @@ export const generatedMeta = {
 			"name": "Ops",
 			"description": "운영 및 배포",
 			"color": "#f59e0b",
-			"count": 1
+			"count": 10
 		},
 		{
 			"id": "performance",
@@ -814,13 +3950,13 @@ export const generatedMeta = {
 			"id": "development",
 			"name": "Development",
 			"description": "개발 구현, 개선, 리팩토링 중심 기록",
-			"count": 6
+			"count": 60
 		},
 		{
 			"id": "operations",
 			"name": "Operations",
 			"description": "운영, 장애 대응, 배포 관련 기록",
-			"count": 1
+			"count": 10
 		},
 		{
 			"id": "research",
