@@ -4,11 +4,14 @@
 export const generatedStories = [
 	{
 		"slug": "repo-jgo",
-		"title": "jgo 레포 스냅샷",
-		"summary": "Go 기반 공개 레포 스냅샷과 작업 맥락 정리.",
+		"title": "jgo: OpenAI 호환 자동화 게이트웨이",
+		"summary": "jgo는 OpenAI 호환 API로 요청을 받아 codex CLI 실행까지 연결하는 24/7 상주형 Go 자동화 서버다.",
 		"date": "2026-02-13",
 		"tags": [
-			"devlog"
+			"devlog",
+			"backend",
+			"automation",
+			"ops"
 		],
 		"category": "development",
 		"categoryName": "Development",
@@ -18,34 +21,91 @@ export const generatedStories = [
 		"bgPoster": "/posters/story-bg.svg",
 		"content": [
 			{
-				"heading": "개요",
+				"heading": "본문",
+				"body": [
+					"`jgo`는 **OpenAI 호환 API 서버** 형태로 상주하면서, 들어온 작업 지시를 `codex exec`로 실행해 실제 자동화 결과를 반환하는 프로젝트다.",
+					"핵심은 단순하다.",
+					"- 외부 클라이언트는 `/v1/chat/completions`로 요청",
+					"- 서버는 지시를 해석하고(옵션: 프롬프트 최적화)",
+					"- `codex`를 1회 실행해 실제 작업 수행",
+					"- 결과를 OpenAI 호환 응답 포맷으로 반환",
+					"즉, “챗 API 인터페이스 + 실제 CLI 자동화 실행기”를 하나로 묶은 구조다."
+				]
+			},
+			{
+				"heading": "왜 이 프로젝트가 실전적인가",
+				"body": [
+					"`jgo`는 데모용 래퍼가 아니라, **실제 운영 자동화 루프**를 염두에 둔 설계가 들어가 있다.",
+					"- 상주형 서버(Resident mode)로 24/7 운영 가능",
+					"- `run_id`와 `X-JGO-Run-ID`로 요청/로그 추적 가능",
+					"- `local` 실행 기본 + 필요 시 `ssh` 전환",
+					"- `gh`, `aws`, `kubectl`, `git` 같은 실무 CLI를 바로 활용",
+					"- Kubernetes 배포를 고려한 이미지/환경변수/검증 스크립트 제공"
+				]
+			},
+			{
+				"heading": "아키텍처 요약",
+				"body": [
+					"### 1) API Layer",
+					"- `GET /v1/models`",
+					"- `POST /v1/chat/completions`",
+					"- `GET /healthz`",
+					"### 2) Orchestrator Layer",
+					"- 메시지에서 유효한 user instruction 추출",
+					"- 실행 프롬프트 확정(원문 또는 최적화 결과)",
+					"### 3) Prompt Layer (옵션)",
+					"- 필요 시 upstream OpenAI-compatible endpoint 호출",
+					"- Codex 실행 친화적으로 instruction 재구성",
+					"### 4) Execution Layer",
+					"- `codex login status` 확인",
+					"- `codex exec --full-auto --skip-git-repo-check \"<prompt>\"` 실행",
+					"- transport",
+					"- 기본: `local`",
+					"- 선택: `ssh`",
+					"### 5) Observability Layer",
+					"- 요청 단위 `run_id` 발급",
+					"- 응답 헤더 `X-JGO-Run-ID`",
+					"- login check / exec stdout·stderr 로깅"
+				]
+			},
+			{
+				"heading": "운영 관점에서 좋은 포인트",
+				"body": [
+					"- **API 모드 + CLI 모드 동시 제공**: 서비스형 운영과 단발성 실행 모두 대응",
+					"- **환경변수 전략 명확**: OpenAI/OpenWebUI/LiteLLM fallback 매핑 포함",
+					"- **Kubernetes 친화성**: 컨테이너 이미지/헬스체크/포트포워드 스모크 테스트 흐름 제공",
+					"- **검증 자동화**: `make smoke-test`, `make codex-auth-test`, `make deploy-check`"
+				]
+			},
+			{
+				"heading": "사용 예시(대표 시나리오)",
+				"body": [
+					"- 특정 GitHub 레포 문서 수정 → 커밋/푸시",
+					"- 배포 매니페스트 점검 및 Kubernetes 변경 자동화",
+					"- 다수 레포 점검/정리 같은 반복 작업 자동 실행"
+				]
+			},
+			{
+				"heading": "기술 스택",
+				"body": [
+					"- Language: Go",
+					"- Runtime shape: Resident API server + CLI",
+					"- Interface: OpenAI-compatible API",
+					"- Execution engine: Codex CLI",
+					"- Toolchain integration: GitHub/AWS/Kubernetes CLI"
+				]
+			},
+			{
+				"heading": "링크",
 				"body": [
 					"- Repository: https://github.com/jungju/jgo",
-					"- Visibility: public",
-					"- Primary Language: Go",
-					"- Homepage: (없음)",
-					"- Description: (설명 없음)"
+					"- 문서 기준점: `SPEC/SPEC.md` (FROZEN baseline)"
 				]
 			},
 			{
-				"heading": "메타데이터",
+				"heading": "한 줄 총평",
 				"body": [
-					"- Created: 2026-02-13 03:04:07 UTC",
-					"- Last Push: 2026-02-16 11:50:13 UTC",
-					"- Last Update: 2026-02-16 11:50:17 UTC"
-				]
-			},
-			{
-				"heading": "Topics",
-				"body": [
-					"- (없음)"
-				]
-			},
-			{
-				"heading": "메모",
-				"body": [
-					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
-					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
+					"`jgo`는 “LLM API처럼 호출하지만, 결과는 실제 운영 자동화로 귀결되는” 실무형 게이트웨이다. 특히 **CLI 중심 자동화를 API 제품 형태로 승격**했다는 점에서 구조적 완성도가 높다."
 				]
 			}
 		],
@@ -654,7 +714,14 @@ export const generatedMeta = {
 			"name": "Automation",
 			"description": "자동화 작업",
 			"color": "#84cc16",
-			"count": 0
+			"count": 1
+		},
+		{
+			"id": "backend",
+			"name": "backend",
+			"description": "",
+			"color": "",
+			"count": 1
 		},
 		{
 			"id": "ci-cd",
@@ -731,7 +798,7 @@ export const generatedMeta = {
 			"name": "Ops",
 			"description": "운영 및 배포",
 			"color": "#f59e0b",
-			"count": 1
+			"count": 2
 		},
 		{
 			"id": "performance",
