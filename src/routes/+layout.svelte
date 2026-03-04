@@ -4,7 +4,7 @@
 	import '../app.css';
 
 	type NavItem = {
-		id: 'devlog' | 'services' | 'price' | 'about';
+		id: 'devlog' | 'services' | 'about';
 		label: string;
 		href: string;
 	};
@@ -12,7 +12,6 @@
 	const navItems: NavItem[] = [
 		{ id: 'devlog', label: 'AI 창작기', href: `${base}/` },
 		{ id: 'services', label: '서비스', href: `${base}/services` },
-		{ id: 'price', label: 'Price', href: `${base}/price` },
 		{ id: 'about', label: '소개', href: `${base}/about` }
 	];
 
@@ -34,9 +33,6 @@
 		}
 		if (itemId === 'services') {
 			return serviceRoutePrefixes.some((prefix) => matchesRoute(routePath, prefix));
-		}
-		if (itemId === 'price') {
-			return routePath === '/price';
 		}
 		return routePath === '/about';
 	};
