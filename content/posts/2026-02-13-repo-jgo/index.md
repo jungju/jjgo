@@ -4,6 +4,10 @@ date: "2026-02-13"
 tags: ["devlog", "backend", "automation", "ops", "philosophy"]
 category: "development"
 summary: "jgo는 단순한 실행기가 아니라, 복잡함을 줄이고 실행력을 높이기 위해 만든 ‘내 방식의 자동화 철학’을 담은 프로젝트다."
+cardVideoSrc: "/posts/2026-02-13-repo-jgo/jgo-hero.svg"
+cardPoster: "/posts/2026-02-13-repo-jgo/jgo-hero.svg"
+bgVideoSrc: "/posts/2026-02-13-repo-jgo/jgo-hero.svg"
+bgPoster: "/posts/2026-02-13-repo-jgo/jgo-hero.svg"
 ---
 
 # jgo
@@ -14,6 +18,8 @@ summary: "jgo는 단순한 실행기가 아니라, 복잡함을 줄이고 실행
 나는 자동화를 좋아하지만, 자동화를 위한 자동화는 싫어한다.  
 연결이 많아질수록 구조는 화려해지지만, 운영자는 더 피곤해진다.  
 그래서 `jgo`는 거대한 도구 상자가 아니라, **실행의 중심축 하나**를 세우는 쪽으로 방향을 잡았다.
+
+![jgo 컨셉 히어로 이미지](/posts/2026-02-13-repo-jgo/jgo-hero.svg)
 
 ## 목적: "생각은 사람이, 실행은 시스템이"
 
