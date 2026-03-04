@@ -106,9 +106,9 @@ export const generatedStories = [
 		"category": "development",
 		"categoryName": "Development",
 		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posts/2026-02-12-dad-daughter-english-study/study-home.svg",
+		"cardPoster": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
 		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posts/2026-02-12-dad-daughter-english-study/study-home.svg",
+		"bgPoster": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
 		"content": [
 			{
 				"heading": "본문",

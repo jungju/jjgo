@@ -4,8 +4,8 @@ date: "2026-02-12"
 tags: ["personal-site", "english-study", "elevenlabs", "gpt", "family-learning"]
 category: "development"
 summary: "study.jjgo.io는 아빠와 딸이 함께 오래 공부하기 위해 만든 가족 맞춤형 영어 학습 루프다."
-cardPoster: "/posts/2026-02-12-dad-daughter-english-study/study-home.svg"
-bgPoster: "/posts/2026-02-12-dad-daughter-english-study/study-home.svg"
+cardPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
+bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 ---
 
 # 아빠와 딸을 위한 영어 공부 사이트
