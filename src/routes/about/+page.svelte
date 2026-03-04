@@ -1,7 +1,7 @@
 <script lang="ts">
 	const PROFILE_LINKS = {
-		linkedin: 'https://www.linkedin.com/in/replace-me',
-		github: 'https://github.com/replace-me'
+		github: 'https://github.com/jungju',
+		website: 'https://jjgo.io'
 	};
 </script>
 
@@ -19,8 +19,8 @@
 		</p>
 
 		<div class="link-row" aria-label="프로필 링크">
-			<a href={PROFILE_LINKS.linkedin} target="_blank" rel="noreferrer noopener">LinkedIn</a>
 			<a href={PROFILE_LINKS.github} target="_blank" rel="noreferrer noopener">GitHub</a>
+			<a href={PROFILE_LINKS.website} target="_blank" rel="noreferrer noopener">Website</a>
 		</div>
 	</section>
 </main>

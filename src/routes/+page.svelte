@@ -4,7 +4,7 @@
 
 	const ctaLinks = [
 		{ label: 'GitHub', href: 'https://github.com/jungju' },
-		{ label: 'Email', href: 'mailto:jungju@example.com' }
+		{ label: 'Website', href: 'https://jjgo.io' }
 	];
 
 	let q = '';
