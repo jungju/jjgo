@@ -36,6 +36,10 @@
 	const isVideoEmbedParagraph = (paragraph: string) => paragraph.trim().toLowerCase().startsWith('<video');
 	const isDividerParagraph = (paragraph: string) => paragraph.trim() === '---';
 	const isQuoteParagraph = (paragraph: string) => /^>\s+/.test(paragraph.trim());
+	const isBulletParagraph = (paragraph: string) => /^[-*]\s+/.test(paragraph.trim());
+	const isNumberedParagraph = (paragraph: string) => /^\d+\.\s+/.test(paragraph.trim());
+	const bulletText = (paragraph: string) => paragraph.trim().replace(/^[-*]\s+/, '');
+	const numberedText = (paragraph: string) => paragraph.trim().replace(/^\d+\.\s+/, '');
 	const quoteText = (paragraph: string) => paragraph.trim().replace(/^>\s+/, '');
 	const imageMatch = (paragraph: string) => paragraph.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
 	const isMarkdownImageParagraph = (paragraph: string) => Boolean(imageMatch(paragraph));
@@ -152,6 +156,10 @@
 							<hr class="section-divider" />
 						{:else if isQuoteParagraph(paragraph)}
 							<blockquote>{@html renderInlineMarkdown(quoteText(paragraph))}</blockquote>
+						{:else if isBulletParagraph(paragraph)}
+							<ul class="md-list"><li>{@html renderInlineMarkdown(bulletText(paragraph))}</li></ul>
+						{:else if isNumberedParagraph(paragraph)}
+							<ol class="md-list"><li>{@html renderInlineMarkdown(numberedText(paragraph))}</li></ol>
 						{:else}
 							<p>{@html renderInlineMarkdown(paragraph)}</p>
 						{/if}
@@ -392,6 +400,16 @@
 	section p {
 		margin: 0;
 		color: var(--text-soft);
+		line-height: 1.67;
+	}
+
+	.md-list {
+		margin: 0;
+		padding-left: 1.25rem;
+		color: var(--text-soft);
+	}
+
+	.md-list li {
 		line-height: 1.67;
 	}
 
