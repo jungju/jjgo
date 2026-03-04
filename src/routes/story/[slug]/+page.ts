@@ -1,6 +1,9 @@
 import { error } from '@sveltejs/kit';
 import { stories } from '$lib/data/stories';
 
+export const prerender = true;
+export const entries = () => stories.map((story) => ({ slug: story.slug }));
+
 export const load = ({ params }) => {
 	const storyIndex = stories.findIndex((story) => story.slug === params.slug);
 	if (storyIndex < 0) {
