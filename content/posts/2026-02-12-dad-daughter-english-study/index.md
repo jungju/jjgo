@@ -56,6 +56,8 @@ bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 핵심은 "많은 기능"이 아니라 **상황에 맞는 빠른 선택**이다.  
 오늘 컨디션에 따라 문제만 풀 수도 있고, 오디오 중심으로 들을 수도 있다.
 
+![학습 홈 화면(세트 목록)](/posts/2026-02-12-dad-daughter-english-study/study-home-grid.png)
+
 ## 음성 콘텐츠 제작 방식
 
 이 프로젝트에서 큰 비중을 차지하는 건 음성이다.  
@@ -76,6 +78,8 @@ bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 
 이 과정을 반복하면서 "기계적으로 읽는 음성"이 아니라,  
 실제로 따라 하고 싶은 학습 음성으로 다듬어가고 있다.
+
+![Flash+ 학습 화면(빈칸/문장 중심)](/posts/2026-02-12-dad-daughter-english-study/study-flash-screen.png)
 
 ## 실제 사용 루틴
 
@@ -117,10 +121,6 @@ bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 **좋은 날에도, 피곤한 날에도, 우리 가족이 영어를 놓지 않게 만드는 것.**
 
 ## 화면 예시
-
-![학습 홈 화면(세트 목록)](/posts/2026-02-12-dad-daughter-english-study/study-home-grid.png)
-
-![Flash+ 학습 화면(빈칸/문장 중심)](/posts/2026-02-12-dad-daughter-english-study/study-flash-screen.png)
 
 ![첫 페이지](/posts/2026-02-12-dad-daughter-english-study/study-home.svg)
 

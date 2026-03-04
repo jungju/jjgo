@@ -150,7 +150,8 @@ export const generatedStories = [
 					"- 퀴즈 풀이",
 					"- 대화 학습",
 					"- 영어/한국어 음성 청취",
-					"핵심은 \"많은 기능\"이 아니라 **상황에 맞는 빠른 선택**이다. 오늘 컨디션에 따라 문제만 풀 수도 있고, 오디오 중심으로 들을 수도 있다."
+					"핵심은 \"많은 기능\"이 아니라 **상황에 맞는 빠른 선택**이다. 오늘 컨디션에 따라 문제만 풀 수도 있고, 오디오 중심으로 들을 수도 있다.",
+					"![학습 홈 화면(세트 목록)](/posts/2026-02-12-dad-daughter-english-study/study-home-grid.png)"
 				]
 			},
 			{
@@ -164,7 +165,8 @@ export const generatedStories = [
 					"- ElevenLabs로 반자동 음성 생성",
 					"- 실제 청취 후 톤/속도/문장 자연스러움 보정",
 					"- 학습 흐름에 맞춰 콘텐츠를 지속 업데이트",
-					"이 과정을 반복하면서 \"기계적으로 읽는 음성\"이 아니라, 실제로 따라 하고 싶은 학습 음성으로 다듬어가고 있다."
+					"이 과정을 반복하면서 \"기계적으로 읽는 음성\"이 아니라, 실제로 따라 하고 싶은 학습 음성으로 다듬어가고 있다.",
+					"![Flash+ 학습 화면(빈칸/문장 중심)](/posts/2026-02-12-dad-daughter-english-study/study-flash-screen.png)"
 				]
 			},
 			{
@@ -204,8 +206,6 @@ export const generatedStories = [
 			{
 				"heading": "화면 예시",
 				"body": [
-					"![학습 홈 화면(세트 목록)](/posts/2026-02-12-dad-daughter-english-study/study-home-grid.png)",
-					"![Flash+ 학습 화면(빈칸/문장 중심)](/posts/2026-02-12-dad-daughter-english-study/study-flash-screen.png)",
 					"![첫 페이지](/posts/2026-02-12-dad-daughter-english-study/study-home.svg)",
 					"![가상 회의 대화 학습 페이지](/posts/2026-02-12-dad-daughter-english-study/study-dialogue.svg)",
 					"![퀴즈 페이지](/posts/2026-02-12-dad-daughter-english-study/study-quiz.svg)"
