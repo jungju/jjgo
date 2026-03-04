@@ -5,21 +5,22 @@ GIT_PUSH_SCRIPT := scripts/codex-git-push.sh
 
 content:
 	node $(CONTENT_SCRIPT)
+	node scripts/sync-content-media.mjs
 
 dev: content
-	yarn run dev
+	npm run dev
 
 build: content
-	yarn run build
+	npm run build
 
 preview: content
-	yarn run preview
+	npm run preview
 
 check: content
-	yarn run check
+	npm run check
 
 deploy: content
-	yarn run deploy:gh-pages
+	npm run deploy:gh-pages
 
 git-push:
 	@bash $(GIT_PUSH_SCRIPT)

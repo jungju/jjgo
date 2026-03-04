@@ -1,16 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import path from 'path';
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(() => ({
 	plugins: [sveltekit()],
 	server: {
 		headers: {
 			'Cross-Origin-Opener-Policy': 'same-origin',
 			'Cross-Origin-Embedder-Policy': 'require-corp'
-		},
-		fs: {
-		  allow: [path.resolve('./static')]
 		}
 	},
 	preview: {
