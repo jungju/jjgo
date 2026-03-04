@@ -29,22 +29,6 @@
 			score: 1.0,
 			frequency: '현재 사용 안함 (아이가 다 커서 중단)'
 		},
-		{
-			id: 'voice-memory-notes',
-			name: 'Voice Memory Notes',
-			summary: '음성 메모를 요약하고 핵심 액션만 남기는 개인 정리 서비스',
-			status: '준비중',
-			score: 4.1,
-			frequency: '주 2~3회 사용 예정'
-		},
-		{
-			id: 'movie-fragment-market',
-			name: '영화 조각 팔아요',
-			summary: '영화의 멋진 장면만 모아 소개하고, 그 장면에 대한 내 생각을 짧게 남기는 큐레이션 사이트',
-			status: '준비중',
-			score: 4.7,
-			frequency: '주 4~5회 사용 예정'
-		}
 	];
 
 	const filledStars = (score: number) => '★'.repeat(Math.round(score)).padEnd(5, '☆');
