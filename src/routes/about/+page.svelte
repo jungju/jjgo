@@ -1,33 +1,43 @@
 <script lang="ts">
 	const profile = {
 		name: '이정주 (JJGo)',
-		title: 'AI 기반 전략 개발자 · 15년+ 개발 리더',
+		title: 'AI Strategy Developer · Product & Platform Builder',
 		intro:
-			'백엔드 중심으로 제품을 설계·개발·운영하며, 최근에는 AI를 실제 서비스 루프로 연결하는 실행형 개발에 집중하고 있습니다.',
+			'15년+ 개발 리더십 경험을 바탕으로, AI를 아이디어 단계에서 끝내지 않고 실제 서비스 루프로 연결하는 실행 중심 개발을 지향합니다.',
 		linkedin: 'https://www.linkedin.com/in/jungjugo/',
 		github: 'https://github.com/jungju',
-		website: 'https://jjgo.io'
+		website: 'https://jjgo.io',
+		heroImage: '/posts/about/about-hero.png'
 	};
 
 	const highlights = [
 		'AI 협업 개발 루프 설계 및 제품화',
 		'백엔드/플랫폼 아키텍처 설계·운영',
-		'개발 조직 리딩과 실행 프로세스 개선'
+		'개발 조직 리딩과 실행 프로세스 개선',
+		'Fast Build, Real Delivery 문화 정착'
 	];
 
 	const facts = [
 		{ label: 'Career', value: '15+ years' },
-		{ label: 'Focus', value: 'AI Product + Platform' },
-		{ label: 'Style', value: 'Fast Build, Real Delivery' }
+		{ label: 'Core', value: 'AI + Backend + Platform' },
+		{ label: 'Execution', value: 'Fast Build, Real Delivery' }
 	];
 </script>
 
 <svelte:head>
 	<title>소개 | 나의 AI 창작기</title>
-	<meta name="description" content="JJGo(이정주) 소개. AI 기반 전략 개발, 제품 설계·개발·운영, 실행 중심 빌드 철학." />
+	<meta
+		name="description"
+		content="JJGo(이정주) 소개. AI 기반 전략 개발, 제품/플랫폼 설계·운영, 실행 중심 빌드 철학."
+	/>
 </svelte:head>
 
 <main class="about-shell">
+	<section class="hero-visual glass-panel">
+		<img src={profile.heroImage} alt="JJGo의 AI 협업 개발 철학을 상징하는 비주얼" loading="eager" />
+		<div class="overlay"></div>
+	</section>
+
 	<section class="about-card glass-panel">
 		<p class="eyebrow">ABOUT JJGO</p>
 		<h1>{profile.name}</h1>
@@ -62,11 +72,31 @@
 
 <style>
 	.about-shell {
-		max-width: 920px;
+		max-width: 980px;
 		margin: 0 auto;
 		padding: 1rem 1rem 2rem;
 		display: grid;
 		gap: 0.95rem;
+	}
+
+	.hero-visual {
+		position: relative;
+		overflow: hidden;
+		padding: 0;
+		min-height: 220px;
+	}
+
+	.hero-visual img {
+		display: block;
+		width: 100%;
+		height: clamp(220px, 38vw, 360px);
+		object-fit: cover;
+	}
+
+	.hero-visual .overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, rgba(3, 10, 21, 0.15) 0%, rgba(3, 10, 21, 0.45) 100%);
 	}
 
 	.about-card,
@@ -108,8 +138,9 @@
 
 	.intro {
 		margin: 0.65rem 0 0;
-		max-width: 48rem;
+		max-width: 52rem;
 		color: #a8bdd5;
+		line-height: 1.65;
 	}
 
 	.facts {
@@ -163,22 +194,6 @@
 		font-size: 0.86rem;
 		font-weight: 650;
 		color: #d8e8f7;
-		transition:
-			transform 180ms ease,
-			border-color 180ms ease,
-			color 180ms ease,
-			background-color 180ms ease;
-	}
-
-	.link-row a:hover {
-		transform: translateY(-1px);
-		border-color: rgba(121, 214, 235, 0.52);
-		color: #f2f9ff;
-	}
-
-	.link-row a:focus-visible {
-		outline: 2px solid rgba(136, 230, 255, 0.72);
-		outline-offset: 2px;
 	}
 
 	h2 {
