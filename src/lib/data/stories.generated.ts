@@ -16,17 +16,17 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
+		"cardVideoSrc": "/posts/2026-02-13-repo-jgo/jgo-hero.png",
+		"cardPoster": "/posts/2026-02-13-repo-jgo/jgo-hero.png",
+		"bgVideoSrc": "/posts/2026-02-13-repo-jgo/jgo-hero.png",
+		"bgPoster": "/posts/2026-02-13-repo-jgo/jgo-hero.png",
 		"content": [
 			{
 				"heading": "본문",
 				"body": [
 					"`jgo`를 만들 때 가장 먼저 떠올린 건 “기능을 얼마나 더 붙일까?”가 아니었다. 오히려 정반대였다. **어떻게 덜 복잡하게, 더 오래, 더 조용하게 일하게 만들까**가 출발점이었다.",
 					"나는 자동화를 좋아하지만, 자동화를 위한 자동화는 싫어한다. 연결이 많아질수록 구조는 화려해지지만, 운영자는 더 피곤해진다. 그래서 `jgo`는 거대한 도구 상자가 아니라, **실행의 중심축 하나**를 세우는 쪽으로 방향을 잡았다.",
-					"<video controls playsinline preload=\"metadata\" poster=\"/posters/story-card.svg\" src=\"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4\"></video>"
+					"![jgo 컨셉 히어로 이미지](/posts/2026-02-13-repo-jgo/jgo-hero.png)"
 				]
 			},
 			{
