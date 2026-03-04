@@ -53,6 +53,7 @@
 	};
 	const resolveMediaPath = (paragraph: string) =>
 		paragraph.replace(/(src|poster)=["']\/([^"']+)["']/g, (_, attr: string, path: string) => `${attr}="${base}/${path}"`);
+	const isVideoSource = (path: string) => /\.(mp4|webm|ogg|mov|m4v)(\?.*)?$/i.test(path || '');
 	const escapeHtml = (text: string) =>
 		text
 			.replaceAll('&', '&amp;')
@@ -84,7 +85,7 @@
 
 <div class={`story-shell ${theme.className}`}>
 	<div class="video-background" aria-hidden="true">
-		{#if saveData}
+		{#if saveData || !isVideoSource(data.story.bgVideoSrc)}
 			<img class="background-poster" src={toPublicPath(data.story.bgPoster)} alt="" loading="eager" />
 		{:else}
 			<video class="background-video" muted playsinline loop autoplay preload="metadata" poster={toPublicPath(data.story.bgPoster)}>

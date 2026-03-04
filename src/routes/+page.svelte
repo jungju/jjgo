@@ -18,6 +18,7 @@
 		if (path.startsWith('/')) return `${base}/${path.replace(/^\/+/, '')}`;
 		return path;
 	};
+	const isVideoSource = (path: string) => /\.(mp4|webm|ogg|mov|m4v)(\?.*)?$/i.test(path || '');
 
 	$: filteredStories = stories.filter((story) => {
 		const text = `${story.title} ${story.summary} ${story.tags.join(' ')}`.toLowerCase();
@@ -127,7 +128,7 @@
 					<li>
 						<a class="video-card glass-panel" href={`${base}/story/${story.slug}`} aria-label={`${story.title} 상세 페이지로 이동`}>
 							<div class="media-shell">
-								{#if saveData}
+								{#if saveData || !isVideoSource(story.cardVideoSrc)}
 									<img class="card-poster" src={toPublicPath(story.cardPoster)} alt="" loading={index < 3 ? 'eager' : 'lazy'} />
 								{:else}
 									<video

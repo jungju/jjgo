@@ -105,9 +105,9 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardVideoSrc": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
 		"cardPoster": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgVideoSrc": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
 		"bgPoster": "/posts/2026-02-12-dad-daughter-english-study/main-hero.png",
 		"content": [
 			{
