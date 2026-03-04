@@ -517,55 +517,6 @@ export const generatedStories = [
 			}
 		],
 		"links": []
-	},
-	{
-		"slug": "repo-solquiz",
-		"title": "SolQuiz 레포 스냅샷",
-		"summary": "GDScript 기반 비공개 레포 스냅샷과 작업 맥락 정리.",
-		"date": "2023-04-09",
-		"tags": [
-			"devlog"
-		],
-		"category": "development",
-		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
-		"content": [
-			{
-				"heading": "개요",
-				"body": [
-					"- Repository: https://github.com/jungju/SolQuiz",
-					"- Visibility: private",
-					"- Primary Language: GDScript",
-					"- Homepage: (없음)",
-					"- Description: (설명 없음)"
-				]
-			},
-			{
-				"heading": "메타데이터",
-				"body": [
-					"- Created: 2023-04-09 06:52:40 UTC",
-					"- Last Push: 2023-05-29 17:06:52 UTC",
-					"- Last Update: 2023-04-09 06:56:13 UTC"
-				]
-			},
-			{
-				"heading": "Topics",
-				"body": [
-					"- (없음)"
-				]
-			},
-			{
-				"heading": "메모",
-				"body": [
-					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
-					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
-				]
-			}
-		],
-		"links": []
 	}
 ];
 export const generatedMeta = {
@@ -603,7 +554,7 @@ export const generatedMeta = {
 			"name": "Devlog",
 			"description": "개발 과정과 회고 기록",
 			"color": "#38bdf8",
-			"count": 2
+			"count": 1
 		},
 		{
 			"id": "devops",
@@ -758,7 +709,7 @@ export const generatedMeta = {
 			"id": "development",
 			"name": "Development",
 			"description": "개발 구현, 개선, 리팩토링 중심 기록",
-			"count": 5
+			"count": 4
 		},
 		{
 			"id": "operations",
