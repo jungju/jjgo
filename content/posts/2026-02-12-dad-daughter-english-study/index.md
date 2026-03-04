@@ -61,6 +61,12 @@ bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 이 프로젝트에서 큰 비중을 차지하는 건 음성이다.  
 학습 몰입도는 텍스트보다 음성의 품질과 리듬에서 크게 갈리기 때문이다.
 
+그리고 이 서비스는 단순히 "읽는" 서비스가 아니다.  
+**학습에 등장하는 모든 텍스트를 들을 수 있도록 음성화**하는 것을 기본 원칙으로 삼고 있다.
+
+즉, 단어/문장/문제/대화를 눈으로만 소비하는 게 아니라,  
+듣고 따라 말하면서 몸에 익히는 구조다.
+
 현재 워크플로우는 다음과 같다.
 
 - GPT로 학습 목적에 맞는 스크립트/문장 초안 생성
@@ -111,6 +117,10 @@ bgPoster: "/posts/2026-02-12-dad-daughter-english-study/main-hero.png"
 **좋은 날에도, 피곤한 날에도, 우리 가족이 영어를 놓지 않게 만드는 것.**
 
 ## 화면 예시
+
+![학습 홈 화면(세트 목록)](/posts/2026-02-12-dad-daughter-english-study/study-home-grid.png)
+
+![Flash+ 학습 화면(빈칸/문장 중심)](/posts/2026-02-12-dad-daughter-english-study/study-flash-screen.png)
 
 ![첫 페이지](/posts/2026-02-12-dad-daughter-english-study/study-home.svg)
 
