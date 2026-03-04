@@ -46,26 +46,11 @@ export const generatedStories = [
 			{
 				"heading": "아키텍처 요약",
 				"body": [
-					"### 1) API Layer",
-					"- `GET /v1/models`",
-					"- `POST /v1/chat/completions`",
-					"- `GET /healthz`",
-					"### 2) Orchestrator Layer",
-					"- 메시지에서 유효한 user instruction 추출",
-					"- 실행 프롬프트 확정(원문 또는 최적화 결과)",
-					"### 3) Prompt Layer (옵션)",
-					"- 필요 시 upstream OpenAI-compatible endpoint 호출",
-					"- Codex 실행 친화적으로 instruction 재구성",
-					"### 4) Execution Layer",
-					"- `codex login status` 확인",
-					"- `codex exec --full-auto --skip-git-repo-check \"<prompt>\"` 실행",
-					"- transport",
-					"- 기본: `local`",
-					"- 선택: `ssh`",
-					"### 5) Observability Layer",
-					"- 요청 단위 `run_id` 발급",
-					"- 응답 헤더 `X-JGO-Run-ID`",
-					"- login check / exec stdout·stderr 로깅"
+					"- API Layer: `GET /v1/models`, `POST /v1/chat/completions`, `GET /healthz`",
+					"- Orchestrator Layer: 메시지에서 유효한 user instruction 추출, 실행 프롬프트 확정",
+					"- Prompt Layer(옵션): upstream OpenAI-compatible endpoint 호출, 실행 친화적 instruction 재구성",
+					"- Execution Layer: `codex login status` 확인 후 `codex exec --full-auto --skip-git-repo-check` 실행 (`local`/`ssh`)",
+					"- Observability Layer: 요청 단위 `run_id`, 응답 헤더 `X-JGO-Run-ID`, exec 로그 추적"
 				]
 			},
 			{
