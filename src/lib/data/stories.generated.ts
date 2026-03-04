@@ -216,106 +216,6 @@ export const generatedStories = [
 		"links": []
 	},
 	{
-		"slug": "repo-jjgo",
-		"title": "jjgo 레포 스냅샷",
-		"summary": "JavaScript 기반 공개 레포 스냅샷과 작업 맥락 정리.",
-		"date": "2026-02-12",
-		"tags": [
-			"devlog",
-			"frontend"
-		],
-		"category": "development",
-		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
-		"content": [
-			{
-				"heading": "개요",
-				"body": [
-					"- Repository: https://github.com/jungju/jjgo",
-					"- Visibility: public",
-					"- Primary Language: JavaScript",
-					"- Homepage: (없음)",
-					"- Description: (설명 없음)"
-				]
-			},
-			{
-				"heading": "메타데이터",
-				"body": [
-					"- Created: 2026-02-12 05:32:51 UTC",
-					"- Last Push: 2026-02-13 01:17:00 UTC",
-					"- Last Update: 2026-02-13 01:17:03 UTC"
-				]
-			},
-			{
-				"heading": "Topics",
-				"body": [
-					"- (없음)"
-				]
-			},
-			{
-				"heading": "메모",
-				"body": [
-					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
-					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
-				]
-			}
-		],
-		"links": []
-	},
-	{
-		"slug": "repo-eng-meeting",
-		"title": "eng-meeting 레포 스냅샷",
-		"summary": "Svelte 기반 공개 레포. 영어공부",
-		"date": "2025-03-03",
-		"tags": [
-			"devlog",
-			"frontend"
-		],
-		"category": "development",
-		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
-		"content": [
-			{
-				"heading": "개요",
-				"body": [
-					"- Repository: https://github.com/jungju/eng-meeting",
-					"- Visibility: public",
-					"- Primary Language: Svelte",
-					"- Homepage: https://study.jjgo.io/",
-					"- Description: 영어공부"
-				]
-			},
-			{
-				"heading": "메타데이터",
-				"body": [
-					"- Created: 2025-03-03 03:46:07 UTC",
-					"- Last Push: 2025-12-27 06:31:40 UTC",
-					"- Last Update: 2025-12-27 07:53:21 UTC"
-				]
-			},
-			{
-				"heading": "Topics",
-				"body": [
-					"- (없음)"
-				]
-			},
-			{
-				"heading": "메모",
-				"body": [
-					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
-					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
-				]
-			}
-		],
-		"links": []
-	},
-	{
 		"slug": "shorts",
 		"title": "쇼츠생성기",
 		"summary": "처음 AI에 의존해서 개발을 한 리엑트기반 쇼츠생성기 저작도구",
@@ -472,65 +372,6 @@ export const generatedStories = [
 					"- 무엇보다 **보이지 않는 노하우를 축적한 시간**이었다",
 					"2024년 9월 1일의 나는 이 프로젝트를 통해 AI와 함께 개발할 때 결국 중요한 것은 **기술 자체보다도, 끝까지 같은 목표를 바라보게 만드는 ‘방향 잡기’**라는 걸 배웠다.",
 					"그리고 그 감각은 지금도 여전히 유효하다."
-				]
-			}
-		],
-		"links": []
-	},
-	{
-		"slug": "repo-deploy-sh",
-		"title": "deploy.sh 레포 스냅샷",
-		"summary": "Shell 기반 공개 레포. The most convenient CI/CD in the world.",
-		"date": "2023-05-04",
-		"tags": [
-			"devlog",
-			"ops",
-			"devops"
-		],
-		"category": "operations",
-		"categoryName": "Operations",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
-		"content": [
-			{
-				"heading": "개요",
-				"body": [
-					"- Repository: https://github.com/jungju/deploy.sh",
-					"- Visibility: public",
-					"- Primary Language: Shell",
-					"- Homepage: (없음)",
-					"- Description: The most convenient CI/CD in the world."
-				]
-			},
-			{
-				"heading": "메타데이터",
-				"body": [
-					"- Created: 2023-05-04 17:03:36 UTC",
-					"- Last Push: 2026-02-14 09:00:51 UTC",
-					"- Last Update: 2026-02-14 09:00:55 UTC"
-				]
-			},
-			{
-				"heading": "Topics",
-				"body": [
-					"- automation",
-					"- cicd",
-					"- continuous-delivery",
-					"- continuous-integration",
-					"- deploy",
-					"- devops",
-					"- kubernetes",
-					"- bash",
-					"- git"
-				]
-			},
-			{
-				"heading": "메모",
-				"body": [
-					"- 이 글은 github.com/jungju 계정의 직접 생성 레포를 일괄 스캔해 자동 생성한 기록이다.",
-					"- 세부 구현/회고는 이후 커밋 단위로 보강한다."
 				]
 			}
 		],
@@ -762,14 +603,14 @@ export const generatedMeta = {
 			"name": "Devlog",
 			"description": "개발 과정과 회고 기록",
 			"color": "#38bdf8",
-			"count": 5
+			"count": 2
 		},
 		{
 			"id": "devops",
 			"name": "DevOps",
 			"description": "개발/운영 통합",
 			"color": "#0284c7",
-			"count": 1
+			"count": 0
 		},
 		{
 			"id": "elevenlabs",
@@ -804,7 +645,7 @@ export const generatedMeta = {
 			"name": "Frontend",
 			"description": "프론트엔드 구현",
 			"color": "#3b82f6",
-			"count": 2
+			"count": 0
 		},
 		{
 			"id": "godot",
@@ -832,7 +673,7 @@ export const generatedMeta = {
 			"name": "Ops",
 			"description": "운영 및 배포",
 			"color": "#f59e0b",
-			"count": 2
+			"count": 1
 		},
 		{
 			"id": "performance",
@@ -917,13 +758,13 @@ export const generatedMeta = {
 			"id": "development",
 			"name": "Development",
 			"description": "개발 구현, 개선, 리팩토링 중심 기록",
-			"count": 7
+			"count": 5
 		},
 		{
 			"id": "operations",
 			"name": "Operations",
 			"description": "운영, 장애 대응, 배포 관련 기록",
-			"count": 1
+			"count": 0
 		},
 		{
 			"id": "research",
