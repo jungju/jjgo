@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Study Quiz</title>
+  <desc id="desc">Quiz mode page placeholder</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08182e"/>
+      <stop offset="100%" stop-color="#142f54"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="120" y="110" width="1360" height="680" rx="28" fill="#0d223e" stroke="#7bb5e6" stroke-opacity="0.3"/>
+  <text x="180" y="210" fill="#e9f5ff" font-family="Arial, sans-serif" font-size="50" font-weight="700">Quiz Mode</text>
+  <rect x="180" y="270" width="1220" height="150" rx="18" fill="#17375d"/>
+  <rect x="180" y="460" width="590" height="120" rx="16" fill="#17365c"/>
+  <rect x="810" y="460" width="590" height="120" rx="16" fill="#17365c"/>
+  <rect x="180" y="610" width="590" height="120" rx="16" fill="#17365c"/>
+  <rect x="810" y="610" width="590" height="120" rx="16" fill="#17365c"/>
+</svg>
