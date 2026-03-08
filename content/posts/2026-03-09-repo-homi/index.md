@@ -4,12 +4,18 @@ date: "2026-03-09"
 tags: ["devlog", "svelte", "local-first", "automation"]
 category: "development"
 summary: "homi는 브라우저 localStorage를 활용하는 정적 웹앱으로, 가볍고 빠른 개인 홈 서비스 실험을 위한 프로젝트다."
+cardVideoSrc: "/posts/2026-03-09-repo-homi/homi-hero.png"
+cardPoster: "/posts/2026-03-09-repo-homi/homi-hero.png"
+bgVideoSrc: "/posts/2026-03-09-repo-homi/homi-hero.png"
+bgPoster: "/posts/2026-03-09-repo-homi/homi-hero.png"
 ---
 
 # homi
 
 `homi`는 브라우저 `localStorage`를 중심으로 동작하는 정적 웹앱 프로젝트다.  
 서버 의존도를 낮추고, 빠르게 배포·실험할 수 있는 **로컬 퍼스트(local-first)** 접근을 지향한다.
+
+![homi 메인 비주얼](/posts/2026-03-09-repo-homi/homi-hero.png)
 
 ## 핵심 포인트
 

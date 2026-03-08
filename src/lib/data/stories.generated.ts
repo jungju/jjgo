@@ -15,15 +15,16 @@ export const generatedStories = [
 		],
 		"category": "development",
 		"categoryName": "Development",
-		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"cardPoster": "/posters/story-card.svg",
-		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-		"bgPoster": "/posters/story-bg.svg",
+		"cardVideoSrc": "/posts/2026-03-09-repo-homi/homi-hero.png",
+		"cardPoster": "/posts/2026-03-09-repo-homi/homi-hero.png",
+		"bgVideoSrc": "/posts/2026-03-09-repo-homi/homi-hero.png",
+		"bgPoster": "/posts/2026-03-09-repo-homi/homi-hero.png",
 		"content": [
 			{
 				"heading": "본문",
 				"body": [
-					"`homi`는 브라우저 `localStorage`를 중심으로 동작하는 정적 웹앱 프로젝트다. 서버 의존도를 낮추고, 빠르게 배포·실험할 수 있는 **로컬 퍼스트(local-first)** 접근을 지향한다."
+					"`homi`는 브라우저 `localStorage`를 중심으로 동작하는 정적 웹앱 프로젝트다. 서버 의존도를 낮추고, 빠르게 배포·실험할 수 있는 **로컬 퍼스트(local-first)** 접근을 지향한다.",
+					"![homi 메인 비주얼](/posts/2026-03-09-repo-homi/homi-hero.png)"
 				]
 			},
 			{
