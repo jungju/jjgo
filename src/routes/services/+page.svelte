@@ -29,6 +29,15 @@
 			score: 1.0,
 			frequency: '현재 사용 안함 (아이가 다 커서 중단)'
 		},
+		{
+			id: 'homi',
+			name: 'homi',
+			summary: '거실에 늘 켜두고 일정 안내, 간단한 게임, 공부 상호작용을 이어주는 가족 인터랙션 홈 앱',
+			href: 'https://homi.jjgo.io/',
+			status: '운영중',
+			score: 5.0,
+			frequency: '상시 운영 (집에서 늘 켜두는 앱)'
+		}
 	];
 
 	const filledStars = (score: number) => '★'.repeat(Math.round(score)).padEnd(5, '☆');
