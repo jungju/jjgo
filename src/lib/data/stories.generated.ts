@@ -3,6 +3,55 @@
 
 export const generatedStories = [
 	{
+		"slug": "repo-homi",
+		"title": "homi: 브라우저 로컬 기반 홈 앱",
+		"summary": "homi는 브라우저 localStorage를 활용하는 정적 웹앱으로, 가볍고 빠른 개인 홈 서비스 실험을 위한 프로젝트다.",
+		"date": "2026-03-09",
+		"tags": [
+			"devlog",
+			"svelte",
+			"local-first",
+			"automation"
+		],
+		"category": "development",
+		"categoryName": "Development",
+		"cardVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"cardPoster": "/posters/story-card.svg",
+		"bgVideoSrc": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+		"bgPoster": "/posters/story-bg.svg",
+		"content": [
+			{
+				"heading": "본문",
+				"body": [
+					"`homi`는 브라우저 `localStorage`를 중심으로 동작하는 정적 웹앱 프로젝트다. 서버 의존도를 낮추고, 빠르게 배포·실험할 수 있는 **로컬 퍼스트(local-first)** 접근을 지향한다."
+				]
+			},
+			{
+				"heading": "핵심 포인트",
+				"body": [
+					"- 정적 웹앱 구조로 배포/운영 부담이 낮음",
+					"- 데이터 저장을 브라우저 `localStorage`에 위임",
+					"- Svelte 기반으로 가벼운 UI/상태 관리",
+					"- 계약(Contract) 기반 QA/검증 파이프라인 포함"
+				]
+			},
+			{
+				"heading": "프로젝트 철학",
+				"body": [
+					"`homi`는 복잡한 인프라를 먼저 올리는 대신, 작게 시작해 빠르게 검증하고 반복 개선하는 흐름에 초점을 둔다.",
+					"특히 machine-first 문서 체계를 통해, 사람 문서와 실행 규칙이 어긋나는 문제를 줄이려는 시도가 인상적이다."
+				]
+			},
+			{
+				"heading": "링크",
+				"body": [
+					"- Repository: https://github.com/jungju/homi"
+				]
+			}
+		],
+		"links": []
+	},
+	{
 		"slug": "repo-jgo",
 		"title": "jgo: 목적과 철학이 먼저인 자동화 엔진",
 		"summary": "jgo는 단순한 실행기가 아니라, 복잡함을 줄이고 실행력을 높이기 위해 만든 ‘내 방식의 자동화 철학’을 담은 프로젝트다.",
@@ -533,7 +582,7 @@ export const generatedMeta = {
 			"name": "Automation",
 			"description": "자동화 작업",
 			"color": "#84cc16",
-			"count": 1
+			"count": 2
 		},
 		{
 			"id": "backend",
@@ -554,7 +603,7 @@ export const generatedMeta = {
 			"name": "Devlog",
 			"description": "개발 과정과 회고 기록",
 			"color": "#38bdf8",
-			"count": 1
+			"count": 2
 		},
 		{
 			"id": "devops",
@@ -618,6 +667,13 @@ export const generatedMeta = {
 			"description": "장애 대응 기록",
 			"color": "#ef4444",
 			"count": 0
+		},
+		{
+			"id": "local-first",
+			"name": "local-first",
+			"description": "",
+			"color": "",
+			"count": 1
 		},
 		{
 			"id": "ops",
@@ -694,7 +750,7 @@ export const generatedMeta = {
 			"name": "Svelte",
 			"description": "Svelte 컴포넌트 작업",
 			"color": "#f43f5e",
-			"count": 0
+			"count": 1
 		},
 		{
 			"id": "sveltekit",
@@ -709,7 +765,7 @@ export const generatedMeta = {
 			"id": "development",
 			"name": "Development",
 			"description": "개발 구현, 개선, 리팩토링 중심 기록",
-			"count": 4
+			"count": 5
 		},
 		{
 			"id": "operations",
