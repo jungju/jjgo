@@ -1,0 +1,1 @@
+const r=e=>/^https?:\/\//.test(e),n=(e,t="")=>!e||r(e)?e:e.startsWith("/")?`${t}/${e.replace(/^\/+/,"")}`:e,s=e=>!e||r(e)||e.endsWith(".webp")?e:e.replace(/\.(png|jpe?g)$/i,".webp");export{n as a,s as t};
