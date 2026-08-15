@@ -1,0 +1,1931 @@
+@import "./original.css";
+
+html {
+  background: #07130f;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.forest2-work-preview-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 10, 8, 0.82);
+  backdrop-filter: blur(14px);
+}
+
+.forest2-work-preview {
+  position: relative;
+  width: min(100%, 680px);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 34px;
+  border: 1px solid rgba(225, 173, 55, 0.48);
+  border-radius: 20px;
+  color: #f7f3e8;
+  background: #061a13;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.58);
+}
+
+.forest2-work-preview-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(244, 241, 232, 0.2);
+  border-radius: 50%;
+  color: #f4f1e8;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.forest2-work-preview-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 26px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #020b08;
+}
+
+.forest2-work-preview-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forest2-work-preview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  color: rgba(244, 241, 232, 0.7);
+  font-size: 0.82rem;
+}
+
+.forest2-work-preview h2 {
+  margin: 22px 0 12px;
+  color: #f4f1e8;
+  font-family: var(--forest2-font-display-en);
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.forest2-work-preview-copy {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.76);
+  line-height: 1.75;
+}
+
+.forest2-work-preview-note {
+  margin: 18px 0 0;
+  color: rgba(244, 241, 232, 0.62);
+}
+
+.forest2-work-preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.forest2-work-preview-tags span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #d8ca9e;
+  background: rgba(216, 202, 158, 0.1);
+  font-size: 0.78rem;
+}
+
+/* Works collection hub */
+.forest2-site--works-hub .forest2-bg-wash {
+  background: linear-gradient(180deg, rgba(2, 12, 8, 0.48) 0, rgba(3, 14, 10, 0.86) 620px, rgba(3, 14, 10, 0.97) 100%);
+}
+
+.forest2-works-frame {
+  min-height: calc(100vh - 80px);
+  padding: 86px 48px 96px;
+}
+
+.forest2-works-shell {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.forest2-works-hero {
+  max-width: 790px;
+}
+
+.forest2-works-hero > p,
+.forest2-works-section-head > div > p,
+.forest2-works-list-head > div > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.forest2-works-hero h1 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(3rem, 5vw, 4.35rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.46);
+}
+
+.forest2-works-hero > span {
+  display: block;
+  max-width: 680px;
+  margin-top: 26px;
+  color: rgba(244, 241, 232, 0.74);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.forest2-works-featured,
+.forest2-works-collections,
+.forest2-works-list {
+  margin-top: 96px;
+}
+
+.forest2-works-section-head,
+.forest2-works-list-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 28px;
+}
+
+.forest2-works-section-head h2,
+.forest2-works-list-head h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.forest2-works-section-head > span {
+  padding-bottom: 6px;
+  color: rgba(244, 241, 232, 0.54);
+  font-size: 0.84rem;
+}
+
+.forest2-works-featured-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.75fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forest2-works-featured-card,
+.forest2-works-card,
+.forest2-works-collection-card {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.forest2-works-featured-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.92fr) minmax(0, 1.08fr);
+  min-height: 244px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(9, 36, 25, 0.94), rgba(4, 23, 16, 0.94));
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.24);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.forest2-works-featured-card--lead {
+  grid-row: 1 / span 2;
+  grid-template-columns: 1fr;
+  min-height: 504px;
+}
+
+.forest2-works-featured-card:hover,
+.forest2-works-featured-card:focus-visible,
+.forest2-works-card:hover,
+.forest2-works-card:focus-visible {
+  border-color: rgba(220, 163, 71, 0.5);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.34);
+  transform: translateY(-4px);
+}
+
+.forest2-works-featured-card:focus-visible,
+.forest2-works-card:focus-visible,
+.forest2-works-collection-card:focus-visible,
+.forest2-works-more:focus-visible,
+.forest2-work-primary-action:focus-visible,
+.forest2-work-related button:focus-visible {
+  outline: 3px solid rgba(220, 163, 71, 0.62);
+  outline-offset: 3px;
+}
+
+.forest2-works-featured-media {
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: #04130e;
+}
+
+.forest2-works-featured-card--lead .forest2-works-featured-media {
+  min-height: 306px;
+}
+
+.forest2-works-featured-media img,
+.forest2-works-card-media img,
+.forest2-works-collection-card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.forest2-works-featured-card:hover img,
+.forest2-works-featured-card:focus-visible img,
+.forest2-works-card:hover img,
+.forest2-works-card:focus-visible img,
+.forest2-works-collection-card:hover > img,
+.forest2-works-collection-card:focus-visible > img {
+  transform: scale(1.045);
+}
+
+.forest2-works-featured-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.forest2-works-featured-card--lead .forest2-works-featured-copy {
+  min-height: 198px;
+  padding: 26px 30px 28px;
+}
+
+.forest2-works-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.forest2-works-card-meta > span:first-child {
+  color: #efc878;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.forest2-works-status::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(244, 241, 232, 0.5);
+  content: "";
+}
+
+.forest2-works-status--live::before {
+  background: var(--forest2-positive);
+  box-shadow: 0 0 0 4px rgba(169, 215, 95, 0.1);
+}
+
+.forest2-works-status--building::before {
+  background: var(--forest2-gold);
+}
+
+.forest2-works-featured-copy h3 {
+  margin: 16px 0 8px;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-en);
+  font-size: 1.42rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.forest2-works-featured-card--lead h3 {
+  font-size: 1.8rem;
+}
+
+.forest2-works-featured-copy p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.88rem;
+  line-height: 1.68;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.forest2-works-card-action {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  gap: 8px;
+  color: var(--forest2-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.forest2-works-card-action svg {
+  transition: transform 180ms ease;
+}
+
+.forest2-works-featured-card:hover .forest2-works-card-action svg,
+.forest2-works-card:hover .forest2-works-card-action svg {
+  transform: translateX(4px);
+}
+
+.forest2-works-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 260px;
+  gap: 14px;
+}
+
+.forest2-works-collection-card {
+  position: relative;
+  grid-column: span 2;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 20px;
+  background: #071b13;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.forest2-works-collection-card--roblox,
+.forest2-works-collection-card--web {
+  grid-column: span 3;
+}
+
+.forest2-works-collection-card:hover,
+.forest2-works-collection-card:focus-visible,
+.forest2-works-collection-card[aria-pressed="true"] {
+  border-color: rgba(220, 163, 71, 0.62);
+  box-shadow: 0 26px 68px rgba(0, 0, 0, 0.34);
+  transform: translateY(-4px);
+}
+
+.forest2-works-collection-card[aria-pressed="true"]::after {
+  position: absolute;
+  inset: auto 18px 16px auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--forest2-gold);
+  box-shadow: 0 0 0 5px rgba(220, 163, 71, 0.16);
+  content: "";
+}
+
+.forest2-works-collection-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(2, 16, 11, 0.94) 0, rgba(2, 16, 11, 0.72) 52%, rgba(2, 16, 11, 0.18) 100%), linear-gradient(0deg, rgba(2, 16, 11, 0.72), transparent 65%);
+}
+
+.forest2-works-collection-index {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgba(244, 241, 232, 0.52);
+  font-family: var(--forest2-font-display-en);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-collection-copy {
+  position: absolute;
+  inset: auto 26px 24px;
+  display: flex;
+  max-width: 430px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.forest2-works-collection-count {
+  color: #efc878;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-collection-copy strong {
+  margin-top: 9px;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.forest2-works-collection-copy > span:not(.forest2-works-collection-count) {
+  display: -webkit-box;
+  margin-top: 8px;
+  overflow: hidden;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.forest2-works-collection-copy em {
+  margin-top: 12px;
+  color: rgba(190, 220, 141, 0.82);
+  font-size: 0.68rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.forest2-works-list {
+  padding-top: 72px;
+  border-top: 1px solid rgba(220, 163, 71, 0.32);
+  scroll-margin-top: 24px;
+}
+
+.forest2-works-list-head > div:first-child {
+  max-width: 720px;
+}
+
+.forest2-works-list-head > div:first-child > span {
+  display: block;
+  margin-top: 14px;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.forest2-works-list-summary {
+  display: grid;
+  min-width: 96px;
+  padding-left: 26px;
+  border-left: 1px solid rgba(244, 241, 232, 0.14);
+}
+
+.forest2-works-list-summary strong {
+  color: #efc878;
+  font-family: var(--forest2-font-display-en);
+  font-size: 2.7rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.forest2-works-list-summary span {
+  margin-top: 7px;
+  color: rgba(244, 241, 232, 0.5);
+  font-size: 0.72rem;
+}
+
+.forest2-works-comics-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  gap: 20px;
+  border: 1px solid rgba(169, 215, 95, 0.2);
+  border-radius: 14px;
+  background: rgba(169, 215, 95, 0.07);
+  color: rgba(244, 241, 232, 0.7);
+  font-size: 0.84rem;
+}
+
+.forest2-works-comics-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest2-gold);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.forest2-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forest2-works-card {
+  display: flex;
+  min-height: 380px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.13);
+  border-radius: 18px;
+  background: rgba(5, 28, 19, 0.82);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.2);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.forest2-works-card-media {
+  position: relative;
+  height: 210px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #03110c;
+}
+
+.forest2-works-card-media > span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(244, 241, 232, 0.16);
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.88);
+  background: rgba(3, 17, 12, 0.7);
+  font-size: 0.68rem;
+  font-weight: 750;
+  backdrop-filter: blur(10px);
+}
+
+.forest2-works-card-body {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 21px;
+}
+
+.forest2-works-card-body h3 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-en);
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.forest2-works-card-body > p {
+  display: -webkit-box;
+  margin: 10px 0 0;
+  overflow: hidden;
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.84rem;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.forest2-works-card-body > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.forest2-works-empty {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+  align-content: center;
+  padding: 34px;
+  border: 1px dashed rgba(220, 163, 71, 0.36);
+  border-radius: 20px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 100%, rgba(169, 215, 95, 0.08), transparent 50%), rgba(5, 28, 19, 0.5);
+}
+
+.forest2-works-empty > span {
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-works-empty h3 {
+  margin: 18px 0 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.forest2-works-empty p {
+  max-width: 500px;
+  margin: 12px 0 0;
+  color: rgba(244, 241, 232, 0.6);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.forest2-works-more {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  gap: 9px;
+  border: 1px solid rgba(220, 163, 71, 0.5);
+  border-radius: 999px;
+  color: var(--forest2-cream);
+  background: rgba(5, 28, 19, 0.72);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.forest2-works-more span {
+  display: grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 999px;
+  color: #173326;
+  background: var(--forest2-gold);
+  font-size: 0.68rem;
+}
+
+.forest2-works-more:hover {
+  color: var(--forest2-gold);
+  border-color: var(--forest2-gold);
+  transform: translateY(-2px);
+}
+
+.forest2-work-preview--detail {
+  display: block;
+  width: min(100%, 980px);
+  padding: 0;
+  border-radius: 24px;
+}
+
+.forest2-work-preview--detail .forest2-work-preview-close {
+  z-index: 3;
+  background: rgba(3, 17, 12, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.forest2-work-preview--detail .forest2-work-preview-media {
+  aspect-ratio: 16 / 7;
+  margin: 0;
+  border-radius: 0;
+}
+
+.forest2-work-preview-content {
+  padding: 32px 36px 38px;
+}
+
+.forest2-work-preview--detail h2 {
+  margin-top: 16px;
+  font-size: 2.4rem;
+}
+
+.forest2-work-preview--detail .forest2-work-preview-copy {
+  max-width: 740px;
+  font-size: 1rem;
+}
+
+.forest2-work-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.12);
+  border-radius: 16px;
+}
+
+.forest2-work-detail-grid section {
+  min-width: 0;
+  padding: 23px;
+  border-right: 1px solid rgba(244, 241, 232, 0.1);
+}
+
+.forest2-work-detail-grid section:nth-child(2) {
+  border-right: 0;
+}
+
+.forest2-work-detail-grid .forest2-work-detail-update {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(244, 241, 232, 0.1);
+  border-right: 0;
+  background: rgba(169, 215, 95, 0.05);
+}
+
+.forest2-work-detail-grid section > span,
+.forest2-work-related > div:first-child > span {
+  color: var(--forest2-gold);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-work-detail-grid h3,
+.forest2-work-related h3 {
+  margin: 10px 0 9px;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.forest2-work-detail-grid p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.forest2-work-detail-grid ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+  padding: 0;
+  gap: 6px;
+  list-style: none;
+}
+
+.forest2-work-detail-grid li {
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: rgba(213, 231, 181, 0.84);
+  background: rgba(169, 215, 95, 0.09);
+  font-size: 0.7rem;
+}
+
+.forest2-work-primary-action {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 20px;
+  gap: 9px;
+  border-radius: 10px;
+  color: #173326;
+  background: var(--forest2-gold);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.forest2-work-primary-action:hover {
+  background: #f0d49d;
+}
+
+.forest2-work-related {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-work-related > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 15px;
+  gap: 9px;
+}
+
+.forest2-work-related button {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
+  border: 1px solid rgba(244, 241, 232, 0.11);
+  border-radius: 10px;
+  color: rgba(244, 241, 232, 0.7);
+  background: rgba(255, 255, 255, 0.025);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.forest2-work-related button:hover {
+  border-color: rgba(220, 163, 71, 0.4);
+}
+
+.forest2-work-related button img {
+  width: 54px;
+  height: 46px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.forest2-work-related button > span {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.forest2-work-related strong {
+  overflow: hidden;
+  color: var(--forest2-cream);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.forest2-work-related em {
+  color: rgba(244, 241, 232, 0.48);
+  font-size: 0.66rem;
+  font-style: normal;
+}
+
+@media (max-width: 1040px) {
+  .forest2-works-frame {
+    padding: 72px 32px 80px;
+  }
+
+  .forest2-works-featured-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .forest2-works-featured-card--lead {
+    grid-row: auto;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    min-height: 330px;
+  }
+
+  .forest2-works-featured-card--lead .forest2-works-featured-media {
+    min-height: 330px;
+  }
+
+  .forest2-works-featured-card:not(.forest2-works-featured-card--lead) {
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .forest2-works-collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .forest2-works-collection-card,
+  .forest2-works-collection-card--roblox,
+  .forest2-works-collection-card--web {
+    grid-column: auto;
+  }
+
+  .forest2-works-collection-card--indie {
+    grid-column: 1 / -1;
+  }
+
+  .forest2-works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .forest2-works-frame {
+    padding: 54px 18px 64px;
+  }
+
+  .forest2-works-hero h1 {
+    font-size: 2.35rem;
+    line-height: 1.24;
+  }
+
+  .forest2-works-hero > span {
+    margin-top: 19px;
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .forest2-works-featured,
+  .forest2-works-collections,
+  .forest2-works-list {
+    margin-top: 62px;
+  }
+
+  .forest2-works-section-head,
+  .forest2-works-list-head {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .forest2-works-section-head h2,
+  .forest2-works-list-head h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-works-section-head > span {
+    display: none;
+  }
+
+  .forest2-works-featured-card,
+  .forest2-works-featured-card--lead,
+  .forest2-works-featured-card:not(.forest2-works-featured-card--lead) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .forest2-works-featured-media,
+  .forest2-works-featured-card--lead .forest2-works-featured-media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-works-featured-copy,
+  .forest2-works-featured-card--lead .forest2-works-featured-copy {
+    min-height: 188px;
+    padding: 21px;
+  }
+
+  .forest2-works-featured-card--lead h3 {
+    font-size: 1.48rem;
+  }
+
+  .forest2-works-collection-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+  }
+
+  .forest2-works-collection-card--indie {
+    grid-column: auto;
+  }
+
+  .forest2-works-collection-copy {
+    inset: auto 20px 20px;
+  }
+
+  .forest2-works-collection-copy strong {
+    font-size: 1.35rem;
+  }
+
+  .forest2-works-list {
+    padding-top: 48px;
+    scroll-margin-top: 16px;
+  }
+
+  .forest2-works-list-head > div:first-child > span {
+    font-size: 0.87rem;
+  }
+
+  .forest2-works-list-summary {
+    min-width: 68px;
+    padding-left: 16px;
+  }
+
+  .forest2-works-list-summary strong {
+    font-size: 2.1rem;
+  }
+
+  .forest2-works-comics-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .forest2-works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-works-card {
+    min-height: 0;
+  }
+
+  .forest2-works-card-media {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-works-card-body {
+    min-height: 174px;
+  }
+
+  .forest2-work-preview--detail {
+    border-radius: 22px 22px 0 0;
+  }
+
+  .forest2-work-preview--detail .forest2-work-preview-media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-work-preview-content {
+    padding: 24px 20px 30px;
+  }
+
+  .forest2-work-preview--detail h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-work-detail-grid,
+  .forest2-work-related > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-work-detail-grid section,
+  .forest2-work-detail-grid section:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(244, 241, 232, 0.1);
+  }
+
+  .forest2-work-detail-grid .forest2-work-detail-update {
+    grid-column: auto;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .forest2-work-primary-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest2-works-featured-card,
+  .forest2-works-card,
+  .forest2-works-collection-card,
+  .forest2-works-featured-media img,
+  .forest2-works-card-media img,
+  .forest2-works-collection-card > img {
+    transition: none;
+  }
+}
+
+.forest2-consulting-offers {
+  margin-top: 58px;
+  scroll-margin-top: 32px;
+}
+
+.forest2-method-possibility-word {
+  width: 4.3em;
+}
+
+.forest2-consulting-subnav {
+  position: sticky;
+  top: 16px;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 900px);
+  margin: 32px 0 28px;
+  padding: 6px;
+  gap: 6px;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 14px;
+  background: rgba(3, 18, 13, 0.86);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.forest2-consulting-subnav a {
+  display: flex;
+  min-width: 0;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  gap: 9px;
+  border-radius: 9px;
+  color: rgba(244, 241, 232, 0.72);
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.forest2-consulting-subnav a span {
+  color: var(--forest2-gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.forest2-consulting-subnav a:hover,
+.forest2-consulting-subnav a:focus-visible,
+.forest2-consulting-subnav a[aria-current="page"] {
+  color: var(--forest2-cream);
+  background: rgba(169, 215, 95, 0.12);
+}
+
+.forest2-consulting-subnav a:focus-visible,
+.forest2-consulting-card:focus-visible,
+.forest2-consulting-back:focus-visible {
+  outline: 3px solid rgba(220, 163, 71, 0.52);
+  outline-offset: 3px;
+}
+
+.forest2-consulting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.forest2-consulting-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 610px;
+  flex-direction: column;
+  padding: 0 28px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.15);
+  border-radius: var(--forest2-card-radius);
+  color: inherit;
+  background: linear-gradient(150deg, rgba(13, 47, 33, 0.92), rgba(5, 25, 18, 0.88));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.forest2-consulting-card:hover {
+  border-color: rgba(220, 163, 71, 0.52);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+  transform: none;
+}
+
+.forest2-consulting-card-head {
+  position: absolute;
+  inset: 18px 20px auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.forest2-consulting-card-head > span {
+  color: #f4d18a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.76);
+}
+
+.forest2-consulting-card-media {
+  position: relative;
+  isolation: isolate;
+  height: 196px;
+  flex: 0 0 auto;
+  margin: 0 -28px 28px;
+  overflow: hidden;
+  background: #071c14;
+  contain: paint;
+}
+
+.forest2-consulting-card-media::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(2, 10, 8, 0.08) 34%, rgba(5, 25, 18, 0.82) 82%, #071c14 100%);
+  box-shadow: inset 0 -2px 0 #071c14;
+  content: "";
+  pointer-events: none;
+}
+
+.forest2-consulting-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.forest2-consulting-card:nth-child(1) .forest2-consulting-card-media img {
+  transform-origin: 52% 48%;
+  animation: forest2-consulting-image-one 17s ease-in-out infinite alternate;
+}
+
+.forest2-consulting-card:nth-child(2) .forest2-consulting-card-media img {
+  transform-origin: 64% 42%;
+  animation: forest2-consulting-image-two 20s ease-in-out infinite alternate;
+}
+
+.forest2-consulting-card:nth-child(3) .forest2-consulting-card-media img {
+  transform-origin: 48% 54%;
+  animation: forest2-consulting-image-three 23s ease-in-out infinite alternate;
+}
+
+@keyframes forest2-consulting-image-one {
+  from { transform: scale(1.05) translate3d(-1.8%, 0, 0); }
+  to { transform: scale(1.14) translate3d(2.2%, -1.5%, 0); }
+}
+
+@keyframes forest2-consulting-image-two {
+  from { transform: scale(1.12) translate3d(2%, 1%, 0); }
+  to { transform: scale(1.04) translate3d(-2.5%, -1.5%, 0); }
+}
+
+@keyframes forest2-consulting-image-three {
+  from { transform: scale(1.04) translate3d(0, 1.8%, 0); }
+  to { transform: scale(1.13) translate3d(-1.8%, -1.2%, 0); }
+}
+
+.forest2-consulting-card > p {
+  margin: 0;
+  color: rgba(220, 163, 71, 0.9);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-consulting-card h3 {
+  margin: 12px 0 14px;
+  color: var(--forest2-cream);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.forest2-consulting-card > span {
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-card ul,
+.forest2-consulting-detail-hero ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24px 0 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.forest2-consulting-card li,
+.forest2-consulting-detail-hero li {
+  padding: 7px 9px;
+  border: 1px solid rgba(169, 215, 95, 0.2);
+  border-radius: 999px;
+  color: rgba(215, 231, 186, 0.8);
+  background: rgba(169, 215, 95, 0.06);
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+.forest2-consulting-card strong {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 28px;
+  gap: 9px;
+  color: var(--forest2-gold);
+  font-size: 0.86rem;
+}
+
+.forest2-consulting-card strong svg {
+  transition: transform 180ms ease;
+}
+
+.forest2-consulting-card:hover strong svg {
+  transform: translateX(4px);
+}
+
+.forest2-consulting-cta {
+  margin-top: 88px;
+}
+
+.forest2-consulting-back {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.forest2-consulting-back:hover {
+  color: var(--forest2-gold);
+}
+
+.forest2-consulting-detail-frame .forest2-consulting-subnav {
+  margin-top: 24px;
+}
+
+.forest2-consulting-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(420px, 1.12fr);
+  align-items: center;
+  gap: clamp(38px, 5vw, 72px);
+  margin-top: 56px;
+}
+
+.forest2-consulting-detail-copy > p,
+.forest2-consulting-detail-section > header > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-consulting-detail-hero h1 {
+  max-width: 8em;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(3.1rem, 5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.46);
+}
+
+.forest2-consulting-detail-copy > span {
+  display: block;
+  max-width: 470px;
+  margin-top: 22px;
+  color: rgba(244, 241, 232, 0.74);
+  font-size: 1.06rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-detail-hero ul {
+  margin-top: 28px;
+}
+
+.forest2-consulting-detail-hero li {
+  padding: 9px 12px;
+  font-size: 0.82rem;
+}
+
+.forest2-consulting-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.forest2-consulting-hero-actions a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 19px;
+  border: 1px solid rgba(244, 241, 232, 0.26);
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.84);
+  font-size: 0.86rem;
+  font-weight: 750;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.forest2-consulting-hero-actions a:first-child {
+  border-color: var(--forest2-gold);
+  background: var(--forest2-gold);
+  color: #173326;
+}
+
+.forest2-consulting-hero-actions a:hover {
+  border-color: var(--forest2-gold);
+  color: var(--forest2-gold);
+  transform: translateY(-2px);
+}
+
+.forest2-consulting-hero-actions a:first-child:hover {
+  background: #f0d49d;
+  color: #173326;
+}
+
+.forest2-consulting-detail-visual {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.16);
+  border-radius: 28px;
+  background: rgba(5, 28, 19, 0.7);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+.forest2-consulting-detail-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), transparent 36%, rgba(2, 20, 13, 0.22));
+  content: "";
+  pointer-events: none;
+}
+
+.forest2-consulting-detail-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  animation: forest2-consulting-detail-drift 18s ease-in-out infinite alternate;
+}
+
+.forest2-consulting-detail-frame--ax .forest2-consulting-detail-visual img {
+  animation-duration: 21s;
+  animation-direction: alternate-reverse;
+}
+
+.forest2-consulting-detail-frame--platform-engineering .forest2-consulting-detail-visual img {
+  animation-duration: 24s;
+}
+
+@keyframes forest2-consulting-detail-drift {
+  from {
+    transform: scale(1.06) translate3d(-1.25%, -0.75%, 0);
+  }
+
+  to {
+    transform: scale(1.12) translate3d(1.5%, 1%, 0);
+  }
+}
+
+.forest2-consulting-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(44px, 6vw, 84px);
+  align-items: end;
+  margin-top: 96px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(220, 163, 71, 0.34);
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+  scroll-margin-top: 108px;
+}
+
+.forest2-consulting-proof-copy > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-consulting-proof-copy h2 {
+  max-width: 11em;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.forest2-consulting-proof-copy > span {
+  display: block;
+  max-width: 600px;
+  margin-top: 22px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.96rem;
+  line-height: 1.82;
+}
+
+.forest2-consulting-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 20px;
+  background: rgba(5, 28, 19, 0.72);
+}
+
+.forest2-consulting-metrics > div {
+  min-width: 0;
+  min-height: 154px;
+  padding: 24px;
+  border-right: 1px solid rgba(244, 241, 232, 0.12);
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-consulting-metrics > div:nth-child(2n) {
+  border-right: 0;
+}
+
+.forest2-consulting-metrics > div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.forest2-consulting-metrics dt {
+  color: #f0d49d;
+  font-family: var(--forest2-font-display-en);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.forest2-consulting-metrics dd {
+  display: grid;
+  gap: 5px;
+  margin: 20px 0 0;
+}
+
+.forest2-consulting-metrics dd strong {
+  color: var(--forest2-cream);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.forest2-consulting-metrics dd span {
+  color: rgba(244, 241, 232, 0.58);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.forest2-consulting-detail-section {
+  margin-top: 82px;
+  scroll-margin-top: 108px;
+}
+
+.forest2-consulting-detail-section > header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.forest2-consulting-detail-section > header h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.forest2-consulting-expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.forest2-consulting-expertise article {
+  min-width: 0;
+  min-height: 220px;
+  padding: 26px;
+  border: 1px solid rgba(244, 241, 232, 0.13);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(9, 34, 25, 0.88), rgba(5, 28, 19, 0.58));
+}
+
+.forest2-consulting-expertise article > span {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.forest2-consulting-expertise h3 {
+  margin: 0 0 12px;
+  color: #f0d49d;
+  font-size: 1.22rem;
+  font-weight: 600;
+}
+
+.forest2-consulting-expertise p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.92rem;
+  line-height: 1.76;
+}
+
+.forest2-consulting-process-note {
+  display: block;
+  margin-top: 10px;
+  color: rgba(244, 241, 232, 0.54);
+  font-size: 0.82rem;
+}
+
+.forest2-consulting-situations ol,
+.forest2-consulting-process {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forest2-consulting-situations ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.forest2-consulting-situations li {
+  min-width: 0;
+  min-height: 190px;
+  padding: 24px;
+  border-top: 1px solid rgba(220, 163, 71, 0.52);
+  background: linear-gradient(180deg, rgba(9, 34, 25, 0.78), rgba(9, 34, 25, 0.18));
+}
+
+.forest2-consulting-situations li > span,
+.forest2-consulting-process li > span {
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.forest2-consulting-situations li p {
+  margin: 34px 0 0;
+  color: rgba(244, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+.forest2-consulting-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: var(--forest2-card-radius);
+  background: rgba(5, 28, 19, 0.76);
+}
+
+.forest2-consulting-outcomes article {
+  min-width: 0;
+  min-height: 250px;
+  padding: 28px;
+  border-right: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-consulting-outcomes article:last-child {
+  border-right: 0;
+}
+
+.forest2-consulting-outcomes h3,
+.forest2-consulting-process h3 {
+  margin: 0 0 12px;
+  color: #f0d49d;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.forest2-consulting-outcomes p,
+.forest2-consulting-process p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.forest2-consulting-process li {
+  display: grid;
+  min-width: 0;
+  min-height: 250px;
+  grid-template-rows: auto 1fr;
+  padding: 22px;
+  gap: 34px;
+  border: 1px solid rgba(220, 163, 71, 0.28);
+  border-radius: 14px;
+  background: rgba(5, 28, 19, 0.78);
+}
+
+.forest2-consulting-process li em {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--forest2-positive);
+  font-size: 0.76rem;
+  font-style: normal;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 960px) {
+  .forest2-consulting-proof {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .forest2-consulting-proof-copy {
+    max-width: 760px;
+  }
+
+  .forest2-consulting-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .forest2-consulting-detail-copy {
+    max-width: 720px;
+  }
+
+  .forest2-consulting-detail-visual {
+    max-width: 760px;
+  }
+
+  .forest2-consulting-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-card {
+    min-height: 0;
+  }
+
+  .forest2-consulting-situations ol,
+  .forest2-consulting-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-situations li {
+    min-height: 0;
+  }
+
+  .forest2-consulting-outcomes article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+  }
+
+  .forest2-consulting-outcomes article:last-child {
+    border-bottom: 0;
+  }
+
+  .forest2-consulting-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .forest2-consulting-offers,
+  .forest2-consulting-cta,
+  .forest2-consulting-detail-section {
+    margin-top: 48px;
+  }
+
+  .forest2-consulting-subnav {
+    position: relative;
+    top: auto;
+    display: flex;
+    width: calc(100vw - 36px);
+    margin: 24px 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .forest2-consulting-subnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .forest2-consulting-subnav a {
+    min-width: max-content;
+    flex: 1 0 auto;
+    padding-inline: 14px;
+  }
+
+  .forest2-consulting-card {
+    padding: 0 22px 22px;
+  }
+
+  .forest2-consulting-card-media {
+    height: 184px;
+    margin: 0 -22px 24px;
+  }
+
+  .forest2-consulting-detail-hero {
+    gap: 30px;
+    margin-top: 38px;
+  }
+
+  .forest2-consulting-proof {
+    gap: 28px;
+    margin-top: 56px;
+    padding: 30px 0;
+  }
+
+  .forest2-consulting-proof-copy h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-consulting-proof-copy > span {
+    margin-top: 16px;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .forest2-consulting-metrics > div {
+    min-height: 138px;
+    padding: 18px;
+  }
+
+  .forest2-consulting-metrics dt {
+    font-size: 1.9rem;
+  }
+
+  .forest2-consulting-metrics dd {
+    margin-top: 14px;
+  }
+
+  .forest2-consulting-detail-hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .forest2-consulting-detail-copy > span {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .forest2-consulting-detail-hero ul {
+    margin-top: 22px;
+  }
+
+  .forest2-consulting-hero-actions {
+    margin-top: 26px;
+  }
+
+  .forest2-consulting-detail-visual {
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+  }
+
+  .forest2-consulting-detail-section > header {
+    margin-bottom: 20px;
+  }
+
+  .forest2-consulting-detail-section > header h2 {
+    font-size: 1.8rem;
+  }
+
+  .forest2-consulting-expertise {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-expertise article {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .forest2-consulting-expertise article > span {
+    margin-bottom: 20px;
+  }
+
+  .forest2-consulting-situations li,
+  .forest2-consulting-outcomes article {
+    padding: 20px;
+  }
+
+  .forest2-consulting-situations li p {
+    margin-top: 22px;
+  }
+
+  .forest2-consulting-process {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-process li {
+    min-height: 0;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+
+  .forest2-work-preview-backdrop {
+    align-items: end;
+    padding: 0;
+  }
+
+  .forest2-work-preview {
+    width: 100%;
+    max-height: 88vh;
+    padding: 24px 20px 30px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .forest2-work-preview h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest2-consulting-card-media img,
+  .forest2-consulting-detail-visual img {
+    animation: none !important;
+    transform: scale(1.05);
+  }
+}
