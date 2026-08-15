@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function WorksPage() {
-  return <WorksClient />;
+  return <WorksClient locale="ko" />;
 }

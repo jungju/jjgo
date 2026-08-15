@@ -12,18 +12,18 @@ export default function ConsultingPage() {
     <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site">
       <main className="forest2-site forest2-site--method forest2-site--consulting" data-jhub-web-app="jjgo2" data-web-app-title="JJGo">
         <ForestBackground />
-        <Topbar />
+        <Topbar locale="ko" />
         <div className="forest2-content forest2-route-view">
           <article className="forest2-method-frame">
             <div className="forest2-method-shell">
               <header className="forest2-method-hero" data-visual-id="consulting-hero">
                 <p className="forest2-method-eyebrow">CONSULTING</p>
-                <OriginalMethodHeadline />
+                <OriginalMethodHeadline locale="ko" />
                 <p className="forest2-method-lead">조직, 비즈니스, 기술 기반을 함께 살펴보고 AI 시대에 필요한 변화를 실제로 실행할 수 있는 구조로 연결합니다.</p>
               </header>
 
               <section className="forest2-consulting-offers" data-visual-id="consulting-services">
-                <ConsultingSubnav />
+                <ConsultingSubnav locale="ko" />
 
                 <div className="forest2-consulting-grid">
                   {consultingServices.map((service) => (

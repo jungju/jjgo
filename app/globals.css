@@ -15,6 +15,52 @@ select {
   -webkit-tap-highlight-color: transparent;
 }
 
+.forest2-language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 232, 0.42);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.forest2-nav .forest2-language-toggle > a {
+  min-height: 40px;
+  color: rgba(244, 241, 232, 0.52);
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.forest2-nav .forest2-language-toggle > a::after {
+  display: none;
+}
+
+.forest2-nav .forest2-language-toggle > a[data-active="true"] {
+  color: var(--forest2-gold);
+}
+
+.forest2-nav .forest2-language-toggle > a:hover,
+.forest2-nav .forest2-language-toggle > a:focus-visible {
+  color: var(--forest2-cream);
+}
+
+@media (max-width: 760px) {
+  .forest2-nav .forest2-language-toggle {
+    gap: 4px;
+    font-size: 0.62rem;
+  }
+
+  .forest2-nav .forest2-language-toggle > a {
+    min-height: 34px;
+    font-size: 0.62rem;
+  }
+}
+
 .forest2-work-preview-backdrop {
   position: fixed;
   inset: 0;

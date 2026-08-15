@@ -14,6 +14,14 @@ const routes = [
   "consulting/ai-native/index.html",
   "consulting/ax/index.html",
   "consulting/platform-engineering/index.html",
+  "en/index.html",
+  "en/about/index.html",
+  "en/works/index.html",
+  "en/method/index.html",
+  "en/consulting/index.html",
+  "en/consulting/ai-native/index.html",
+  "en/consulting/ax/index.html",
+  "en/consulting/platform-engineering/index.html",
 ];
 
 test("exports every public route as static HTML", async () => {
@@ -25,6 +33,20 @@ test("exports every public route as static HTML", async () => {
     assert.match(html, /<title>.*JJGo.*<\/title>/i, route);
     assert.doesNotMatch(html, /localhost:3000|_vinext/i, route);
   }
+});
+
+test("exports matching Korean and English navigation", async () => {
+  const [koreanHome, englishHome, englishConsulting] = await Promise.all([
+    readFile(new URL("index.html", outputRoot), "utf8"),
+    readFile(new URL("en/index.html", outputRoot), "utf8"),
+    readFile(new URL("en/consulting/ai-native/index.html", outputRoot), "utf8"),
+  ]);
+
+  assert.match(koreanHome, /href="\/en\/"/);
+  assert.match(englishHome, /href="\/"/);
+  assert.match(englishHome, /From bold ideas/);
+  assert.match(englishConsulting, /An organization built to solve problems/);
+  assert.match(englishConsulting, /href="\/consulting\/ai-native"/);
 });
 
 test("uses a serverless static-export configuration", async () => {

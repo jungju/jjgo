@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { LanguageToggle, localizedPath, type Locale } from "../language-toggle";
 
 export type ConsultingSlug = "ai-native" | "ax" | "platform-engineering";
 
@@ -165,27 +166,32 @@ export function ForestBackground() {
   );
 }
 
-export function Topbar() {
+export function Topbar({ locale = "ko", path = "/consulting" }: { locale?: Locale; path?: string }) {
+  const labels = locale === "ko"
+    ? { home: "홈", works: "작품", consulting: "컨설팅", about: "소개", nav: "JJGo 페이지", homeLabel: "JJGo 홈" }
+    : { home: "Home", works: "Works", consulting: "Consulting", about: "About", nav: "JJGo pages", homeLabel: "JJGo home" };
+
   return (
     <header className="forest2-topbar" data-visual-id="topbar">
-      <a className="forest2-brand" aria-label="JJGo 홈" href="/">
+      <a className="forest2-brand" aria-label={labels.homeLabel} href={localizedPath(locale, "/")}>
         <img className="forest2-brand-logo" src="/a/logo/jjgo-logo.png" alt="" />
       </a>
-      <nav className="forest2-nav" aria-label="JJGo 페이지">
-        <a href="/">홈</a>
-        <a href="/works">작품</a>
-        <a aria-current="page" href="/consulting">컨설팅</a>
-        <a href="/about">소개</a>
+      <nav className="forest2-nav" aria-label={labels.nav}>
+        <a href={localizedPath(locale, "/")}>{labels.home}</a>
+        <a href={localizedPath(locale, "/works")}>{labels.works}</a>
+        <a aria-current="page" href={localizedPath(locale, "/consulting")}>{labels.consulting}</a>
+        <a href={localizedPath(locale, "/about")}>{labels.about}</a>
+        <LanguageToggle locale={locale} path={path} />
       </nav>
     </header>
   );
 }
 
-export function ConsultingSubnav({ active }: { active?: ConsultingSlug }) {
+export function ConsultingSubnav({ active, locale = "ko", services = consultingServices }: { active?: ConsultingSlug; locale?: Locale; services?: ConsultingService[] }) {
   return (
-    <nav className="forest2-consulting-subnav" aria-label="컨설팅 분야">
-      {consultingServices.map((service) => (
-        <a key={service.slug} aria-current={active === service.slug ? "page" : undefined} href={`/consulting/${service.slug}`}>
+    <nav className="forest2-consulting-subnav" aria-label={locale === "ko" ? "컨설팅 분야" : "Consulting areas"}>
+      {services.map((service) => (
+        <a key={service.slug} aria-current={active === service.slug ? "page" : undefined} href={localizedPath(locale, `/consulting/${service.slug}`)}>
           <span>{service.number}</span>
           {service.shortTitle}
         </a>
@@ -194,7 +200,27 @@ export function ConsultingSubnav({ active }: { active?: ConsultingSlug }) {
   );
 }
 
-export function OriginalMethodHeadline() {
+export function OriginalMethodHeadline({ locale = "ko" }: { locale?: Locale }) {
+  if (locale === "en") {
+    return (
+      <h1 aria-label="Keep structure simple and possibility wide">
+        <span aria-hidden="true" className="forest2-method-wind-line">
+          Keep structure
+          <span className="forest2-method-wind-word">
+            <span>simple</span><span>fast</span><span>effective</span><span>practical</span><span>resilient</span>
+          </span>
+        </span>
+        <br aria-hidden="true" />
+        <span aria-hidden="true" className="forest2-method-wind-line">
+          Grow possibility
+          <span className="forest2-method-wind-word forest2-method-possibility-word">
+            <span>wider</span><span>higher</span><span>bigger</span><span>freer</span><span>newer</span>
+          </span>
+        </span>
+      </h1>
+    );
+  }
+
   return (
     <h1 aria-label="구조는 단순하게 가능성은 넓게">
       <span aria-hidden="true" className="forest2-method-wind-line">
@@ -222,29 +248,43 @@ export function OriginalMethodHeadline() {
   );
 }
 
-export function ConsultingDetail({ service }: { service: ConsultingService }) {
+export function ConsultingDetail({ service, locale = "ko", services = consultingServices }: { service: ConsultingService; locale?: Locale; services?: ConsultingService[] }) {
+  const ui = locale === "ko" ? {
+    back: "컨설팅 전체 보기", topics: "핵심 주제", contact: "상담 문의", outcomesLink: "결과 보기",
+    expertise: "어디까지 함께하는가", outcomes: "무엇을 함께 만드는가", situations: "언제 필요한가",
+    process: "어떻게 진행하는가", note: "상황에 따라 범위와 기간을 조정합니다.",
+    ctaTitle: <>정답을 제시하기보다<br />함께 실행할 구조를 만듭니다.</>,
+    ctaBody: "현재 상황과 해결하고 싶은 문제를 알려주시면 가장 적합한 시작점을 함께 찾겠습니다.", cta: "상담 문의하기",
+  } : {
+    back: "View all consulting", topics: "Core topics", contact: "Start a conversation", outcomesLink: "See outcomes",
+    expertise: "How I can help", outcomes: "What we build together", situations: "When to start",
+    process: "How we work", note: "Scope and timeline are adjusted to your context.",
+    ctaTitle: <>More than an answer,<br />build a system your team can run.</>,
+    ctaBody: "Share your current situation and the problem you want to solve. We’ll identify the strongest place to begin.", cta: "Send an email",
+  };
+
   return (
-    <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site">
+    <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site" lang={locale}>
       <main className="forest2-site forest2-site--method forest2-site--consulting" data-jhub-web-app="jjgo2" data-web-app-title="JJGo">
         <ForestBackground />
-        <Topbar />
+        <Topbar locale={locale} path={`/consulting/${service.slug}`} />
         <div className="forest2-content forest2-route-view">
           <article className={`forest2-method-frame forest2-consulting-detail-frame forest2-consulting-detail-frame--${service.slug}`}>
             <div className="forest2-method-shell">
-              <a className="forest2-consulting-back" href="/consulting"><ArrowLeft size={17} aria-hidden="true" />컨설팅 전체 보기</a>
-              <ConsultingSubnav active={service.slug} />
+              <a className="forest2-consulting-back" href={localizedPath(locale, "/consulting")}><ArrowLeft size={17} aria-hidden="true" />{ui.back}</a>
+              <ConsultingSubnav active={service.slug} locale={locale} services={services} />
 
               <header className="forest2-consulting-detail-hero">
                 <div className="forest2-consulting-detail-copy">
                   <p>{service.english}</p>
                   <h1>{service.detailTitle}</h1>
                   <span>{service.detailSummary}</span>
-                  <ul aria-label="핵심 주제">
+                  <ul aria-label={ui.topics}>
                     {service.keywords.map((keyword) => <li key={keyword}>{keyword}</li>)}
                   </ul>
                   <div className="forest2-consulting-hero-actions">
-                    <a href="mailto:leejungju.go@gmail.com">상담 문의<ArrowRight size={18} aria-hidden="true" /></a>
-                    <a href="#outcomes">결과 보기</a>
+                    <a href="mailto:leejungju.go@gmail.com">{ui.contact}<ArrowRight size={18} aria-hidden="true" /></a>
+                    <a href="#outcomes">{ui.outcomesLink}</a>
                   </div>
                 </div>
                 <figure className="forest2-consulting-detail-visual" aria-hidden="true">
@@ -271,7 +311,7 @@ export function ConsultingDetail({ service }: { service: ConsultingService }) {
               <section className="forest2-consulting-detail-section" id="expertise">
                 <header>
                   <p>EXPERTISE</p>
-                  <h2>어디까지 함께하는가</h2>
+                  <h2>{ui.expertise}</h2>
                 </header>
                 <div className="forest2-consulting-expertise">
                   {service.expertise.map((item, index) => (
@@ -287,7 +327,7 @@ export function ConsultingDetail({ service }: { service: ConsultingService }) {
               <section className="forest2-consulting-detail-section" id="outcomes">
                 <header>
                   <p>WHAT YOU GET</p>
-                  <h2>무엇을 함께 만드는가</h2>
+                  <h2>{ui.outcomes}</h2>
                 </header>
                 <div className="forest2-consulting-outcomes">
                   {service.outcomes.map((outcome) => (
@@ -299,7 +339,7 @@ export function ConsultingDetail({ service }: { service: ConsultingService }) {
               <section className="forest2-consulting-detail-section forest2-consulting-situations" id="situations">
                 <header>
                   <p>WHEN TO START</p>
-                  <h2>언제 필요한가</h2>
+                  <h2>{ui.situations}</h2>
                 </header>
                 <ol>
                   {service.situations.map((situation, index) => (
@@ -311,8 +351,8 @@ export function ConsultingDetail({ service }: { service: ConsultingService }) {
               <section className="forest2-consulting-detail-section" id="process">
                 <header>
                   <p>PROCESS</p>
-                  <h2>어떻게 진행하는가</h2>
-                  <span className="forest2-consulting-process-note">상황에 따라 범위와 기간을 조정합니다.</span>
+                  <h2>{ui.process}</h2>
+                  <span className="forest2-consulting-process-note">{ui.note}</span>
                 </header>
                 <ol className="forest2-consulting-process">
                   {service.process.map((step, index) => (
@@ -323,9 +363,9 @@ export function ConsultingDetail({ service }: { service: ConsultingService }) {
 
               <section className="forest2-method-cta forest2-consulting-cta">
                 <p>START A CONVERSATION</p>
-                <h2>정답을 제시하기보다<br />함께 실행할 구조를 만듭니다.</h2>
-                <span>현재 상황과 해결하고 싶은 문제를 알려주시면 가장 적합한 시작점을 함께 찾겠습니다.</span>
-                <a href="mailto:leejungju.go@gmail.com">상담 문의하기<ArrowRight size={20} aria-hidden="true" /></a>
+                <h2>{ui.ctaTitle}</h2>
+                <span>{ui.ctaBody}</span>
+                <a href="mailto:leejungju.go@gmail.com">{ui.cta}<ArrowRight size={20} aria-hidden="true" /></a>
               </section>
             </div>
           </article>
