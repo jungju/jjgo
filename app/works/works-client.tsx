@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { localizedPath, type Locale } from "../language-toggle";
 import { SiteHeader } from "../site-header";
-import { pagePath } from "../site-spec";
+import { pagePath, type SitePageId } from "../site-spec";
 
 type CollectionId = "web" | "indie" | "comics" | "roblox" | "video";
 
@@ -20,6 +20,7 @@ type Work = {
   roles: string[];
   update: string;
   url?: string;
+  internalPage?: SitePageId;
   actionLabel: string;
 };
 
@@ -106,6 +107,22 @@ const worksKo: Work[] = [
     url: "https://mytoon.jjgo.io",
     actionLabel: "만화 보기",
   },
+  {
+    id: 5,
+    category: "웹사이트",
+    collection: "web",
+    title: "AI Slop",
+    description: "AI가 만들고 자동으로 연재하는 만화와 영상 아카이브",
+    purpose: "AI가 기획부터 제작과 게시까지 이어 가는 창작·자동화 파이프라인을 실제 연재 서비스로 운영합니다.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/wind-returning-place.jpg",
+    technologies: ["AI 콘텐츠 생성", "자동화 파이프라인", "정적 웹"],
+    roles: ["기획", "개발", "운영"],
+    update: "대표 만화 《바람이 돌아오는 곳》을 연재하며 제작 모델과 출처 정보를 함께 공개하고 있습니다.",
+    url: "https://slop.jjgo.io",
+    internalPage: "aiSlop",
+    actionLabel: "프로젝트 소개",
+  },
 ];
 
 const worksEn: Work[] = [
@@ -180,6 +197,22 @@ const worksEn: Work[] = [
     update: "Currently available at its public address.",
     url: "https://mytoon.jjgo.io",
     actionLabel: "View comics",
+  },
+  {
+    id: 5,
+    category: "Website",
+    collection: "web",
+    title: "AI Slop",
+    description: "A comics and video archive created and published automatically by AI.",
+    purpose: "Runs an AI-led creative and publishing pipeline as a real serialized content service, from planning through production and release.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/wind-returning-place.jpg",
+    technologies: ["AI content generation", "Publishing automation", "Static web"],
+    roles: ["Strategy", "Engineering", "Operations"],
+    update: "The ongoing comic The Place Where the Wind Returns is published with available model and production provenance.",
+    url: "https://slop.jjgo.io",
+    internalPage: "aiSlop",
+    actionLabel: "View project",
   },
 ];
 
@@ -299,7 +332,7 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
   const copy = worksCopy[locale];
   const collections = locale === "ko" ? collectionsKo : collectionsEn;
   const works = worksByLocale[locale];
-  const featuredWorks = [3, 4, 0].map((id) => works.find((work) => work.id === id)).filter((work): work is Work => Boolean(work));
+  const featuredWorks = [5, 3, 4].map((id) => works.find((work) => work.id === id)).filter((work): work is Work => Boolean(work));
   const collectionCounts = Object.fromEntries(collections.map((collection) => [collection.id, works.filter((work) => work.collection === collection.id).length])) as Record<CollectionId, number>;
   const active = collections.find((collection) => collection.id === activeCollection) ?? collections[0];
   const collectionWorks = works.filter((work) => work.collection === activeCollection);
@@ -344,8 +377,9 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                   <span>{copy.featuredBody}</span>
                 </header>
                 <div className="forest2-works-featured-grid">
-                  {featuredWorks.map((work, index) => (
-                    <button key={work.id} className={`forest2-works-featured-card${index === 0 ? " forest2-works-featured-card--lead" : ""}`} type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">
+                  {featuredWorks.map((work, index) => {
+                    const cardClass = `forest2-works-featured-card${index === 0 ? " forest2-works-featured-card--lead" : ""}`;
+                    const cardContent = <>
                       <div className="forest2-works-featured-media">
                         <img src={work.image} alt={`${work.title} ${copy.alt}`} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} />
                       </div>
@@ -355,13 +389,19 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                         <p>{work.description}</p>
                         <span className="forest2-works-card-action">{work.actionLabel}<ArrowRight /></span>
                       </div>
-                    </button>
-                  ))}
+                    </>;
+                    return work.internalPage ? (
+                      <a key={work.id} className={cardClass} href={localizedPath(locale, pagePath(work.internalPage))}>{cardContent}</a>
+                    ) : (
+                      <button key={work.id} className={cardClass} type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">{cardContent}</button>
+                    );
+                  })}
                 </div>
                 <div className="forest2-works-public-links" aria-label={locale === "ko" ? "공개 운영 주소" : "Public live URLs"}>
                   <span>{locale === "ko" ? "공개 운영 주소" : "PUBLIC & LIVE"}</span>
                   <a href="https://okgo4.jjgo.io" target="_blank" rel="noreferrer">okgo4.jjgo.io<ArrowRight /></a>
                   <a href="https://mytoon.jjgo.io" target="_blank" rel="noreferrer">mytoon.jjgo.io<ArrowRight /></a>
+                  <a href="https://slop.jjgo.io" target="_blank" rel="noreferrer">slop.jjgo.io<ArrowRight /></a>
                 </div>
               </section>
 
@@ -430,8 +470,8 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
 
                 {visibleWorks.length > 0 ? (
                   <div className="forest2-works-grid" data-visual-id="works-gallery">
-                    {visibleWorks.map((work) => (
-                      <button key={work.id} className="forest2-works-card" type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">
+                    {visibleWorks.map((work) => {
+                      const cardContent = <>
                         <div className="forest2-works-card-media">
                           <img src={work.image} alt={`${work.title} ${copy.alt}`} loading="lazy" />
                           <span>{work.category}</span>
@@ -441,8 +481,13 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                           <p>{work.description}</p>
                           <div><WorkStatus status={work.status} locale={locale} /><span className="forest2-works-card-action">{work.actionLabel}<ArrowRight /></span></div>
                         </div>
-                      </button>
-                    ))}
+                      </>;
+                      return work.internalPage ? (
+                        <a key={work.id} className="forest2-works-card" href={localizedPath(locale, pagePath(work.internalPage))}>{cardContent}</a>
+                      ) : (
+                        <button key={work.id} className="forest2-works-card" type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">{cardContent}</button>
+                      );
+                    })}
                   </div>
                 ) : (
                   <div className="forest2-works-empty">
@@ -492,7 +537,11 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                 </section>
               </div>
 
-              {selected.url && <a className="forest2-work-primary-action" href={selected.url} target="_blank" rel="noreferrer">{selected.actionLabel}<ArrowRight /></a>}
+              {selected.internalPage ? (
+                <a className="forest2-work-primary-action" href={localizedPath(locale, pagePath(selected.internalPage))}>{selected.actionLabel}<ArrowRight /></a>
+              ) : selected.url ? (
+                <a className="forest2-work-primary-action" href={selected.url} target="_blank" rel="noreferrer">{selected.actionLabel}<ArrowRight /></a>
+              ) : null}
 
               {relatedWorks.length > 0 && (
                 <section className="forest2-work-related" aria-labelledby="related-title">

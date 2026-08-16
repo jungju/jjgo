@@ -97,6 +97,8 @@ test("keeps the site hierarchy internally consistent", () => {
   assert.equal(new Set(paths).size, paths.length, "page paths must be unique");
   assert.equal(sitePages.roblox.parent, "works");
   assert.match(sitePages.roblox.path, /^\/works\//);
+  assert.equal(sitePages.aiSlop.parent, "works");
+  assert.match(sitePages.aiSlop.path, /^\/works\//);
 
   for (const [id, page] of Object.entries(sitePages)) {
     if (!page.parent) continue;
@@ -270,11 +272,13 @@ test("declares the correct document language for each locale", async () => {
 });
 
 test("exports matching Korean and English navigation", async () => {
-  const [koreanHome, englishHome, englishConsulting, koreanRoblox] = await Promise.all([
+  const [koreanHome, englishHome, englishConsulting, koreanRoblox, koreanAiSlop, englishAiSlop] = await Promise.all([
     readFile(new URL("index.html", outputRoot), "utf8"),
     readFile(new URL("en/index.html", outputRoot), "utf8"),
     readFile(new URL("en/consulting/ai-native/index.html", outputRoot), "utf8"),
     readFile(new URL("works/roblox/index.html", outputRoot), "utf8"),
+    readFile(new URL("works/ai-slop/index.html", outputRoot), "utf8"),
+    readFile(new URL("en/works/ai-slop/index.html", outputRoot), "utf8"),
   ]);
 
   assert.match(koreanHome, /href="\/en\/"/);
@@ -291,6 +295,11 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(koreanRoblox, /138101004117090\/Bomb-Rain-You-Won-t-Last/);
   assert.match(koreanRoblox, /Paper Boat Exploration: Seoul Waterways Adventure/);
   assert.match(koreanRoblox, /Bomb Rain/);
+  assert.match(koreanAiSlop, /AI가 만들고,[\s\S]*AI가 연재합니다/);
+  assert.match(koreanAiSlop, /href="https:\/\/slop\.jjgo\.io"/);
+  assert.match(koreanAiSlop, /바람이 돌아오는 곳/);
+  assert.match(englishAiSlop, /Created by AI,[\s\S]*published by AI/);
+  assert.match(englishAiSlop, /The Place Where the Wind Returns/);
 });
 
 test("keeps inquiries and coffee chats in the About contact area", async () => {
@@ -400,6 +409,8 @@ test("ships a curated Works set without archived or internal-only targets", asyn
   for (const [route, html] of [["works/index.html", koreanWorks], ["en/works/index.html", englishWorks]]) {
     assert.match(html, /href="https:\/\/okgo4\.jjgo\.io\/?"/, `${route}: verified SaaS project link`);
     assert.match(html, /href="https:\/\/mytoon\.jjgo\.io\/?"/, `${route}: verified comics project link`);
+    assert.match(html, /href="https:\/\/slop\.jjgo\.io\/?"/, `${route}: verified AI Slop project link`);
+    assert.match(html, /href="\/(?:en\/)?works\/ai-slop\/?"/, `${route}: AI Slop project page link`);
     assert.match(html, /href="\/(?:en\/)?works\/roblox\/?"/, `${route}: curated Roblox collection link`);
   }
 });

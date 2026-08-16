@@ -16,6 +16,7 @@ export const sitePages = {
   home: { path: "/", parent: null, nav: "home", identity: null },
   works: { path: "/works", parent: null, nav: "works", identity: null },
   roblox: { path: "/works/roblox", parent: "works", nav: "works", identity: { ko: "Roblox", en: "Roblox" } },
+  aiSlop: { path: "/works/ai-slop", parent: "works", nav: "works", identity: { ko: "AI Slop", en: "AI Slop" } },
   consulting: { path: "/consulting", parent: null, nav: "consulting", identity: { ko: "Consulting", en: "Consulting" } },
   consultingAiNative: { path: "/consulting/ai-native", parent: "consulting", nav: "consulting", identity: null },
   consultingAx: { path: "/consulting/ax", parent: "consulting", nav: "consulting", identity: null },
