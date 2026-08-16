@@ -32,7 +32,7 @@ function adaptAboutProfile(source: string) {
     )
     .replaceAll(
       "백엔드와 클라우드부터 AI 제품화와 개발 조직 운영까지 경험해 왔습니다.",
-      "현재 N3N 개발실 실장으로 AI 제품과 개발 조직의 전환을 이끌고 있습니다.",
+      "AI 제품과 개발 조직의 전환을 이끌고 있습니다.",
     )
     .replaceAll("16년의 제품 개발 경험", "16년의 제품·플랫폼 개발 경험")
     .replaceAll(
@@ -40,7 +40,7 @@ function adaptAboutProfile(source: string) {
       "Daum·Kakao와 NCSOFT에서 대규모 클라우드 플랫폼을, 이후 AI 제품과 개발 조직을 이끌었습니다.",
     )
     .replace(/<dl class="forest2-about-evidence-grid">[\s\S]*?<\/dl>/, evidence)
-    .replaceAll("Daum · Kakao · NCSOFT · Alchera · NeuroXT · N3N", "N3N(현재) · NeuroXT · Alchera · NCSOFT · Kakao · Daum")
+    .replaceAll("Daum · Kakao · NCSOFT · Alchera · NeuroXT", "NeuroXT · Alchera · NCSOFT · Kakao · Daum")
     .replace('<section class="forest2-about-next"', `${verification}<section class="forest2-about-next"`)
     .replaceAll('rel="noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"', 'rel="me noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"')
     .replaceAll('rel="noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"', 'rel="me noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"');
@@ -81,7 +81,7 @@ const englishReplacements: [string, string][] = [
   ["AI Native 조직, AX, 플랫폼 엔지니어링을 통해 실행 가능한 변화를 만듭니다.", "Turn AI-native organization, AX, and platform engineering into executable change."],
   ["찾아와 주셔서 감사합니다.", "Thank you for stopping by."],
   ["AI 제품과 클라우드 플랫폼을 설계하고, 지속적으로 개발·운영할 조직과 프로세스까지 구축해 왔습니다.", "I design AI products and cloud platforms, along with the organizations and processes that keep them evolving in production."],
-  ["현재 N3N 개발실 실장으로 AI 제품과 개발 조직의 전환을 이끌고 있습니다.", "I currently lead engineering at N3N, guiding the transformation of AI products and the development organization."],
+  ["AI 제품과 개발 조직의 전환을 이끌고 있습니다.", "I lead the transformation of AI products and engineering organizations."],
   ["제가 해온 일", "WHAT I BRING"],
   ["16년의 제품·플랫폼 개발 경험", "16 years of product and platform engineering"],
   ["Daum·Kakao와 NCSOFT에서 대규모 클라우드 플랫폼을, 이후 AI 제품과 개발 조직을 이끌었습니다.", "I built large-scale cloud platforms at Daum, Kakao, and NCSOFT, then led AI products and engineering organizations."],
@@ -105,7 +105,7 @@ const englishReplacements: [string, string][] = [
   ["웹 서비스", "Web Services"],
   ["클라우드 플랫폼", "Cloud Platforms"],
   ["AI Native 조직", "AI-Native Organization"],
-  ["N3N(현재) · NeuroXT · Alchera · NCSOFT · Kakao · Daum", "N3N (current) · NeuroXT · Alchera · NCSOFT · Kakao · Daum"],
+  ["NeuroXT · Alchera · NCSOFT · Kakao · Daum", "NeuroXT · Alchera · NCSOFT · Kakao · Daum"],
   ["프로필과 공개 기록", "PROFILE & PUBLIC RECORDS"],
   ["외부에서 확인할 수 있는 기록입니다.", "Public records you can review."],
   ["경력 프로필, 공개 코드와 과거 인터뷰·연구 기록을 연결했습니다.", "Links to my career profile, public code, past interview, and research record."],

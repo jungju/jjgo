@@ -106,7 +106,6 @@ export function personJsonLd(locale: SiteLocale) {
     description: korean
       ? "AI 제품화, 클라우드 플랫폼, DevOps·MLOps와 AI Native 개발 조직을 연결하는 16년 경력의 개발 리더"
       : "A product engineering leader with 16 years of experience across AI productization, cloud platforms, DevOps, MLOps, and AI-native engineering organizations.",
-    worksFor: { "@type": "Organization", name: "N3N" },
     alumniOf: { "@type": "CollegeOrUniversity", name: korean ? "대전대학교" : "Daejeon University" },
     knowsAbout: [
       "AI productization",

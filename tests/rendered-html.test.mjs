@@ -308,6 +308,12 @@ test("keeps inquiries and coffee chats in the About contact area", async () => {
   assert.doesNotMatch(englishAbout, /\/coffee-chat|Request a coffee chat/);
 });
 
+test("does not publish the removed company name", async () => {
+  const published = await Promise.all(routes.map((route) => readFile(new URL(route, outputRoot), "utf8")));
+  published.push(await builtJavaScript());
+  assert.doesNotMatch(published.join("\n"), /\bN3N\b/i);
+});
+
 test("renders the manifest navigation on every public page", async () => {
   for (const locale of siteLocales) {
     const expectedLinks = primaryNavigation.map((item) => localizedSitePath(locale, pagePath(item.page)));
