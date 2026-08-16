@@ -19,6 +19,7 @@ export type ConsultingService = {
   proofTitle: string;
   proofBody: string;
   metrics: { value: string; label: string; detail: string }[];
+  metricsNote: string;
   expertise: { title: string; body: string }[];
   situations: string[];
   outcomes: { title: string; body: string }[];
@@ -33,18 +34,18 @@ export const consultingServices: ConsultingService[] = [
     title: "AI Native 조직 만들기",
     shortTitle: "AI Native 조직",
     summary: "AI를 일부 구성원의 도구가 아니라 조직 전체의 일하는 방식과 제품 개발 구조로 정착시킵니다.",
-    detailTitle: "문제를 푸는 조직",
-    detailSummary: "AI로 문제를 푸는 조직을 만들어갑니다.",
+    detailTitle: "AI Native 조직 전환",
+    detailSummary: "AI를 일부 구성원의 도구가 아니라 조직 전체의 문제 해결 방식으로 정착시킵니다.",
     image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
     keywords: ["조직 구조", "업무 방식", "AI 활용 체계"],
     proofTitle: "개발 경험을 조직의 실행 체계로 바꿉니다.",
     proofBody: "도구 교육에 머물지 않습니다. 제품 개발, 의사결정, 코드 리뷰, 테스트, 지식 공유까지 AI가 실제 업무 흐름에 들어오도록 전략·기술·문화를 하나의 운영 모델로 연결합니다.",
     metrics: [
       { value: "16년", label: "제품 개발 경험", detail: "Daum·Kakao·NCSOFT부터 AI 제품 조직까지" },
-      { value: "6단계", label: "경험의 확장", detail: "웹·API·클라우드·DevOps·MLOps·AI Native" },
-      { value: "4개 축", label: "전환 설계", detail: "전략·업무·기술·문화의 동시 변화" },
-      { value: "1개 팀", label: "파일럿 시작", detail: "작게 검증하고 조직 전체로 확산" },
+      { value: "약 2개월", label: "제품 재설계", detail: "2년 이상 운영된 제품을 AI 기반 신규 제품 형태로 전환" },
+      { value: "80%", label: "AI 환경 준비 시간 단축", detail: "표준화된 개발 환경으로 온보딩과 실험 준비 시간을 단축" },
     ],
+    metricsNote: "출처: 이정주 포트폴리오·이력서에 기재된 본인 수행 프로젝트 기록(자기보고).",
     expertise: [
       { title: "AI Operating Model", body: "사람과 AI의 역할, 의사결정 권한, 검토 책임을 정의하고 조직이 반복해서 사용할 운영 원칙을 설계합니다." },
       { title: "AI Workflow Design", body: "기획·개발·리뷰·테스트·문서화에서 효과가 큰 작업을 골라 프롬프트, 에이전트, 도구 체계를 업무 흐름에 연결합니다." },
@@ -75,18 +76,18 @@ export const consultingServices: ConsultingService[] = [
     title: "AX",
     shortTitle: "AX",
     summary: "비즈니스와 고객 경험을 AI 관점에서 다시 보고, 실행 가능한 서비스와 업무 변화로 연결합니다.",
-    detailTitle: "AI로 바꾸는 비즈니스",
-    detailSummary: "가치 있는 기회를 찾아 실제 서비스와 업무 변화로 연결합니다.",
+    detailTitle: "AX 전략과 AI 제품화",
+    detailSummary: "AX(AI Transformation)의 가치 있는 기회를 찾아 실제 서비스와 업무 변화로 연결합니다.",
     image: "/a/generated/consulting/ax-dragonfly-v3.webp",
     keywords: ["문제 발굴", "서비스 기획", "PoC와 로드맵"],
     proofTitle: "아이디어를 운영되는 제품으로 연결합니다.",
     proofBody: "기술 가능성만 검토하지 않습니다. 고객 문제, 비즈니스 가치, 데이터와 운영 제약을 함께 보고 가장 효과적인 전환 지점을 찾습니다. 기획에서 PoC, 제품화와 운영까지 직접 경험한 관점으로 실행 가능한 결정을 만듭니다.",
     metrics: [
-      { value: "8개+", label: "도메인 경험", detail: "의료·금융·게임·포털·인프라·보안 등" },
-      { value: "20개+", label: "제품·플랫폼", detail: "설계부터 개발·배포·운영까지 연결" },
-      { value: "3개 관점", label: "기회 평가", detail: "고객 가치·사업 효과·기술 실행 가능성" },
-      { value: "1개 PoC", label: "검증 시작점", detail: "핵심 가설부터 작동하는 증거로 확인" },
+      { value: "최대 80%", label: "모델 반영 리드타임 단축", detail: "의료 AI 모델 표준화로 신규 모델의 서비스 반영 시간을 단축" },
+      { value: "30%", label: "릴리즈 위험·영향 감소", detail: "모델별 독립 배포·업데이트 구조로 서비스 영향을 축소" },
+      { value: "80%", label: "온보딩·실험 준비 단축", detail: "표준화된 AI 개발 환경으로 준비 시간을 단축" },
     ],
+    metricsNote: "출처: 이정주 포트폴리오·이력서에 기재된 본인 수행 프로젝트 기록(자기보고).",
     expertise: [
       { title: "Opportunity Portfolio", body: "고객 여정과 업무 흐름에서 AI 기회를 발굴하고 가치, 실현 가능성, 위험도를 기준으로 투자 우선순위를 만듭니다." },
       { title: "Service & Workflow", body: "AI와 사람이 협업하는 사용자 경험, 예외 처리, 운영 프로세스와 책임 구조를 서비스 청사진으로 구체화합니다." },
@@ -117,18 +118,18 @@ export const consultingServices: ConsultingService[] = [
     title: "플랫폼 엔지니어링",
     shortTitle: "플랫폼 엔지니어링",
     summary: "개발자가 인프라의 복잡성보다 제품 가치에 집중할 수 있도록 공통 플랫폼과 운영 기반을 만듭니다.",
-    detailTitle: "개발을 가속하는 플랫폼",
-    detailSummary: "복잡성을 줄이고 팀이 제품에 집중할 수 있는 기반을 만듭니다.",
+    detailTitle: "플랫폼 엔지니어링과 개발자 플랫폼",
+    detailSummary: "인프라 복잡성을 줄이고 제품 팀이 안전하게 빠르게 전달할 기반을 만듭니다.",
     image: "/a/generated/consulting/platform-beaver-dam-v4.webp",
     keywords: ["개발자 플랫폼", "CI/CD", "운영 자동화"],
     proofTitle: "플랫폼을 기술 프로젝트가 아닌 내부 제품으로 만듭니다.",
     proofBody: "DBaaS, KaaS, 클라우드 포털, 의료 AI 플랫폼을 설계하고 운영한 경험을 바탕으로 개발자 경험과 운영 안정성을 함께 봅니다. 인프라를 더 만드는 것이 아니라 제품 팀의 인지 부하와 전달 시간을 줄이는 플랫폼을 설계합니다.",
     metrics: [
-      { value: "1만 대+", label: "운영 규모", detail: "자동화·관리 플랫폼이 다룬 서버" },
-      { value: "20개+", label: "제품·플랫폼", detail: "설계·개발·배포·운영 전 과정 경험" },
-      { value: "6개 영역", label: "엔지니어링 연결", detail: "BE·FE·Cloud·DevOps/SRE·MLOps·Data" },
-      { value: "3개 층", label: "플랫폼 설계", detail: "개발자 경험·전달 자동화·신뢰성" },
+      { value: "약 200개", label: "Kubernetes 클러스터", detail: "NCSOFT KaaS의 설계·개발·운영 경험" },
+      { value: "1,000+", label: "클러스터 노드", detail: "AWS·GCP·OpenStack·베어메탈 환경 지원" },
+      { value: "15+", label: "클라우드 서비스", detail: "마이크로프론트엔드 기반 사내 포털로 통합" },
     ],
+    metricsNote: "출처: 이정주 포트폴리오·이력서에 기재된 본인 수행 프로젝트 기록(자기보고).",
     expertise: [
       { title: "Platform as a Product", body: "개발자를 고객으로 정의하고 여정, 페인포인트, 사용 지표를 기반으로 플랫폼 비전과 제품 백로그를 수립합니다." },
       { title: "Reference Architecture", body: "조직의 기술·보안·비용 제약에 맞춰 포털, 서비스 카탈로그, IDP, 관찰 가능성의 경계와 통합 구조를 설계합니다." },
@@ -164,12 +165,11 @@ export function ForestBackground() {
   return (
     <>
       <picture className="forest2-bg-picture">
-        <source media="(max-width: 900px)" srcSet="/a/generated/backgrounds/home-mobile-bg.png" />
-        <source media="(max-width: 1120px)" srcSet="/a/generated/backgrounds/home-tablet-bg.png" />
-        <img className="forest2-bg-image" src="/a/generated/backgrounds/home-desktop-bg.png" alt="" />
+        <source media="(max-width: 900px)" srcSet="/a/generated/backgrounds/home-mobile-bg.webp" />
+        <source media="(max-width: 1120px)" srcSet="/a/generated/backgrounds/home-desktop-bg.webp" />
+        <img className="forest2-bg-image" src="/a/generated/backgrounds/home-desktop-bg.webp" alt="" />
       </picture>
       <div className="forest2-bg-wash" aria-hidden="true" />
-      <canvas className="forest2-atmosphere-canvas" data-visual-id="threejs-atmosphere" aria-hidden="true" width="1280" height="720" />
     </>
   );
 }
@@ -202,47 +202,17 @@ export function ConsultingSubnav({ active, locale = "ko", services = consultingS
 export function OriginalMethodHeadline({ locale = "ko" }: { locale?: Locale }) {
   if (locale === "en") {
     return (
-      <h1 aria-label="Keep structure simple and possibility wide">
-        <span aria-hidden="true" className="forest2-method-wind-line">
-          Keep structure
-          <span className="forest2-method-wind-word">
-            <span>simple</span><span>fast</span><span>effective</span><span>practical</span><span>resilient</span>
-          </span>
-        </span>
-        <br aria-hidden="true" />
-        <span aria-hidden="true" className="forest2-method-wind-line">
-          Grow possibility
-          <span className="forest2-method-wind-word forest2-method-possibility-word">
-            <span>wider</span><span>higher</span><span>bigger</span><span>freer</span><span>newer</span>
-          </span>
-        </span>
+      <h1>
+        AI-Native Organization &amp; AX<br />
+        Platform Engineering Consulting
       </h1>
     );
   }
 
   return (
-    <h1 aria-label="구조는 단순하게 가능성은 넓게">
-      <span aria-hidden="true" className="forest2-method-wind-line">
-        구조는
-        <span className="forest2-method-wind-word">
-          <span>단순하게</span>
-          <span>빠르게</span>
-          <span>효과적이게</span>
-          <span>실용적이게</span>
-          <span>단단하게</span>
-        </span>
-      </span>
-      <br aria-hidden="true" />
-      <span aria-hidden="true" className="forest2-method-wind-line">
-        가능성은
-        <span className="forest2-method-wind-word forest2-method-possibility-word">
-          <span>넓게</span>
-          <span>높게</span>
-          <span>크게</span>
-          <span>자유롭게</span>
-          <span>새롭게</span>
-        </span>
-      </span>
+    <h1>
+      AI Native 조직·AX·<br />
+      플랫폼 엔지니어링 컨설팅
     </h1>
   );
 }
@@ -301,14 +271,17 @@ export function ConsultingDetail({ service, locale = "ko", services = consulting
                   <h2>{service.proofTitle}</h2>
                   <span>{service.proofBody}</span>
                 </div>
-                <dl className="forest2-consulting-metrics">
-                  {service.metrics.map((metric) => (
-                    <div key={metric.label}>
-                      <dt>{metric.value}</dt>
-                      <dd><strong>{metric.label}</strong><span>{metric.detail}</span></dd>
-                    </div>
-                  ))}
-                </dl>
+                <div>
+                  <dl className="forest2-consulting-metrics">
+                    {service.metrics.map((metric) => (
+                      <div key={metric.label}>
+                        <dt>{metric.value}</dt>
+                        <dd><strong>{metric.label}</strong><span>{metric.detail}</span></dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="forest2-consulting-metric-note">{service.metricsNote}</p>
+                </div>
               </section>
 
               <section className="forest2-consulting-detail-section" id="expertise">

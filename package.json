@@ -16,8 +16,7 @@
     "lucide-react": "^0.468.0",
     "next": "^16.3.1",
     "react": "19.2.6",
-    "react-dom": "19.2.6",
-    "three": "^0.184.0"
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
     "@eslint/js": "9.39.4",
@@ -26,7 +25,6 @@
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@types/three": "^0.184.0",
     "eslint": "9.39.4",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.5",

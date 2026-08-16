@@ -1,16 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import sourceCards from "../data/works.json";
 import { localizedPath, type Locale } from "../language-toggle";
 import { SiteHeader } from "../site-header";
 import { pagePath } from "../site-spec";
-
-type SourceCard = {
-  index: number;
-  text: string;
-  image: string | null;
-};
 
 type CollectionId = "web" | "indie" | "comics" | "roblox" | "video";
 
@@ -40,94 +33,155 @@ type Collection = {
   emptyLabel?: string;
 };
 
-const knownWorksKo: Record<number, Partial<Work>> = {
-  0: {
-    description: "집 안에 상시 띄워두는 가족용 홈 페이스 서비스",
-    purpose: "가족이 자주 확인하는 정보와 기능을 한 화면에 모아 생활 속 디지털 접점을 단순하게 만들었습니다.",
-    technologies: ["Web", "JHub", "Responsive UI"],
-    roles: ["기획", "제품 설계", "개발", "운영"],
-    update: "실사용 환경에 맞춰 정보 구조와 상시 표시 경험을 고도화하고 있습니다.",
-    url: "https://homi.jjgo.io",
-    actionLabel: "사이트 방문",
+const worksKo: Work[] = [
+  {
+    id: 0,
+    category: "웹사이트",
+    collection: "web",
+    title: "Homi",
+    description: "집에서 상시 사용하는 홈 페이스 앱",
+    purpose: "집에서 상시 표시하도록 만든 홈 페이스 앱입니다.",
+    status: "보관",
+    image: "/a/versions/works/20260720/homi.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["기획", "개발", "운영"],
+    update: "인증서 만료로 외부 주소는 공개하지 않고 보관 중입니다.",
+    actionLabel: "상세 보기",
   },
-  1: {
-    description: "게임 대사를 모으고 반복 연습하는 언어 학습 서비스",
-    purpose: "좋아하는 게임의 실제 문장을 학습 재료로 바꿔, 수집부터 복습까지 자연스럽게 이어지도록 설계했습니다.",
-    technologies: ["Web", "JHub", "Learning UX"],
-    roles: ["기획", "UX 설계", "개발", "운영"],
-    update: "대사 수집과 반복 학습 흐름을 중심으로 사용 경험을 개선하고 있습니다.",
-    url: "https://gamelingo.jjgo.io",
-    actionLabel: "사이트 방문",
+  {
+    id: 1,
+    category: "웹사이트",
+    collection: "web",
+    title: "GameLingo",
+    description: "게임 대사를 수집하고 연습하는 학습 앱",
+    purpose: "게임 대사를 수집하고 연습할 수 있도록 만든 웹 앱입니다.",
+    status: "보관",
+    image: "/a/versions/works/20260720/gamelingo.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["기획", "개발", "운영"],
+    update: "인증서 만료로 외부 주소는 공개하지 않고 보관 중입니다.",
+    actionLabel: "상세 보기",
   },
-  2: {
-    description: "실전 회의를 준비하는 영어 학습 서비스",
-    purpose: "업무에서 바로 써야 하는 표현을 상황별로 준비하고 반복할 수 있도록 학습 과정을 제품화했습니다.",
-    technologies: ["Web", "JHub", "Learning UX"],
-    roles: ["기획", "콘텐츠 설계", "개발"],
-    update: "학습 기록과 실전 활용 사이의 연결을 계속 다듬고 있습니다.",
-    url: "https://study.jjgo.io",
-    actionLabel: "사이트 방문",
+  {
+    id: 2,
+    category: "웹사이트",
+    collection: "web",
+    title: "English Meeting",
+    description: "실용 영어 학습 앱",
+    purpose: "실용 영어 학습을 위해 만든 웹 앱입니다.",
+    status: "보관",
+    image: "/a/versions/works/20260720/eng-meeting.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["기획", "개발", "운영"],
+    update: "인증서 만료로 외부 주소는 공개하지 않고 보관 중입니다.",
+    actionLabel: "상세 보기",
   },
-  3: {
-    description: "사이트·게임·만화·쇼츠의 제작과 배포를 연결하는 SaaS",
-    purpose: "아이디어가 결과물이 되기까지 필요한 주문, 제작, 배포 과정을 하나의 운영 흐름으로 묶었습니다.",
-    technologies: ["SaaS", "Automation", "JHub"],
-    roles: ["제품 전략", "시스템 설계", "개발", "운영"],
-    update: "다양한 제작 유형을 한 파이프라인에서 다루는 기능을 확장하고 있습니다.",
+  {
+    id: 3,
+    category: "웹사이트",
+    collection: "web",
+    title: "okgo4",
+    description: "사이트·게임·만화·쇼츠·키오스크·알림 서비스의 주문과 배포를 지원하는 쇼룸 중심 SaaS",
+    purpose: "사이트, 게임, 만화, 쇼츠, 키오스크, 알림 서비스의 주문과 배포를 지원합니다.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/okgo4.jpg",
+    technologies: ["Web", "SaaS"],
+    roles: ["제품 기획", "개발", "운영"],
+    update: "현재 공개 주소에서 운영 중입니다.",
     url: "https://okgo4.jjgo.io",
     actionLabel: "사이트 방문",
   },
-  4: {
-    description: "웹툰 서가와 리더, 작가 작업실을 한곳에 담은 서비스",
-    purpose: "작품을 만들고 보관하고 읽는 경험을 하나의 개인 창작 공간 안에서 이어지게 했습니다.",
-    technologies: ["Web", "JHub Records", "Reader UX"],
-    roles: ["기획", "콘텐츠 구조", "개발", "운영"],
-    update: "대표 만화와 창작 기록을 모으는 독립 허브로 운영하고 있습니다.",
+  {
+    id: 4,
+    category: "만화",
+    collection: "comics",
+    title: "Mytoon",
+    description: "개인 전용 전체이용가 웹툰 서가·리더·작가 작업실을 JHub Records DB로 저장하는 서비스",
+    purpose: "웹툰 서가, 리더, 작가 작업실의 기록을 JHub Records DB에 저장합니다.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/mytoon.jpg",
+    technologies: ["Web", "JHub Records"],
+    roles: ["기획", "개발", "운영"],
+    update: "현재 공개 주소에서 운영 중입니다.",
     url: "https://mytoon.jjgo.io",
     actionLabel: "만화 보기",
   },
-};
+];
 
-const knownWorksEn: Record<number, Partial<Work>> = {
-  0: {
-    description: "An always-on home dashboard designed for everyday family use.",
-    purpose: "Bring frequently used information and actions into one calm surface, reducing friction in the family’s daily digital routine.",
-    technologies: ["Web", "JHub", "Responsive UI"], roles: ["Strategy", "Product design", "Engineering", "Operations"],
-    update: "The information architecture and ambient display experience continue to evolve around real household use.",
-    url: "https://homi.jjgo.io", actionLabel: "Visit site",
+const worksEn: Work[] = [
+  {
+    id: 0,
+    category: "Website",
+    collection: "web",
+    title: "Homi",
+    description: "An always-on home face app.",
+    purpose: "Built as an always-on home face app.",
+    status: "보관",
+    image: "/a/versions/works/20260720/homi.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["Strategy", "Engineering", "Operations"],
+    update: "Archived without an external link because its certificate has expired.",
+    actionLabel: "View details",
   },
-  1: {
-    description: "A language-learning service for collecting and repeatedly practicing dialogue from games.",
-    purpose: "Turn memorable lines from games into learning material and connect collection, practice, and review in one flow.",
-    technologies: ["Web", "JHub", "Learning UX"], roles: ["Strategy", "UX design", "Engineering", "Operations"],
-    update: "The dialogue collection and spaced practice experience is being refined continuously.",
-    url: "https://gamelingo.jjgo.io", actionLabel: "Visit site",
+  {
+    id: 1,
+    category: "Website",
+    collection: "web",
+    title: "GameLingo",
+    description: "A game-line collection and practice app.",
+    purpose: "Built to collect and practice lines from games.",
+    status: "보관",
+    image: "/a/versions/works/20260720/gamelingo.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["Strategy", "Engineering", "Operations"],
+    update: "Archived without an external link because its certificate has expired.",
+    actionLabel: "View details",
   },
-  2: {
-    description: "A practical English-learning product for preparing for real meetings.",
-    purpose: "Productize the preparation and repetition of expressions people need to use immediately at work.",
-    technologies: ["Web", "JHub", "Learning UX"], roles: ["Strategy", "Content design", "Engineering"],
-    update: "The connection between learning history and real-world application continues to improve.",
-    url: "https://study.jjgo.io", actionLabel: "Visit site",
+  {
+    id: 2,
+    category: "Website",
+    collection: "web",
+    title: "English Meeting",
+    description: "A practical English study app.",
+    purpose: "Built for practical English study.",
+    status: "보관",
+    image: "/a/versions/works/20260720/eng-meeting.jpg",
+    technologies: ["Web", "JHub"],
+    roles: ["Strategy", "Engineering", "Operations"],
+    update: "Archived without an external link because its certificate has expired.",
+    actionLabel: "View details",
   },
-  3: {
-    description: "A SaaS product connecting the creation and delivery of sites, games, comics, and short-form video.",
-    purpose: "Bring ordering, production, and deployment into one operating flow from idea to published result.",
-    technologies: ["SaaS", "Automation", "JHub"], roles: ["Product strategy", "System design", "Engineering", "Operations"],
-    update: "The production pipeline continues to expand across more types of creative output.",
-    url: "https://okgo4.jjgo.io", actionLabel: "Visit site",
+  {
+    id: 3,
+    category: "Website",
+    collection: "web",
+    title: "okgo4",
+    description: "A showroom-first SaaS for ordering and deploying sites, games, comics, shorts, kiosks, and notification services.",
+    purpose: "Supports ordering and deploying sites, games, comics, shorts, kiosks, and notification services.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/okgo4.jpg",
+    technologies: ["Web", "SaaS"],
+    roles: ["Product strategy", "Engineering", "Operations"],
+    update: "Currently available at its public address.",
+    url: "https://okgo4.jjgo.io",
+    actionLabel: "Visit site",
   },
-  4: {
-    description: "A personal space combining a webtoon library, reader, and creator studio.",
-    purpose: "Connect creating, keeping, and reading stories inside one independent creative space.",
-    technologies: ["Web", "JHub Records", "Reader UX"], roles: ["Strategy", "Content architecture", "Engineering", "Operations"],
-    update: "It operates as an independent hub for featured comics and creative records.",
-    url: "https://mytoon.jjgo.io", actionLabel: "View comics",
+  {
+    id: 4,
+    category: "Comics",
+    collection: "comics",
+    title: "Mytoon",
+    description: "A private, all-ages webtoon library, reader, and creator studio backed by the JHub Records database.",
+    purpose: "Stores the webtoon library, reader, and creator-studio records in the JHub Records database.",
+    status: "운영 중",
+    image: "/a/versions/works/20260720/mytoon.jpg",
+    technologies: ["Web", "JHub Records"],
+    roles: ["Strategy", "Engineering", "Operations"],
+    update: "Currently available at its public address.",
+    url: "https://mytoon.jjgo.io",
+    actionLabel: "View comics",
   },
-  5: {
-    title: "Godot Factory Development Dashboard",
-  },
-};
+];
 
 const collectionsKo: Collection[] = [
   {
@@ -201,57 +255,7 @@ const worksCopy = {
   },
 } as const;
 
-function imagePath(source: string | null) {
-  if (!source || source.includes("/api/jhub/")) return "/a/generated/services/service-play.png";
-  try {
-    return new URL(source).pathname;
-  } catch {
-    return source;
-  }
-}
-
-function collectionFor(category: string, title: string): CollectionId {
-  if (["마이툰", "바람이 돌아오는 곳"].includes(title)) return "comics";
-  if (category === "게임") return "indie";
-  if (["영상", "쇼츠"].includes(category)) return "video";
-  if (/roblox|로블록스/i.test(title)) return "roblox";
-  return "web";
-}
-
-function buildWorks(locale: Locale): Work[] {
-  const knownWorks = locale === "ko" ? knownWorksKo : knownWorksEn;
-  const categoryEn: Record<string, string> = { "웹사이트": "Website", "앱": "App", "게임": "Game", "만화": "Comics", "영상": "Video", "쇼츠": "Shorts" };
-
-  return (sourceCards as SourceCard[]).map((card) => {
-  const lines = card.text.split("\n").map((line) => line.trim()).filter(Boolean);
-  const category = lines[0] ?? "작품";
-  const title = lines[1] ?? "제목 없음";
-  const rawDescription = lines[2] ?? "만드는 과정에서 발견한 가능성을 실제 경험으로 구현한 작업입니다.";
-  const englishDescription = /[가-힣]/.test(rawDescription)
-    ? "A practical experiment turned into a working digital experience."
-    : rawDescription;
-  const collection = collectionFor(category, title);
-  const isGame = collection === "indie";
-  const isComic = collection === "comics";
-  const base: Work = {
-    id: card.index,
-    category: locale === "en" ? (isComic ? "Comics" : categoryEn[category] ?? category) : (isComic ? "만화" : category),
-    collection,
-    title,
-    description: locale === "en" ? englishDescription : rawDescription,
-    purpose: locale === "en" ? englishDescription : rawDescription,
-    status: /배포 필요|개발 중/.test(card.text) ? "개발 중" : "운영 중",
-    image: imagePath(card.image),
-    technologies: isGame ? ["Godot", "Web Export", "Game Design"] : ["Web", "Responsive UI", "JHub"],
-    roles: locale === "en" ? (isGame ? ["Game design", "Art direction", "Engineering"] : ["Strategy", "UX design", "Engineering"]) : (isGame ? ["게임 기획", "아트 디렉션", "개발"] : ["기획", "UX 설계", "개발"]),
-    update: locale === "en" ? (isGame ? "A game experiment completed as a directly playable browser experience." : "The functionality and interface continue to evolve through real usage scenarios.") : (isGame ? "브라우저에서 바로 플레이할 수 있는 형태로 완성한 게임 실험입니다." : "사용 시나리오를 검증하며 기능과 인터페이스를 지속적으로 다듬고 있습니다."),
-    actionLabel: locale === "en" ? (isGame ? "Play" : isComic ? "View comics" : "Visit site") : (isGame ? "플레이" : isComic ? "만화 보기" : "사이트 보기"),
-  };
-  return { ...base, ...knownWorks[card.index] };
-  });
-}
-
-const worksByLocale = { ko: buildWorks("ko"), en: buildWorks("en") };
+const worksByLocale: Record<Locale, Work[]> = { ko: worksKo, en: worksEn };
 
 function ArrowRight({ size = 17 }: { size?: number }) {
   return (
@@ -274,12 +278,11 @@ function Background() {
   return (
     <>
       <picture className="forest2-bg-picture">
-        <source media="(max-width: 900px)" srcSet="/a/generated/backgrounds/home-mobile-bg.png" />
-        <source media="(max-width: 1120px)" srcSet="/a/generated/backgrounds/home-tablet-bg.png" />
-        <img className="forest2-bg-image" src="/a/generated/backgrounds/home-desktop-bg.png" alt="" />
+        <source media="(max-width: 900px)" srcSet="/a/generated/backgrounds/home-mobile-bg.webp" />
+        <source media="(max-width: 1120px)" srcSet="/a/generated/backgrounds/home-desktop-bg.webp" />
+        <img className="forest2-bg-image" src="/a/generated/backgrounds/home-desktop-bg.webp" alt="" />
       </picture>
       <div className="forest2-bg-wash" aria-hidden="true" />
-      <canvas className="forest2-atmosphere-canvas" data-visual-id="threejs-atmosphere" aria-hidden="true" width="1280" height="720" />
     </>
   );
 }
@@ -296,7 +299,7 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
   const copy = worksCopy[locale];
   const collections = locale === "ko" ? collectionsKo : collectionsEn;
   const works = worksByLocale[locale];
-  const featuredWorks = [0, 1, 3].map((id) => works.find((work) => work.id === id)).filter((work): work is Work => Boolean(work));
+  const featuredWorks = [3, 4, 0].map((id) => works.find((work) => work.id === id)).filter((work): work is Work => Boolean(work));
   const collectionCounts = Object.fromEntries(collections.map((collection) => [collection.id, works.filter((work) => work.collection === collection.id).length])) as Record<CollectionId, number>;
   const active = collections.find((collection) => collection.id === activeCollection) ?? collections[0];
   const collectionWorks = works.filter((work) => work.collection === activeCollection);
@@ -344,7 +347,7 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                   {featuredWorks.map((work, index) => (
                     <button key={work.id} className={`forest2-works-featured-card${index === 0 ? " forest2-works-featured-card--lead" : ""}`} type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">
                       <div className="forest2-works-featured-media">
-                        <img src={work.image} alt={`${work.title} ${copy.alt}`} loading="eager" />
+                        <img src={work.image} alt={`${work.title} ${copy.alt}`} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} />
                       </div>
                       <div className="forest2-works-featured-copy">
                         <div className="forest2-works-card-meta"><span>{index === 0 ? "CURRENT FOCUS" : "FEATURED"}</span><WorkStatus status={work.status} locale={locale} /></div>
@@ -354,6 +357,11 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                       </div>
                     </button>
                   ))}
+                </div>
+                <div className="forest2-works-public-links" aria-label={locale === "ko" ? "공개 운영 주소" : "Public live URLs"}>
+                  <span>{locale === "ko" ? "공개 운영 주소" : "PUBLIC & LIVE"}</span>
+                  <a href="https://okgo4.jjgo.io" target="_blank" rel="noreferrer">okgo4.jjgo.io<ArrowRight /></a>
+                  <a href="https://mytoon.jjgo.io" target="_blank" rel="noreferrer">mytoon.jjgo.io<ArrowRight /></a>
                 </div>
               </section>
 
@@ -422,10 +430,10 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
 
                 {visibleWorks.length > 0 ? (
                   <div className="forest2-works-grid" data-visual-id="works-gallery">
-                    {visibleWorks.map((work, index) => (
+                    {visibleWorks.map((work) => (
                       <button key={work.id} className="forest2-works-card" type="button" onClick={() => setSelected(work)} aria-haspopup="dialog">
                         <div className="forest2-works-card-media">
-                          <img src={work.image} alt={`${work.title} ${copy.alt}`} loading={index < 3 ? "eager" : "lazy"} />
+                          <img src={work.image} alt={`${work.title} ${copy.alt}`} loading="lazy" />
                           <span>{work.category}</span>
                         </div>
                         <div className="forest2-works-card-body">

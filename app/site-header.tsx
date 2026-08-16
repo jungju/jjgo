@@ -66,8 +66,8 @@ export function SiteHeader(props: SiteHeaderProps) {
             {item.label}
           </a>
         ))}
-        <LanguageToggle locale={locale} path={path} />
       </nav>
+      <LanguageToggle locale={locale} path={path} />
     </header>
   );
 }
@@ -93,5 +93,5 @@ export function siteHeaderMarkup(props: SiteHeaderProps) {
     return `<a${ariaCurrent} href="${localizedPath(locale, item.href)}">${item.label}</a>`;
   }).join("");
 
-  return `<header class="forest2-topbar" data-visual-id="topbar"><div class="forest2-brand-lockup"><a class="forest2-brand" aria-label="${labels.homeLabel}" href="${localizedPath(locale, "/")}"><img class="forest2-brand-logo" src="/a/logo/jjgo-logo.png" alt=""></a>${identityMarkup}</div><nav class="forest2-nav" aria-label="${labels.nav}">${navMarkup}${languageToggleMarkup(locale, path)}</nav></header>`;
+  return `<header class="forest2-topbar" data-visual-id="topbar"><div class="forest2-brand-lockup"><a class="forest2-brand" aria-label="${labels.homeLabel}" href="${localizedPath(locale, "/")}"><img class="forest2-brand-logo" src="/a/logo/jjgo-logo.png" alt=""></a>${identityMarkup}</div><nav class="forest2-nav" aria-label="${labels.nav}">${navMarkup}</nav>${languageToggleMarkup(locale, path)}</header>`;
 }

@@ -18,8 +18,13 @@ select {
 .forest2-language-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: rgba(244, 241, 232, 0.42);
+  gap: 2px;
+  min-height: 32px;
+  padding: 3px;
+  border: 1px solid rgba(244, 241, 232, 0.2);
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.58);
+  background: rgba(4, 14, 10, 0.58);
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   font-size: 0.7rem;
   font-weight: 800;
@@ -27,36 +32,193 @@ select {
   white-space: nowrap;
 }
 
-.forest2-nav .forest2-language-toggle > a {
-  min-height: 40px;
-  color: rgba(244, 241, 232, 0.52);
-  font-family: inherit;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.forest2-nav .forest2-language-toggle > a::after {
+.forest2-language-toggle > span {
   display: none;
 }
 
-.forest2-nav .forest2-language-toggle > a[data-active="true"] {
-  color: var(--forest2-gold);
-}
-
-.forest2-nav .forest2-language-toggle > a:hover,
-.forest2-nav .forest2-language-toggle > a:focus-visible {
-  color: var(--forest2-cream);
+/* Keep the searchable home H1 visually identical to the former paragraph. */
+.forest2-site--home .forest2-home-copy > h1.forest2-home-wind-copy {
+  margin: 0;
+  color: var(--forest2-muted);
+  font-family: var(--forest2-font-body);
+  font-size: 1.2rem;
+  font-weight: 430;
+  line-height: 1.55;
+  letter-spacing: 0;
 }
 
 @media (max-width: 760px) {
-  .forest2-nav .forest2-language-toggle {
-    gap: 4px;
+  .forest2-site--home .forest2-home-copy > h1.forest2-home-wind-copy {
+    font-size: 1.05rem;
+  }
+}
+
+.forest2-about-evidence-note,
+.forest2-consulting-metric-note {
+  margin: 14px 0 0;
+  color: rgba(244, 241, 232, 0.58);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.forest2-consulting-metrics > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  min-height: 132px;
+  border-right: 0;
+}
+
+.forest2-consulting-metrics > div:nth-last-child(2):nth-child(even) {
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-about-verification > h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko), Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.forest2-about-verification > p:not(.forest2-about-section-label) {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: rgba(244, 241, 232, 0.68);
+  line-height: 1.7;
+}
+
+.forest2-about-verification-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.forest2-about-verification-links a {
+  display: grid;
+  min-height: 112px;
+  align-content: space-between;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(124, 143, 91, 0.3);
+  border-radius: 14px;
+  color: var(--forest2-cream);
+  background: rgba(8, 35, 25, 0.72);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.forest2-about-verification-links a:hover,
+.forest2-about-verification-links a:focus-visible {
+  border-color: var(--forest2-gold);
+  transform: translateY(-2px);
+}
+
+.forest2-about-verification-links strong {
+  font-size: 1rem;
+}
+
+.forest2-about-verification-links span {
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.forest2-works-public-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 241, 232, 0.16);
+}
+
+.forest2-works-public-links > span {
+  color: var(--forest2-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-public-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 232, 0.8);
+  font-size: 0.82rem;
+}
+
+.forest2-works-public-links a:hover,
+.forest2-works-public-links a:focus-visible {
+  color: var(--forest2-gold);
+}
+
+@media (max-width: 900px) {
+  .forest2-about-verification-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .forest2-about-verification-links {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-about-verification-links a {
+    min-height: 92px;
+  }
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle > a {
+  display: grid;
+  min-width: 30px;
+  min-height: 24px;
+  place-items: center;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.68);
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle > a::after {
+  display: none;
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle > a[data-active="true"] {
+  color: var(--forest2-ink);
+  background: var(--forest2-gold);
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle > a:hover,
+.forest2-site .forest2-topbar > .forest2-language-toggle > a:focus-visible {
+  color: var(--forest2-cream);
+  background: rgba(244, 241, 232, 0.1);
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle > a[data-active="true"]:hover,
+.forest2-site .forest2-topbar > .forest2-language-toggle > a[data-active="true"]:focus-visible {
+  color: var(--forest2-ink);
+  background: #f0bb56;
+}
+
+@media (max-width: 760px) {
+  .forest2-site .forest2-topbar > .forest2-language-toggle {
+    min-height: 30px;
+    gap: 2px;
+    padding: 3px;
     font-size: 0.62rem;
   }
 
-  .forest2-nav .forest2-language-toggle > a {
-    min-height: 34px;
+  .forest2-site .forest2-topbar > .forest2-language-toggle > a {
+    min-width: 28px;
+    min-height: 22px;
+    padding: 0 6px;
     font-size: 0.62rem;
   }
 }
@@ -2300,6 +2462,18 @@ select {
   grid-template-columns: minmax(260px, 1fr) auto minmax(260px, 1fr);
 }
 
+.forest2-site .forest2-topbar > .forest2-brand-lockup {
+  grid-column: 1;
+  width: 100%;
+  max-width: 100%;
+  padding-right: clamp(20px, 2vw, 32px);
+}
+
+.forest2-site .forest2-topbar > .forest2-language-toggle {
+  grid-column: 3;
+  justify-self: end;
+}
+
 .forest2-brand-lockup {
   display: flex;
   min-width: 0;
@@ -2309,27 +2483,25 @@ select {
 }
 
 .forest2-brand-section {
-  display: inline-flex;
+  display: block;
+  max-width: 220px;
+  flex: 1 1 auto;
   min-width: 0;
   min-height: 44px;
-  align-items: center;
-  gap: 16px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(244, 241, 232, 0.3);
   overflow: hidden;
   color: rgba(244, 241, 232, 0.8);
   font-size: 0.92rem;
   font-weight: 720;
   letter-spacing: 0.01em;
-  line-height: 1.2;
+  line-height: 44px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .forest2-brand-section::before {
-  width: 1px;
-  height: 22px;
-  flex: 0 0 auto;
-  background: rgba(244, 241, 232, 0.3);
-  content: "";
+  display: none;
 }
 
 .forest2-brand-section:hover,
@@ -2904,7 +3076,7 @@ select {
   }
 
   .forest2-site .forest2-brand-lockup {
-    justify-self: center;
+    justify-self: start;
     gap: 10px;
   }
 
@@ -3104,12 +3276,92 @@ select {
     font-size: 0.78rem;
   }
 
-  .forest2-site .forest2-nav .forest2-language-toggle,
-  .forest2-site .forest2-nav .forest2-language-toggle > a {
-    font-size: 0.56rem;
+  .forest2-site .forest2-topbar > .forest2-language-toggle,
+  .forest2-site .forest2-topbar > .forest2-language-toggle > a {
+    font-size: 0.6rem;
   }
 
   .forest2-roblox-actions a {
     width: 100%;
+  }
+}
+
+/* Keep the full header comfortable through portrait-tablet widths. */
+@media (max-width: 1024px) {
+  .forest2-site .forest2-topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 6px;
+    min-height: 116px;
+    padding: 12px clamp(18px, 4vw, 32px) 10px;
+  }
+
+  .forest2-site .forest2-topbar > .forest2-brand-lockup {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-right: 0;
+  }
+
+  .forest2-site .forest2-topbar > .forest2-language-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .forest2-site .forest2-brand-logo {
+    height: 27px;
+    max-width: 136px;
+  }
+
+  .forest2-site .forest2-brand-lockup .forest2-brand-section {
+    max-width: min(220px, 40vw);
+    min-height: 32px;
+    padding-left: 10px;
+    font-size: 0.78rem;
+    line-height: 32px;
+  }
+
+  .forest2-site .forest2-brand-lockup .forest2-brand-section::before {
+    height: 18px;
+  }
+
+  .forest2-site .forest2-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+  }
+
+  .forest2-site .forest2-nav > a {
+    min-height: 36px;
+    font-size: clamp(0.82rem, 2.2vw, 0.9rem);
+  }
+
+  .forest2-site .forest2-nav > a[aria-current="page"]::after {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .forest2-site .forest2-brand-lockup .forest2-brand-section {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1320px) {
+  .forest2-site .forest2-brand-lockup .forest2-brand-section {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1120px) {
+  .forest2-site .forest2-topbar {
+    grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
   }
 }
