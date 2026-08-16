@@ -36,20 +36,27 @@ select {
   display: none;
 }
 
-/* Keep the searchable home H1 visually identical to the former paragraph. */
-.forest2-site--home .forest2-home-copy > h1.forest2-home-wind-copy {
+/* Keep every home hero variant visually consistent, including the searchable H1. */
+.forest2-site--home [data-visual-id="hero"] > .forest2-home-wind-copy {
   margin: 0;
-  color: var(--forest2-muted);
-  font-family: var(--forest2-font-body);
-  font-size: 1.2rem;
-  font-weight: 430;
-  line-height: 1.55;
-  letter-spacing: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 3.1rem;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  text-shadow: 0 6px 24px rgba(3, 10, 9, 0.5);
 }
 
-@media (max-width: 760px) {
-  .forest2-site--home .forest2-home-copy > h1.forest2-home-wind-copy {
-    font-size: 1.05rem;
+@media (max-width: 900px) {
+  .forest2-site--home [data-visual-id="hero"] > .forest2-home-wind-copy {
+    font-size: 2.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .forest2-site--home [data-visual-id="hero"] > .forest2-home-wind-copy {
+    font-size: 2.1rem;
   }
 }
 
