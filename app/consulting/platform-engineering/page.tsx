@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ConsultingDetail, consultingServices } from "../consulting-components";
+import { ConsultingDetail, consultingServiceBySlug, consultingServices } from "../consulting-components";
+
+const service = consultingServiceBySlug(consultingServices, "platform-engineering");
 
 export const metadata: Metadata = {
   title: "플랫폼 엔지니어링 컨설팅",
@@ -7,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function PlatformEngineeringConsultingPage() {
-  return <ConsultingDetail service={consultingServices[2]} />;
+  return <ConsultingDetail service={service} />;
 }

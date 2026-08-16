@@ -17,7 +17,11 @@ npm run dev
 npm run build
 ```
 
-완성된 사이트는 `out/`에 생성됩니다. 홈, 소개, 작품, 컨설팅과 세 개의 컨설팅 상세 경로가 모두 정적 HTML로 출력됩니다.
+완성된 사이트는 `out/`에 생성됩니다. 홈, 소개, 작품과 그 하위 Roblox 전용 페이지, 커피챗 신청, 컨설팅과 세 개의 컨설팅 상세 경로가 한국어·영어 정적 HTML로 출력됩니다.
+
+## 사이트 구조
+
+URL 계층과 공통 메뉴의 SSOT는 `app/site-spec.ts`입니다. 구조 원칙과 변경 절차는 [`docs/site-architecture.md`](docs/site-architecture.md)를 따릅니다.
 
 ## 배포
 

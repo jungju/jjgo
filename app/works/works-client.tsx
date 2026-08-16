@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import sourceCards from "../data/works.json";
-import { LanguageToggle, localizedPath, type Locale } from "../language-toggle";
+import { localizedPath, type Locale } from "../language-toggle";
+import { SiteHeader } from "../site-header";
+import { pagePath } from "../site-spec";
 
 type SourceCard = {
   index: number;
@@ -282,25 +284,6 @@ function Background() {
   );
 }
 
-function Topbar({ locale }: { locale: Locale }) {
-  const copy = worksCopy[locale].nav;
-
-  return (
-    <header className="forest2-topbar" data-visual-id="topbar">
-      <a className="forest2-brand" aria-label={copy.homeLabel} href={localizedPath(locale, "/")}>
-        <img className="forest2-brand-logo" src="/a/logo/jjgo-logo.png" alt="" />
-      </a>
-      <nav className="forest2-nav" aria-label={copy.label}>
-        <a href={localizedPath(locale, "/")}>{copy.home}</a>
-        <a aria-current="page" href={localizedPath(locale, "/works")}>{copy.works}</a>
-        <a href={localizedPath(locale, "/consulting")}>{copy.consulting}</a>
-        <a href={localizedPath(locale, "/about")}>{copy.about}</a>
-        <LanguageToggle locale={locale} path="/works" />
-      </nav>
-    </header>
-  );
-}
-
 function WorkStatus({ status, locale }: { status: Work["status"]; locale: Locale }) {
   return <span className={`forest2-works-status forest2-works-status--${status === "운영 중" ? "live" : status === "개발 중" ? "building" : "archive"}`}>{worksCopy[locale].status[status]}</span>;
 }
@@ -339,7 +322,7 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
     <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site" lang={locale}>
       <main className="forest2-site forest2-site--home2 forest2-site--works-hub" data-jhub-web-app="jjgo2" data-web-app-title="JJGo">
         <Background />
-        <Topbar locale={locale} />
+        <SiteHeader locale={locale} page="works" />
         <div className="forest2-content forest2-route-view">
           <section className="forest2-home2-frame forest2-works-frame">
             <div className="forest2-home2-shell forest2-works-shell">
@@ -385,6 +368,21 @@ export function WorksClient({ locale = "ko" }: { locale?: Locale }) {
                 <div className="forest2-works-collection-grid">
                   {collections.map((collection) => {
                     const count = collectionCounts[collection.id];
+                    if (collection.id === "roblox") {
+                      return (
+                        <a key={collection.id} className="forest2-works-collection-card forest2-works-collection-card--roblox" href={localizedPath(locale, pagePath("roblox"))}>
+                          <img src={collection.image} alt="" loading="lazy" />
+                          <span className="forest2-works-collection-shade" />
+                          <span className="forest2-works-collection-index">{collection.index}</span>
+                          <span className="forest2-works-collection-copy">
+                            <span className="forest2-works-collection-count">{locale === "ko" ? "전용 페이지" : "DEDICATED PAGE"}</span>
+                            <strong>{collection.title}</strong>
+                            <span>{collection.description}</span>
+                            <em>{collection.subcategories.join(" · ")}</em>
+                          </span>
+                        </a>
+                      );
+                    }
                     return (
                       <button key={collection.id} className={`forest2-works-collection-card forest2-works-collection-card--${collection.id}`} type="button" onClick={() => chooseCollection(collection.id)} aria-pressed={activeCollection === collection.id}>
                         <img src={collection.image} alt="" loading="lazy" />

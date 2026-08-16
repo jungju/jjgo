@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { ConsultingSubnav, ForestBackground, OriginalMethodHeadline, Topbar, consultingServices } from "./consulting-components";
+import { consultingPath } from "../site-spec";
 
 export const metadata: Metadata = {
   title: "컨설팅",
@@ -27,7 +28,7 @@ export default function ConsultingPage() {
 
                 <div className="forest2-consulting-grid">
                   {consultingServices.map((service) => (
-                      <a key={service.slug} href={`/consulting/${service.slug}`} className="forest2-consulting-card">
+                      <a key={service.slug} href={consultingPath(service.slug)} className="forest2-consulting-card">
                         <div className="forest2-consulting-card-media" aria-hidden="true">
                           <img src={service.image} alt="" width="1200" height="800" loading="lazy" />
                           <div className="forest2-consulting-card-head">

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { ConsultingSubnav, ForestBackground, OriginalMethodHeadline, Topbar } from "../../consulting/consulting-components";
 import { consultingServicesEn } from "../../consulting/consulting-data-en";
+import { localizedPath } from "../../language-toggle";
+import { consultingPath } from "../../site-spec";
 
 export const metadata: Metadata = {
   title: "Consulting",
@@ -27,7 +29,7 @@ export default function EnglishConsultingPage() {
                 <ConsultingSubnav locale="en" services={consultingServicesEn} />
                 <div className="forest2-consulting-grid">
                   {consultingServicesEn.map((service) => (
-                    <a key={service.slug} href={`/en/consulting/${service.slug}`} className="forest2-consulting-card">
+                    <a key={service.slug} href={localizedPath("en", consultingPath(service.slug))} className="forest2-consulting-card">
                       <div className="forest2-consulting-card-media" aria-hidden="true">
                         <img src={service.image} alt="" width="1200" height="800" loading="lazy" />
                         <div className="forest2-consulting-card-head"><span>{service.number}</span></div>

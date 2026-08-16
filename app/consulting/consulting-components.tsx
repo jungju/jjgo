@@ -1,7 +1,9 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { LanguageToggle, localizedPath, type Locale } from "../language-toggle";
+import { localizedPath, type Locale } from "../language-toggle";
+import { SiteHeader, type SiteIdentity } from "../site-header";
+import { consultingPageBySlug, consultingPath, type ConsultingSlug, type SitePageId } from "../site-spec";
 
-export type ConsultingSlug = "ai-native" | "ax" | "platform-engineering";
+export type { ConsultingSlug } from "../site-spec";
 
 export type ConsultingService = {
   slug: ConsultingSlug;
@@ -152,6 +154,12 @@ export const consultingServices: ConsultingService[] = [
   },
 ];
 
+export function consultingServiceBySlug(services: ConsultingService[], slug: ConsultingSlug) {
+  const service = services.find((candidate) => candidate.slug === slug);
+  if (!service) throw new Error(`Missing consulting content for: ${slug}`);
+  return service;
+}
+
 export function ForestBackground() {
   return (
     <>
@@ -166,32 +174,23 @@ export function ForestBackground() {
   );
 }
 
-export function Topbar({ locale = "ko", path = "/consulting" }: { locale?: Locale; path?: string }) {
-  const labels = locale === "ko"
-    ? { home: "홈", works: "작품", consulting: "컨설팅", about: "소개", nav: "JJGo 페이지", homeLabel: "JJGo 홈" }
-    : { home: "Home", works: "Works", consulting: "Consulting", about: "About", nav: "JJGo pages", homeLabel: "JJGo home" };
-
-  return (
-    <header className="forest2-topbar" data-visual-id="topbar">
-      <a className="forest2-brand" aria-label={labels.homeLabel} href={localizedPath(locale, "/")}>
-        <img className="forest2-brand-logo" src="/a/logo/jjgo-logo.png" alt="" />
-      </a>
-      <nav className="forest2-nav" aria-label={labels.nav}>
-        <a href={localizedPath(locale, "/")}>{labels.home}</a>
-        <a href={localizedPath(locale, "/works")}>{labels.works}</a>
-        <a aria-current="page" href={localizedPath(locale, "/consulting")}>{labels.consulting}</a>
-        <a href={localizedPath(locale, "/about")}>{labels.about}</a>
-        <LanguageToggle locale={locale} path={path} />
-      </nav>
-    </header>
-  );
+export function Topbar({
+  locale = "ko",
+  page = "consulting",
+  identity,
+}: {
+  locale?: Locale;
+  page?: SitePageId;
+  identity?: SiteIdentity | null;
+}) {
+  return <SiteHeader locale={locale} page={page} identity={identity} />;
 }
 
 export function ConsultingSubnav({ active, locale = "ko", services = consultingServices }: { active?: ConsultingSlug; locale?: Locale; services?: ConsultingService[] }) {
   return (
     <nav className="forest2-consulting-subnav" aria-label={locale === "ko" ? "컨설팅 분야" : "Consulting areas"}>
       {services.map((service) => (
-        <a key={service.slug} aria-current={active === service.slug ? "page" : undefined} href={localizedPath(locale, `/consulting/${service.slug}`)}>
+        <a key={service.slug} aria-current={active === service.slug ? "page" : undefined} href={localizedPath(locale, consultingPath(service.slug))}>
           <span>{service.number}</span>
           {service.shortTitle}
         </a>
@@ -267,7 +266,11 @@ export function ConsultingDetail({ service, locale = "ko", services = consulting
     <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site" lang={locale}>
       <main className="forest2-site forest2-site--method forest2-site--consulting" data-jhub-web-app="jjgo2" data-web-app-title="JJGo">
         <ForestBackground />
-        <Topbar locale={locale} path={`/consulting/${service.slug}`} />
+        <Topbar
+          locale={locale}
+          page={consultingPageBySlug[service.slug]}
+          identity={{ label: `Consulting · ${service.shortTitle}`, href: consultingPath(service.slug) }}
+        />
         <div className="forest2-content forest2-route-view">
           <article className={`forest2-method-frame forest2-consulting-detail-frame forest2-consulting-detail-frame--${service.slug}`}>
             <div className="forest2-method-shell">

@@ -1,4 +1,6 @@
-import { languageToggleMarkup, type Locale } from "./language-toggle";
+import type { Locale } from "./language-toggle";
+import { siteHeaderMarkup } from "./site-header";
+import type { SitePageId } from "./site-spec";
 
 function extractMain(source: string) {
   return source.match(/<main[\s\S]*<\/main>/)?.[0] ?? source;
@@ -13,6 +15,16 @@ function adaptConsultingNavigation(source: string) {
     .replaceAll("사용자 피드백, XP·애자일, DevOps와 단순한 조직 구조로 제품을 만드는 방식입니다.", "AI Native 조직, AX, 플랫폼 엔지니어링을 통해 실행 가능한 변화를 만듭니다.")
     .replaceAll("사용자 피드백과 XP·애자일을 바탕으로 작게 만들고 검증하며, 개발과 운영을 하나의 흐름으로 연결합니다.", "조직, 비즈니스, 기술 기반을 함께 살펴보고 AI 시대에 필요한 실행 구조를 만듭니다.")
     .replaceAll("피드백과 실험을 반복하며 제품과 조직을 개선하는 방식.", "AI Native 조직, AX, 플랫폼 엔지니어링 컨설팅.");
+}
+
+function adaptCoffeeChatCta(source: string) {
+  return source
+    .replaceAll("<p class=\"forest2-about-next-label\">NEXT</p>", "<p class=\"forest2-about-next-label\">LET'S TALK</p>")
+    .replaceAll("지나온 경험은, 지금 만드는 방식으로 이어집니다.", "나누고, 얻고, 교류하고 싶습니다.")
+    .replaceAll("결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "서로의 경험과 고민을 나누고, 새로운 관점과 가능성을 얻는 대화를 기다립니다.")
+    .replaceAll('href="/works">만든 것 보기', 'href="/coffee-chat">커피챗 신청하기')
+    .replaceAll('href="/consulting">컨설팅 보기', 'href="/consulting">컨설팅 문의하기')
+    .replaceAll('</svg></a></div><div class="forest2-about-contact-links"', '</svg></a><a class="forest2-about-action forest2-about-action--text" href="/works">만든 것 보기</a></div><div class="forest2-about-contact-links"');
 }
 
 const englishReplacements: [string, string][] = [
@@ -54,6 +66,10 @@ const englishReplacements: [string, string][] = [
   ["AI Native 조직", "AI-Native Organization"],
   ["지나온 경험은, 지금 만드는 방식으로 이어집니다.", "Past experience shapes how I build today."],
   ["결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "Explore both the outcomes and the systems behind them."],
+  ["나누고, 얻고, 교류하고 싶습니다.", "Share, learn, and grow through conversation."],
+  ["서로의 경험과 고민을 나누고, 새로운 관점과 가능성을 얻는 대화를 기다립니다.", "I welcome conversations where we exchange experience, perspectives, and new possibilities."],
+  ["커피챗 신청하기", "Request a coffee chat"],
+  ["컨설팅 문의하기", "Discuss consulting"],
   ["만든 것 보기", "Explore my work"],
   ["이메일", "Email"],
   ["제품으로 옮기기", "TURN IDEAS INTO PRODUCTS"],
@@ -80,18 +96,21 @@ function localizeInternalLinks(source: string, locale: Locale) {
   if (locale === "ko") return source;
   return source
     .replaceAll('href="/"', 'href="/en/"')
-    .replace(/href="\/(works|consulting|about)"/g, 'href="/en/$1"');
+    .replace(/href="\/(works|consulting|about|coffee-chat)"/g, 'href="/en/$1"');
 }
 
-function addLanguageToggle(source: string, locale: Locale, path: string) {
-  return source.replace("</nav>", `${languageToggleMarkup(locale, path)}</nav>`);
+function replaceTopbar(source: string, locale: Locale, page: SitePageId) {
+  return source.replace(
+    /<header class="forest2-topbar"[\s\S]*?<\/header>/,
+    siteHeaderMarkup({ locale, page }),
+  );
 }
 
-export function RawSourcePage({ source, locale = "ko", path = "/" }: { source: string; locale?: Locale; path?: string }) {
-  let html = adaptConsultingNavigation(extractMain(source));
+export function RawSourcePage({ source, locale = "ko", page }: { source: string; locale?: Locale; page: SitePageId }) {
+  let html = adaptCoffeeChatCta(adaptConsultingNavigation(extractMain(source)));
   if (locale === "en") html = localizeEnglish(html);
   html = localizeInternalLinks(html, locale);
-  html = addLanguageToggle(html, locale, path);
+  html = replaceTopbar(html, locale, page);
 
   return (
     <div

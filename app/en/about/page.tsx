@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishAboutPage() {
-  return <RawSourcePage source={aboutSource} locale="en" path="/about" />;
+  return <RawSourcePage source={aboutSource} locale="en" page="about" />;
 }

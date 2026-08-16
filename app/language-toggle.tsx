@@ -1,8 +1,9 @@
-export type Locale = "ko" | "en";
+import { localizedSitePath, type SiteLocale } from "./site-spec";
+
+export type Locale = SiteLocale;
 
 export function localizedPath(locale: Locale, path: string) {
-  if (locale === "ko") return path;
-  return path === "/" ? "/en/" : `/en${path}`;
+  return localizedSitePath(locale, path);
 }
 
 export function LanguageToggle({ locale, path }: { locale: Locale; path: string }) {

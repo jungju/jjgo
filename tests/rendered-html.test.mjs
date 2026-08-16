@@ -1,30 +1,37 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
+import { localizedSitePath, pagePath, primaryNavigation, siteLocales, sitePages, staticHtmlRoutes } from "../app/site-spec.ts";
 
 const projectRoot = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 
-const routes = [
-  "index.html",
-  "about/index.html",
-  "works/index.html",
-  "method/index.html",
-  "consulting/index.html",
-  "consulting/ai-native/index.html",
-  "consulting/ax/index.html",
-  "consulting/platform-engineering/index.html",
-  "en/index.html",
-  "en/about/index.html",
-  "en/works/index.html",
-  "en/method/index.html",
-  "en/consulting/index.html",
-  "en/consulting/ai-native/index.html",
-  "en/consulting/ax/index.html",
-  "en/consulting/platform-engineering/index.html",
-];
+const routes = staticHtmlRoutes();
+
+test("keeps the site hierarchy internally consistent", () => {
+  const paths = Object.values(sitePages).map((page) => page.path);
+  assert.equal(new Set(paths).size, paths.length, "page paths must be unique");
+  assert.equal(sitePages.roblox.parent, "works");
+  assert.match(sitePages.roblox.path, /^\/works\//);
+
+  for (const [id, page] of Object.entries(sitePages)) {
+    if (!page.parent) continue;
+    const parent = sitePages[page.parent];
+    assert.ok(page.path.startsWith(`${parent.path}/`), `${id} must stay below ${page.parent}`);
+    assert.equal(page.nav, parent.nav, `${id} must keep its parent's global navigation state`);
+  }
+
+  assert.deepEqual(primaryNavigation.map((item) => item.id), ["home", "works", "consulting", "about"]);
+});
 
 test("exports every public route as static HTML", async () => {
+  const exportedIndexFiles = (await readdir(outputRoot, { recursive: true }))
+    .map((file) => file.replaceAll("\\", "/"))
+    .filter((file) => file === "index.html" || file.endsWith("/index.html"))
+    .filter((file) => file !== "404/index.html" && file !== "_not-found/index.html")
+    .sort();
+  assert.deepEqual(exportedIndexFiles, [...routes].sort(), "every exported route must be declared in the site manifest");
+
   for (const route of routes) {
     const file = new URL(route, outputRoot);
     await access(file);
@@ -36,10 +43,11 @@ test("exports every public route as static HTML", async () => {
 });
 
 test("exports matching Korean and English navigation", async () => {
-  const [koreanHome, englishHome, englishConsulting] = await Promise.all([
+  const [koreanHome, englishHome, englishConsulting, koreanRoblox] = await Promise.all([
     readFile(new URL("index.html", outputRoot), "utf8"),
     readFile(new URL("en/index.html", outputRoot), "utf8"),
     readFile(new URL("en/consulting/ai-native/index.html", outputRoot), "utf8"),
+    readFile(new URL("works/roblox/index.html", outputRoot), "utf8"),
   ]);
 
   assert.match(koreanHome, /href="\/en\/"/);
@@ -47,6 +55,28 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(englishHome, /From bold ideas/);
   assert.match(englishConsulting, /An organization built to solve problems/);
   assert.match(englishConsulting, /href="\/consulting\/ai-native"/);
+  assert.match(englishConsulting, /forest2-brand-section[^>]*>Consulting · AI-Native Organization/);
+  assert.match(koreanRoblox, /forest2-brand-section[^>]*>Roblox/);
+  assert.match(koreanRoblox, /forest2-brand-section[^>]*href="\/works\/roblox"/);
+  assert.match(koreanRoblox, /aria-current="page" href="\/works"/);
+  assert.match(koreanRoblox, /101526777002639\/unnamed/);
+  assert.match(koreanRoblox, /138101004117090\/Bomb-Rain-You-Won-t-Last/);
+  assert.match(koreanRoblox, /Paper Boat Exploration: Seoul Waterways Adventure/);
+  assert.match(koreanRoblox, /Bomb Rain/);
+});
+
+test("renders the manifest navigation on every public page", async () => {
+  for (const locale of siteLocales) {
+    const expectedLinks = primaryNavigation.map((item) => localizedSitePath(locale, pagePath(item.page)));
+    const localeRoutes = routes.filter((route) => locale === "ko" ? !route.startsWith("en/") : route.startsWith("en/"));
+
+    for (const route of localeRoutes) {
+      const html = await readFile(new URL(route, outputRoot), "utf8");
+      for (const href of expectedLinks) {
+        assert.match(html, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`), `${route}: ${href}`);
+      }
+    }
+  }
 });
 
 test("uses a serverless static-export configuration", async () => {
@@ -67,6 +97,10 @@ test("ships static assets without server infrastructure", async () => {
   await Promise.all([
     access(new URL("a/logo/jjgo-logo.png", outputRoot)),
     access(new URL("a/generated/threejs-summer-leaf.png", outputRoot)),
+    access(new URL("a/generated/roblox/paper-boat-seoul.png", outputRoot)),
+    access(new URL("a/generated/roblox/paper-boat-seoul-icon.png", outputRoot)),
+    access(new URL("a/generated/roblox/bomb-rain.png", outputRoot)),
+    access(new URL("a/generated/roblox/bomb-rain-icon.png", outputRoot)),
     access(new URL(".nojekyll", outputRoot)),
   ]);
 

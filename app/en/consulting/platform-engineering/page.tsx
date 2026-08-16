@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { ConsultingDetail } from "../../../consulting/consulting-components";
+import { ConsultingDetail, consultingServiceBySlug } from "../../../consulting/consulting-components";
 import { consultingServicesEn } from "../../../consulting/consulting-data-en";
 
-const service = consultingServicesEn[2];
+const service = consultingServiceBySlug(consultingServicesEn, "platform-engineering");
 
 export const metadata: Metadata = { title: service.title, description: service.summary };
 

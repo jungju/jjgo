@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ConsultingDetail, consultingServices } from "../consulting-components";
+import { ConsultingDetail, consultingServiceBySlug, consultingServices } from "../consulting-components";
+
+const service = consultingServiceBySlug(consultingServices, "ai-native");
 
 export const metadata: Metadata = {
   title: "AI Native 조직 만들기",
@@ -7,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function AiNativeConsultingPage() {
-  return <ConsultingDetail service={consultingServices[0]} />;
+  return <ConsultingDetail service={service} />;
 }
