@@ -412,6 +412,20 @@ test("uses a serverless static-export configuration", async () => {
   assert.match(workflow, /path:\s*out/);
 });
 
+test("configures PostHog web analytics for static deployment", async () => {
+  const [instrumentation, packageJson, workflow] = await Promise.all([
+    readFile(new URL("instrumentation-client.ts", projectRoot), "utf8"),
+    readFile(new URL("package.json", projectRoot), "utf8"),
+    readFile(new URL(".github/workflows/pages.yml", projectRoot), "utf8"),
+  ]);
+
+  assert.match(packageJson, /"posthog-js"/);
+  assert.match(instrumentation, /posthog\.init\(/);
+  assert.match(instrumentation, /capture_pageview:\s*["']history_change["']/);
+  assert.match(instrumentation, /disable_session_recording:\s*true/);
+  assert.match(workflow, /NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN:\s*\$\{\{\s*vars\.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN\s*\}\}/);
+});
+
 test("ships static assets without server infrastructure", async () => {
   await Promise.all([
     access(new URL("a/logo/jjgo-logo.png", outputRoot)),
