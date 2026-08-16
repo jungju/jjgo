@@ -21,7 +21,6 @@ export const sitePages = {
   consultingAx: { path: "/consulting/ax", parent: "consulting", nav: "consulting", identity: null },
   consultingPlatformEngineering: { path: "/consulting/platform-engineering", parent: "consulting", nav: "consulting", identity: null },
   about: { path: "/about", parent: null, nav: "about", identity: null },
-  coffeeChat: { path: "/coffee-chat", parent: null, nav: null, identity: null },
   method: { path: "/method", parent: null, nav: "consulting", identity: { ko: "Consulting", en: "Consulting" } },
 } as const satisfies Record<string, SitePageSpec>;
 

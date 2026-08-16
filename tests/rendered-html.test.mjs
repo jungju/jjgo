@@ -65,6 +65,21 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(koreanRoblox, /Bomb Rain/);
 });
 
+test("keeps inquiries and coffee chats in the About contact area", async () => {
+  const [koreanAbout, englishAbout] = await Promise.all([
+    readFile(new URL("about/index.html", outputRoot), "utf8"),
+    readFile(new URL("en/about/index.html", outputRoot), "utf8"),
+  ]);
+
+  assert.match(koreanAbout, /문의와 커피챗, 모두 편하게 연락해 주세요/);
+  assert.match(koreanAbout, /href="mailto:leejungju\.go@gmail\.com">메일 보내기/);
+  assert.match(koreanAbout, />leejungju\.go@gmail\.com<\/a>/);
+  assert.doesNotMatch(koreanAbout, /\/coffee-chat|커피챗 신청하기/);
+  assert.match(englishAbout, /Questions or a coffee chat\? Feel free to reach out/);
+  assert.match(englishAbout, /href="mailto:leejungju\.go@gmail\.com">Send an email/);
+  assert.doesNotMatch(englishAbout, /\/coffee-chat|Request a coffee chat/);
+});
+
 test("renders the manifest navigation on every public page", async () => {
   for (const locale of siteLocales) {
     const expectedLinks = primaryNavigation.map((item) => localizedSitePath(locale, pagePath(item.page)));

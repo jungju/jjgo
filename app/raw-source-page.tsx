@@ -17,14 +17,14 @@ function adaptConsultingNavigation(source: string) {
     .replaceAll("피드백과 실험을 반복하며 제품과 조직을 개선하는 방식.", "AI Native 조직, AX, 플랫폼 엔지니어링 컨설팅.");
 }
 
-function adaptCoffeeChatCta(source: string) {
+function adaptContactCta(source: string) {
   return source
-    .replaceAll("<p class=\"forest2-about-next-label\">NEXT</p>", "<p class=\"forest2-about-next-label\">LET'S TALK</p>")
-    .replaceAll("지나온 경험은, 지금 만드는 방식으로 이어집니다.", "나누고, 얻고, 교류하고 싶습니다.")
-    .replaceAll("결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "서로의 경험과 고민을 나누고, 새로운 관점과 가능성을 얻는 대화를 기다립니다.")
-    .replaceAll('href="/works">만든 것 보기', 'href="/coffee-chat">커피챗 신청하기')
-    .replaceAll('href="/consulting">컨설팅 보기', 'href="/consulting">컨설팅 문의하기')
-    .replaceAll('</svg></a></div><div class="forest2-about-contact-links"', '</svg></a><a class="forest2-about-action forest2-about-action--text" href="/works">만든 것 보기</a></div><div class="forest2-about-contact-links"');
+    .replaceAll("<p class=\"forest2-about-next-label\">NEXT</p>", "<p class=\"forest2-about-next-label\">CONTACT</p>")
+    .replaceAll("지나온 경험은, 지금 만드는 방식으로 이어집니다.", "문의와 커피챗, 모두 편하게 연락해 주세요.")
+    .replaceAll("결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "프로젝트 문의, 협업 제안, 가벼운 커피챗 모두 환영합니다.")
+    .replaceAll('href="/works">만든 것 보기', 'href="mailto:leejungju.go@gmail.com">메일 보내기')
+    .replace(/<a class="forest2-about-action" href="\/consulting">컨설팅 보기[\s\S]*?<\/a>/, "")
+    .replaceAll(">이메일</a>", ">leejungju.go@gmail.com</a>");
 }
 
 const englishReplacements: [string, string][] = [
@@ -66,11 +66,9 @@ const englishReplacements: [string, string][] = [
   ["AI Native 조직", "AI-Native Organization"],
   ["지나온 경험은, 지금 만드는 방식으로 이어집니다.", "Past experience shapes how I build today."],
   ["결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "Explore both the outcomes and the systems behind them."],
-  ["나누고, 얻고, 교류하고 싶습니다.", "Share, learn, and grow through conversation."],
-  ["서로의 경험과 고민을 나누고, 새로운 관점과 가능성을 얻는 대화를 기다립니다.", "I welcome conversations where we exchange experience, perspectives, and new possibilities."],
-  ["커피챗 신청하기", "Request a coffee chat"],
-  ["컨설팅 문의하기", "Discuss consulting"],
-  ["만든 것 보기", "Explore my work"],
+  ["문의와 커피챗, 모두 편하게 연락해 주세요.", "Questions or a coffee chat? Feel free to reach out."],
+  ["프로젝트 문의, 협업 제안, 가벼운 커피챗 모두 환영합니다.", "Project inquiries, collaboration ideas, and casual coffee chats are all welcome."],
+  ["메일 보내기", "Send an email"],
   ["이메일", "Email"],
   ["제품으로 옮기기", "TURN IDEAS INTO PRODUCTS"],
   [">홈<", ">Home<"],
@@ -96,7 +94,7 @@ function localizeInternalLinks(source: string, locale: Locale) {
   if (locale === "ko") return source;
   return source
     .replaceAll('href="/"', 'href="/en/"')
-    .replace(/href="\/(works|consulting|about|coffee-chat)"/g, 'href="/en/$1"');
+    .replace(/href="\/(works|consulting|about)"/g, 'href="/en/$1"');
 }
 
 function replaceTopbar(source: string, locale: Locale, page: SitePageId) {
@@ -107,7 +105,7 @@ function replaceTopbar(source: string, locale: Locale, page: SitePageId) {
 }
 
 export function RawSourcePage({ source, locale = "ko", page }: { source: string; locale?: Locale; page: SitePageId }) {
-  let html = adaptCoffeeChatCta(adaptConsultingNavigation(extractMain(source)));
+  let html = adaptContactCta(adaptConsultingNavigation(extractMain(source)));
   if (locale === "en") html = localizeEnglish(html);
   html = localizeInternalLinks(html, locale);
   html = replaceTopbar(html, locale, page);
