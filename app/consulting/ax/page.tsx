@@ -7,8 +7,8 @@ const path = "/consulting/ax";
 export const metadata = pageMetadata({
   locale: "ko",
   path,
-  title: "AX 컨설팅 | AI 서비스 기획·제품화 | JJGo",
-  description: "AI 기회 발굴과 서비스 설계, PoC, 제품화·운영 로드맵을 연결해 비즈니스와 고객 경험의 변화를 실행하는 이정주의 AX 컨설팅입니다.",
+  title: "AX 컨설팅 | AI 평가·오케스트레이션 | JJGo",
+  description: "다양한 환경에서 모델·에이전트·도구 구성을 평가해 최적점을 찾고, 실제 서비스 흐름으로 오케스트레이션하는 AX 컨설팅입니다.",
   image: service.image,
   imageWidth: 1200,
   imageHeight: 800,

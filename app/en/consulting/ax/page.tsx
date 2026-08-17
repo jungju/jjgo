@@ -8,8 +8,8 @@ const path = "/consulting/ax";
 export const metadata = pageMetadata({
   locale: "en",
   path,
-  title: "AI Transformation Consulting | Service Design & Productization | JJGo",
-  description: "Connect AI opportunity discovery, service design, PoCs, productization, and operating roadmaps to measurable business and customer outcomes.",
+  title: "AI Transformation Consulting | Evaluation & Orchestration | JJGo",
+  description: "Evaluate models, agents, and tool configurations across environments, then orchestrate the best fit into a reliable service flow.",
   image: service.image,
   imageWidth: 1200,
   imageHeight: 800,
