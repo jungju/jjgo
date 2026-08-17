@@ -1,4 +1,5 @@
 import type { Locale } from "./language-toggle";
+import { homeExpansionMarkup } from "./home-expansion";
 import { siteHeaderMarkup } from "./site-header";
 import type { SitePageId } from "./site-spec";
 
@@ -158,6 +159,9 @@ export function RawSourcePage({ source, locale = "ko", page }: { source: string;
   if (locale === "en") html = localizeEnglish(html);
   html = localizeInternalLinks(html, locale);
   html = replaceTopbar(html, locale, page);
+  if (page === "home") {
+    html = html.replace("</section></div></main>", `</section>${homeExpansionMarkup(locale)}</div></main>`);
+  }
 
   return (
     <div

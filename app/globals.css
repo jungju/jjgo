@@ -3746,3 +3746,603 @@ select {
     grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
   }
 }
+
+/* Home page depth: capabilities, selected work, and Roblox making. */
+.forest2-site--home .forest2-home-expansion {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  border-top: 1px solid rgba(220, 163, 71, 0.32);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(169, 215, 95, 0.1), transparent 25%),
+    radial-gradient(circle at 92% 43%, rgba(220, 163, 71, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(3, 15, 11, 0.96), #03100c 58%, #020b08 100%);
+}
+
+.forest2-site--home .forest2-home-expansion::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(92vw, 1320px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 241, 232, 0.42), transparent);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.forest2-home-expansion-shell {
+  position: relative;
+  width: min(100%, 1296px);
+  margin: 0 auto;
+  padding: 116px 48px 92px;
+}
+
+.forest2-home-expansion-section + .forest2-home-expansion-section {
+  margin-top: 132px;
+}
+
+.forest2-home-expansion-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.62fr);
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 42px;
+}
+
+.forest2-home-expansion-head p,
+.forest2-home-capability-copy > p,
+.forest2-home-work-copy > p,
+.forest2-home-roblox-copy > p {
+  margin: 0 0 15px;
+  color: #e5af51;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.17em;
+  line-height: 1.35;
+}
+
+.forest2-home-expansion-head h2,
+.forest2-home-roblox-copy h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko), Georgia, serif;
+  font-size: clamp(2.5rem, 4.35vw, 4rem);
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.048em;
+  white-space: pre-line;
+}
+
+.forest2-home-expansion-head > span {
+  display: block;
+  padding-bottom: 4px;
+  color: rgba(244, 241, 232, 0.69);
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+.forest2-home-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forest2-home-capability-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 592px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 22px;
+  background: linear-gradient(155deg, rgba(11, 40, 28, 0.96), rgba(4, 22, 16, 0.97));
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.forest2-home-capability-card:nth-child(2) {
+  background: linear-gradient(155deg, rgba(17, 44, 29, 0.96), rgba(5, 24, 17, 0.97));
+}
+
+.forest2-home-capability-card:nth-child(3) {
+  background: linear-gradient(155deg, rgba(13, 36, 30, 0.96), rgba(4, 20, 17, 0.97));
+}
+
+.forest2-home-capability-card:hover,
+.forest2-home-capability-card:focus-visible {
+  border-color: rgba(220, 163, 71, 0.64);
+  box-shadow: 0 34px 82px rgba(0, 0, 0, 0.38);
+  transform: translateY(-6px);
+}
+
+.forest2-home-capability-card:focus-visible,
+.forest2-home-work-actions a:focus-visible,
+.forest2-home-roblox-copy > a:focus-visible,
+.forest2-home-all-works a:focus-visible {
+  outline: 3px solid rgba(220, 163, 71, 0.7);
+  outline-offset: 3px;
+}
+
+.forest2-home-capability-number {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(244, 241, 232, 0.22);
+  border-radius: 50%;
+  color: rgba(244, 241, 232, 0.82);
+  background: rgba(3, 15, 11, 0.64);
+  backdrop-filter: blur(12px);
+  font-family: var(--forest2-font-display-en), Georgia, serif;
+  font-size: 0.76rem;
+}
+
+.forest2-home-capability-media {
+  height: 224px;
+  overflow: hidden;
+  background: #06140f;
+}
+
+.forest2-home-capability-media::after,
+.forest2-home-work-media::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 45%;
+  background: linear-gradient(180deg, transparent, rgba(4, 22, 16, 0.86));
+  content: "";
+  pointer-events: none;
+}
+
+.forest2-home-capability-media,
+.forest2-home-work-media {
+  position: relative;
+}
+
+.forest2-home-capability-media img,
+.forest2-home-work-media img,
+.forest2-home-roblox-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.forest2-home-capability-card:hover .forest2-home-capability-media img,
+.forest2-home-capability-card:focus-visible .forest2-home-capability-media img,
+.forest2-home-work-card:hover .forest2-home-work-media img {
+  transform: scale(1.045);
+}
+
+.forest2-home-capability-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 28px 28px 27px;
+}
+
+.forest2-home-capability-copy h3,
+.forest2-home-work-copy h3 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-en), var(--forest2-font-display-ko), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+}
+
+.forest2-home-capability-copy > span,
+.forest2-home-work-copy > span,
+.forest2-home-roblox-copy > span {
+  display: block;
+  margin-top: 16px;
+  color: rgba(244, 241, 232, 0.69);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+
+.forest2-home-capability-copy ul,
+.forest2-home-roblox-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 22px 0 0;
+  padding: 0;
+  gap: 7px;
+  list-style: none;
+}
+
+.forest2-home-capability-copy li,
+.forest2-home-roblox-copy li {
+  padding: 7px 10px;
+  border: 1px solid rgba(169, 215, 95, 0.17);
+  border-radius: 999px;
+  color: rgba(213, 228, 189, 0.82);
+  background: rgba(169, 215, 95, 0.07);
+  font-size: 0.7rem;
+  font-weight: 720;
+  line-height: 1;
+}
+
+.forest2-home-capability-copy strong {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 26px;
+  gap: 8px;
+  color: #e7b65e;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.forest2-home-capability-copy strong svg,
+.forest2-home-work-actions a svg,
+.forest2-home-roblox-copy > a svg,
+.forest2-home-all-works a svg {
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.forest2-home-capability-card:hover strong svg,
+.forest2-home-work-actions a:hover svg,
+.forest2-home-roblox-copy > a:hover svg,
+.forest2-home-all-works a:hover svg {
+  transform: translateX(4px);
+}
+
+.forest2-home-work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 16px;
+}
+
+.forest2-home-work-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 24px;
+  background: rgba(5, 25, 18, 0.92);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.26);
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.forest2-home-work-card:hover {
+  border-color: rgba(220, 163, 71, 0.52);
+  transform: translateY(-4px);
+}
+
+.forest2-home-work-media {
+  height: 320px;
+  overflow: hidden;
+  background: #07110e;
+}
+
+.forest2-home-work-card--slop .forest2-home-work-media {
+  height: 382px;
+}
+
+.forest2-home-work-card--okgo .forest2-home-work-media img {
+  object-position: center top;
+}
+
+.forest2-home-work-copy {
+  padding: 30px 32px 34px;
+}
+
+.forest2-home-work-copy h3 {
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+}
+
+.forest2-home-work-card--slop .forest2-home-work-copy > span {
+  max-width: 720px;
+}
+
+.forest2-home-work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.forest2-home-work-actions a,
+.forest2-home-roblox-copy > a,
+.forest2-home-all-works a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  gap: 9px;
+  border: 1px solid rgba(220, 163, 71, 0.48);
+  border-radius: 10px;
+  color: var(--forest2-cream);
+  background: rgba(220, 163, 71, 0.05);
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.forest2-home-work-actions a:first-child,
+.forest2-home-roblox-copy > a {
+  border-color: #dca347;
+  color: #102016;
+  background: #dca347;
+}
+
+.forest2-home-work-actions a:hover,
+.forest2-home-work-actions a:focus-visible,
+.forest2-home-roblox-copy > a:hover,
+.forest2-home-roblox-copy > a:focus-visible,
+.forest2-home-all-works a:hover,
+.forest2-home-all-works a:focus-visible {
+  border-color: #f0c772;
+  color: #102016;
+  background: #f0c772;
+}
+
+.forest2-home-work-card--okgo .forest2-home-work-actions a:first-child {
+  border-color: rgba(220, 163, 71, 0.48);
+  color: var(--forest2-cream);
+  background: rgba(220, 163, 71, 0.05);
+}
+
+.forest2-home-work-card--okgo .forest2-home-work-actions a:first-child:hover,
+.forest2-home-work-card--okgo .forest2-home-work-actions a:first-child:focus-visible {
+  border-color: #f0c772;
+  color: #102016;
+  background: #f0c772;
+}
+
+.forest2-home-roblox {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(44px, 6vw, 84px);
+  padding: 58px;
+  overflow: hidden;
+  border: 1px solid rgba(169, 215, 95, 0.22);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 94% 8%, rgba(169, 215, 95, 0.13), transparent 33%),
+    linear-gradient(140deg, rgba(8, 42, 29, 0.97), rgba(4, 22, 17, 0.98));
+  box-shadow: 0 30px 82px rgba(0, 0, 0, 0.28);
+}
+
+.forest2-home-roblox-copy h2 {
+  font-size: clamp(2.25rem, 3.65vw, 3.4rem);
+}
+
+.forest2-home-roblox-copy > a {
+  margin-top: 28px;
+}
+
+.forest2-home-roblox-gallery {
+  position: relative;
+  min-height: 480px;
+}
+
+.forest2-home-roblox-gallery figure {
+  position: absolute;
+  width: 78%;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.2);
+  border-radius: 18px;
+  background: #07140f;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.42);
+}
+
+.forest2-home-roblox-gallery figure:first-child {
+  top: 0;
+  left: 0;
+  transform: rotate(-2.5deg);
+}
+
+.forest2-home-roblox-gallery figure:last-child {
+  right: 0;
+  bottom: 0;
+  transform: rotate(2.5deg);
+}
+
+.forest2-home-roblox-gallery img {
+  aspect-ratio: 16 / 9;
+}
+
+.forest2-home-roblox-gallery figcaption {
+  padding: 12px 15px;
+  color: rgba(244, 241, 232, 0.78);
+  font-family: var(--forest2-font-display-en), Georgia, serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+}
+
+.forest2-home-all-works {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
+.forest2-home-all-works a {
+  min-width: 210px;
+  border-color: rgba(244, 241, 232, 0.24);
+}
+
+@media (max-width: 1024px) {
+  .forest2-home-expansion-shell {
+    padding: 88px 32px 78px;
+  }
+
+  .forest2-home-expansion-section + .forest2-home-expansion-section {
+    margin-top: 104px;
+  }
+
+  .forest2-home-expansion-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .forest2-home-expansion-head > span {
+    max-width: 720px;
+  }
+
+  .forest2-home-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-home-capability-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+    min-height: 0;
+  }
+
+  .forest2-home-capability-media {
+    height: 100%;
+    min-height: 360px;
+  }
+
+  .forest2-home-work-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .forest2-home-work-card--slop .forest2-home-work-media,
+  .forest2-home-work-media {
+    height: 300px;
+  }
+
+  .forest2-home-roblox {
+    grid-template-columns: 1fr;
+    padding: 44px;
+  }
+
+  .forest2-home-roblox-copy {
+    max-width: 740px;
+  }
+
+  .forest2-home-roblox-gallery {
+    width: min(100%, 760px);
+    min-height: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .forest2-home-expansion-shell {
+    padding: 68px 18px 64px;
+  }
+
+  .forest2-home-expansion-section + .forest2-home-expansion-section {
+    margin-top: 80px;
+  }
+
+  .forest2-home-expansion-head {
+    margin-bottom: 28px;
+  }
+
+  .forest2-home-expansion-head h2,
+  .forest2-home-roblox-copy h2 {
+    font-size: 2.25rem;
+  }
+
+  .forest2-home-expansion-head > span {
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  .forest2-home-capability-card {
+    grid-template-columns: 1fr;
+    border-radius: 18px;
+  }
+
+  .forest2-home-capability-media {
+    height: 210px;
+    min-height: 0;
+  }
+
+  .forest2-home-capability-copy {
+    padding: 24px 22px 23px;
+  }
+
+  .forest2-home-capability-copy h3 {
+    font-size: 1.8rem;
+  }
+
+  .forest2-home-work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-home-work-card {
+    border-radius: 19px;
+  }
+
+  .forest2-home-work-card--slop .forest2-home-work-media,
+  .forest2-home-work-media {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-home-work-copy {
+    padding: 25px 22px 27px;
+  }
+
+  .forest2-home-work-copy h3 {
+    font-size: 2.05rem;
+  }
+
+  .forest2-home-work-actions {
+    flex-direction: column;
+  }
+
+  .forest2-home-work-actions a {
+    width: 100%;
+  }
+
+  .forest2-home-roblox {
+    padding: 30px 22px 24px;
+    border-radius: 20px;
+  }
+
+  .forest2-home-roblox-gallery {
+    display: grid;
+    min-height: 0;
+    gap: 12px;
+  }
+
+  .forest2-home-roblox-gallery figure,
+  .forest2-home-roblox-gallery figure:first-child,
+  .forest2-home-roblox-gallery figure:last-child {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    transform: none;
+  }
+
+  .forest2-home-roblox-copy > a {
+    width: 100%;
+  }
+
+  .forest2-home-all-works {
+    margin-top: 48px;
+  }
+
+  .forest2-home-all-works a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest2-home-capability-card,
+  .forest2-home-capability-media img,
+  .forest2-home-work-card,
+  .forest2-home-work-media img,
+  .forest2-home-capability-copy strong svg,
+  .forest2-home-work-actions a svg,
+  .forest2-home-roblox-copy > a svg,
+  .forest2-home-all-works a svg {
+    transition: none;
+  }
+}
