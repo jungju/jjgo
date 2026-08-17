@@ -302,6 +302,20 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(englishAiSlop, /The Place Where the Wind Returns/);
 });
 
+test("keeps the home hero focused without the legacy summary cards", async () => {
+  const [koreanHome, englishHome] = await Promise.all([
+    readFile(new URL(outputRoute("ko", "/"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("en", "/"), outputRoot), "utf8"),
+  ]);
+
+  for (const home of [koreanHome, englishHome]) {
+    assert.doesNotMatch(home, /class="forest2-(?:home-card|tablet-feature-card|mobile-feature-card|connect-card)"/);
+    assert.match(home, /id="home-capabilities"/);
+    assert.match(home, /href="#home-capabilities"/);
+    assert.match(home, /class="forest2-home-expansion"/);
+  }
+});
+
 test("keeps inquiries and coffee chats in the About contact area", async () => {
   const [koreanAbout, englishAbout] = await Promise.all([
     readFile(new URL("about/index.html", outputRoot), "utf8"),

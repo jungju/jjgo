@@ -154,8 +154,18 @@ function replaceTopbar(source: string, locale: Locale, page: SitePageId) {
   );
 }
 
+function removeHomeSummaryCards(source: string) {
+  return source
+    .replace(/<a class="forest2-home-card"[\s\S]*?<\/a>/g, "")
+    .replace(/<a class="forest2-tablet-feature-card"[\s\S]*?<\/a>/g, "")
+    .replace(/<a class="forest2-mobile-feature-card"[\s\S]*?<\/a>/g, "")
+    .replace(/<section class="forest2-connect-card"[\s\S]*?<\/section>/g, "")
+    .replaceAll('href="#home-cards"', 'href="#home-capabilities"');
+}
+
 export function RawSourcePage({ source, locale = "ko", page }: { source: string; locale?: Locale; page: SitePageId }) {
   let html = adaptContactCta(adaptAboutProfile(adaptConsultingNavigation(adaptSearchableIdentity(extractMain(source)))));
+  if (page === "home") html = removeHomeSummaryCards(html);
   if (locale === "en") html = localizeEnglish(html);
   html = localizeInternalLinks(html, locale);
   html = replaceTopbar(html, locale, page);

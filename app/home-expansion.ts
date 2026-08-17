@@ -193,7 +193,7 @@ export function homeExpansionMarkup(locale: Locale) {
   return `
     <section class="forest2-home-expansion" aria-labelledby="home-capabilities-title">
       <div class="forest2-home-expansion-shell">
-        <section class="forest2-home-expansion-section forest2-home-capabilities">
+        <section class="forest2-home-expansion-section forest2-home-capabilities" id="home-capabilities">
           <header class="forest2-home-expansion-head">
             <div><p>${text.capabilityEyebrow}</p><h2 id="home-capabilities-title">${text.capabilityTitle}</h2></div>
             <span>${text.capabilityBody}</span>
