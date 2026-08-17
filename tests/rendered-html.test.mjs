@@ -310,6 +310,7 @@ test("keeps the home hero focused without the legacy summary cards", async () =>
 
   for (const home of [koreanHome, englishHome]) {
     assert.doesNotMatch(home, /class="[^"]*\bforest2-(?:home-card|tablet-feature-card|mobile-feature-card|connect-card)\b/);
+    assert.doesNotMatch(home, /class="forest2-(?:home-cards|tablet-home-stack|mobile-home-stack)"/);
     assert.match(home, /id="home-capabilities"/);
     assert.match(home, /href="#home-capabilities"/);
     assert.match(home, /class="forest2-home-expansion"/);

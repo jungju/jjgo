@@ -3748,6 +3748,12 @@ select {
 }
 
 /* Home page depth: capabilities, selected work, and Roblox making. */
+@media (min-width: 1121px) {
+  .forest2-site--home .forest2-home-frame {
+    min-height: clamp(460px, 56vh, 580px);
+  }
+}
+
 .forest2-site--home .forest2-home-expansion {
   position: relative;
   z-index: 3;

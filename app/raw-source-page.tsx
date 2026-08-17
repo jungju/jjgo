@@ -160,6 +160,7 @@ function removeHomeSummaryCards(source: string) {
     .replace(/<a class="forest2-tablet-feature-card\b[^"]*"[\s\S]*?<\/a>/g, "")
     .replace(/<a class="forest2-mobile-feature-card\b[^"]*"[\s\S]*?<\/a>/g, "")
     .replace(/<section class="forest2-connect-card"[\s\S]*?<\/section>/g, "")
+    .replace(/<div class="forest2-(?:home-cards|tablet-home-stack|mobile-home-stack)"[^>]*><\/div>/g, "")
     .replaceAll('href="#home-cards"', 'href="#home-capabilities"');
 }
 
