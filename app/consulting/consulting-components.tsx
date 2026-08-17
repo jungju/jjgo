@@ -83,7 +83,7 @@ export const consultingServices: ConsultingService[] = [
     proofTitle: "좋은 AI는 모델 하나가 아니라, 검증된 구성에서 나옵니다.",
     proofBody: "같은 구성도 사용자, 데이터, 비용, 보안 환경에 따라 결과가 달라집니다. 그래서 품질·비용·속도를 함께 평가하고, 모델·에이전트·도구를 목적에 맞게 오케스트레이션합니다.",
     metrics: [
-      { value: "최대 80%", label: "모델 반영 리드타임 단축", detail: "의료 AI 모델 표준화로 신규 모델의 서비스 반영 시간을 단축" },
+      { value: "최대 80%", label: "모델 반영 리드타임 단축", detail: "AI 모델 표준화로 신규 모델의 서비스 반영 시간을 단축" },
       { value: "30%", label: "릴리즈 위험·영향 감소", detail: "모델별 독립 배포·업데이트 구조로 서비스 영향을 축소" },
       { value: "80%", label: "온보딩·실험 준비 단축", detail: "표준화된 AI 개발 환경으로 준비 시간을 단축" },
     ],
@@ -123,7 +123,7 @@ export const consultingServices: ConsultingService[] = [
     image: "/a/generated/consulting/platform-beaver-dam-v4.webp",
     keywords: ["개발자 플랫폼", "CI/CD", "운영 자동화"],
     proofTitle: "플랫폼을 기술 프로젝트가 아닌 내부 제품으로 만듭니다.",
-    proofBody: "DBaaS, KaaS, 클라우드 포털, 의료 AI 플랫폼을 설계하고 운영한 경험을 바탕으로 개발자 경험과 운영 안정성을 함께 봅니다. 인프라를 더 만드는 것이 아니라 제품 팀의 인지 부하와 전달 시간을 줄이는 플랫폼을 설계합니다.",
+    proofBody: "DBaaS, KaaS, 클라우드 포털, AI 플랫폼을 설계하고 운영한 경험을 바탕으로 개발자 경험과 운영 안정성을 함께 봅니다. 인프라를 더 만드는 것이 아니라 제품 팀의 인지 부하와 전달 시간을 줄이는 플랫폼을 설계합니다.",
     metrics: [
       { value: "약 200개", label: "Kubernetes 클러스터", detail: "NCSOFT KaaS의 설계·개발·운영 경험" },
       { value: "1,000+", label: "클러스터 노드", detail: "AWS·GCP·OpenStack·베어메탈 환경 지원" },

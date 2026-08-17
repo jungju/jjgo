@@ -57,7 +57,7 @@ export const consultingServicesEn: ConsultingService[] = [
     proofTitle: "The best AI outcome comes from a proven system—not one model.",
     proofBody: "The same configuration performs differently across users, data, cost, and security contexts. Quality, cost, and speed must be evaluated together before models, agents, and tools are orchestrated for the job.",
     metrics: [
-      { value: "Up to 80%", label: "Model lead-time reduction", detail: "Reduced the time to bring new medical AI models into service through standardization" },
+      { value: "Up to 80%", label: "Model lead-time reduction", detail: "Reduced the time to bring new AI models into service through standardization" },
       { value: "30%", label: "Lower release risk & impact", detail: "Reduced service impact through independent model deployment and updates" },
       { value: "80%", label: "Onboarding & experiment prep", detail: "Reduced preparation time through a standardized AI development environment" },
     ],
@@ -97,7 +97,7 @@ export const consultingServicesEn: ConsultingService[] = [
     image: "/a/generated/consulting/platform-beaver-dam-v4.webp",
     keywords: ["Developer platform", "CI/CD", "Operations automation"],
     proofTitle: "Build the platform as an internal product—not another technology project.",
-    proofBody: "Experience designing and operating DBaaS, KaaS, cloud portals, and medical AI platforms brings developer experience and operational reliability into one view. The goal is not more infrastructure; it is lower cognitive load and faster delivery for product teams.",
+    proofBody: "Experience designing and operating DBaaS, KaaS, cloud portals, and AI platforms brings developer experience and operational reliability into one view. The goal is not more infrastructure; it is lower cognitive load and faster delivery for product teams.",
     metrics: [
       { value: "About 200", label: "Kubernetes clusters", detail: "Designed, built, and operated through NCSOFT KaaS" },
       { value: "1,000+", label: "Cluster nodes", detail: "Across AWS, GCP, OpenStack, and bare-metal environments" },

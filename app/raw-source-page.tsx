@@ -22,7 +22,7 @@ function adaptSearchableIdentity(source: string) {
 }
 
 function adaptAboutProfile(source: string) {
-  const evidence = `<dl class="forest2-about-evidence-grid"><div class="forest2-about-evidence"><dt>16년</dt><dd>제품·플랫폼 개발 경험</dd></div><div class="forest2-about-evidence"><dt>약 200개</dt><dd>Kubernetes 클러스터 구축·운영</dd></div><div class="forest2-about-evidence"><dt>1,000개+</dt><dd>Kubernetes 노드 운영 규모</dd></div><div class="forest2-about-evidence"><dt>최대 80%</dt><dd>의료 AI 모델 서비스 반영 리드타임 단축</dd></div></dl><p class="forest2-about-evidence-note">2026년 8월 기준 · 대표 프로젝트와 경력 기록에 기재된 수치입니다.</p>`;
+  const evidence = `<dl class="forest2-about-evidence-grid"><div class="forest2-about-evidence"><dt>16년</dt><dd>제품·플랫폼 개발 경험</dd></div><div class="forest2-about-evidence"><dt>약 200개</dt><dd>Kubernetes 클러스터 구축·운영</dd></div><div class="forest2-about-evidence"><dt>1,000개+</dt><dd>Kubernetes 노드 운영 규모</dd></div><div class="forest2-about-evidence"><dt>최대 80%</dt><dd>AI 모델 서비스 반영 리드타임 단축</dd></div></dl><p class="forest2-about-evidence-note">2026년 8월 기준 · 대표 프로젝트와 경력 기록에 기재된 수치입니다.</p>`;
   const verification = `<section class="forest2-about-section forest2-about-verification" data-visual-id="about-verification"><p class="forest2-about-section-label">프로필과 공개 기록</p><h2>외부에서 확인할 수 있는 기록입니다.</h2><p>경력 프로필, 공개 코드와 과거 인터뷰·연구 기록을 연결했습니다.</p><div class="forest2-about-verification-links"><a href="https://www.linkedin.com/in/jungjugo/" rel="me noreferrer" target="_blank"><strong>LinkedIn</strong><span>경력 프로필</span></a><a href="https://github.com/jungju" rel="me noreferrer" target="_blank"><strong>GitHub</strong><span>공개 코드</span></a><a href="https://korea.googleblog.com/2007/11/blog-post_23.html" rel="noreferrer" target="_blank"><strong>Google Korea</strong><span>개발자 인터뷰 · 2007</span></a><a href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&amp;control_no=57460ea93e1f8e03ffe0bdc3ef48d419" rel="noreferrer" target="_blank"><strong>RISS</strong><span>석사 학위 논문</span></a></div></section>`;
 
   return source
@@ -36,7 +36,7 @@ function adaptAboutProfile(source: string) {
     )
     .replaceAll("16년의 제품 개발 경험", "16년의 제품·플랫폼 개발 경험")
     .replaceAll(
-      "Daum, Kakao, NCSOFT를 거쳐 AI·의료·클라우드 제품과 플랫폼을 만들고 운영했습니다.",
+      "Daum, Kakao, NCSOFT를 거쳐 AI·클라우드 제품과 플랫폼을 만들고 운영했습니다.",
       "Daum·Kakao와 NCSOFT에서 대규모 클라우드 플랫폼을, 이후 AI 제품과 개발 조직을 이끌었습니다.",
     )
     .replace(/<dl class="forest2-about-evidence-grid">[\s\S]*?<\/dl>/, evidence)
@@ -88,7 +88,7 @@ const englishReplacements: [string, string][] = [
   ["경계를 넘는 제품 개발", "Product engineering across boundaries"],
   ["백엔드, 프론트엔드, 클라우드, DevOps/SRE, MLOps와 데이터 영역을 연결합니다.", "I connect backend, frontend, cloud, DevOps/SRE, MLOps, and data into one delivery system."],
   ["운영되는 플랫폼", "Platforms built to operate"],
-  ["DBaaS, KaaS, 클라우드 포털과 의료 AI 플랫폼을 배포·운영·확장까지 고려해 설계했습니다.", "I designed DBaaS, KaaS, cloud portals, and medical AI platforms for deployment, operations, and scale."],
+  ["DBaaS, KaaS, 클라우드 포털과 AI 플랫폼을 배포·운영·확장까지 고려해 설계했습니다.", "I designed DBaaS, KaaS, cloud portals, and AI platforms for deployment, operations, and scale."],
   ["사람과 조직의 실행 방식", "How people and organizations deliver"],
   ["XP·애자일, 코드 리뷰, 테스트, CI/CD와 AI 협업 체계로 속도와 품질을 함께 개선합니다.", "I improve speed and quality through XP, Agile, code review, testing, CI/CD, and AI-assisted collaboration."],
   ["경험을 보여주는 숫자", "EXPERIENCE IN NUMBERS"],
@@ -99,7 +99,7 @@ const englishReplacements: [string, string][] = [
   ["1,000개+", "1,000+"],
   ["Kubernetes 노드 운영 규모", "Kubernetes nodes operated"],
   ["최대 80%", "Up to 80%"],
-  ["의료 AI 모델 서비스 반영 리드타임 단축", "shorter medical-AI model service lead time"],
+  ["AI 모델 서비스 반영 리드타임 단축", "shorter AI model service lead time"],
   ["2026년 8월 기준 · 대표 프로젝트와 경력 기록에 기재된 수치입니다.", "As of August 2026 · Figures are drawn from selected project and career records."],
   ["경험의 확장", "HOW THE EXPERIENCE GREW"],
   ["웹 서비스", "Web Services"],
