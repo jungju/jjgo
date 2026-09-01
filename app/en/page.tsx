@@ -8,8 +8,8 @@ const homeSource = readFileSync(join(process.cwd(), "app/source/home.html"), "ut
 export const metadata = pageMetadata({
   locale: "en",
   path: "/",
-  title: "Jungju Lee | AI Product & Platform Engineering | JJGo",
-  description: "Jungju Lee is a product engineering leader with 16 years of experience across AI productization, AI-native organizations, cloud platforms, and DevOps.",
+  title: "Jungju Lee | AI Products, AX/RAG & Platforms | JJGo",
+  description: "AI products, AX and RAG grounded in real-work evaluation and orchestration, AI-native organizations, and cloud platform engineering.",
   image: "/og-en.png",
 });
 

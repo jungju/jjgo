@@ -109,6 +109,9 @@ export function personJsonLd(locale: SiteLocale) {
     alumniOf: { "@type": "CollegeOrUniversity", name: korean ? "대전대학교" : "Daejeon University" },
     knowsAbout: [
       "AI productization",
+      "Retrieval-augmented generation (RAG)",
+      "AI evaluation",
+      "AI orchestration",
       "AI-native organization",
       "Platform engineering",
       "Cloud computing",
@@ -116,6 +119,18 @@ export function personJsonLd(locale: SiteLocale) {
       "DevOps",
       "SRE",
       "MLOps",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: korean ? "정보처리기사" : "Engineer Information Processing",
+        credentialCategory: korean ? "국가기술자격" : "National Technical Qualification",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: korean ? "사무자동화산업기사" : "Industrial Engineer Office Automation",
+        credentialCategory: korean ? "국가기술자격" : "National Technical Qualification",
+      },
     ],
     sameAs: [
       "https://www.linkedin.com/in/jungjugo/",
@@ -145,7 +160,7 @@ export function profilePageJsonLd(locale: SiteLocale) {
     url: absoluteUrl(localizedPagePath(locale, "/about")),
     name: locale === "ko" ? "이정주 소개" : "About Jungju Lee",
     inLanguage: locale === "ko" ? "ko-KR" : "en",
-    dateModified: "2026-08-16",
+    dateModified: "2026-09-01",
     mainEntity: { "@id": PERSON_ID },
   };
 }

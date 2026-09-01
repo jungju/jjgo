@@ -1,13 +1,13 @@
 import { ArrowRight } from "lucide-react";
-import { ConsultingSubnav, ForestBackground, OriginalMethodHeadline, Topbar, consultingServices } from "./consulting-components";
+import { ConsultingSubnav, DevelopmentStages, ForestBackground, OriginalMethodHeadline, Topbar, consultingServices } from "./consulting-components";
 import { consultingPath } from "../site-spec";
 import { JsonLd, pageMetadata, serviceJsonLd } from "../seo";
 
 export const metadata = pageMetadata({
   locale: "ko",
   path: "/consulting",
-  title: "AI·AX·플랫폼 엔지니어링 컨설팅 | 이정주 | JJGo",
-  description: "16년 경력의 개발 리더 이정주가 AI Native 조직 전환, AX 서비스 제품화, Kubernetes 기반 플랫폼 엔지니어링을 실행 가능한 구조로 연결합니다.",
+  title: "AI Native·AX/RAG·플랫폼 엔지니어링 컨설팅 | JJGo",
+  description: "AI Native 조직 전환, 현장 평가와 오케스트레이션 중심의 AX·RAG, Kubernetes 기반 플랫폼 엔지니어링을 다룹니다.",
   image: "/og.png",
 });
 
@@ -30,7 +30,7 @@ export default function ConsultingPage() {
                 <header className="forest2-method-hero" data-visual-id="consulting-hero">
                   <p className="forest2-method-eyebrow">CONSULTING</p>
                   <OriginalMethodHeadline locale="ko" />
-                  <p className="forest2-method-lead">조직, 비즈니스, 기술 기반을 함께 살펴보고 AI 시대에 필요한 변화를 실제로 실행할 수 있는 구조로 연결합니다.</p>
+                  <p className="forest2-method-lead">현장 업무에서 출발해 평가 기준을 세우고, 조직·비즈니스·기술을 실행 가능한 운영 흐름으로 연결합니다.</p>
                 </header>
 
                 <section className="forest2-consulting-offers" data-visual-id="consulting-services">
@@ -57,10 +57,12 @@ export default function ConsultingPage() {
                   </div>
                 </section>
 
+                <DevelopmentStages locale="ko" />
+
                 <section className="forest2-method-cta forest2-consulting-cta">
                   <p>START A CONVERSATION</p>
-                  <h2>어디서부터 시작해야 할지<br />함께 정의할 수 있습니다.</h2>
-                  <span>현재 상황과 고민을 기준으로 세 가지 컨설팅 중 가장 적합한 시작점과 범위를 제안합니다.</span>
+                  <h2>현재 단계에 맞는<br />시작점을 함께 정합니다.</h2>
+                  <span>목표와 제약을 기준으로 필요한 컨설팅 범위와 우선순위를 제안합니다.</span>
                   <a href="mailto:leejungju.go@gmail.com">상담 문의하기<ArrowRight size={20} aria-hidden="true" /></a>
                 </section>
               </div>

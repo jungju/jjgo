@@ -73,15 +73,15 @@ export const consultingServices: ConsultingService[] = [
     slug: "ax",
     number: "02",
     english: "AI TRANSFORMATION",
-    title: "AX",
-    shortTitle: "AX",
-    summary: "평가를 통해 환경별 최적의 AI 구성을 찾고, 모델·에이전트·도구를 하나의 서비스로 오케스트레이션합니다.",
-    detailTitle: "평가와 오케스트레이션 중심의 AX",
-    detailSummary: "다양한 환경에서 최적의 AI 구성을 찾고, 실제 서비스 흐름으로 연결합니다.",
+    title: "AX · RAG",
+    shortTitle: "AX · RAG",
+    summary: "현장 업무를 기준으로 AI·RAG 구성을 평가하고, 모델·에이전트·검색·도구를 운영 흐름으로 오케스트레이션합니다.",
+    detailTitle: "현장 평가와 오케스트레이션 중심의 AX·RAG",
+    detailSummary: "실제 업무 사례로 AI·RAG 구성을 비교하고, 현장에 맞는 운영 흐름으로 연결합니다.",
     image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
-    keywords: ["평가 체계", "구성 최적화", "오케스트레이션"],
-    proofTitle: "좋은 AI는 모델 하나가 아니라, 검증된 구성에서 나옵니다.",
-    proofBody: "같은 구성도 사용자, 데이터, 비용, 보안 환경에 따라 결과가 달라집니다. 그래서 품질·비용·속도를 함께 평가하고, 모델·에이전트·도구를 목적에 맞게 오케스트레이션합니다.",
+    keywords: ["현장 업무", "AI·RAG 평가", "오케스트레이션"],
+    proofTitle: "현장에 맞는 구성은 실제 업무 평가에서 찾습니다.",
+    proofBody: "같은 모델과 RAG 구성도 사용자, 문서, 비용, 보안 조건에 따라 결과가 달라집니다. 실제 업무 사례로 품질·비용·응답 속도를 비교하고, 모델·검색·에이전트·사람의 검토를 필요한 수준으로 연결합니다.",
     metrics: [
       { value: "최대 80%", label: "모델 반영 리드타임 단축", detail: "AI 모델 표준화로 신규 모델의 서비스 반영 시간을 단축" },
       { value: "30%", label: "릴리즈 위험·영향 감소", detail: "모델별 독립 배포·업데이트 구조로 서비스 영향을 축소" },
@@ -89,26 +89,26 @@ export const consultingServices: ConsultingService[] = [
     ],
     metricsNote: "출처: 이정주 포트폴리오·이력서에 기재된 본인 수행 프로젝트 기록(자기보고).",
     expertise: [
-      { title: "Evaluation Design", body: "실제 업무를 반영한 평가셋과 품질·비용·속도 지표를 정의해 선택을 감이 아닌 근거로 바꿉니다." },
-      { title: "Configuration Search", body: "모델, 프롬프트, 검색, 도구의 조합을 다양한 환경에서 비교해 목적에 맞는 최적 구성을 찾습니다." },
-      { title: "Orchestration", body: "작업 분해, 라우팅, 실패 대응, 사람의 검토를 연결해 여러 AI 구성 요소가 하나의 흐름으로 작동하게 합니다." },
-      { title: "Continuous Evaluation", body: "운영 데이터로 품질 저하와 환경 변화를 감지하고 구성과 평가 기준을 함께 갱신합니다." },
+      { title: "현장 업무 정의", body: "사용자, 업무 흐름, 문서와 예외 상황을 살펴 실제 평가 사례를 정리합니다." },
+      { title: "AI·RAG 평가", body: "모델·프롬프트와 문서 구성·검색·재랭킹 조합을 품질·비용·속도로 비교합니다." },
+      { title: "오케스트레이션", body: "작업 분해, 라우팅, 도구 호출, 실패 대응과 사람의 검토를 하나의 흐름으로 연결합니다." },
+      { title: "운영 평가", body: "로그와 피드백으로 품질 변화를 확인하고 구성과 평가 기준을 갱신합니다." },
     ],
     situations: [
-      "모델과 도구 선택지는 많지만 실제 업무에 가장 잘 맞는 구성을 판단하기 어려운 조직",
-      "PoC는 작동했지만 데이터·사용자·비용 환경이 달라지면 품질이 흔들리는 조직",
-      "여러 모델·에이전트·도구를 안정적인 하나의 서비스 흐름으로 연결하려는 조직",
+      "AI나 RAG를 도입하려 하지만 실제 업무에서 무엇을 먼저 검증할지 정하기 어려운 조직",
+      "PoC는 작동하지만 현장 문서와 질문이 달라지면 답변 품질이 흔들리는 조직",
+      "모델·RAG·에이전트·도구와 사람의 검토를 하나의 운영 흐름으로 연결하려는 조직",
     ],
     outcomes: [
-      { title: "평가 기준과 벤치마크", body: "실제 업무 시나리오와 평가 데이터, 품질·비용·속도 지표를 묶어 후보 구성을 비교할 기준을 만듭니다." },
-      { title: "최적 구성과 오케스트레이션", body: "환경별 최적의 모델·프롬프트·도구 조합과 작업 분해, 라우팅, 실패 대응 흐름을 설계합니다." },
-      { title: "운영 평가 루프", body: "배포 후에도 품질과 비용을 추적하고, 환경 변화에 맞춰 구성을 개선하는 운영 체계를 만듭니다." },
+      { title: "현장 시나리오와 평가셋", body: "실제 질문, 문서, 예외 사례와 품질·비용·속도 지표를 묶어 비교 기준을 만듭니다." },
+      { title: "AI·RAG 구성", body: "모델, 프롬프트, 검색·재랭킹과 도구 조합을 평가해 목적에 맞는 구성을 정합니다." },
+      { title: "오케스트레이션과 운영 평가", body: "라우팅, 예외 처리, 사람의 검토와 모니터링을 연결하고 운영 중 품질 변화를 확인합니다." },
     ],
     process: [
-      { period: "1주", title: "기준 정의", body: "목표 업무와 환경 제약을 정리하고 평가 지표와 기준선을 세웁니다." },
-      { period: "2–4주", title: "구성 평가", body: "모델·프롬프트·검색·도구 조합을 비교해 환경별 최적점을 찾습니다." },
-      { period: "2–4주", title: "오케스트레이션", body: "라우팅, 예외 처리, 사람의 검토를 포함한 서비스 흐름을 구현합니다." },
-      { period: "지속", title: "운영 평가", body: "실제 사용 데이터를 바탕으로 품질과 비용, 구성을 계속 개선합니다." },
+      { period: "1주", title: "현장 분석", body: "사용자와 업무 흐름, 문서, 제약 조건을 살펴 적용 범위와 평가 사례를 정합니다." },
+      { period: "2–4주", title: "구성 평가", body: "모델·프롬프트·RAG·도구 조합을 실제 사례로 비교합니다." },
+      { period: "2–4주", title: "오케스트레이션", body: "라우팅, 예외 처리와 사람의 검토를 운영 가능한 서비스 흐름으로 연결합니다." },
+      { period: "지속", title: "운영 평가", body: "로그와 사용자 피드백을 바탕으로 품질, 비용과 구성을 조정합니다." },
     ],
   },
   {
@@ -203,7 +203,7 @@ export function OriginalMethodHeadline({ locale = "ko" }: { locale?: Locale }) {
   if (locale === "en") {
     return (
       <h1>
-        AI-Native Organization &amp; AX<br />
+        AI-Native Organization &amp; AX/RAG<br />
         Platform Engineering Consulting
       </h1>
     );
@@ -211,9 +211,108 @@ export function OriginalMethodHeadline({ locale = "ko" }: { locale?: Locale }) {
 
   return (
     <h1>
-      AI Native 조직·AX·<br />
+      AI Native 조직·AX/RAG·<br />
       플랫폼 엔지니어링 컨설팅
     </h1>
+  );
+}
+
+const developmentStageCopy = {
+  ko: {
+    eyebrow: "DEVELOPMENT METHOD",
+    title: "목표와 단계에 맞는 구성을 선택합니다.",
+    body: "0→1, 1→10, 10→100에서 검증할 것과 운영 책임은 달라집니다. 팀, 기술, 운영의 복잡도를 현재 목표에 맞춥니다.",
+    labels: { goal: "목표", team: "팀", technology: "기술", operations: "운영" },
+    note: "숫자는 회사 규모가 아니라 제품의 검증·확장 단계를 뜻합니다. 실제 구성은 도메인, 위험 수준, 팀 역량에 따라 달라집니다.",
+    stages: [
+      {
+        phase: "0 → 1",
+        title: "핵심 가설 검증",
+        goal: "가장 작은 제품으로 문제와 핵심 가치가 맞는지 확인합니다.",
+        team: "제품·디자인·개발이 가까이 협업하는 소수의 다기능 팀",
+        technology: "검증된 기술, 관리형 서비스, 단순한 애플리케이션 구조",
+        operations: "짧은 배포 주기, 핵심 로그, 직접적인 사용자 피드백",
+      },
+      {
+        phase: "1 → 10",
+        title: "반복 가능한 제품화",
+        goal: "검증된 가치를 안정적인 사용과 반복 가능한 개발 흐름으로 만듭니다.",
+        team: "제품 책임을 분명히 두고 필요한 전문 역할을 단계적으로 보강",
+        technology: "도메인 경계, 자동 테스트·CI/CD, 기본 관찰 가능성",
+        operations: "기본 SLO와 장애 대응, 사용·품질 지표, 점진적 표준화",
+      },
+      {
+        phase: "10 → 100",
+        title: "안정적인 확장",
+        goal: "사용자와 팀이 늘어도 품질, 속도, 비용을 관리합니다.",
+        team: "자율적인 제품 팀을 플랫폼·SRE·보안 역량이 공통 지원",
+        technology: "확인된 부하·소유 경계만 분리하고 셀프서비스 플랫폼 적용",
+        operations: "용량·비용·SLO 관리, 정책 자동화, 점진적 배포와 복구",
+      },
+    ],
+  },
+  en: {
+    eyebrow: "DEVELOPMENT METHOD",
+    title: "Choose the setup that fits the goal and stage.",
+    body: "0→1, 1→10, and 10→100 involve different unknowns and operating responsibilities. Match the team, technology, and operational complexity to the current goal.",
+    labels: { goal: "Goal", team: "Team", technology: "Technology", operations: "Operations" },
+    note: "The ranges describe stages of product validation and scale, not literal company size. The right setup depends on the domain, risk, and team capability.",
+    stages: [
+      {
+        phase: "0 → 1",
+        title: "Validate the core hypothesis",
+        goal: "Use the smallest viable product to test the problem and core value.",
+        team: "A small cross-functional group with product, design, and engineering working closely",
+        technology: "Proven tools, managed services, and a simple application architecture",
+        operations: "Short release cycles, essential telemetry, and direct user feedback",
+      },
+      {
+        phase: "1 → 10",
+        title: "Build repeatable delivery",
+        goal: "Turn validated value into reliable use and a repeatable delivery flow.",
+        team: "Clear product ownership, adding specialist roles as needs emerge",
+        technology: "Clear domain boundaries, automated tests and CI/CD, baseline observability",
+        operations: "Basic SLOs and incident response, usage and quality metrics, gradual standardization",
+      },
+      {
+        phase: "10 → 100",
+        title: "Operate at scale",
+        goal: "Manage quality, speed, and cost as users and teams grow.",
+        team: "Autonomous product teams supported by shared platform, SRE, and security capabilities",
+        technology: "Split only where load or ownership boundaries are proven, with self-service platforms",
+        operations: "Capacity, cost, and SLO management; policy automation; progressive delivery and recovery",
+      },
+    ],
+  },
+} as const;
+
+export function DevelopmentStages({ locale = "ko" }: { locale?: Locale }) {
+  const content = developmentStageCopy[locale];
+  const headingId = `development-stages-${locale}`;
+
+  return (
+    <section className="forest2-consulting-stages" aria-labelledby={headingId}>
+      <header>
+        <p>{content.eyebrow}</p>
+        <h2 id={headingId}>{content.title}</h2>
+        <span>{content.body}</span>
+      </header>
+      <div className="forest2-consulting-stage-grid">
+        {content.stages.map((stage) => (
+          <article key={stage.phase}>
+            <span>{stage.phase}</span>
+            <h3>{stage.title}</h3>
+            <dl>
+              <div><dt>{content.labels.goal}</dt><dd>{stage.goal}</dd></div>
+              <div><dt>{content.labels.team}</dt><dd>{stage.team}</dd></div>
+              <div><dt>{content.labels.technology}</dt><dd>{stage.technology}</dd></div>
+              <div><dt>{content.labels.operations}</dt><dd>{stage.operations}</dd></div>
+            </dl>
+          </article>
+        ))}
+      </div>
+      <p className="forest2-consulting-stage-note">{content.note}</p>
+    </section>
   );
 }
 

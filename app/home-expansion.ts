@@ -7,18 +7,18 @@ const copy = {
   ko: {
     capabilityEyebrow: "WHAT I DO",
     capabilityTitle: "AI가 작동하는 제품과 조직,\n그 기반을 함께 만듭니다.",
-    capabilityBody: "아이디어를 데모에 머물게 하지 않습니다. AI를 제품과 업무에 연결하고, 팀이 반복해서 만들 수 있는 방식과 안정적으로 운영할 플랫폼까지 하나의 흐름으로 설계합니다.",
+    capabilityBody: "AI를 제품과 실제 업무에 연결하고, 팀이 반복해 만들고 운영할 수 있는 방식과 플랫폼을 설계합니다.",
     capabilities: [
       {
         number: "01",
         eyebrow: "AI TRANSFORMATION",
-        title: "AX",
-        body: "실제 업무를 평가 기준으로 바꾸고, 모델·에이전트·도구의 최적 조합을 찾아 서비스 흐름으로 연결합니다.",
-        strengths: ["평가 체계", "구성 최적화", "오케스트레이션"],
+        title: "AX · RAG",
+        body: "현장 업무에서 출발해 AI·RAG 구성을 실제 사례로 평가하고, 모델·에이전트·검색·도구를 운영 흐름으로 오케스트레이션합니다.",
+        strengths: ["현장 업무", "AI·RAG 평가", "오케스트레이션"],
         image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
         alt: "사람과 AI가 하나의 흐름으로 협업하는 AX 이미지",
         href: "/consulting/ax",
-        action: "AX 강점 더 보기",
+        action: "AX·RAG 자세히 보기",
       },
       {
         number: "02",
@@ -82,18 +82,18 @@ const copy = {
   en: {
     capabilityEyebrow: "WHAT I DO",
     capabilityTitle: "I build AI-powered products,\norganizations, and foundations.",
-    capabilityBody: "Ideas should move beyond demos. I connect AI to products and real work, shape repeatable ways for teams to deliver, and build the platforms that keep everything reliable in production.",
+    capabilityBody: "I connect AI to products and real work, and design the workflows and platforms teams need to build and operate them.",
     capabilities: [
       {
         number: "01",
         eyebrow: "AI TRANSFORMATION",
-        title: "AX",
-        body: "Turn real work into evaluation criteria, find the right combination of models, agents, and tools, and orchestrate them into a service.",
-        strengths: ["Evaluation systems", "Configuration search", "Orchestration"],
+        title: "AX & RAG",
+        body: "Start with how work is actually done, evaluate AI and RAG configurations against real cases, and orchestrate models, agents, retrieval, and tools into an operational flow.",
+        strengths: ["Real workflows", "AI & RAG evaluation", "Orchestration"],
         image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
         alt: "A person and AI working together in one orchestrated flow",
         href: "/consulting/ax",
-        action: "Explore AX strengths",
+        action: "Explore AX & RAG",
       },
       {
         number: "02",

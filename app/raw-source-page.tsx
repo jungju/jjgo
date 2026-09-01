@@ -24,6 +24,7 @@ function adaptSearchableIdentity(source: string) {
 
 function adaptAboutProfile(source: string) {
   const evidence = `<dl class="forest2-about-evidence-grid"><div class="forest2-about-evidence"><dt>16년</dt><dd>제품·플랫폼 개발 경험</dd></div><div class="forest2-about-evidence"><dt>약 200개</dt><dd>Kubernetes 클러스터 구축·운영</dd></div><div class="forest2-about-evidence"><dt>1,000개+</dt><dd>Kubernetes 노드 운영 규모</dd></div><div class="forest2-about-evidence"><dt>최대 80%</dt><dd>AI 모델 서비스 반영 리드타임 단축</dd></div></dl><p class="forest2-about-evidence-note">2026년 8월 기준 · 대표 프로젝트와 경력 기록에 기재된 수치입니다.</p>`;
+  const credentials = `<section class="forest2-about-section forest2-about-credentials" data-visual-id="about-credentials"><p class="forest2-about-section-label">자격과 교육</p><h2>소프트웨어 관련 자격·교육</h2><p>국가기술자격과 소프트웨어 생명주기·위험관리 교육 이수 기록입니다.</p><div class="forest2-about-credential-grid"><article><span>국가기술자격 · 2006</span><h3>정보처리기사 · 사무자동화산업기사</h3></article><article><span>전문 교육 · 2025</span><h3>의료기기 S/W 생명주기 · ISO 14971 위험관리</h3><p>SGS · DNV</p></article></div><a class="forest2-about-credential-source" href="https://www.linkedin.com/in/jungjugo/" rel="me noreferrer" target="_blank">LinkedIn 공개 프로필에서 자격·수료 기록 확인</a></section>`;
   const verification = `<section class="forest2-about-section forest2-about-verification" data-visual-id="about-verification"><p class="forest2-about-section-label">프로필과 공개 기록</p><h2>외부에서 확인할 수 있는 기록입니다.</h2><p>경력 프로필, 공개 코드와 과거 인터뷰·연구 기록을 연결했습니다.</p><div class="forest2-about-verification-links"><a href="https://www.linkedin.com/in/jungjugo/" rel="me noreferrer" target="_blank"><strong>LinkedIn</strong><span>경력 프로필</span></a><a href="https://github.com/jungju" rel="me noreferrer" target="_blank"><strong>GitHub</strong><span>공개 코드</span></a><a href="https://korea.googleblog.com/2007/11/blog-post_23.html" rel="noreferrer" target="_blank"><strong>Google Korea</strong><span>개발자 인터뷰 · 2007</span></a><a href="https://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&amp;control_no=57460ea93e1f8e03ffe0bdc3ef48d419" rel="noreferrer" target="_blank"><strong>RISS</strong><span>석사 학위 논문</span></a></div></section>`;
 
   return source
@@ -42,7 +43,7 @@ function adaptAboutProfile(source: string) {
     )
     .replace(/<dl class="forest2-about-evidence-grid">[\s\S]*?<\/dl>/, evidence)
     .replaceAll("Daum · Kakao · NCSOFT · Alchera · NeuroXT", "NeuroXT · Alchera · NCSOFT · Kakao · Daum")
-    .replace('<section class="forest2-about-next"', `${verification}<section class="forest2-about-next"`)
+    .replace('<section class="forest2-about-next"', `${credentials}${verification}<section class="forest2-about-next"`)
     .replaceAll('rel="noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"', 'rel="me noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"')
     .replaceAll('rel="noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"', 'rel="me noreferrer" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"');
 }
@@ -114,6 +115,14 @@ const englishReplacements: [string, string][] = [
   ["공개 코드", "Public code"],
   ["개발자 인터뷰 · 2007", "Developer interview · 2007"],
   ["석사 학위 논문", "Master’s thesis"],
+  ["자격과 교육", "CREDENTIALS & TRAINING"],
+  ["소프트웨어 관련 자격·교육", "Software credentials and training"],
+  ["국가기술자격과 소프트웨어 생명주기·위험관리 교육 이수 기록입니다.", "National technical qualifications and completed training in software lifecycle and risk management."],
+  ["국가기술자격 · 2006", "National technical qualifications · 2006"],
+  ["정보처리기사 · 사무자동화산업기사", "Engineer Information Processing · Industrial Engineer Office Automation"],
+  ["전문 교육 · 2025", "Professional training · 2025"],
+  ["의료기기 S/W 생명주기 · ISO 14971 위험관리", "Medical Device S/W Life Cycle · ISO 14971 Risk Management"],
+  ["LinkedIn 공개 프로필에서 자격·수료 기록 확인", "Verify credentials and training on LinkedIn"],
   ["지나온 경험은, 지금 만드는 방식으로 이어집니다.", "Past experience shapes how I build today."],
   ["결과물과 그 결과를 만드는 방법을 함께 살펴보세요.", "Explore both the outcomes and the systems behind them."],
   ["문의와 커피챗, 모두 편하게 연락해 주세요.", "Questions or a coffee chat? Feel free to reach out."],

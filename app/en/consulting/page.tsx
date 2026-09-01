@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { ConsultingSubnav, ForestBackground, OriginalMethodHeadline, Topbar } from "../../consulting/consulting-components";
+import { ConsultingSubnav, DevelopmentStages, ForestBackground, OriginalMethodHeadline, Topbar } from "../../consulting/consulting-components";
 import { consultingServicesEn } from "../../consulting/consulting-data-en";
 import { localizedPath } from "../../language-toggle";
 import { consultingPath } from "../../site-spec";
@@ -8,8 +8,8 @@ import { JsonLd, pageMetadata, serviceJsonLd } from "../../seo";
 export const metadata = pageMetadata({
   locale: "en",
   path: "/consulting",
-  title: "AI Transformation & Platform Engineering Consulting | JJGo",
-  description: "Jungju Lee brings 16 years of product engineering experience to AI-native organization design, AI transformation, and Kubernetes platform engineering.",
+  title: "AI-Native, AX/RAG & Platform Engineering Consulting | JJGo",
+  description: "Consulting for AI-native organizations, AX and RAG grounded in real-work evaluation and orchestration, and Kubernetes platform engineering.",
   image: "/og-en.png",
 });
 
@@ -32,7 +32,7 @@ export default function EnglishConsultingPage() {
                 <header className="forest2-method-hero" data-visual-id="consulting-hero">
                   <p className="forest2-method-eyebrow">CONSULTING</p>
                   <OriginalMethodHeadline locale="en" />
-                  <p className="forest2-method-lead">Connect organization, business, and technology into practical systems that can deliver meaningful change in the AI era.</p>
+                  <p className="forest2-method-lead">Start with real work, define how outcomes will be evaluated, and connect organization, business, and technology into an operating flow.</p>
                 </header>
 
                 <section className="forest2-consulting-offers" data-visual-id="consulting-services">
@@ -56,10 +56,12 @@ export default function EnglishConsultingPage() {
                   </div>
                 </section>
 
+                <DevelopmentStages locale="en" />
+
                 <section className="forest2-method-cta forest2-consulting-cta">
                   <p>START A CONVERSATION</p>
-                  <h2>Start where change matters most.</h2>
-                  <span>Share your current situation and I’ll recommend the strongest starting point across the three areas.</span>
+                  <h2>Choose a starting point that fits the current stage.</h2>
+                  <span>Based on your goals and constraints, I’ll propose a practical scope and priorities.</span>
                   <a href="mailto:leejungju.go@gmail.com">Send an email<ArrowRight size={20} aria-hidden="true" /></a>
                 </section>
               </div>

@@ -8,8 +8,8 @@ const path = "/consulting/ax";
 export const metadata = pageMetadata({
   locale: "en",
   path,
-  title: "AI Transformation Consulting | Evaluation & Orchestration | JJGo",
-  description: "Evaluate models, agents, and tool configurations across environments, then orchestrate the best fit into a reliable service flow.",
+  title: "AX & RAG Consulting | Evaluation & Orchestration | JJGo",
+  description: "Evaluate AI and RAG configurations against real workflows and documents, then orchestrate models, retrieval, agents, and tools into an operational service flow.",
   image: service.image,
   imageWidth: 1200,
   imageHeight: 800,
@@ -21,7 +21,7 @@ export default function EnglishAxPage() {
       <JsonLd data={serviceJsonLd({
         locale: "en",
         path,
-        name: "AI Transformation (AX) Consulting",
+        name: "AX & RAG Consulting",
         description: service.summary,
       })} />
       <ConsultingDetail service={service} services={consultingServicesEn} locale="en" />

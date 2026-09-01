@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   publisher: "이정주",
   category: "technology",
   icons: {
-    icon: "/a/logo/jjgo-logo.png",
-    shortcut: "/a/logo/jjgo-logo.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
 };
 

@@ -317,6 +317,60 @@ test("keeps the home hero focused without the legacy summary cards", async () =>
   }
 });
 
+test("presents AX and RAG through real work, evaluation, and orchestration", async () => {
+  const [koreanHome, englishHome, koreanAx, englishAx] = await Promise.all([
+    readFile(new URL(outputRoute("ko", "/"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("en", "/"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("ko", "/consulting/ax"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("en", "/consulting/ax"), outputRoot), "utf8"),
+  ]);
+
+  const koreanHomeText = visibleText(koreanHome);
+  const englishHomeText = visibleText(englishHome);
+  const koreanAxText = visibleText(koreanAx);
+  const englishAxText = visibleText(englishAx);
+
+  assert.match(koreanHomeText, /AX · RAG/);
+  assert.match(koreanHomeText, /현장 업무[\s\S]*AI·RAG 평가[\s\S]*오케스트레이션/);
+  assert.match(englishHomeText, /AX & RAG/);
+  assert.match(englishHomeText, /Real workflows[\s\S]*AI & RAG evaluation[\s\S]*Orchestration/);
+  assert.match(koreanAxText, /현장 평가와 오케스트레이션 중심의 AX·RAG/);
+  assert.match(koreanAxText, /현장 업무 정의[\s\S]*AI·RAG 평가[\s\S]*오케스트레이션[\s\S]*운영 평가/);
+  assert.match(englishAxText, /AX & RAG for Real Work/);
+  assert.match(englishAxText, /Workflow Discovery[\s\S]*AI & RAG Evaluation[\s\S]*Orchestration[\s\S]*Production Evaluation/);
+});
+
+test("matches development setup to the product stage", async () => {
+  const [koreanConsulting, englishConsulting] = await Promise.all([
+    readFile(new URL(outputRoute("ko", "/consulting"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("en", "/consulting"), outputRoot), "utf8"),
+  ]);
+  const koreanText = visibleText(koreanConsulting);
+  const englishText = visibleText(englishConsulting);
+
+  assert.match(koreanText, /목표와 단계에 맞는 구성을 선택합니다/);
+  assert.match(koreanText, /0 → 1[\s\S]*핵심 가설 검증[\s\S]*1 → 10[\s\S]*반복 가능한 제품화[\s\S]*10 → 100[\s\S]*안정적인 확장/);
+  assert.match(koreanText, /팀[\s\S]*기술[\s\S]*운영/);
+  assert.match(englishText, /Choose the setup that fits the goal and stage/);
+  assert.match(englishText, /0 → 1[\s\S]*Validate the core hypothesis[\s\S]*1 → 10[\s\S]*Build repeatable delivery[\s\S]*10 → 100[\s\S]*Operate at scale/);
+});
+
+test("shows software qualifications separately from completed training", async () => {
+  const [koreanAbout, englishAbout] = await Promise.all([
+    readFile(new URL(outputRoute("ko", "/about"), outputRoot), "utf8"),
+    readFile(new URL(outputRoute("en", "/about"), outputRoot), "utf8"),
+  ]);
+  const koreanText = visibleText(koreanAbout);
+  const englishText = visibleText(englishAbout);
+
+  assert.match(koreanText, /소프트웨어 관련 자격·교육/);
+  assert.match(koreanText, /국가기술자격 · 2006[\s\S]*정보처리기사 · 사무자동화산업기사/);
+  assert.match(koreanText, /전문 교육 · 2025[\s\S]*의료기기 S\/W 생명주기 · ISO 14971 위험관리/);
+  assert.match(englishText, /Software credentials and training/);
+  assert.match(englishText, /Engineer Information Processing · Industrial Engineer Office Automation/);
+  assert.match(englishText, /Medical Device S\/W Life Cycle · ISO 14971 Risk Management/);
+});
+
 test("keeps inquiries and coffee chats in the About contact area", async () => {
   const [koreanAbout, englishAbout] = await Promise.all([
     readFile(new URL("about/index.html", outputRoot), "utf8"),
