@@ -1,4 +1,4 @@
-import type { ConsultingService } from "./consulting-components";
+import type { ConsultingService } from "./consulting-data";
 
 export const consultingServicesEn: ConsultingService[] = [
   {
@@ -7,24 +7,55 @@ export const consultingServicesEn: ConsultingService[] = [
     english: "AI-NATIVE ORGANIZATION",
     title: "Building an AI-Native Organization",
     shortTitle: "AI-Native Organization",
-    summary: "Make AI part of how the whole organization decides, collaborates, and builds products—not a tool used by a few individuals.",
+    summary:
+      "Make AI part of how the whole organization decides, collaborates, and builds products—not a tool used by a few individuals.",
     detailTitle: "AI-Native Organization Transformation",
-    detailSummary: "Make AI part of how the whole organization solves problems—not a tool used by a few individuals.",
+    detailSummary:
+      "Make AI part of how the whole organization solves problems—not a tool used by a few individuals.",
     image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
     keywords: ["Operating model", "Ways of working", "AI enablement"],
-    proofTitle: "Turn product engineering experience into an operating system for the organization.",
-    proofBody: "This goes beyond tool training. Strategy, technology, and culture are connected so AI becomes part of product development, decision-making, code review, testing, and knowledge sharing.",
+    proofTitle:
+      "Turn product engineering experience into an operating system for the organization.",
+    proofBody:
+      "This goes beyond tool training. Strategy, technology, and culture are connected so AI becomes part of product development, decision-making, code review, testing, and knowledge sharing.",
     metrics: [
-      { value: "16 yrs", label: "Product engineering", detail: "From Daum, Kakao, and NCSOFT to AI product organizations" },
-      { value: "~2 months", label: "Product redesign", detail: "Reframed a product operated for more than two years as a new AI-based product" },
-      { value: "80%", label: "AI environment setup", detail: "Reduced onboarding and experiment preparation through a standardized development environment" },
+      {
+        value: "16 yrs",
+        label: "Product engineering",
+        detail: "From Daum, Kakao, and NCSOFT to AI product organizations",
+      },
+      {
+        value: "~2 months",
+        label: "Product redesign",
+        detail:
+          "Reframed a product operated for more than two years as a new AI-based product",
+      },
+      {
+        value: "80%",
+        label: "AI environment setup",
+        detail:
+          "Reduced onboarding and experiment preparation through a standardized development environment",
+      },
     ],
-    metricsNote: "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
+    metricsNote:
+      "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
     expertise: [
-      { title: "AI Operating Model", body: "Define how people and AI divide work, make decisions, review outcomes, and remain accountable through reusable operating principles." },
-      { title: "AI Workflow Design", body: "Identify high-value work across planning, development, review, testing, and documentation, then connect prompts, agents, and tools into the flow." },
-      { title: "Governance & Quality", body: "Balance speed with safety through security boundaries, result validation, traceability, and human-in-the-loop controls." },
-      { title: "Adoption & Capability", body: "Design capability standards, coaching, communities of practice, and measures that turn adoption into organizational learning." },
+      {
+        title: "AI Operating Model",
+        body: "Define how people and AI divide work, make decisions, review outcomes, and remain accountable through reusable operating principles.",
+      },
+      {
+        title: "AI Workflow Design",
+        body: "Identify high-value work across planning, development, review, testing, and documentation, then connect prompts, agents, and tools into the flow.",
+      },
+      {
+        title: "Governance & Quality",
+        body: "Balance speed with safety through security boundaries, result validation, traceability, and human-in-the-loop controls.",
+      },
+      {
+        title: "Adoption & Capability",
+        body: "Design capability standards, coaching, communities of practice, and measures that turn adoption into organizational learning.",
+      },
     ],
     situations: [
       "AI capability varies widely and effective practices remain individual know-how.",
@@ -32,15 +63,40 @@ export const consultingServicesEn: ConsultingService[] = [
       "Roles, collaboration, and product development need to be redesigned for the AI era.",
     ],
     outcomes: [
-      { title: "AI operating model", body: "A practical model covering principles, responsibilities, approvals, and review controls aligned to organizational goals and risk." },
-      { title: "Core workflow playbooks", body: "Reusable prompts, agent flows, quality checklists, and measures for the work where AI creates the most value." },
-      { title: "Scale-up roadmap", body: "A 90-day execution plan that turns pilot learning into standards, training, communities, and leadership routines." },
+      {
+        title: "AI operating model",
+        body: "A practical model covering principles, responsibilities, approvals, and review controls aligned to organizational goals and risk.",
+      },
+      {
+        title: "Core workflow playbooks",
+        body: "Reusable prompts, agent flows, quality checklists, and measures for the work where AI creates the most value.",
+      },
+      {
+        title: "Scale-up roadmap",
+        body: "A 90-day execution plan that turns pilot learning into standards, training, communities, and leadership routines.",
+      },
     ],
     process: [
-      { period: "1–2 weeks", title: "Assess", body: "Use interviews and workflow observation to map AI maturity, repetitive work, and quality or security constraints." },
-      { period: "2 weeks", title: "Design", body: "Define the target operating model, priority workflows, accountability, and success measures." },
-      { period: "4–6 weeks", title: "Pilot", body: "Validate the new workflow and tool system inside one team’s real product delivery process." },
-      { period: "90 days", title: "Scale", body: "Extend proven practices through standards, learning programs, communities, and leadership cadence." },
+      {
+        period: "1–2 weeks",
+        title: "Assess",
+        body: "Use interviews and workflow observation to map AI maturity, repetitive work, and quality or security constraints.",
+      },
+      {
+        period: "2 weeks",
+        title: "Design",
+        body: "Define the target operating model, priority workflows, accountability, and success measures.",
+      },
+      {
+        period: "4–6 weeks",
+        title: "Pilot",
+        body: "Validate the new workflow and tool system inside one team’s real product delivery process.",
+      },
+      {
+        period: "90 days",
+        title: "Scale",
+        body: "Extend proven practices through standards, learning programs, communities, and leadership cadence.",
+      },
     ],
   },
   {
@@ -49,24 +105,55 @@ export const consultingServicesEn: ConsultingService[] = [
     english: "AI TRANSFORMATION",
     title: "AX & RAG",
     shortTitle: "AX & RAG",
-    summary: "Start with real workflows, evaluate AI and RAG configurations, and orchestrate models, agents, retrieval, and tools into an operational service flow.",
+    summary:
+      "Start with real workflows, evaluate AI and RAG configurations, and orchestrate models, agents, retrieval, and tools into an operational service flow.",
     detailTitle: "AX & RAG for Real Work",
-    detailSummary: "Evaluate AI and RAG configurations against real cases, then connect the right components into an operational flow.",
+    detailSummary:
+      "Evaluate AI and RAG configurations against real cases, then connect the right components into an operational flow.",
     image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
     keywords: ["Real workflows", "AI & RAG evaluation", "Orchestration"],
     proofTitle: "The right system is found by evaluating real work.",
-    proofBody: "Models and RAG pipelines perform differently across users, documents, cost, and security constraints. Real cases are used to compare quality, cost, and latency before models, retrieval, agents, tools, and human review are connected into the workflow.",
+    proofBody:
+      "Models and RAG pipelines perform differently across users, documents, cost, and security constraints. Real cases are used to compare quality, cost, and latency before models, retrieval, agents, tools, and human review are connected into the workflow.",
     metrics: [
-      { value: "Up to 80%", label: "Model lead-time reduction", detail: "Reduced the time to bring new AI models into service through standardization" },
-      { value: "30%", label: "Lower release risk & impact", detail: "Reduced service impact through independent model deployment and updates" },
-      { value: "80%", label: "Onboarding & experiment prep", detail: "Reduced preparation time through a standardized AI development environment" },
+      {
+        value: "Up to 80%",
+        label: "Model lead-time reduction",
+        detail:
+          "Reduced the time to bring new AI models into service through standardization",
+      },
+      {
+        value: "30%",
+        label: "Lower release risk & impact",
+        detail:
+          "Reduced service impact through independent model deployment and updates",
+      },
+      {
+        value: "80%",
+        label: "Onboarding & experiment prep",
+        detail:
+          "Reduced preparation time through a standardized AI development environment",
+      },
     ],
-    metricsNote: "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
+    metricsNote:
+      "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
     expertise: [
-      { title: "Workflow Discovery", body: "Map users, workflows, documents, and exceptions into concrete evaluation cases." },
-      { title: "AI & RAG Evaluation", body: "Compare models, prompts, document preparation, retrieval, and reranking by quality, cost, and latency." },
-      { title: "Orchestration", body: "Connect task decomposition, routing, tool use, failure handling, and human review into one flow." },
-      { title: "Production Evaluation", body: "Use logs and feedback to track quality changes and update both the configuration and its evaluation criteria." },
+      {
+        title: "Workflow Discovery",
+        body: "Map users, workflows, documents, and exceptions into concrete evaluation cases.",
+      },
+      {
+        title: "AI & RAG Evaluation",
+        body: "Compare models, prompts, document preparation, retrieval, and reranking by quality, cost, and latency.",
+      },
+      {
+        title: "Orchestration",
+        body: "Connect task decomposition, routing, tool use, failure handling, and human review into one flow.",
+      },
+      {
+        title: "Production Evaluation",
+        body: "Use logs and feedback to track quality changes and update both the configuration and its evaluation criteria.",
+      },
     ],
     situations: [
       "The team wants to adopt AI or RAG but is unsure what to validate first in real work.",
@@ -74,15 +161,40 @@ export const consultingServicesEn: ConsultingService[] = [
       "Models, RAG, agents, tools, and human review need to become one operational flow.",
     ],
     outcomes: [
-      { title: "Real-work scenarios & evaluation set", body: "Real questions, documents, exceptions, and quality, cost, and latency measures for comparing configurations." },
-      { title: "AI & RAG configuration", body: "An evaluated combination of models, prompts, retrieval, reranking, and tools suited to the goal." },
-      { title: "Orchestration & production evaluation", body: "Routing, exception handling, human review, and monitoring connected into an operational flow." },
+      {
+        title: "Real-work scenarios & evaluation set",
+        body: "Real questions, documents, exceptions, and quality, cost, and latency measures for comparing configurations.",
+      },
+      {
+        title: "AI & RAG configuration",
+        body: "An evaluated combination of models, prompts, retrieval, reranking, and tools suited to the goal.",
+      },
+      {
+        title: "Orchestration & production evaluation",
+        body: "Routing, exception handling, human review, and monitoring connected into an operational flow.",
+      },
     ],
     process: [
-      { period: "1 week", title: "Analyze real work", body: "Review users, workflows, documents, and constraints to define the scope and evaluation cases." },
-      { period: "2–4 weeks", title: "Evaluate configurations", body: "Compare model, prompt, RAG, and tool combinations against real cases." },
-      { period: "2–4 weeks", title: "Orchestrate", body: "Connect routing, exception handling, and human review into an operational service flow." },
-      { period: "Ongoing", title: "Evaluate in production", body: "Use logs and user feedback to adjust quality, cost, and configuration." },
+      {
+        period: "1 week",
+        title: "Analyze real work",
+        body: "Review users, workflows, documents, and constraints to define the scope and evaluation cases.",
+      },
+      {
+        period: "2–4 weeks",
+        title: "Evaluate configurations",
+        body: "Compare model, prompt, RAG, and tool combinations against real cases.",
+      },
+      {
+        period: "2–4 weeks",
+        title: "Orchestrate",
+        body: "Connect routing, exception handling, and human review into an operational service flow.",
+      },
+      {
+        period: "Ongoing",
+        title: "Evaluate in production",
+        body: "Use logs and user feedback to adjust quality, cost, and configuration.",
+      },
     ],
   },
   {
@@ -91,24 +203,53 @@ export const consultingServicesEn: ConsultingService[] = [
     english: "PLATFORM ENGINEERING",
     title: "Platform Engineering",
     shortTitle: "Platform Engineering",
-    summary: "Build a shared platform and operating foundation so developers can focus on product value instead of infrastructure complexity.",
+    summary:
+      "Build a shared platform and operating foundation so developers can focus on product value instead of infrastructure complexity.",
     detailTitle: "Platform Engineering & Internal Developer Platforms",
-    detailSummary: "Reduce infrastructure complexity and create a safe, fast delivery foundation for product teams.",
+    detailSummary:
+      "Reduce infrastructure complexity and create a safe, fast delivery foundation for product teams.",
     image: "/a/generated/consulting/platform-beaver-dam-v4.webp",
     keywords: ["Developer platform", "CI/CD", "Operations automation"],
-    proofTitle: "Build the platform as an internal product—not another technology project.",
-    proofBody: "Experience designing and operating DBaaS, KaaS, cloud portals, and AI platforms brings developer experience and operational reliability into one view. The goal is not more infrastructure; it is lower cognitive load and faster delivery for product teams.",
+    proofTitle:
+      "Build the platform as an internal product—not another technology project.",
+    proofBody:
+      "Experience designing and operating DBaaS, KaaS, cloud portals, and AI platforms brings developer experience and operational reliability into one view. The goal is not more infrastructure; it is lower cognitive load and faster delivery for product teams.",
     metrics: [
-      { value: "About 200", label: "Kubernetes clusters", detail: "Designed, built, and operated through NCSOFT KaaS" },
-      { value: "1,000+", label: "Cluster nodes", detail: "Across AWS, GCP, OpenStack, and bare-metal environments" },
-      { value: "15+", label: "Cloud services", detail: "Integrated into an internal micro-frontend cloud portal" },
+      {
+        value: "About 200",
+        label: "Kubernetes clusters",
+        detail: "Designed, built, and operated through NCSOFT KaaS",
+      },
+      {
+        value: "1,000+",
+        label: "Cluster nodes",
+        detail: "Across AWS, GCP, OpenStack, and bare-metal environments",
+      },
+      {
+        value: "15+",
+        label: "Cloud services",
+        detail: "Integrated into an internal micro-frontend cloud portal",
+      },
     ],
-    metricsNote: "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
+    metricsNote:
+      "Source: self-reported project records in Jungju Lee’s portfolio and résumé.",
     expertise: [
-      { title: "Platform as a Product", body: "Treat developers as customers and shape the platform vision and backlog around journeys, pain points, and adoption measures." },
-      { title: "Reference Architecture", body: "Design boundaries and integration across portals, service catalogs, IDPs, and observability within technical, security, and cost constraints." },
-      { title: "Golden Path & Automation", body: "Implement safe defaults and self-service automation from project creation through build, test, deployment, and observability." },
-      { title: "SRE & Governance", body: "Operate speed and reliability together through SLOs, error budgets, policy automation, cost visibility, and a clear support model." },
+      {
+        title: "Platform as a Product",
+        body: "Treat developers as customers and shape the platform vision and backlog around journeys, pain points, and adoption measures.",
+      },
+      {
+        title: "Reference Architecture",
+        body: "Design boundaries and integration across portals, service catalogs, IDPs, and observability within technical, security, and cost constraints.",
+      },
+      {
+        title: "Golden Path & Automation",
+        body: "Implement safe defaults and self-service automation from project creation through build, test, deployment, and observability.",
+      },
+      {
+        title: "SRE & Governance",
+        body: "Operate speed and reliability together through SLOs, error budgets, policy automation, cost visibility, and a clear support model.",
+      },
     ],
     situations: [
       "Every team builds, deploys, and observes differently, increasing duplicated work and operational load.",
@@ -116,15 +257,40 @@ export const consultingServicesEn: ConsultingService[] = [
       "The organization needs stronger standards, cost efficiency, and reliability without taking autonomy away from developers.",
     ],
     outcomes: [
-      { title: "Platform product strategy", body: "A clear definition of platform customers, value proposition, boundaries, priorities, and success measures tied to developer journeys and organizational goals." },
-      { title: "Reference architecture & golden path", body: "A working self-service path connecting portal, catalog, CI/CD, IaC, and observability for real product teams." },
-      { title: "Operating & governance model", body: "A sustainable structure for platform responsibilities, team autonomy, SLOs, policy automation, support, and cost." },
+      {
+        title: "Platform product strategy",
+        body: "A clear definition of platform customers, value proposition, boundaries, priorities, and success measures tied to developer journeys and organizational goals.",
+      },
+      {
+        title: "Reference architecture & golden path",
+        body: "A working self-service path connecting portal, catalog, CI/CD, IaC, and observability for real product teams.",
+      },
+      {
+        title: "Operating & governance model",
+        body: "A sustainable structure for platform responsibilities, team autonomy, SLOs, policy automation, support, and cost.",
+      },
     ],
     process: [
-      { period: "2–3 weeks", title: "Assess", body: "Measure wait time, repetitive work, and reliability or security bottlenecks through developer interviews and delivery-flow analysis." },
-      { period: "1–2 weeks", title: "Prioritize", body: "Select the first platform product area using developer value, operational impact, and implementation cost." },
-      { period: "6–12 weeks", title: "Build", body: "Create a golden path with a real product team, including portal, templates, pipelines, and observability." },
-      { period: "Ongoing", title: "Productize", body: "Run the platform backlog using adoption, lead time, deployment, recovery, and feedback measures." },
+      {
+        period: "2–3 weeks",
+        title: "Assess",
+        body: "Measure wait time, repetitive work, and reliability or security bottlenecks through developer interviews and delivery-flow analysis.",
+      },
+      {
+        period: "1–2 weeks",
+        title: "Prioritize",
+        body: "Select the first platform product area using developer value, operational impact, and implementation cost.",
+      },
+      {
+        period: "6–12 weeks",
+        title: "Build",
+        body: "Create a golden path with a real product team, including portal, templates, pipelines, and observability.",
+      },
+      {
+        period: "Ongoing",
+        title: "Productize",
+        body: "Run the platform backlog using adoption, lead time, deployment, recovery, and feedback measures.",
+      },
     ],
   },
 ];

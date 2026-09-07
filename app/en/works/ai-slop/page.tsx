@@ -1,8 +1,15 @@
-import { AiSlopPage } from "../../../ai-slop/ai-slop-page";
-import { JsonLd, PERSON_ID, absoluteUrl, localizedPagePath, pageMetadata } from "../../../seo";
+import { AiSlopPage } from "../../../works/ai-slop/ai-slop-page";
+import {
+  JsonLd,
+  PERSON_ID,
+  absoluteUrl,
+  localizedPagePath,
+  pageMetadata,
+} from "../../../seo";
 
 const title = "AI Slop | Automated AI Publishing Project | JJGo";
-const description = "Meet AI Slop, an AI-created and automatically published comics and video archive, and its featured series The Place Where the Wind Returns.";
+const description =
+  "Meet AI Slop, an AI-created and automatically published comics and video archive, and its featured series The Place Where the Wind Returns.";
 
 export const metadata = pageMetadata({
   locale: "en",
@@ -17,17 +24,19 @@ export const metadata = pageMetadata({
 export default function Page() {
   return (
     <>
-      <JsonLd data={{
-        "@context": "https://schema.org",
-        "@type": "CreativeWork",
-        "@id": `${absoluteUrl(localizedPagePath("en", "/works/ai-slop"))}#project`,
-        url: absoluteUrl(localizedPagePath("en", "/works/ai-slop")),
-        name: "AI Slop",
-        description,
-        inLanguage: "en",
-        creator: { "@id": PERSON_ID },
-        sameAs: ["https://slop.jjgo.io/", "https://github.com/jungju/slop"],
-      }} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "@id": `${absoluteUrl(localizedPagePath("en", "/works/ai-slop"))}#project`,
+          url: absoluteUrl(localizedPagePath("en", "/works/ai-slop")),
+          name: "AI Slop",
+          description,
+          inLanguage: "en",
+          creator: { "@id": PERSON_ID },
+          sameAs: ["https://slop.jjgo.io/", "https://github.com/jungju/slop"],
+        }}
+      />
       <AiSlopPage locale="en" />
     </>
   );

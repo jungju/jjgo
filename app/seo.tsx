@@ -44,13 +44,25 @@ export function pageMetadata({
   const korean = localizedPagePath("ko", canonicalPath);
   const english = localizedPagePath("en", canonicalPath);
   const socialImage = image
-    ? [{ url: absoluteUrl(image), width: imageWidth, height: imageHeight, alt: title }]
+    ? [
+        {
+          url: absoluteUrl(image),
+          width: imageWidth,
+          height: imageHeight,
+          alt: title,
+        },
+      ]
     : undefined;
 
   return {
     title: { absolute: title },
     description,
-    authors: [{ name: locale === "ko" ? "이정주" : "Jungju Lee", url: localizedPagePath(locale, "/about") }],
+    authors: [
+      {
+        name: locale === "ko" ? "이정주" : "Jungju Lee",
+        url: localizedPagePath(locale, "/about"),
+      },
+    ],
     creator: locale === "ko" ? "이정주" : "Jungju Lee",
     publisher: locale === "ko" ? "이정주" : "Jungju Lee",
     alternates: {
@@ -102,11 +114,16 @@ export function personJsonLd(locale: SiteLocale) {
     name: korean ? "이정주" : "Jungju Lee",
     alternateName: korean ? ["Jungju Lee", "JJGo"] : ["이정주", "JJGo"],
     url: absoluteUrl(localizedPagePath(locale, "/about")),
-    jobTitle: korean ? "AI 제품·플랫폼 개발 리더" : "AI Product and Platform Engineering Leader",
+    jobTitle: korean
+      ? "AI 제품·플랫폼 개발 리더"
+      : "AI Product and Platform Engineering Leader",
     description: korean
       ? "AI 제품화, 클라우드 플랫폼, DevOps·MLOps와 AI Native 개발 조직을 연결하는 16년 경력의 개발 리더"
       : "A product engineering leader with 16 years of experience across AI productization, cloud platforms, DevOps, MLOps, and AI-native engineering organizations.",
-    alumniOf: { "@type": "CollegeOrUniversity", name: korean ? "대전대학교" : "Daejeon University" },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: korean ? "대전대학교" : "Daejeon University",
+    },
     knowsAbout: [
       "AI productization",
       "Retrieval-augmented generation (RAG)",
@@ -124,12 +141,18 @@ export function personJsonLd(locale: SiteLocale) {
       {
         "@type": "EducationalOccupationalCredential",
         name: korean ? "정보처리기사" : "Engineer Information Processing",
-        credentialCategory: korean ? "국가기술자격" : "National Technical Qualification",
+        credentialCategory: korean
+          ? "국가기술자격"
+          : "National Technical Qualification",
       },
       {
         "@type": "EducationalOccupationalCredential",
-        name: korean ? "사무자동화산업기사" : "Industrial Engineer Office Automation",
-        credentialCategory: korean ? "국가기술자격" : "National Technical Qualification",
+        name: korean
+          ? "사무자동화산업기사"
+          : "Industrial Engineer Office Automation",
+        credentialCategory: korean
+          ? "국가기술자격"
+          : "National Technical Qualification",
       },
     ],
     sameAs: [
@@ -193,7 +216,9 @@ export function JsonLd({ data }: { data: object | object[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
     />
   );
 }

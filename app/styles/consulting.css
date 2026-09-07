@@ -1,0 +1,1056 @@
+.forest2-method-frame {
+  position: relative;
+}
+.forest2-method-hero {
+  max-width: 900px;
+}
+.forest2-method-eyebrow,
+.forest2-method-cta > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.forest2-method-hero h1 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-weight: 400;
+}
+.forest2-method-lead {
+  max-width: 820px;
+  margin: 28px 0 0;
+  color: #f4f1e8c7;
+  font-size: 1.08rem;
+  line-height: 1.82;
+}
+.forest2-method-cta a:focus-visible {
+  outline: 3px solid var(--forest2-preview-action-hover);
+  outline-offset: 3px;
+}
+.forest2-method-cta h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 2.35rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+.forest2-method-cta > span {
+  display: block;
+  margin-top: 14px;
+  color: #f4f1e8ad;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.forest2-method-cta {
+  margin-top: 72px;
+  padding: 54px;
+  border: 1px solid rgba(220, 163, 71, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(220, 163, 71, 0.18),
+      transparent 46%
+    ),
+    #051c13e0;
+}
+.forest2-method-cta h2 {
+  font-size: 2.55rem;
+}
+.forest2-method-cta > span {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.forest2-method-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 28px;
+  padding: 0 24px;
+  gap: 10px;
+  border-radius: 10px;
+  color: var(--forest2-preview-ink);
+  background: var(--forest2-preview-action);
+  font-weight: 800;
+}
+.forest2-method-cta a:hover {
+  background: var(--forest2-preview-action-hover);
+}
+@media (max-width: 760px) {
+  .forest2-method-lead {
+    margin-top: 20px;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+  .forest2-method-cta h2 {
+    font-size: 1.85rem;
+  }
+  .forest2-method-cta {
+    margin-top: 48px;
+    padding: 36px 20px;
+  }
+  .forest2-method-cta h2 {
+    font-size: 1.95rem;
+  }
+  .forest2-method-cta a {
+    width: 100%;
+  }
+}
+
+.forest2-about-evidence-note,
+.forest2-consulting-metric-note {
+  margin: 14px 0 0;
+  color: rgba(244, 241, 232, 0.58);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.forest2-consulting-metrics > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  min-height: 132px;
+  border-right: 0;
+}
+
+.forest2-consulting-metrics > div:nth-last-child(2):nth-child(even) {
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-consulting-offers {
+  margin-top: 58px;
+  scroll-margin-top: 32px;
+}
+
+.forest2-consulting-subnav {
+  z-index: 6;
+  display: flex;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  margin: 32px 0 28px;
+  padding: 6px;
+  gap: 6px;
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+
+.forest2-consulting-subnav a {
+  display: flex;
+  min-width: 0;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  gap: 9px;
+  border-radius: 9px;
+  color: rgba(244, 241, 232, 0.72);
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-align: center;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.forest2-consulting-subnav a span {
+  color: var(--forest2-gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.forest2-consulting-subnav a:hover,
+.forest2-consulting-subnav a:focus-visible,
+.forest2-consulting-subnav a[aria-current="page"] {
+  color: var(--forest2-cream);
+  background: rgba(169, 215, 95, 0.12);
+}
+
+.forest2-consulting-subnav a:focus-visible,
+.forest2-consulting-card:focus-visible,
+.forest2-consulting-back:focus-visible {
+  outline: 3px solid rgba(220, 163, 71, 0.52);
+  outline-offset: 3px;
+}
+
+.forest2-consulting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.forest2-consulting-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 0 28px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.15);
+  border-radius: var(--forest2-card-radius);
+  color: inherit;
+  background: linear-gradient(
+    150deg,
+    rgba(13, 47, 33, 0.92),
+    rgba(5, 25, 18, 0.88)
+  );
+  backdrop-filter: blur(14px);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.forest2-consulting-card:hover {
+  border-color: rgba(220, 163, 71, 0.52);
+  transform: none;
+}
+
+.forest2-consulting-card-head {
+  position: absolute;
+  inset: 18px 20px auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.forest2-consulting-card-head > span {
+  color: #f4d18a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.76);
+}
+
+.forest2-consulting-card-media {
+  position: relative;
+  isolation: isolate;
+  height: 196px;
+  flex: 0 0 auto;
+  margin: 0 -28px 28px;
+  overflow: hidden;
+  background: #071c14;
+  contain: paint;
+}
+
+.forest2-consulting-card-media::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 10, 8, 0.08) 34%,
+    rgba(5, 25, 18, 0.82) 82%,
+    #071c14 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.forest2-consulting-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forest2-consulting-card:nth-child(1) .forest2-consulting-card-media img {
+  transform-origin: 52% 48%;
+}
+
+.forest2-consulting-card:nth-child(2) .forest2-consulting-card-media img {
+  transform-origin: 64% 42%;
+}
+
+.forest2-consulting-card:nth-child(3) .forest2-consulting-card-media img {
+  transform-origin: 48% 54%;
+}
+
+.forest2-consulting-card > p {
+  margin: 0;
+  color: rgba(220, 163, 71, 0.9);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-consulting-card h3 {
+  margin: 12px 0 14px;
+  color: var(--forest2-cream);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.forest2-consulting-card > span {
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-card ul,
+.forest2-consulting-detail-hero ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24px 0 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.forest2-consulting-card li,
+.forest2-consulting-detail-hero li {
+  padding: 7px 9px;
+  border: 1px solid rgba(169, 215, 95, 0.2);
+  border-radius: 999px;
+  color: rgba(215, 231, 186, 0.8);
+  background: rgba(169, 215, 95, 0.06);
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+.forest2-consulting-card strong {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 28px;
+  gap: 9px;
+  color: var(--forest2-gold);
+  font-size: 0.86rem;
+}
+
+.forest2-consulting-card strong svg {
+  transition: transform 180ms ease;
+}
+
+.forest2-consulting-card:hover strong svg {
+  transform: translateX(4px);
+}
+
+.forest2-consulting-stages {
+  margin-top: 96px;
+  padding-top: 68px;
+  border-top: 1px solid rgba(220, 163, 71, 0.34);
+}
+
+.forest2-consulting-stages > header {
+  max-width: 820px;
+}
+
+.forest2-consulting-stages > header > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-consulting-stages > header h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.forest2-consulting-stages > header > span {
+  display: block;
+  max-width: 720px;
+  margin-top: 18px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.96rem;
+  line-height: 1.78;
+}
+
+.forest2-consulting-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.forest2-consulting-stage-grid > article {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid rgba(244, 241, 232, 0.13);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(9, 34, 25, 0.9),
+    rgba(5, 28, 19, 0.62)
+  );
+}
+
+.forest2-consulting-stage-grid > article > span {
+  display: block;
+  color: var(--forest2-gold);
+  font-family: var(--forest2-font-display-en);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.forest2-consulting-stage-grid h3 {
+  min-height: 3.1em;
+  margin: 18px 0 24px;
+  color: #f0d49d;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.forest2-consulting-stage-grid dl {
+  display: grid;
+  margin: 0;
+  gap: 17px;
+}
+
+.forest2-consulting-stage-grid dl > div {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.forest2-consulting-stage-grid dt {
+  color: var(--forest2-positive);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.forest2-consulting-stage-grid dd {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.forest2-consulting-stage-note {
+  margin: 18px 0 0;
+  color: rgba(244, 241, 232, 0.52);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.forest2-consulting-cta {
+  margin-top: 88px;
+}
+
+.forest2-consulting-back {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.forest2-consulting-back:hover {
+  color: var(--forest2-gold);
+}
+
+.forest2-consulting-detail-frame .forest2-consulting-subnav {
+  margin-top: 24px;
+}
+
+.forest2-consulting-detail-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(420px, 1.12fr);
+  align-items: center;
+  gap: clamp(38px, 5vw, 72px);
+  margin-top: 56px;
+}
+
+.forest2-consulting-detail-copy > p,
+.forest2-consulting-detail-section > header > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-consulting-detail-hero h1 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-weight: 400;
+}
+
+.forest2-consulting-detail-copy > span {
+  display: block;
+  max-width: 470px;
+  margin-top: 22px;
+  color: rgba(244, 241, 232, 0.74);
+  font-size: 1.06rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-detail-hero ul {
+  margin-top: 28px;
+}
+
+.forest2-consulting-detail-hero li {
+  padding: 9px 12px;
+  font-size: 0.82rem;
+}
+
+.forest2-consulting-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.forest2-consulting-hero-actions a {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 19px;
+  border: 1px solid rgba(244, 241, 232, 0.26);
+  border-radius: 10px;
+  color: rgba(244, 241, 232, 0.84);
+  font-size: 0.86rem;
+  font-weight: 750;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.forest2-consulting-hero-actions a:first-child {
+  border-color: var(--forest2-gold);
+  background: var(--forest2-gold);
+  color: #173326;
+}
+
+.forest2-consulting-hero-actions a:hover {
+  border-color: var(--forest2-gold);
+  color: var(--forest2-gold);
+  transform: translateY(-2px);
+}
+
+.forest2-consulting-hero-actions a:first-child:hover {
+  background: #f0d49d;
+  color: #173326;
+}
+
+.forest2-consulting-detail-visual {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 3 / 2;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.16);
+  border-radius: 28px;
+  background: rgba(5, 28, 19, 0.7);
+}
+
+.forest2-consulting-detail-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 36%,
+    rgba(2, 20, 13, 0.22)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.forest2-consulting-detail-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+}
+
+.forest2-consulting-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(44px, 6vw, 84px);
+  align-items: end;
+  margin-top: 96px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(220, 163, 71, 0.34);
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+  scroll-margin-top: 108px;
+}
+
+.forest2-consulting-proof-copy > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-consulting-proof-copy h2 {
+  max-width: 11em;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.forest2-consulting-proof-copy > span {
+  display: block;
+  max-width: 600px;
+  margin-top: 22px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.96rem;
+  line-height: 1.82;
+}
+
+.forest2-consulting-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 20px;
+  background: rgba(5, 28, 19, 0.72);
+}
+
+.forest2-consulting-metrics > div {
+  min-width: 0;
+  min-height: 154px;
+  padding: 24px;
+  border-right: 1px solid rgba(244, 241, 232, 0.12);
+  border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-consulting-metrics > div:nth-child(2n) {
+  border-right: 0;
+}
+
+.forest2-consulting-metrics > div:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.forest2-consulting-metrics dt {
+  color: #f0d49d;
+  font-family: var(--forest2-font-display-en);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.forest2-consulting-metrics dd {
+  display: grid;
+  gap: 5px;
+  margin: 20px 0 0;
+}
+
+.forest2-consulting-metrics dd strong {
+  color: var(--forest2-cream);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.forest2-consulting-metrics dd span {
+  color: rgba(244, 241, 232, 0.58);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.forest2-consulting-detail-section {
+  margin-top: 82px;
+  scroll-margin-top: 108px;
+}
+
+.forest2-consulting-detail-section > header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.forest2-consulting-detail-section > header h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.forest2-consulting-expertise {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.forest2-consulting-expertise article {
+  min-width: 0;
+  min-height: 220px;
+  padding: 26px;
+  border: 1px solid rgba(244, 241, 232, 0.13);
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(9, 34, 25, 0.88),
+    rgba(5, 28, 19, 0.58)
+  );
+}
+
+.forest2-consulting-expertise article > span {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.forest2-consulting-expertise h3 {
+  margin: 0 0 12px;
+  color: #f0d49d;
+  font-size: 1.22rem;
+  font-weight: 600;
+}
+
+.forest2-consulting-expertise p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.92rem;
+  line-height: 1.76;
+}
+
+.forest2-consulting-process-note {
+  display: block;
+  margin-top: 10px;
+  color: rgba(244, 241, 232, 0.54);
+  font-size: 0.82rem;
+}
+
+.forest2-consulting-situations ol,
+.forest2-consulting-process {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forest2-consulting-situations ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.forest2-consulting-situations li {
+  min-width: 0;
+  min-height: 190px;
+  padding: 24px;
+  border-top: 1px solid rgba(220, 163, 71, 0.52);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 34, 25, 0.78),
+    rgba(9, 34, 25, 0.18)
+  );
+}
+
+.forest2-consulting-situations li > span,
+.forest2-consulting-process li > span {
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.forest2-consulting-situations li p {
+  margin: 34px 0 0;
+  color: rgba(244, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+.forest2-consulting-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: var(--forest2-card-radius);
+  background: rgba(5, 28, 19, 0.76);
+}
+
+.forest2-consulting-outcomes article {
+  min-width: 0;
+  min-height: 250px;
+  padding: 28px;
+  border-right: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-consulting-outcomes article:last-child {
+  border-right: 0;
+}
+
+.forest2-consulting-outcomes h3,
+.forest2-consulting-process h3 {
+  margin: 0 0 12px;
+  color: #f0d49d;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.forest2-consulting-outcomes p,
+.forest2-consulting-process p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.forest2-consulting-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.forest2-consulting-process li {
+  display: grid;
+  min-width: 0;
+  min-height: 250px;
+  grid-template-rows: auto 1fr;
+  padding: 22px;
+  gap: 34px;
+  border: 1px solid rgba(220, 163, 71, 0.28);
+  border-radius: 14px;
+  background: rgba(5, 28, 19, 0.78);
+}
+
+.forest2-consulting-process li em {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--forest2-positive);
+  font-size: 0.76rem;
+  font-style: normal;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 960px) {
+  .forest2-consulting-proof {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .forest2-consulting-proof-copy {
+    max-width: 760px;
+  }
+
+  .forest2-consulting-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .forest2-consulting-detail-copy {
+    max-width: 720px;
+  }
+
+  .forest2-consulting-detail-visual {
+    max-width: 760px;
+  }
+
+  .forest2-consulting-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-stage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-stage-grid h3 {
+    min-height: 0;
+  }
+
+  .forest2-consulting-card {
+    min-height: 0;
+  }
+
+  .forest2-consulting-situations ol,
+  .forest2-consulting-outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-situations li {
+    min-height: 0;
+  }
+
+  .forest2-consulting-outcomes article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(244, 241, 232, 0.12);
+  }
+
+  .forest2-consulting-outcomes article:last-child {
+    border-bottom: 0;
+  }
+
+  .forest2-consulting-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .forest2-consulting-offers,
+  .forest2-consulting-stages,
+  .forest2-consulting-cta,
+  .forest2-consulting-detail-section {
+    margin-top: 48px;
+  }
+
+  .forest2-consulting-stages {
+    padding-top: 42px;
+  }
+
+  .forest2-consulting-stages > header h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-consulting-stage-grid {
+    margin-top: 26px;
+  }
+
+  .forest2-consulting-stage-grid > article {
+    padding: 22px;
+  }
+
+  .forest2-consulting-subnav {
+    display: flex;
+    width: 100%;
+    margin: 24px 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .forest2-consulting-subnav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .forest2-consulting-subnav a {
+    min-width: max-content;
+    flex: 1 1 140px;
+    padding-inline: 14px;
+  }
+
+  .forest2-consulting-card {
+    padding: 0 22px 22px;
+  }
+
+  .forest2-consulting-card-media {
+    height: 184px;
+    margin: 0 -22px 24px;
+  }
+
+  .forest2-consulting-detail-hero {
+    gap: 30px;
+    margin-top: 38px;
+  }
+
+  .forest2-consulting-proof {
+    gap: 28px;
+    margin-top: 56px;
+    padding: 30px 0;
+  }
+
+  .forest2-consulting-proof-copy h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-consulting-proof-copy > span {
+    margin-top: 16px;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .forest2-consulting-metrics > div {
+    min-height: 138px;
+    padding: 18px;
+  }
+
+  .forest2-consulting-metrics dt {
+    font-size: 1.9rem;
+  }
+
+  .forest2-consulting-metrics dd {
+    margin-top: 14px;
+  }
+
+  .forest2-consulting-detail-copy > span {
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .forest2-consulting-detail-hero ul {
+    margin-top: 22px;
+  }
+
+  .forest2-consulting-hero-actions {
+    margin-top: 26px;
+  }
+
+  .forest2-consulting-detail-visual {
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+  }
+
+  .forest2-consulting-detail-section > header {
+    margin-bottom: 20px;
+  }
+
+  .forest2-consulting-detail-section > header h2 {
+    font-size: 1.8rem;
+  }
+
+  .forest2-consulting-expertise {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-expertise article {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .forest2-consulting-expertise article > span {
+    margin-bottom: 20px;
+  }
+
+  .forest2-consulting-situations li,
+  .forest2-consulting-outcomes article {
+    padding: 20px;
+  }
+
+  .forest2-consulting-situations li p {
+    margin-top: 22px;
+  }
+
+  .forest2-consulting-process {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-consulting-process li {
+    min-height: 0;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest2-consulting-card-media img,
+  .forest2-consulting-detail-visual img {
+    transform: scale(1.05);
+  }
+}

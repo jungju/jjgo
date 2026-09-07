@@ -5,7 +5,8 @@ export const metadata = pageMetadata({
   locale: "en",
   path: "/works",
   title: "Jungju Lee Portfolio | Web Products, Games & Content | JJGo",
-  description: "A curated selection of web products, SaaS, Roblox games, and content designed, built, and operated by Jungju Lee.",
+  description:
+    "A curated selection of web products, SaaS, Roblox games, and content designed, built, and operated by Jungju Lee.",
   image: "/og-en.png",
 });
 

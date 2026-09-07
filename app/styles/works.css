@@ -1,0 +1,853 @@
+.forest2-works-public-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244, 241, 232, 0.16);
+}
+
+.forest2-works-public-links > span {
+  color: var(--forest2-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-public-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 232, 0.8);
+  font-size: 0.82rem;
+}
+
+.forest2-works-public-links a:hover,
+.forest2-works-public-links a:focus-visible {
+  color: var(--forest2-gold);
+}
+
+.forest2-works-hero {
+  max-width: 790px;
+}
+
+.forest2-works-hero > p,
+.forest2-works-section-head > div > p,
+.forest2-works-list-head > div > p {
+  margin: 0 0 16px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.forest2-works-hero h1 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-weight: 400;
+}
+
+.forest2-works-hero > span {
+  display: block;
+  max-width: 680px;
+  margin-top: 26px;
+  color: rgba(244, 241, 232, 0.74);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.forest2-works-featured,
+.forest2-works-collections,
+.forest2-works-list {
+  margin-top: 96px;
+}
+
+.forest2-works-section-head,
+.forest2-works-list-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 28px;
+}
+
+.forest2-works-section-head h2,
+.forest2-works-list-head h2 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(2rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.forest2-works-section-head > span {
+  padding-bottom: 6px;
+  color: rgba(244, 241, 232, 0.54);
+  font-size: 0.84rem;
+}
+
+.forest2-works-featured-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.75fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forest2-works-featured-card,
+.forest2-works-card {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.forest2-works-featured-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.92fr) minmax(0, 1.08fr);
+  min-height: 244px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.14);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(9, 36, 25, 0.94),
+    rgba(4, 23, 16, 0.94)
+  );
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.forest2-works-featured-card--lead {
+  grid-row: 1 / span 2;
+  grid-template-columns: 1fr;
+  min-height: 504px;
+}
+
+.forest2-works-featured-card:hover,
+.forest2-works-featured-card:focus-visible,
+.forest2-works-card:hover,
+.forest2-works-card:focus-visible {
+  border-color: rgba(220, 163, 71, 0.5);
+  transform: translateY(-4px);
+}
+
+.forest2-works-featured-card:focus-visible,
+.forest2-works-card:focus-visible,
+.forest2-work-primary-action:focus-visible,
+.forest2-work-related button:focus-visible {
+  outline: 3px solid rgba(220, 163, 71, 0.62);
+  outline-offset: 3px;
+}
+
+.forest2-works-featured-media {
+  min-width: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: #04130e;
+}
+
+.forest2-works-featured-card--lead .forest2-works-featured-media {
+  min-height: 306px;
+}
+
+.forest2-works-featured-media img,
+.forest2-works-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.forest2-works-featured-card:hover img,
+.forest2-works-featured-card:focus-visible img,
+.forest2-works-card:hover img,
+.forest2-works-card:focus-visible img {
+  transform: scale(1.045);
+}
+
+.forest2-works-featured-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.forest2-works-featured-card--lead .forest2-works-featured-copy {
+  min-height: 198px;
+  padding: 26px 30px 28px;
+}
+
+.forest2-works-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.forest2-works-card-meta > span:first-child {
+  color: #efc878;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-works-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.forest2-works-status::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(244, 241, 232, 0.5);
+  content: "";
+}
+
+.forest2-works-status--live::before {
+  background: var(--forest2-positive);
+}
+
+.forest2-works-featured-copy h3 {
+  margin: 16px 0 8px;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-en);
+  font-size: 1.42rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.forest2-works-featured-card--lead h3 {
+  font-size: 1.8rem;
+}
+
+.forest2-works-featured-copy p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.88rem;
+  line-height: 1.68;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.forest2-works-card-action {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 20px;
+  gap: 8px;
+  color: var(--forest2-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.forest2-works-card-action svg {
+  transition: transform 180ms ease;
+}
+
+.forest2-works-featured-card:hover .forest2-works-card-action svg,
+.forest2-works-card:hover .forest2-works-card-action svg {
+  transform: translateX(4px);
+}
+
+.forest2-works-list {
+  padding-top: 72px;
+  border-top: 1px solid rgba(220, 163, 71, 0.32);
+  scroll-margin-top: 24px;
+}
+
+.forest2-works-list-head > div:first-child {
+  max-width: 720px;
+}
+
+.forest2-works-list-head > div:first-child > span {
+  display: block;
+  margin-top: 14px;
+  color: rgba(244, 241, 232, 0.66);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.forest2-works-list-summary {
+  display: grid;
+  min-width: 96px;
+  padding-left: 26px;
+  border-left: 1px solid rgba(244, 241, 232, 0.14);
+}
+
+.forest2-works-list-summary strong {
+  color: #efc878;
+  font-family: var(--forest2-font-display-en);
+  font-size: 2.7rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.forest2-works-list-summary span {
+  margin-top: 7px;
+  color: rgba(244, 241, 232, 0.5);
+  font-size: 0.72rem;
+}
+
+.forest2-works-comics-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  gap: 20px;
+  border: 1px solid rgba(169, 215, 95, 0.2);
+  border-radius: 14px;
+  background: rgba(169, 215, 95, 0.07);
+  color: rgba(244, 241, 232, 0.7);
+  font-size: 0.84rem;
+}
+
+.forest2-works-comics-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--forest2-gold);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.forest2-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.forest2-works-card {
+  display: flex;
+  min-height: 380px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.13);
+  border-radius: 18px;
+  background: rgba(5, 28, 19, 0.82);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.forest2-works-card-media {
+  position: relative;
+  height: 210px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #03110c;
+}
+
+.forest2-works-card-media > span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(244, 241, 232, 0.16);
+  border-radius: 999px;
+  color: rgba(244, 241, 232, 0.88);
+  background: rgba(3, 17, 12, 0.7);
+  font-size: 0.68rem;
+  font-weight: 750;
+  backdrop-filter: blur(10px);
+}
+
+.forest2-works-card-body {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 21px;
+}
+
+.forest2-works-card-body h3 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-en);
+  font-size: 1.18rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.forest2-works-card-body > p {
+  display: -webkit-box;
+  margin: 10px 0 0;
+  overflow: hidden;
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.84rem;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.forest2-works-card-body > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.forest2-works-empty {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+  align-content: center;
+  padding: 34px;
+  border: 1px dashed rgba(220, 163, 71, 0.36);
+  border-radius: 20px;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(169, 215, 95, 0.08),
+      transparent 50%
+    ),
+    rgba(5, 28, 19, 0.5);
+}
+
+.forest2-works-empty > span {
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.forest2-works-empty h3 {
+  margin: 18px 0 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.forest2-works-empty p {
+  max-width: 500px;
+  margin: 12px 0 0;
+  color: rgba(244, 241, 232, 0.6);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.forest2-work-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 241, 232, 0.12);
+  border-radius: 16px;
+}
+
+.forest2-work-detail-grid section {
+  min-width: 0;
+  padding: 23px;
+  border-right: 1px solid rgba(244, 241, 232, 0.1);
+}
+
+.forest2-work-detail-grid section:nth-child(2) {
+  border-right: 0;
+}
+
+.forest2-work-detail-grid .forest2-work-detail-update {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(244, 241, 232, 0.1);
+  border-right: 0;
+  background: rgba(169, 215, 95, 0.05);
+}
+
+.forest2-work-detail-grid section > span,
+.forest2-work-related > div:first-child > span {
+  color: var(--forest2-gold);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.forest2-work-detail-grid h3,
+.forest2-work-related h3 {
+  margin: 10px 0 9px;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.forest2-work-detail-grid p {
+  margin: 0;
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.forest2-work-detail-grid ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+  padding: 0;
+  gap: 6px;
+  list-style: none;
+}
+
+.forest2-work-detail-grid li {
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: rgba(213, 231, 181, 0.84);
+  background: rgba(169, 215, 95, 0.09);
+  font-size: 0.7rem;
+}
+
+.forest2-work-primary-action {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 20px;
+  gap: 9px;
+  border-radius: 10px;
+  color: #173326;
+  background: var(--forest2-gold);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.forest2-work-primary-action:hover {
+  background: #f0d49d;
+}
+
+.forest2-work-related {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.forest2-work-related > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 15px;
+  gap: 9px;
+}
+
+.forest2-work-related button {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  align-items: center;
+  padding: 8px;
+  gap: 10px;
+  border: 1px solid rgba(244, 241, 232, 0.11);
+  border-radius: 10px;
+  color: rgba(244, 241, 232, 0.7);
+  background: rgba(255, 255, 255, 0.025);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.forest2-work-related button:hover {
+  border-color: rgba(220, 163, 71, 0.4);
+}
+
+.forest2-work-related button img {
+  width: 54px;
+  height: 46px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.forest2-work-related button > span {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.forest2-work-related strong {
+  overflow: hidden;
+  color: var(--forest2-cream);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.forest2-work-related em {
+  color: rgba(244, 241, 232, 0.48);
+  font-size: 0.66rem;
+  font-style: normal;
+}
+
+@media (max-width: 1040px) {
+  .forest2-works-featured-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .forest2-works-featured-card--lead {
+    grid-row: auto;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    min-height: 330px;
+  }
+
+  .forest2-works-featured-card--lead .forest2-works-featured-media {
+    min-height: 330px;
+  }
+
+  .forest2-works-featured-card:not(.forest2-works-featured-card--lead) {
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  .forest2-works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .forest2-works-hero > span {
+    margin-top: 19px;
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .forest2-works-featured,
+  .forest2-works-collections,
+  .forest2-works-list {
+    margin-top: 62px;
+  }
+
+  .forest2-works-section-head,
+  .forest2-works-list-head {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .forest2-works-section-head h2,
+  .forest2-works-list-head h2 {
+    font-size: 1.85rem;
+  }
+
+  .forest2-works-section-head > span {
+    display: none;
+  }
+
+  .forest2-works-featured-card,
+  .forest2-works-featured-card--lead,
+  .forest2-works-featured-card:not(.forest2-works-featured-card--lead) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .forest2-works-featured-media,
+  .forest2-works-featured-card--lead .forest2-works-featured-media {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-works-featured-copy,
+  .forest2-works-featured-card--lead .forest2-works-featured-copy {
+    min-height: 188px;
+    padding: 21px;
+  }
+
+  .forest2-works-featured-card--lead h3 {
+    font-size: 1.48rem;
+  }
+
+  .forest2-works-list {
+    padding-top: 48px;
+    scroll-margin-top: 16px;
+  }
+
+  .forest2-works-list-head > div:first-child > span {
+    font-size: 0.87rem;
+  }
+
+  .forest2-works-list-summary {
+    min-width: 68px;
+    padding-left: 16px;
+  }
+
+  .forest2-works-list-summary strong {
+    font-size: 2.1rem;
+  }
+
+  .forest2-works-comics-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .forest2-works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-works-card {
+    min-height: 0;
+  }
+
+  .forest2-works-card-media {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .forest2-works-card-body {
+    min-height: 174px;
+  }
+
+  .forest2-work-detail-grid,
+  .forest2-work-related > div:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-work-detail-grid section,
+  .forest2-work-detail-grid section:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(244, 241, 232, 0.1);
+  }
+
+  .forest2-work-detail-grid .forest2-work-detail-update {
+    grid-column: auto;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .forest2-work-primary-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forest2-works-featured-card,
+  .forest2-works-card,
+  .forest2-works-featured-media img,
+  .forest2-works-card-media img {
+    transition: none;
+  }
+}
+.collection-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.collection-filters > :is(a, button) {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid var(--forest2-line);
+  border-radius: 10px;
+  color: var(--forest2-muted);
+  background: var(--forest2-surface);
+  font-size: 0.9rem;
+}
+
+.collection-filters > :is(a, button):hover {
+  border-color: var(--forest2-gold);
+  color: var(--forest2-cream);
+}
+
+.collection-filters > [aria-pressed="true"] {
+  border-color: var(--forest2-gold);
+  background: var(--forest2-gold);
+  color: var(--forest2-ink);
+}
+
+.collection-filters span {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.forest2-work-preview {
+  width: min(980px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--forest2-line);
+  border-radius: 18px;
+  color: var(--forest2-cream);
+  background: #061a13;
+}
+
+.forest2-work-preview::backdrop {
+  background: #020b08d9;
+  backdrop-filter: blur(8px);
+}
+
+.forest2-work-preview-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--forest2-line);
+  border-radius: 50%;
+  color: var(--forest2-cream);
+  background: #061a13ed;
+}
+
+.forest2-work-preview-close:hover {
+  border-color: var(--forest2-gold);
+}
+
+.forest2-work-preview-media {
+  aspect-ratio: 16 / 7;
+  background: #020b08;
+}
+
+.forest2-work-preview-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forest2-work-preview-content {
+  padding: clamp(20px, 4vw, 36px);
+}
+
+.forest2-work-preview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: var(--forest2-muted);
+  font-size: 0.85rem;
+}
+
+.forest2-work-preview h2 {
+  margin: 16px 0;
+  font-family: var(--forest2-font-display-ko);
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  line-height: 1.3;
+}
+
+.forest2-work-preview-copy {
+  margin: 0;
+  color: var(--forest2-muted);
+  line-height: 1.75;
+}

@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "source-captures/**",
+    "output/**",
+    ".playwright-cli/**",
     "next-env.d.ts",
   ]),
   eslint.configs.recommended,
@@ -25,7 +27,9 @@ const eslintConfig = defineConfig([
   next.configs["core-web-vitals"],
   {
     rules: {
+      // GitHub Pages serves static assets and full-document navigation.
       "@next/next/no-html-link-for-pages": "off",
+      "@next/next/no-img-element": "off",
     },
     languageOptions: {
       globals: {

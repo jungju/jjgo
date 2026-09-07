@@ -43,3 +43,5 @@ yarn-error.log*
 
 # Local reference captures used during design reconstruction
 /source-captures/
+/output/
+/.playwright-cli/

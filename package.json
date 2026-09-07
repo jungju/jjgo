@@ -9,8 +9,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve out",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern out --ignore-pattern .next"
+    "test": "npm run build && npm run test:unit",
+    "lint": "eslint . --max-warnings 0",
+    "test:unit": "node --test tests/*.test.mjs",
+    "format": "npx --yes prettier@3.9.6 --write app tests/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml",
+    "format:check": "npx --yes prettier@3.9.6 --check app tests/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -22,7 +25,6 @@
   "devDependencies": {
     "@eslint/js": "9.39.4",
     "@next/eslint-plugin-next": "^16.3.1",
-    "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
@@ -31,8 +33,6 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "16.4.0",
-    "react-server-dom-webpack": "19.2.6",
-    "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3"
   },

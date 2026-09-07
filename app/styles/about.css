@@ -1,0 +1,447 @@
+.forest2-about-frame {
+  position: relative;
+}
+@media (max-width: 900px) {
+  .forest2-about-frame {
+    width: 100%;
+  }
+}
+.forest2-about-hero {
+  max-width: 760px;
+}
+.forest2-about-hero h1 {
+  margin: 0;
+  color: var(--forest2-cream);
+  font-weight: 400;
+  white-space: pre-line;
+}
+.forest2-about-identity {
+  max-width: 700px;
+  margin-top: 32px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(220, 163, 71, 0.74);
+}
+.forest2-about-identity p {
+  margin: 0;
+  color: #f4f1e8e0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+.forest2-about-identity p + p {
+  margin-top: 6px;
+}
+.forest2-about-section {
+  margin-top: 80px;
+}
+.forest2-about-section-label,
+.forest2-about-next-label {
+  margin: 0 0 20px;
+  color: var(--forest2-gold);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.forest2-about-section-label:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  margin: 0 10px 3px 0;
+  background: currentColor;
+}
+.forest2-about-strength-grid,
+.forest2-about-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+.forest2-about-strength,
+.forest2-about-evidence {
+  min-width: 0;
+  border: 1px solid rgba(124, 143, 91, 0.26);
+  border-radius: 16px;
+  background: #082319b8;
+}
+.forest2-about-strength {
+  padding: 24px;
+}
+.forest2-about-strength > span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #a9d75f1a;
+  color: var(--forest2-leaf);
+}
+.forest2-about-strength h2 {
+  margin: 22px 0 10px;
+  color: var(--forest2-cream);
+  font-size: 1.18rem;
+  line-height: 1.4;
+}
+.forest2-about-strength p {
+  margin: 0;
+  color: #f4f1e8b3;
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+.forest2-about-evidence {
+  padding: 26px 24px;
+}
+.forest2-about-evidence dt {
+  color: var(--forest2-gold);
+  font-family: var(--forest2-font-display-ko);
+  font-size: 2.5rem;
+  line-height: 1.05;
+}
+.forest2-about-evidence dd {
+  margin: 14px 0 0;
+  color: #f4f1e8d1;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.forest2-about-journey {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.forest2-about-journey li {
+  position: relative;
+  min-width: 0;
+  min-height: 108px;
+  padding: 20px 34px 18px 18px;
+  border-top: 1px solid rgba(220, 163, 71, 0.48);
+  background: linear-gradient(180deg, #09221985, #09221900);
+}
+.forest2-about-journey li > span {
+  display: block;
+  color: var(--forest2-gold);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.forest2-about-journey strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--forest2-cream);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+.forest2-about-journey svg {
+  position: absolute;
+  top: 48px;
+  right: 8px;
+  color: #dca347b8;
+}
+.forest2-about-companies {
+  margin: 22px 0 0;
+  color: #f4f1e894;
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+}
+.forest2-about-next {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px 48px;
+  align-items: end;
+  margin-top: 80px;
+  padding: 38px;
+  border: 1px solid rgba(220, 163, 71, 0.38);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #072b1de6, #051c15db);
+}
+.forest2-about-next-label {
+  margin-bottom: 12px;
+}
+.forest2-about-next h2 {
+  max-width: 650px;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.forest2-about-next > div:first-child > p:last-child {
+  margin: 12px 0 0;
+  color: #f4f1e8ad;
+  line-height: 1.7;
+}
+.forest2-about-actions {
+  display: flex;
+  gap: 10px;
+}
+.forest2-about-action {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid rgba(220, 163, 71, 0.58);
+  border-radius: 10px;
+  color: var(--forest2-cream);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.forest2-site--about .forest2-about-action--primary {
+  border-color: var(--forest2-gold);
+  background: var(--forest2-gold);
+  color: #102016;
+}
+.forest2-about-contact-links {
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 10px 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(124, 143, 91, 0.24);
+}
+.forest2-about-contact-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  color: #f4f1e8c2;
+  font-size: 0.86rem;
+  text-decoration: none;
+}
+.forest2-about-action:hover,
+.forest2-about-action:focus-visible,
+.forest2-about-contact-links a:hover,
+.forest2-about-contact-links a:focus-visible {
+  color: var(--forest2-gold);
+}
+.forest2-site--about .forest2-about-action--primary:hover,
+.forest2-site--about .forest2-about-action--primary:focus-visible {
+  background: #f0bb56;
+  color: #102016;
+}
+@media (max-width: 1120px) {
+  .forest2-about-section,
+  .forest2-about-next {
+    margin-top: 64px;
+  }
+  .forest2-about-strength-grid,
+  .forest2-about-evidence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .forest2-about-journey {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .forest2-about-next {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+@media (max-width: 760px) {
+  .forest2-about-identity {
+    margin-top: 26px;
+    padding-left: 14px;
+  }
+  .forest2-about-identity p {
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+  .forest2-about-section,
+  .forest2-about-next {
+    margin-top: 48px;
+  }
+  .forest2-about-strength-grid {
+    grid-template-columns: 1fr;
+  }
+  .forest2-about-strength {
+    padding: 20px;
+  }
+  .forest2-about-strength h2 {
+    margin-top: 16px;
+  }
+  .forest2-about-evidence-grid {
+    gap: 10px;
+  }
+  .forest2-about-evidence {
+    padding: 20px 16px;
+  }
+  .forest2-about-evidence dt {
+    font-size: 1.9rem;
+  }
+  .forest2-about-evidence dd {
+    font-size: 0.82rem;
+  }
+  .forest2-about-journey {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .forest2-about-journey li {
+    min-height: 0;
+    padding: 16px 42px 16px 16px;
+    border-top: 0;
+    border-left: 1px solid rgba(220, 163, 71, 0.48);
+  }
+  .forest2-about-journey li > span,
+  .forest2-about-journey strong {
+    display: inline;
+  }
+  .forest2-about-journey strong {
+    margin-left: 14px;
+  }
+  .forest2-about-journey svg {
+    top: 18px;
+    right: 14px;
+    transform: rotate(90deg);
+  }
+  .forest2-about-next {
+    gap: 24px;
+    padding: 26px 20px;
+  }
+  .forest2-about-next h2 {
+    font-size: 1.5rem;
+  }
+  .forest2-about-actions,
+  .forest2-about-contact-links {
+    flex-direction: column;
+  }
+  .forest2-about-action {
+    width: 100%;
+  }
+  .forest2-about-contact-links {
+    gap: 2px;
+  }
+}
+
+.forest2-about-credentials > h2,
+.forest2-about-verification > h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--forest2-cream);
+  font-family: var(--forest2-font-display-ko), Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.forest2-about-credentials > p:not(.forest2-about-section-label),
+.forest2-about-verification > p:not(.forest2-about-section-label) {
+  max-width: 720px;
+  margin: 14px 0 0;
+  color: rgba(244, 241, 232, 0.68);
+  line-height: 1.7;
+}
+
+.forest2-about-credential-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.forest2-about-credential-grid article {
+  min-width: 0;
+  min-height: 142px;
+  padding: 22px;
+  border: 1px solid rgba(124, 143, 91, 0.3);
+  border-radius: 14px;
+  background: rgba(8, 35, 25, 0.72);
+}
+
+.forest2-about-credential-grid article > span {
+  display: block;
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.forest2-about-credential-grid h3 {
+  margin: 20px 0 0;
+  color: var(--forest2-cream);
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.forest2-about-credential-grid article > p {
+  margin: 10px 0 0;
+  color: rgba(244, 241, 232, 0.58);
+  font-size: 0.8rem;
+}
+
+.forest2-about-credential-source {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 14px;
+  color: rgba(244, 241, 232, 0.68);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-decoration-color: rgba(220, 163, 71, 0.46);
+  text-underline-offset: 4px;
+}
+
+.forest2-about-credential-source:hover,
+.forest2-about-credential-source:focus-visible {
+  color: var(--forest2-gold);
+}
+
+.forest2-about-verification-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.forest2-about-verification-links a {
+  display: grid;
+  min-height: 112px;
+  align-content: space-between;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(124, 143, 91, 0.3);
+  border-radius: 14px;
+  color: var(--forest2-cream);
+  background: rgba(8, 35, 25, 0.72);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.forest2-about-verification-links a:hover,
+.forest2-about-verification-links a:focus-visible {
+  border-color: var(--forest2-gold);
+  transform: translateY(-2px);
+}
+
+.forest2-about-verification-links strong {
+  font-size: 1rem;
+}
+
+.forest2-about-verification-links span {
+  color: rgba(244, 241, 232, 0.62);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .forest2-about-verification-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .forest2-about-credential-grid,
+  .forest2-about-verification-links {
+    grid-template-columns: 1fr;
+  }
+
+  .forest2-about-credential-grid article {
+    min-height: 0;
+  }
+
+  .forest2-about-verification-links a {
+    min-height: 92px;
+  }
+}

@@ -15,14 +15,49 @@ type SitePageSpec = {
 export const sitePages = {
   home: { path: "/", parent: null, nav: "home", identity: null },
   works: { path: "/works", parent: null, nav: "works", identity: null },
-  roblox: { path: "/works/roblox", parent: "works", nav: "works", identity: { ko: "Roblox", en: "Roblox" } },
-  aiSlop: { path: "/works/ai-slop", parent: "works", nav: "works", identity: { ko: "AI Slop", en: "AI Slop" } },
-  consulting: { path: "/consulting", parent: null, nav: "consulting", identity: { ko: "Consulting", en: "Consulting" } },
-  consultingAiNative: { path: "/consulting/ai-native", parent: "consulting", nav: "consulting", identity: null },
-  consultingAx: { path: "/consulting/ax", parent: "consulting", nav: "consulting", identity: null },
-  consultingPlatformEngineering: { path: "/consulting/platform-engineering", parent: "consulting", nav: "consulting", identity: null },
+  roblox: {
+    path: "/works/roblox",
+    parent: "works",
+    nav: "works",
+    identity: { ko: "Roblox", en: "Roblox" },
+  },
+  aiSlop: {
+    path: "/works/ai-slop",
+    parent: "works",
+    nav: "works",
+    identity: { ko: "AI Slop", en: "AI Slop" },
+  },
+  consulting: {
+    path: "/consulting",
+    parent: null,
+    nav: "consulting",
+    identity: { ko: "Consulting", en: "Consulting" },
+  },
+  consultingAiNative: {
+    path: "/consulting/ai-native",
+    parent: "consulting",
+    nav: "consulting",
+    identity: null,
+  },
+  consultingAx: {
+    path: "/consulting/ax",
+    parent: "consulting",
+    nav: "consulting",
+    identity: null,
+  },
+  consultingPlatformEngineering: {
+    path: "/consulting/platform-engineering",
+    parent: "consulting",
+    nav: "consulting",
+    identity: null,
+  },
   about: { path: "/about", parent: null, nav: "about", identity: null },
-  method: { path: "/method", parent: null, nav: "consulting", identity: { ko: "Consulting", en: "Consulting" } },
+  method: {
+    path: "/method",
+    parent: null,
+    nav: "consulting",
+    identity: { ko: "Consulting", en: "Consulting" },
+  },
 } as const satisfies Record<string, SitePageSpec>;
 
 export type SitePageId = keyof typeof sitePages;
@@ -30,9 +65,17 @@ export type SitePageId = keyof typeof sitePages;
 export const primaryNavigation = [
   { id: "home", page: "home", label: { ko: "홈", en: "Home" } },
   { id: "works", page: "works", label: { ko: "작품", en: "Works" } },
-  { id: "consulting", page: "consulting", label: { ko: "컨설팅", en: "Consulting" } },
+  {
+    id: "consulting",
+    page: "consulting",
+    label: { ko: "컨설팅", en: "Consulting" },
+  },
   { id: "about", page: "about", label: { ko: "소개", en: "About" } },
-] as const satisfies readonly { id: SiteNavItem; page: SitePageId; label: LocalizedLabel }[];
+] as const satisfies readonly {
+  id: SiteNavItem;
+  page: SitePageId;
+  label: LocalizedLabel;
+}[];
 
 export const consultingPageBySlug = {
   "ai-native": "consultingAiNative",
@@ -55,16 +98,13 @@ export function localizedSitePath(locale: SiteLocale, path: string) {
   return path === "/" ? "/en/" : `/en${path}`;
 }
 
-export function pageForPath(path: string): SitePageId | null {
-  const entry = Object.entries(sitePages).find(([, page]) => page.path === path);
-  return (entry?.[0] as SitePageId | undefined) ?? null;
-}
-
 export function staticHtmlRoutes() {
   return siteLocales.flatMap((locale) =>
     (Object.keys(sitePages) as SitePageId[]).map((page) => {
       const localized = localizedSitePath(locale, pagePath(page));
-      return localized === "/" ? "index.html" : `${localized.replace(/^\//, "").replace(/\/$/, "")}/index.html`;
+      return localized === "/"
+        ? "index.html"
+        : `${localized.replace(/^\//, "").replace(/\/$/, "")}/index.html`;
     }),
   );
 }

@@ -1,208 +1,48 @@
-# Design QA
+# 리팩토링·UI 검증 기록
 
-**Findings**
+2026-09-07 · 기존 기능과 한국어·영어 URL, SEO, GitHub Pages 정적 배포 방식을 유지했다.
 
-- No actionable P0, P1, or P2 differences remain.
-- The three consulting detail routes now read as distinct service landing pages while retaining the existing JJGo forest atmosphere, navigation, typography, glass panels, and gold/green tokens.
-- The intentional change from the source is a shorter promise-led hero, a service-specific image, two clear actions, and a landing flow of outcomes → situations → process → contact.
-- No residual P3 issue was identified in the requested scope.
+## 핵심 구조 문제와 정리
 
-**Source visual truth**
+홈·소개는 캡처한 HTML을 여러 단계의 정규식으로 고치고, 같은 문자열을 다시 치환해 영어 페이지를 만들고 있었다. 헤더와 언어 선택도 문자열 버전과 React 버전이 따로 있었다. 이를 일반 React 화면과 언어별 콘텐츠 데이터로 바꾸고 공통 레이아웃·헤더 하나로 통합했다.
 
-- AI Native before redesign: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\reference-consulting-detail-ai-native.png`
-- AX before redesign: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\reference-consulting-detail-ax.png`
-- Platform Engineering before redesign: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\reference-consulting-detail-platform-engineering.png`
-- The existing detail pages are the visual-system source. Hero length and content hierarchy are intentionally redesigned per the user's landing-page request.
+컨설팅 파일에 서비스 데이터·배경·헤더 wrapper·목록·상세·개발 단계 설명이 섞여 있었다. 서비스 데이터와 개발 단계 설명을 분리하고 한국어·영어 목록을 같은 화면으로 렌더링한다. 실제 URL 아래에 Roblox·AI Slop 콘텐츠를 배치했다. 작품 데이터의 고정 정보도 언어마다 복제하지 않도록 정리했다.
 
-**Implementation evidence**
+약 196KB의 원본·누적 CSS에는 폐기된 호스트 UI, 이전 페이지 구성, 반복 애니메이션, 중복 반응형 헤더 규칙이 남아 있었다. 현재 화면의 참조를 기준으로 제거하고 공통·페이지별 스타일로 나눴다. 불필요한 Tailwind 처리와 직접 사용하지 않는 서버 컴포넌트 패키지 선언을 제거했다.
 
-- AI Native desktop: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-ai-native.png`
-- AX desktop: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-ax.png`
-- Platform Engineering desktop: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-platform-engineering.png`
-- AI Native mobile: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-mobile-ai-native.png`
-- Platform Engineering mobile: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-mobile-platform.png`
-- AI Native outcomes section: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-outcomes-ai-native.png`
+## 정리 규모
 
-**Viewport and normalization**
+Git HEAD의 추적 파일과 현재 파일을 바이트 기준으로 비교했다. 줄 수는 원래 minify된 CSS를 읽을 수 있게 펼친 영향을 받으므로 지표로 사용하지 않았다.
 
-- Desktop viewport: 1280 × 720 CSS px, device scale factor 1. Source and implementation screenshots are both 1265 × 712 px after scrollbar exclusion.
-- Mobile viewport: 390 × 844 CSS px, device scale factor 1. Implementation screenshots are 375 × 812 px after scrollbar exclusion.
-- No resampling or density conversion was used.
+| 대상                        |              작업 전 |            작업 후 |               감소 |
+| --------------------------- | -------------------: | -----------------: | -----------------: |
+| `app/` 전체 소스·콘텐츠·CSS |            462,318 B |          252,570 B |              45.4% |
+| CSS                         |            196,521 B |           89,305 B |              54.6% |
+| `public/` 배포 리소스       | 82,684,688 B / 252개 | 9,841,609 B / 24개 | 88.1% / 228개 제거 |
 
-**State**
+삭제한 파일은 과거 캡처·시안·중복 폰트·미사용 이미지·폐기된 원본 HTML·작품 JSON이다. 현재 사용하는 이미지, 폰트, OG 이미지, favicon과 `.nojekyll`은 유지했다.
 
-- Routes: `/consulting/ai-native`, `/consulting/ax`, `/consulting/platform-engineering`
-- Theme: dark forest, motion enabled.
-- Initial hero state was compared at scroll position 0. The `#outcomes` anchor state was also tested.
+## UI 개선
 
-**Full-view comparison evidence**
+- 공통 본문 폭·화면 여백·제목 크기·헤더·언어 버튼·기본 포커스를 통일했다. 숲 배경과 기존 폰트·금색/초록색 분위기는 유지했다.
+- 홈 제목을 처음부터 읽을 수 있게 하고 반복되는 문구 교체와 이미지 움직임을 제거했다. 본문 대비와 제목 줄바꿈을 개선했다.
+- 작품 컬렉션의 큰 이미지 카드와 반복 설명을 작은 필터로 정리했다. 빈 영상·독립 게임 컬렉션에도 양쪽 언어의 안내를 제공한다.
+- 상세 대화상자는 native `dialog`로 바꾸고 Escape·닫기·배경 클릭, 배경 스크롤 잠금, Tab 순환, 관련 작품 전환 후 스크롤 초기화, 원래 버튼으로의 포커스 복귀를 확인했다.
+- 컨설팅 하위 메뉴를 작은 화면에서도 잘리지 않고 줄바꿈하도록 정리했다. 제목·버튼·카드의 과도한 크기와 그림자를 줄였다.
+- 본문 바로가기와 사이트 분위기에 맞는 404 화면을 제공한다. 정적 콘텐츠에 가짜 로딩 상태나 재시도 계층을 추가하지 않았다.
 
-- Three-route side-by-side comparison: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\qa-compare-consulting-detail-landings.png`
-- Each row pairs the earlier detail view on the left with the redesigned landing hero on the right at the same viewport.
-- The comparison confirms the logo/header, background crop, content shell, submenu proportions, active state, display type, cream/gold palette, and atmospheric layering remain consistent. The shorter copy and new image column are intentional improvements.
+## 검증 결과
 
-**Focused region comparison evidence**
+- 프로덕션 정적 빌드 성공. 기존 20개 경로와 canonical·hreflang·JSON-LD·사이트맵 유지.
+- 30개 회귀 테스트 통과. 기존 콘텐츠와 함께 내부 링크·앵커·중복 ID·이미지·미사용 public 파일·CSS 변수·작품 상태·빈 컬렉션을 검사한다.
+- lint 오류·경고 0건, Prettier 포맷 검사 및 `git diff --check` 통과.
+- 실제 Chrome에서 한국어·영어 각 10개 경로 × 320·390·768·1024·1440px, 총 100개 화면 조합 검사 통과. 가로 넘침·깨진 이미지·브라우저 런타임/콘솔 오류·실패한 HTTP 요청 0건.
+- 양쪽 언어의 필터·빈 상태·모달 키보드/포커스/스크롤/관련 작품/닫기·언어 전환, 컨설팅 앵커, 본문 바로가기, reduced motion 검사 통과.
+- `next dev`의 `localhost:4174`에서 모달 반복 열기·닫기, 영어 필터, 소개·컨설팅 페이지 확인. 런타임 오류 없음. 없는 경로는 의도한 404와 복귀 링크를 출력했다.
+- 개발 서버를 IP 주소로 접근했을 때는 Next.js의 기본 개발 리소스 출처 제한이 적용됐다. 설정을 완화하지 않고 개발 서버가 안내하는 localhost 주소로 검증했다.
 
-- The native-size paired screenshots keep hero typography, tags, buttons, image crop, radii, and submenu states legible, so a separate hero crop was not required.
-- The outcomes screenshot verifies the first below-fold landing section, its three result cards, the following situations heading, and preserved forest atmosphere.
-- The mobile screenshots verify heading wrapping, horizontal submenu behavior, CTA placement, image crop, and single-column flow without viewport overflow.
+브라우저 검증 스크립트는 `tests/browser-smoke.txt`, 실행 방법은 README에 있다. 검증 스크린샷은 Git에서 제외한 `output/playwright/verified-*.png`에 저장했다. GitHub Actions는 빌드와 lint, 정적 산출물 회귀 테스트가 성공한 뒤 배포한다.
 
-**Required fidelity surfaces**
+## 남겨 둔 범위
 
-- Fonts and typography: existing Korean display and UI font families, optical weights, line heights, and letter spacing are preserved. Hero titles are now concise and remain within two to three mobile lines.
-- Spacing and layout rhythm: desktop uses a balanced two-column hero; tablet/mobile stack copy above imagery. Existing shell width, section gaps, pill spacing, radii, and 3/4-column content systems are reused.
-- Colors and visual tokens: cream foreground, gold emphasis, positive green, translucent borders, dark glass surfaces, shadow depth, and background wash reuse the established variables.
-- Image quality and asset fidelity: three project-owned 1200 × 800 WebP assets are reused at native aspect ratio with object-fit cropping, subtle independent drift, and reduced-motion fallback. No placeholder, emoji, CSS drawing, or approximate SVG was introduced.
-- Copy and content: the hero copy is reduced to one short title and one supporting sentence per service. Outcomes, situations, process, and CTA provide the deeper content below the fold.
-
-**Primary interactions tested**
-
-- Clicking `02 AX` from Platform Engineering navigated to `/consulting/ax` at scroll position 0.
-- `결과 보기` updated the URL to `#outcomes` and aligned the section at the configured 108 px scroll margin.
-- All three service images loaded successfully at 1200 px natural width.
-- Each route exposes three outcome cards, three situations, and four process steps.
-- Desktop and mobile responsive states were rendered and inspected; no horizontal overflow was found.
-- Browser console errors: none.
-- Browser console warnings: none.
-- Production build: passed.
-
-**Comparison history**
-
-- Earlier state: each detail page used a long text-only hero. This preserved the design language but did not feel like a complete service landing page.
-- Fix applied: shortened the hero promise, added service imagery and two hero actions, reordered outcomes first, then situations, process, and contact.
-- Post-fix evidence: the paired desktop comparison and mobile screenshots show distinct landing identities, concise above-fold copy, clean responsive stacking, and preserved brand fidelity.
-- No further P0/P1/P2 fix iteration was required.
-
-**Implementation Checklist**
-
-- [x] Give all three consulting routes independent landing-page heroes.
-- [x] Shorten the title and top supporting sentence for each service.
-- [x] Reuse the three consulting image assets as hero visuals.
-- [x] Add consultation and results actions above the fold.
-- [x] Reorder content into outcomes, situations, process, and contact.
-- [x] Add desktop, tablet, and mobile layouts plus reduced-motion behavior.
-- [x] Verify submenu and anchor navigation.
-- [x] Verify image loading, responsive overflow, clean console, and production build.
-
-**Follow-up Polish**
-
-- None required for this handoff.
-
-**Latest scoped title update**
-
-- Source visual truth: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-detail-landing-ai-native.png`
-- Browser-rendered implementation: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\implementation-consulting-ai-native-title-problem-solving.png`
-- Side-by-side comparison: `C:\Users\jeong\OneDrive\문서\ChatGPT\jjgo-io\source-captures\qa-compare-ai-native-title-change.png`
-- Viewport: 1280 × 720 CSS px, device scale factor 1. Both captures are 1265 × 712 px with no density normalization.
-- State: `/consulting/ai-native`, scroll position 0, dark forest theme, motion enabled.
-- Intentional copy change: `AI와 함께 일하는 조직` → `문제를 푸는 조직`.
-- Fonts/typography: the existing display family, weight, line height, and letter spacing are unchanged; the shorter title now fits on one desktop line without truncation.
-- Spacing/layout rhythm: no component dimensions or spacing changed; the shorter title adds useful breathing room above the summary.
-- Colors/tokens and image quality: unchanged from the passed landing-page implementation.
-- Full-view evidence clearly shows the only material difference is the requested title. A focused crop was unnecessary because the title is large and fully legible in the native-size comparison.
-- Browser console errors: none. Browser console warnings: none. Production build: passed.
-- No actionable P0/P1/P2 findings remain.
-
-final result: passed
-
----
-
-# Coffee Chat CTA and Request Flow QA
-
-**Findings**
-
-- No actionable P0, P1, or P2 differences remain.
-- The About-page decision card keeps the original surface, hierarchy, typography, border, radius, and contact area while making coffee chat the primary action.
-- The new request page extends the same forest background, cream display type, gold/green tokens, translucent panels, and Lucide icon family used by the existing site.
-- No residual P3 issue was identified in the requested scope.
-
-**Source visual truth**
-
-- Original About CTA, mobile: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-audit\04-about-mobile-bottom.png`
-- The source establishes the selected About-card structure and the broader JJGo visual system. The coffee-chat copy, third text action, and dedicated request route are intentional additions from the approved direction.
-
-**Implementation evidence**
-
-- Coffee-chat desktop: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\01-coffee-chat-desktop.png`
-- Completed request review state: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\02-coffee-chat-review.png`
-- Updated About CTA, mobile: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\03-about-cta-mobile.png`
-- Coffee-chat mobile hero: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\05-coffee-chat-mobile-top.png`
-- Coffee-chat mobile form: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\06-coffee-chat-mobile-form.png`
-
-**Viewport and normalization**
-
-- Desktop viewport: 1280 × 900 CSS px, device scale factor 1. Browser-rendered screenshots are 1265 × 889 px after scrollbar exclusion.
-- Mobile viewport: 390 × 844 CSS px, device scale factor 1. Browser-rendered implementation screenshots are 375 × 812 px after scrollbar and browser-surface exclusion.
-- The source mobile screenshot is 390 × 844 px. For focused comparison, both CTA card regions were cropped to 360 × 570 px without resampling or density conversion.
-
-**State**
-
-- Routes: `/about`, `/coffee-chat`, `/en/about`, `/en/coffee-chat`.
-- Theme: dark forest, motion enabled.
-- Compared the About CTA at the bottom-of-page decision state, the coffee-chat initial form state, and the completed request-review state.
-
-**Full-view comparison evidence**
-
-- About CTA before/after: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\04-about-before-after.png`
-- The full-view pair confirms that the new card remains in the same end-of-profile location and keeps the existing background crop, shell width, contact list, and primary/secondary action styling.
-- The additional tertiary action increases card height intentionally without causing clipping or horizontal overflow.
-
-**Focused region comparison evidence**
-
-- Normalized CTA card comparison: `C:\Users\jeong\.codex\visualizations\2026\08\16\01a00861-5bd9-7912-ad02-87f7db4d46a7\coffee-chat-build\07-about-cta-focused-comparison.png`
-- The focused pair keeps the card typography, gold primary action, outlined secondary action, border treatment, spacing rhythm, and contact divider directly legible.
-
-**Required fidelity surfaces**
-
-- Fonts and typography: MaruBuri remains the Korean display face and Pretendard Variable remains the body/UI face. Existing weights, cream/gold hierarchy, line height, and letter spacing are preserved; the mobile title wraps cleanly without truncation.
-- Spacing and layout rhythm: the About card retains its padding and radius. The new page uses the existing 1200 px shell, two-column desktop composition, single-column mobile composition, 44–52 px controls, and consistent section gaps. No horizontal overflow was found.
-- Colors and visual tokens: the implementation reuses the established forest background, dark glass surfaces, cream foreground, gold CTA, positive green, translucent borders, and existing shadow depth.
-- Image quality and asset fidelity: the project-owned responsive forest background and JJGo logo are reused at native quality. No placeholder, emoji, handcrafted SVG, CSS illustration, or approximate raster asset was introduced. Existing Lucide icons remain consistent with the site.
-- Copy and content: the About CTA communicates reciprocal conversation rather than a commercial service. The form now asks only for a reply email. Korean and English routes use matched meaning and correct localized links.
-
-**Primary interactions tested**
-
-- Clicking `커피챗 신청하기` on `/about` navigated to `/coffee-chat/`.
-- The single required email field accepted realistic test content and retained native email validation.
-- Submitting opens a short prefilled `mailto:` request containing the reply address without transmitting data automatically.
-- Korean and English language links resolve to `/coffee-chat` and `/en/coffee-chat` respectively.
-- `/en/about` exposes localized coffee-chat, consulting, and work links; `/en/coffee-chat` exposes localized labels and options.
-- Browser console errors and warnings: none.
-- Production static build: passed. Rendered-HTML test suite: 4/4 passed. ESLint: 0 errors; 10 existing `no-img-element` warnings outside the new form flow.
-
-**Comparison history**
-
-- First browser pass found one P2 content mismatch: the secondary About action still read `컨설팅 보기` instead of the approved `컨설팅 문의하기` because the legacy source adapter changed the text before the coffee-chat adapter ran.
-- Fix applied: the coffee-chat adapter now targets the post-adaptation consulting label, preserving the intended inquiry wording in Korean and `Discuss consulting` in English.
-- Post-fix evidence: `03-about-cta-mobile.png` and `07-about-cta-focused-comparison.png` show the corrected label, balanced action hierarchy, and no resulting layout regression.
-
-**Implementation Checklist**
-
-- [x] Make coffee chat the primary About-page action.
-- [x] Keep consulting as a secondary action and work as a tertiary text action.
-- [x] Add functional Korean and English request routes.
-- [x] Replace the request form with a directly visible contact email.
-- [x] Prefill a short email template without automatic transmission.
-- [x] Verify desktop and mobile layouts, CTA navigation, form state, localization, console output, lint, build, and static tests.
-
-**Follow-up Polish**
-
-- None required for this handoff.
-
-final result: passed
-
----
-
-# Coffee Chat Direct-email Simplification QA
-
-- This update supersedes the earlier multi-field and single-input variants in this report.
-- The contact area now displays `leejungju.go@gmail.com` directly with no form or input controls.
-- Visitors are asked for only three details: organization and location or time zone, a short topic, and two or three available time windows.
-- Korean and English headings and helper copy describe the direct-email flow.
-- The email address itself remains clickable; the separate mail action button has been removed.
-- Responsive fix: the context column is no longer sticky below 960 px, so it cannot cover the compact form while scrolling.
-- Rendered HTML check: visible email and all three prompts, zero inputs and zero forms, HTTP 200.
-- Production static build and rendered-HTML tests: passed, 4/4.
-- Targeted ESLint: passed with no errors or warnings.
-
-final result: passed
+외부 프로젝트의 게시 회차·성과 수치·외부 링크는 기존 콘텐츠를 유지했으며 최신 사실을 다시 조사하거나 자동 동기화하지 않았다. PostHog의 실제 계정 수집 결과도 이번 로컬 검증 대상에 포함하지 않았다. Safari·Firefox와 실제 모바일 기기 검증은 별도로 필요하다. 운영 배포와 커밋은 수행하지 않았다.

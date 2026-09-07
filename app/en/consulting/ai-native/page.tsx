@@ -1,4 +1,5 @@
-import { ConsultingDetail, consultingServiceBySlug } from "../../../consulting/consulting-components";
+import { ConsultingDetail } from "../../../consulting/consulting-components";
+import { consultingServiceBySlug } from "../../../consulting/consulting-data";
 import { consultingServicesEn } from "../../../consulting/consulting-data-en";
 import { JsonLd, pageMetadata, serviceJsonLd } from "../../../seo";
 
@@ -9,7 +10,8 @@ export const metadata = pageMetadata({
   locale: "en",
   path,
   title: "AI-Native Organization Consulting | Jungju Lee | JJGo",
-  description: "Embed AI into the operating model, product development workflow, quality controls, and governance of the whole organization with Jungju Lee.",
+  description:
+    "Embed AI into the operating model, product development workflow, quality controls, and governance of the whole organization with Jungju Lee.",
   image: service.image,
   imageWidth: 1200,
   imageHeight: 800,
@@ -18,13 +20,19 @@ export const metadata = pageMetadata({
 export default function EnglishAiNativePage() {
   return (
     <>
-      <JsonLd data={serviceJsonLd({
-        locale: "en",
-        path,
-        name: "AI-Native Organization Consulting",
-        description: service.summary,
-      })} />
-      <ConsultingDetail service={service} services={consultingServicesEn} locale="en" />
+      <JsonLd
+        data={serviceJsonLd({
+          locale: "en",
+          path,
+          name: "AI-Native Organization Consulting",
+          description: service.summary,
+        })}
+      />
+      <ConsultingDetail
+        service={service}
+        services={consultingServicesEn}
+        locale="en"
+      />
     </>
   );
 }

@@ -1,0 +1,109 @@
+async (page) => {
+  const origin = await page.evaluate(() => location.origin);
+  const routes = ["/", "/about/", "/works/", "/consulting/", "/consulting/ai-native/", "/consulting/ax/", "/consulting/platform-engineering/", "/works/roblox/", "/works/ai-slop/", "/method/"];
+  const errors = [];
+  const failures = [];
+  const check = (condition, message) => { if (!condition) throw new Error(message); };
+  const onError = error => errors.push(error.message);
+  const onConsole = message => { if (message.type() === "error") errors.push(message.text()); };
+  const onResponse = response => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); };
+  page.on("pageerror", onError);
+  page.on("console", onConsole);
+  page.on("response", onResponse);
+  let viewports = 0;
+  try {
+    for (const locale of ["ko", "en"]) {
+      for (const width of [320, 390, 768, 1024, 1440]) {
+        await page.setViewportSize({ width, height: 900 });
+        for (const route of routes) {
+          const path = locale === "en" ? `/en${route}` : route;
+          const response = await page.goto(origin + path);
+          check(response.status() === 200, `${path}: HTTP response`);
+          await page.evaluate(() => document.fonts.ready);
+          const health = await page.evaluate(() => ({
+            overflow: document.documentElement.scrollWidth > innerWidth,
+            language: document.documentElement.lang,
+            headings: document.querySelectorAll("h1").length,
+            focusTargets: [...document.querySelectorAll(".forest2-topbar a")].filter(a => a.getBoundingClientRect().width && a.getBoundingClientRect().height < 24).map(a => a.textContent),
+          }));
+          check(!health.overflow, `${path} at ${width}px: horizontal overflow`);
+          check(health.language === locale && health.headings === 1, `${path}: language or main heading`);
+          check(!health.focusTargets.length, `${path}: small header target`);
+          if (width === 390 || width === 1440) {
+            for (let y = 0, height = await page.evaluate(() => document.body.scrollHeight); y < height; y += 800) {
+              await page.evaluate(y => window.scrollTo(0, y), y);
+            }
+            await page.evaluate(() => Promise.all([...document.images].map(image => image.decode().catch(() => {}))));
+            const broken = await page.evaluate(() => [...document.images].filter(image => !image.naturalWidth).map(image => image.src));
+            check(!broken.length, `${path}: broken images ${broken.join(", ")}`);
+            if (route !== "/method/") {
+              const name = route === "/" ? "home" : route.slice(1, -1).replaceAll("/", "-");
+              await page.screenshot({ path: `output/playwright/verified-${locale}-${name}-${width}.png`, fullPage: true, animations: "disabled" });
+            }
+          }
+          viewports++;
+        }
+      }
+      await page.setViewportSize({ width: 390, height: 900 });
+      await page.goto(origin + (locale === "ko" ? "/works/" : "/en/works/"));
+      const filters = page.locator(".collection-filters");
+      await filters.getByRole("button", { name: locale === "ko" ? "독립 게임 0" : "Indie Games 0", exact: true }).click();
+      check(await page.locator(".forest2-works-empty h3").innerText(), `${locale}: indie empty state`);
+      await filters.getByRole("button", { name: locale === "ko" ? "영상 0" : "Video 0", exact: true }).click();
+      check(await page.locator(".forest2-works-empty h3").innerText(), `${locale}: video empty state`);
+      await filters.getByRole("button", { name: locale === "ko" ? "만화 1" : "Comics 1", exact: true }).click();
+      check(await page.locator(".forest2-works-grid > *").count() === 1, `${locale}: comics filter`);
+      await filters.getByRole("button", { name: locale === "ko" ? "웹 서비스·사이트 5" : "Web Services & Sites 5", exact: true }).click();
+      check(await page.locator(".forest2-works-grid > *").count() === 5, `${locale}: web filter`);
+      const trigger = page.locator(".forest2-works-grid").getByRole("button", { name: /^Homi / });
+      await trigger.focus();
+      await page.keyboard.press("Enter");
+      await page.locator("dialog[open]").waitFor();
+      check(await page.evaluate(() => document.activeElement?.classList.contains("forest2-work-preview-close")), `${locale}: initial modal focus`);
+      check(await page.evaluate(() => document.body.style.overflow === "hidden"), `${locale}: background scroll lock`);
+      await page.keyboard.press("Shift+Tab");
+      check(await page.evaluate(() => !!document.activeElement?.closest("dialog")), `${locale}: reverse focus containment`);
+      for (let index = 0; index < 8; index++) {
+        await page.keyboard.press("Tab");
+        check(await page.evaluate(() => !!document.activeElement?.closest("dialog")), `${locale}: modal focus containment`);
+      }
+      await page.locator("dialog").getByRole("button", { name: /GameLingo/ }).click();
+      check(await page.locator("#work-preview-title").innerText() === "GameLingo", `${locale}: related project`);
+      check(await page.evaluate(() => document.querySelector("dialog").scrollTop === 0), `${locale}: related project scroll reset`);
+      await page.screenshot({ path: `output/playwright/verified-${locale}-dialog-390.png` });
+      await page.keyboard.press("Escape");
+      await page.locator("dialog").waitFor({ state: "detached" });
+      check(await trigger.evaluate(element => element === document.activeElement), `${locale}: focus restoration`);
+      check(await page.evaluate(() => !document.body.style.overflow), `${locale}: scroll restoration`);
+      await trigger.click();
+      await page.locator("dialog[open]").waitFor();
+      await page.mouse.click(2, 450);
+      await page.locator("dialog").waitFor({ state: "detached" });
+      await trigger.click();
+      await page.locator("dialog[open]").waitFor();
+      await page.locator(".forest2-work-preview-close").click();
+      await page.locator("dialog").waitFor({ state: "detached" });
+      const languageLink = page.locator(".forest2-language-toggle").getByRole("link", { name: locale === "ko" ? "EN" : "KO", exact: true });
+      await languageLink.click();
+      check(await page.locator("html").getAttribute("lang") === (locale === "ko" ? "en" : "ko"), `${locale}: language navigation`);
+    }
+    await page.goto(origin + "/consulting/ax/");
+    await page.getByRole("link", { name: "결과 보기", exact: true }).click();
+    check(page.url().endsWith("#outcomes"), "consulting outcomes anchor");
+    await page.goto(origin + "/");
+    await page.keyboard.press("Tab");
+    check(await page.evaluate(() => document.activeElement?.classList.contains("skip-link")), "skip link is first focus target");
+    await page.keyboard.press("Enter");
+    check(await page.evaluate(() => document.activeElement?.id === "main-content"), "skip link moves focus to content");
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    check(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior === "auto"), "reduced motion");
+    check(!errors.length, `Browser errors: ${errors.join("; ")}`);
+    check(!failures.length, `HTTP failures: ${failures.join("; ")}`);
+    return { viewports, locales: 2, routes: routes.length * 2, interactions: "filters, empty states, dialog keyboard/focus/scroll/related/backdrop, language, anchor, skip link, reduced motion", errors, failures };
+  } finally {
+    page.off("pageerror", onError);
+    page.off("console", onConsole);
+    page.off("response", onResponse);
+  }
+}
+

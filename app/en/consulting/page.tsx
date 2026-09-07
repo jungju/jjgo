@@ -1,74 +1,15 @@
-import { ArrowRight } from "lucide-react";
-import { ConsultingSubnav, DevelopmentStages, ForestBackground, OriginalMethodHeadline, Topbar } from "../../consulting/consulting-components";
-import { consultingServicesEn } from "../../consulting/consulting-data-en";
-import { localizedPath } from "../../language-toggle";
-import { consultingPath } from "../../site-spec";
-import { JsonLd, pageMetadata, serviceJsonLd } from "../../seo";
+import { ConsultingOverview } from "../../consulting/consulting-overview";
+import { pageMetadata } from "../../seo";
 
 export const metadata = pageMetadata({
   locale: "en",
   path: "/consulting",
   title: "AI-Native, AX/RAG & Platform Engineering Consulting | JJGo",
-  description: "Consulting for AI-native organizations, AX and RAG grounded in real-work evaluation and orchestration, and Kubernetes platform engineering.",
+  description:
+    "Consulting for AI-native organizations, AX and RAG grounded in real-work evaluation and orchestration, and Kubernetes platform engineering.",
   image: "/og-en.png",
 });
 
-export default function EnglishConsultingPage() {
-  return (
-    <>
-      <JsonLd data={consultingServicesEn.map((service) => serviceJsonLd({
-        locale: "en",
-        path: consultingPath(service.slug),
-        name: `${service.shortTitle} Consulting`,
-        description: service.summary,
-      }))} />
-      <div className="jhub-web-app-root jhub-web-app-root--jjgo2" data-jhub-web-app="jjgo2" data-jhub-web-app-kind="static-content-site" lang="en">
-        <main className="forest2-site forest2-site--method forest2-site--consulting" data-jhub-web-app="jjgo2" data-web-app-title="JJGo">
-          <ForestBackground />
-          <Topbar locale="en" />
-          <div className="forest2-content forest2-route-view">
-            <article className="forest2-method-frame">
-              <div className="forest2-method-shell">
-                <header className="forest2-method-hero" data-visual-id="consulting-hero">
-                  <p className="forest2-method-eyebrow">CONSULTING</p>
-                  <OriginalMethodHeadline locale="en" />
-                  <p className="forest2-method-lead">Start with real work, define how outcomes will be evaluated, and connect organization, business, and technology into an operating flow.</p>
-                </header>
-
-                <section className="forest2-consulting-offers" data-visual-id="consulting-services">
-                  <ConsultingSubnav locale="en" services={consultingServicesEn} />
-                  <div className="forest2-consulting-grid">
-                    {consultingServicesEn.map((service) => (
-                      <a key={service.slug} href={localizedPath("en", consultingPath(service.slug))} className="forest2-consulting-card">
-                        <div className="forest2-consulting-card-media" aria-hidden="true">
-                          <img src={service.image} alt="" width="1200" height="800" loading="lazy" />
-                          <div className="forest2-consulting-card-head"><span>{service.number}</span></div>
-                        </div>
-                        <p>{service.english}</p>
-                        <h3>{service.title}</h3>
-                        <span>{service.summary}</span>
-                        <ul aria-label={`${service.title} core topics`}>
-                          {service.keywords.map((keyword) => <li key={keyword}>{keyword}</li>)}
-                        </ul>
-                        <strong>Learn more<ArrowRight size={18} aria-hidden="true" /></strong>
-                      </a>
-                    ))}
-                  </div>
-                </section>
-
-                <DevelopmentStages locale="en" />
-
-                <section className="forest2-method-cta forest2-consulting-cta">
-                  <p>START A CONVERSATION</p>
-                  <h2>Choose a starting point that fits the current stage.</h2>
-                  <span>Based on your goals and constraints, I’ll propose a practical scope and priorities.</span>
-                  <a href="mailto:leejungju.go@gmail.com">Send an email<ArrowRight size={20} aria-hidden="true" /></a>
-                </section>
-              </div>
-            </article>
-          </div>
-        </main>
-      </div>
-    </>
-  );
+export default function ConsultingPage() {
+  return <ConsultingOverview locale="en" />;
 }

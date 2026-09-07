@@ -17,7 +17,33 @@ npm run dev
 npm run build
 ```
 
-완성된 사이트는 `out/`에 생성됩니다. 홈, 소개, 작품과 그 하위 Roblox 전용 페이지, 컨설팅과 세 개의 컨설팅 상세 경로가 한국어·영어 정적 HTML로 출력됩니다.
+완성된 사이트는 `out/`에 생성됩니다. 홈, 소개, 작품과 하위 Roblox·AI Slop 페이지, 컨설팅과 세 개의 상세 페이지가 한국어·영어 정적 HTML로 출력됩니다. `/method`는 기존 링크를 위한 호환 경로입니다.
+
+## 검증
+
+```bash
+npm test
+npm run lint
+npm run format:check
+```
+
+`npm test`는 빌드 후 콘텐츠·SEO·언어·내부 링크·이미지·CSS 변수·미사용 리소스·작품 데이터 회귀 테스트를 실행합니다. 이미 빌드했다면 `npm run test:unit`으로 테스트만 실행할 수 있습니다. 코드 포맷은 `npm run format`으로 맞춥니다. 포매터는 고정한 버전의 Prettier를 npx로 실행합니다.
+
+실제 Chrome 검증은 정적 사이트를 실행한 상태에서 Playwright CLI로 진행합니다. 첫 실행 시 CLI를 내려받으며 Chrome이 설치되어 있어야 합니다.
+
+```bash
+npm start -- --listen 4173
+```
+
+다른 터미널에서 실행합니다.
+
+```bash
+npx --yes --package @playwright/cli@0.1.19 playwright-cli -s=jjgo-qa open http://127.0.0.1:4173/ --browser chrome
+npx --yes --package @playwright/cli@0.1.19 playwright-cli -s=jjgo-qa run-code --filename tests/browser-smoke.txt
+npx --yes --package @playwright/cli@0.1.19 playwright-cli -s=jjgo-qa close
+```
+
+20개 경로를 5개 화면 폭에서 점검하고 필터, 빈 상태, 모달의 키보드·포커스·닫기, 언어 전환, 앵커, 이미지 및 콘솔 오류를 확인합니다. 스크린샷은 `output/playwright/`에 저장됩니다.
 
 ## 웹 분석
 

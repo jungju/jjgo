@@ -1,0 +1,6 @@
+node_modules/
+.next/
+out/
+output/
+.playwright-cli/
+next-env.d.ts
