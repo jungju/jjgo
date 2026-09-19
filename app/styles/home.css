@@ -105,13 +105,7 @@
   );
 }
 
-.forest2-home-capability-card:hover,
-.forest2-home-capability-card:focus-visible {
-  border-color: rgba(220, 163, 71, 0.64);
-  transform: translateY(-6px);
-}
-
-.forest2-home-capability-card:focus-visible,
+.forest2-home-consulting-cta a:focus-visible,
 .forest2-home-work-actions a:focus-visible,
 .forest2-home-roblox-copy > a:focus-visible,
 .forest2-home-all-works a:focus-visible {
@@ -168,8 +162,6 @@
   transition: transform 700ms cubic-bezier(0.2, 0.72, 0.2, 1);
 }
 
-.forest2-home-capability-card:hover .forest2-home-capability-media img,
-.forest2-home-capability-card:focus-visible .forest2-home-capability-media img,
 .forest2-home-work-card:hover .forest2-home-work-media img {
   transform: scale(1.045);
 }
@@ -190,7 +182,7 @@
     serif;
   font-size: 2rem;
   font-weight: 500;
-  line-height: 1.14;
+  line-height: 1.35;
   letter-spacing: -0.035em;
 }
 
@@ -226,18 +218,41 @@
   line-height: 1;
 }
 
-.forest2-home-capability-copy strong {
+.forest2-home-consulting-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid rgba(220, 163, 71, 0.32);
+  border-radius: 18px;
+  background: rgba(220, 163, 71, 0.06);
+}
+
+.forest2-home-consulting-cta p {
+  flex: 1 1 360px;
+  margin: 0;
+  color: var(--forest2-muted);
+  line-height: 1.8;
+}
+
+.forest2-home-consulting-cta a {
   display: inline-flex;
   align-items: center;
-  margin-top: auto;
-  padding-top: 26px;
-  gap: 8px;
-  color: #e7b65e;
-  font-size: 0.78rem;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  background: var(--forest2-gold);
+  color: #07140f;
+  font-size: 0.9rem;
   font-weight: 800;
 }
 
-.forest2-home-capability-copy strong svg,
+.forest2-home-consulting-cta a svg,
 .forest2-home-work-actions a svg,
 .forest2-home-roblox-copy > a svg,
 .forest2-home-all-works a svg {
@@ -245,7 +260,7 @@
   transition: transform 180ms ease;
 }
 
-.forest2-home-capability-card:hover strong svg,
+.forest2-home-consulting-cta a:hover svg,
 .forest2-home-work-actions a:hover svg,
 .forest2-home-roblox-copy > a:hover svg,
 .forest2-home-all-works a:hover svg {
@@ -575,7 +590,7 @@
   .forest2-home-capability-media img,
   .forest2-home-work-card,
   .forest2-home-work-media img,
-  .forest2-home-capability-copy strong svg,
+  .forest2-home-consulting-cta a svg,
   .forest2-home-work-actions a svg,
   .forest2-home-roblox-copy > a svg,
   .forest2-home-all-works a svg {

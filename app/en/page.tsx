@@ -4,9 +4,9 @@ import { pageMetadata } from "../seo";
 export const metadata = pageMetadata({
   locale: "en",
   path: "/",
-  title: "Jungju Lee | AI Products, AX/RAG & Platforms | JJGo",
+  title: "Jungju Lee | AI Native Consulting | JJGo",
   description:
-    "AI products, AX and RAG grounded in real-work evaluation and orchestration, AI-native organizations, and cloud platform engineering.",
+    "Becoming AI Native means defining ownership, validating AI against real work, and building the foundation to operate reliably. We shape the changes that fit your organization’s current stage.",
   image: "/og-en.png",
 });
 

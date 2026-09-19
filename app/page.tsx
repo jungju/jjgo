@@ -4,9 +4,9 @@ import { pageMetadata } from "./seo";
 export const metadata = pageMetadata({
   locale: "ko",
   path: "/",
-  title: "이정주 | AI 제품·AX/RAG·플랫폼 개발 | JJGo",
+  title: "이정주 | AI Native 컨설팅 · 조직·제품·운영 | JJGo",
   description:
-    "AI 제품, 현장 평가와 오케스트레이션 중심의 AX·RAG, AI Native 개발 조직과 클라우드 플랫폼 경험을 소개합니다.",
+    "AI Native 전환은 역할과 책임을 정하고, 실제 업무에서 AI를 검증하며, 안정적으로 운영할 기반을 갖추는 일입니다. 조직의 현재 단계에 맞춰 필요한 변화를 함께 만듭니다.",
   image: "/og.png",
 });
 

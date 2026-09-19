@@ -5,19 +5,14 @@ import { homeCopy } from "./home-data";
 
 export function HomePage({ locale }: { locale: SiteLocale }) {
   const text = homeCopy[locale];
-  const korean = locale === "ko";
 
   return (
     <SiteLayout locale={locale} page="home" className="forest2-site--home">
       <header className="home-hero" data-visual-id="hero">
-        <p>{korean ? "안녕하세요. 이정주입니다." : "Hello. I’m Jungju Lee."}</p>
-        <h1>
-          {korean
-            ? "AI 제품과 플랫폼을\n설계하고 운영합니다."
-            : "AI products and platforms,\ndesigned to work and last."}
-        </h1>
+        <p>{text.heroIntro}</p>
+        <h1>{text.heroTitle}</h1>
         <a href="#home-capabilities">
-          {korean ? "하는 일 살펴보기" : "Explore what I do"}
+          {text.heroAction}
           <ArrowDown size={18} aria-hidden="true" />
         </a>
       </header>
@@ -39,10 +34,9 @@ export function HomePage({ locale }: { locale: SiteLocale }) {
             </header>
             <div className="forest2-home-capability-grid">
               {text.capabilities.map((item) => (
-                <a
+                <article
                   key={item.number}
                   className="forest2-home-capability-card"
-                  href={localizedSitePath(locale, item.href)}
                 >
                   <span className="forest2-home-capability-number">
                     {item.number}
@@ -65,13 +59,16 @@ export function HomePage({ locale }: { locale: SiteLocale }) {
                         <li key={strength}>{strength}</li>
                       ))}
                     </ul>
-                    <strong>
-                      {item.action}
-                      <ArrowRight size={18} aria-hidden="true" />
-                    </strong>
                   </div>
-                </a>
+                </article>
               ))}
+            </div>
+            <div className="forest2-home-consulting-cta">
+              <p>{text.consultingOutcome}</p>
+              <a href={localizedSitePath(locale, pagePath("consulting"))}>
+                {text.consultingAction}
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
             </div>
           </section>
           <section

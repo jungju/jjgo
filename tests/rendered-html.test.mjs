@@ -528,8 +528,8 @@ test("exports matching Korean and English navigation", async () => {
 
   assert.match(koreanHome, /href="\/en\/"/);
   assert.match(englishHome, /href="\/"/);
-  assert.match(englishHome, /AI products and platforms/);
-  assert.match(englishHome, /designed to work and last\./);
+  assert.match(englishHome, /Build teams that work with AI/);
+  assert.match(englishHome, /Deliver products that work\./);
   assert.match(englishConsulting, /AI Native Consulting/);
   assert.match(englishConsulting, /href="\/consulting"/);
   assert.match(englishConsulting, /forest2-brand-section[^>]*>AI Native/);
@@ -587,15 +587,15 @@ test("presents AX and RAG through real work, evaluation, and orchestration", asy
   const koreanAxText = visibleText(koreanAx);
   const englishAxText = visibleText(englishAx);
 
-  assert.match(koreanHomeText, /AX · RAG/);
+  assert.match(koreanHomeText, /AI NATIVE CONSULTING/);
   assert.match(
     koreanHomeText,
-    /현장 업무[\s\S]*AI·RAG 평가[\s\S]*오케스트레이션/,
+    /함께 일하는 방식[\s\S]*실제 업무에서 검증[\s\S]*지속해서 운영할 기반/,
   );
-  assert.match(englishHomeText, /AX & RAG/);
+  assert.match(englishHomeText, /AI NATIVE CONSULTING/);
   assert.match(
     englishHomeText,
-    /Real workflows[\s\S]*AI & RAG evaluation[\s\S]*Orchestration/,
+    /Work together with AI[\s\S]*Validate against real work[\s\S]*Build for ongoing operation/,
   );
   assert.match(koreanAxText, /AI Native 컨설팅/);
   assert.match(
