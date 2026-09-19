@@ -1,7 +1,7 @@
 export const siteLocales = ["ko", "en"] as const;
 
 export type SiteLocale = (typeof siteLocales)[number];
-export type SiteNavItem = "home" | "works" | "consulting" | "about";
+export type SiteNavItem = "home" | "works" | "consulting" | "notes" | "about";
 
 type LocalizedLabel = Record<SiteLocale, string>;
 
@@ -51,6 +51,30 @@ export const sitePages = {
     nav: "consulting",
     identity: null,
   },
+  notes: {
+    path: "/notes",
+    parent: null,
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
+  noteWorkflows: {
+    path: "/notes/ai-native-starts-with-work",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
+  noteEvaluation: {
+    path: "/notes/evaluate-before-you-scale",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
+  notePlatform: {
+    path: "/notes/platform-as-a-path",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   about: { path: "/about", parent: null, nav: "about", identity: null },
   method: {
     path: "/method",
@@ -70,6 +94,7 @@ export const primaryNavigation = [
     page: "consulting",
     label: { ko: "컨설팅", en: "Consulting" },
   },
+  { id: "notes", page: "notes", label: { ko: "Notes", en: "Notes" } },
   { id: "about", page: "about", label: { ko: "소개", en: "About" } },
 ] as const satisfies readonly {
   id: SiteNavItem;

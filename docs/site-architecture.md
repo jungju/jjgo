@@ -15,10 +15,12 @@
 
 1. `Roblox`는 `Works`의 하위 페이지이며 경로는 `/works/roblox`다.
 2. 컨설팅 상세 페이지는 `Consulting` 하위에 있고 `/consulting/{slug}` 형식을 사용한다.
-3. 모든 공개 페이지는 `Home · Works · Consulting · About` 전역 메뉴를 같은 순서로 사용한다.
+3. 모든 공개 페이지는 `Home · Works · Consulting · Notes · About` 전역 메뉴를 같은 순서로 사용한다.
 4. 하위 페이지의 활성 전역 메뉴는 부모 페이지와 같아야 한다.
 5. 한국어 기본 경로와 `/en` 영어 경로는 같은 페이지 manifest에서 파생한다.
 6. 전용 페이지 이름은 JJGo 로고 옆에 표시한다. 상세 서비스 이름처럼 콘텐츠에서 오는 이름은 해당 콘텐츠의 slug 기반 조회 결과를 사용한다.
+
+Notes는 /notes 목록과 /notes/{slug} 글 상세 페이지로 구성한다. 글 경로는 sitePages에 등록하고, 한국어·영어 본문은 app/notes/notes-data.ts에서 관리한다. 샘플 글은 목록과 본문에 샘플임을 표시한다.
 
 ## 변경 절차
 

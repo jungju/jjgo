@@ -166,7 +166,7 @@ test("keeps the site hierarchy internally consistent", () => {
 
   assert.deepEqual(
     primaryNavigation.map((item) => item.id),
-    ["home", "works", "consulting", "about"],
+    ["home", "works", "consulting", "notes", "about"],
   );
 });
 
@@ -1065,6 +1065,48 @@ test("unifies consulting content and canonical URLs across former areas", async 
         matchingTags(html, "a", { href: "mailto:leejungju.go@gmail.com" })
           .length,
       );
+    }
+  }
+});
+test("Notes samples have complete articles, metadata, and localized navigation", async () => {
+  const postPages = Object.entries(sitePages).filter(
+    ([, page]) => page.parent === "notes",
+  );
+  assert.equal(postPages.length, 3);
+  for (const locale of siteLocales) {
+    const list = await readFile(
+      new URL(outputRoute(locale, "/notes"), outputRoot),
+      "utf8",
+    );
+    for (const [, page] of postPages) {
+      assert.ok(
+        matchingTags(list, "a", { href: localizedSitePath(locale, page.path) })
+          .length,
+      );
+      const route = outputRoute(locale, page.path);
+      const html = await readFile(new URL(route, outputRoot), "utf8");
+      const article = jsonLdNodes(parseJsonLd(html, route)).find(
+        (node) => node["@type"] === "BlogPosting",
+      );
+      assert.ok(article, route);
+      assert.equal(article.mainEntityOfPage, publicUrl(locale, page.path));
+      assert.equal(article.inLanguage, locale);
+      assert.match(
+        visibleText(html),
+        locale === "ko" ? /샘플 글/ : /sample article/i,
+      );
+      assert.ok(
+        matchingTags(html, "a", {
+          href: localizedSitePath(locale, "/notes"),
+          "aria-current": "page",
+        }).length,
+      );
+      const other = locale === "ko" ? "en" : "ko";
+      assert.ok(
+        matchingTags(html, "a", { href: localizedSitePath(other, page.path) })
+          .length,
+      );
+      assert.ok(elementTags(html, "h2").length >= 3);
     }
   }
 });

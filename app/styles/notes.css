@@ -1,0 +1,185 @@
+.notes-shell {
+  position: relative;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 110px) var(--page-gutter);
+}
+.notes-hero {
+  max-width: 850px;
+  margin-bottom: 64px;
+}
+.notes-eyebrow {
+  color: var(--forest2-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+.notes-hero h1 {
+  margin: 24px 0;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  line-height: 1.1;
+}
+.notes-hero h1 span {
+  display: block;
+  margin-top: 24px;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.5;
+}
+.notes-lead {
+  color: var(--forest2-muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  max-width: 740px;
+}
+.notes-notice {
+  color: var(--forest2-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.notes-list {
+  border-top: 1px solid rgba(220, 163, 71, 0.4);
+}
+.notes-card {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(244, 241, 232, 0.18);
+}
+.notes-card-number {
+  color: var(--forest2-gold);
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  padding-top: 2px;
+}
+.notes-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+  color: var(--forest2-muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+.notes-meta > span:first-child {
+  color: var(--forest2-gold);
+  letter-spacing: 0.07em;
+  font-weight: 800;
+}
+.notes-sample {
+  border: 1px solid rgba(244, 241, 232, 0.22);
+  border-radius: 20px;
+  padding: 2px 9px;
+}
+.notes-card h2 {
+  margin: 18px 0 12px;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.5;
+  font-weight: 500;
+}
+.notes-card h2 a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 44px;
+}
+.notes-card p {
+  margin: 0;
+  max-width: 740px;
+  color: var(--forest2-muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.notes-shell a:hover {
+  color: var(--forest2-gold);
+}
+.notes-shell a:focus-visible {
+  outline: 2px solid var(--forest2-gold);
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+.notes-shell a svg {
+  flex-shrink: 0;
+}
+.notes-article {
+  max-width: 860px;
+}
+.notes-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--forest2-muted);
+  font-size: 0.9rem;
+}
+.notes-article-header {
+  margin: 40px 0 52px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(220, 163, 71, 0.35);
+}
+.notes-article-header h1 {
+  margin: 24px 0;
+  font-size: clamp(2rem, 4.5vw, 3.3rem);
+  line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.notes-prose section + section {
+  margin-top: 44px;
+}
+.notes-prose h2 {
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--forest2-cream);
+}
+.notes-prose p {
+  margin: 0 0 20px;
+  font-size: 1.03rem;
+  line-height: 1.95;
+  color: rgba(244, 241, 232, 0.82);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.notes-related {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(220, 163, 71, 0.35);
+}
+.notes-related h2 {
+  font-size: 1rem;
+  color: var(--forest2-muted);
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+.notes-related a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  min-height: 44px;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(244, 241, 232, 0.14);
+}
+@media (max-width: 600px) {
+  .notes-hero {
+    margin-bottom: 40px;
+  }
+  .notes-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 28px 0;
+  }
+  .notes-card-number {
+    font-size: 0.95rem;
+  }
+  .notes-article-header {
+    margin-top: 28px;
+  }
+  .notes-meta {
+    gap: 8px 12px;
+  }
+}
