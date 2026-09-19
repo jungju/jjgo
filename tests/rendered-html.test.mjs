@@ -18,7 +18,13 @@ const siteOrigin = "https://jjgo.io";
 
 const routes = staticHtmlRoutes();
 const canonicalPageIds = Object.keys(sitePages).filter(
-  (page) => page !== "method",
+  (page) =>
+    ![
+      "method",
+      "consultingAiNative",
+      "consultingAx",
+      "consultingPlatformEngineering",
+    ].includes(page),
 );
 
 function escapeRegExp(value) {
@@ -379,7 +385,7 @@ test("emits parseable identity and service JSON-LD", async () => {
       assert.ok(service, `${route}: Service JSON-LD`);
       assert.equal(
         service.url,
-        publicUrl(locale, path),
+        publicUrl(locale, "/consulting"),
         `${route}: Service URL`,
       );
       assert.equal(
@@ -524,12 +530,9 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(englishHome, /href="\/"/);
   assert.match(englishHome, /AI products and platforms/);
   assert.match(englishHome, /designed to work and last\./);
-  assert.match(englishConsulting, /AI-Native Organization Transformation/);
-  assert.match(englishConsulting, /href="\/consulting\/ai-native"/);
-  assert.match(
-    englishConsulting,
-    /forest2-brand-section[^>]*>Consulting · AI-Native Organization/,
-  );
+  assert.match(englishConsulting, /AI Native Consulting/);
+  assert.match(englishConsulting, /href="\/consulting"/);
+  assert.match(englishConsulting, /forest2-brand-section[^>]*>AI Native/);
   assert.match(koreanRoblox, /forest2-brand-section[^>]*>Roblox/);
   assert.match(
     koreanRoblox,
@@ -594,15 +597,15 @@ test("presents AX and RAG through real work, evaluation, and orchestration", asy
     englishHomeText,
     /Real workflows[\s\S]*AI & RAG evaluation[\s\S]*Orchestration/,
   );
-  assert.match(koreanAxText, /현장 평가와 오케스트레이션 중심의 AX·RAG/);
+  assert.match(koreanAxText, /AI Native 컨설팅/);
   assert.match(
     koreanAxText,
-    /현장 업무 정의[\s\S]*AI·RAG 평가[\s\S]*오케스트레이션[\s\S]*운영 평가/,
+    /조직과 업무 설계[\s\S]*현장 업무와 평가 기준[\s\S]*AI·RAG와 에이전트 구현[\s\S]*개발자 플랫폼과 자동화[\s\S]*품질과 운영 거버넌스/,
   );
-  assert.match(englishAxText, /AX & RAG for Real Work/);
+  assert.match(englishAxText, /AI Native Consulting/);
   assert.match(
     englishAxText,
-    /Workflow Discovery[\s\S]*AI & RAG Evaluation[\s\S]*Orchestration[\s\S]*Production Evaluation/,
+    /Organization & Workflow Design[\s\S]*Real Work & Evaluation[\s\S]*AI, RAG & Agent Delivery[\s\S]*Developer Platform & Automation[\s\S]*Quality & Operational Governance/,
   );
 });
 
@@ -815,8 +818,8 @@ test("uses a meaningful AI-native outcome instead of the small team-size claim",
 
   assert.doesNotMatch(koreanText, /최대\s*10명|개발팀\s*리드/);
   assert.doesNotMatch(englishText, /Up to 10|Team leadership/i);
-  assert.match(koreanText, /80%[\s\S]{0,80}AI 환경 준비 시간 단축/);
-  assert.match(englishText, /80%[\s\S]{0,80}AI environment setup/i);
+  assert.match(koreanText, /최대 80%[\s\S]{0,80}모델 반영 리드타임 단축/);
+  assert.match(englishText, /80%[\s\S]{0,80}model/i);
 });
 
 test("ships a curated Works set without archived or internal-only targets", async () => {
@@ -1037,4 +1040,31 @@ test("the static 404 offers a readable path home", async () => {
   assert.match(visibleText(html), /페이지를 찾을 수 없습니다/);
   assert.match(visibleText(html), /This page could not be found/);
   assert.match(html, /href="\/"/);
+});
+
+test("unifies consulting content and canonical URLs across former areas", async () => {
+  for (const locale of siteLocales) {
+    for (const path of [
+      "/consulting",
+      "/consulting/ai-native",
+      "/consulting/ax",
+      "/consulting/platform-engineering",
+    ]) {
+      const route = outputRoute(locale, path);
+      const html = await readFile(new URL(route, outputRoot), "utf8");
+      assert.equal(elementTags(html, "h1").length, 1, route);
+      assert.match(visibleText(html), /AI Native/);
+      assert.doesNotMatch(html, /class="forest2-consulting-subnav"/);
+      assert.doesNotMatch(html, /class="forest2-consulting-card"/);
+      assert.equal(
+        singleTagAttribute(html, "link", { rel: "canonical" }, "href", route),
+        publicUrl(locale, "/consulting"),
+      );
+      assert.ok(matchingTags(html, "a", { href: "#outcomes" }).length);
+      assert.ok(
+        matchingTags(html, "a", { href: "mailto:leejungju.go@gmail.com" })
+          .length,
+      );
+    }
+  }
 });

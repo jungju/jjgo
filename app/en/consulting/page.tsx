@@ -4,9 +4,9 @@ import { pageMetadata } from "../../seo";
 export const metadata = pageMetadata({
   locale: "en",
   path: "/consulting",
-  title: "AI-Native, AX/RAG & Platform Engineering Consulting | JJGo",
+  title: "AI Native Consulting | JJGo",
   description:
-    "Consulting for AI-native organizations, AX and RAG grounded in real-work evaluation and orchestration, and Kubernetes platform engineering.",
+    "Connect how teams work, AI and RAG services, and platform operations so AI delivers practical outcomes.",
   image: "/og-en.png",
 });
 

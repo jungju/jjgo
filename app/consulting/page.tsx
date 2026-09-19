@@ -4,9 +4,9 @@ import { pageMetadata } from "../seo";
 export const metadata = pageMetadata({
   locale: "ko",
   path: "/consulting",
-  title: "AI Native·AX/RAG·플랫폼 엔지니어링 컨설팅 | JJGo",
+  title: "AI Native 컨설팅 | JJGo",
   description:
-    "AI Native 조직 전환, 현장 평가와 오케스트레이션 중심의 AX·RAG, Kubernetes 기반 플랫폼 엔지니어링을 다룹니다.",
+    "조직의 일하는 방식부터 AI·RAG 서비스와 플랫폼 운영까지, AI가 실제 성과로 이어지는 구조를 만듭니다.",
   image: "/og.png",
 });
 

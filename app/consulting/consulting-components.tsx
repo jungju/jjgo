@@ -1,54 +1,19 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { localizedSitePath, type SiteLocale } from "../site-spec";
+import { ArrowRight } from "lucide-react";
+import type { SiteLocale } from "../site-spec";
 import { SiteLayout } from "../site-layout";
-import { consultingServices, type ConsultingService } from "./consulting-data";
-import {
-  consultingPageBySlug,
-  consultingPath,
-  type ConsultingSlug,
-} from "../site-spec";
-
-export function ConsultingSubnav({
-  active,
-  locale = "ko",
-  services = consultingServices,
-}: {
-  active?: ConsultingSlug;
-  locale?: SiteLocale;
-  services?: ConsultingService[];
-}) {
-  return (
-    <nav
-      className="forest2-consulting-subnav"
-      aria-label={locale === "ko" ? "컨설팅 분야" : "Consulting areas"}
-    >
-      {services.map((service) => (
-        <a
-          key={service.slug}
-          aria-current={active === service.slug ? "page" : undefined}
-          href={localizedSitePath(locale, consultingPath(service.slug))}
-        >
-          <span>{service.number}</span>
-          {service.shortTitle}
-        </a>
-      ))}
-    </nav>
-  );
-}
+import type { ConsultingService } from "./consulting-data";
+import { DevelopmentStages } from "./development-stages";
 
 export function ConsultingDetail({
   service,
   locale = "ko",
-  services = consultingServices,
 }: {
   service: ConsultingService;
   locale?: SiteLocale;
-  services?: ConsultingService[];
 }) {
   const ui =
     locale === "ko"
       ? {
-          back: "컨설팅 전체 보기",
           topics: "핵심 주제",
           contact: "상담 문의",
           outcomesLink: "결과 보기",
@@ -69,7 +34,6 @@ export function ConsultingDetail({
           cta: "상담 문의하기",
         }
       : {
-          back: "View all consulting",
           topics: "Core topics",
           contact: "Start a conversation",
           outcomesLink: "See outcomes",
@@ -93,30 +57,17 @@ export function ConsultingDetail({
   return (
     <SiteLayout
       locale={locale}
-      page={consultingPageBySlug[service.slug]}
+      page="consulting"
       className="forest2-site--method forest2-site--consulting"
       identity={{
-        label: `Consulting · ${service.shortTitle}`,
-        href: consultingPath(service.slug),
+        label: "AI Native",
+        href: "/consulting",
       }}
     >
       <article
         className={`page-frame forest2-method-frame forest2-consulting-detail-frame forest2-consulting-detail-frame--${service.slug}`}
       >
         <div className="page-shell forest2-method-shell">
-          <a
-            className="forest2-consulting-back"
-            href={localizedSitePath(locale, "/consulting")}
-          >
-            <ArrowLeft size={17} aria-hidden="true" />
-            {ui.back}
-          </a>
-          <ConsultingSubnav
-            active={service.slug}
-            locale={locale}
-            services={services}
-          />
-
           <header className="forest2-consulting-detail-hero">
             <div className="forest2-consulting-detail-copy">
               <p>{service.english}</p>
@@ -235,6 +186,8 @@ export function ConsultingDetail({
               ))}
             </ol>
           </section>
+
+          <DevelopmentStages locale={locale} />
 
           <section className="forest2-method-cta forest2-consulting-cta">
             <p>START A CONVERSATION</p>

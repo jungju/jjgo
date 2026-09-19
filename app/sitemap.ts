@@ -5,7 +5,13 @@ import { pagePath, sitePages, type SitePageId } from "./site-spec";
 export const dynamic = "force-static";
 
 const canonicalPages = (Object.keys(sitePages) as SitePageId[]).filter(
-  (page) => page !== "method",
+  (page) =>
+    ![
+      "method",
+      "consultingAiNative",
+      "consultingAx",
+      "consultingPlatformEngineering",
+    ].includes(page),
 );
 
 export default function sitemap(): MetadataRoute.Sitemap {
