@@ -41,17 +41,35 @@
 }
 .notes-card {
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
+  grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
+  align-items: center;
   gap: 28px;
   padding: 36px 0;
   border-bottom: 1px solid rgba(244, 241, 232, 0.18);
 }
-.notes-card-number {
-  color: var(--forest2-gold);
-  font-family: Georgia, serif;
-  font-size: 1.35rem;
-  padding-top: 2px;
+.notes-card-image {
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
 }
+.notes-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.notes-cover {
+  margin: 0 0 48px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.notes-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .notes-meta {
   display: flex;
   flex-wrap: wrap;
@@ -172,9 +190,6 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
     padding: 28px 0;
-  }
-  .notes-card-number {
-    font-size: 0.95rem;
   }
   .notes-article-header {
     margin-top: 28px;

@@ -13,7 +13,7 @@ import {
   JsonLd,
   PERSON_ID,
 } from "../seo";
-import { notes } from "./notes-data";
+import { notes, notesNewestFirst } from "./notes-data";
 
 const copy = {
   ko: {
@@ -40,6 +40,16 @@ const copy = {
   },
 };
 
+function formatNoteDate(date: string, locale: SiteLocale) {
+  return new Intl.DateTimeFormat(locale === "ko" ? "ko-KR" : "en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+    timeZone: "UTC",
+  }).format(new Date(date + "T00:00:00Z"));
+}
+
 export function noteByPage(page: SitePageId) {
   const note = notes.find((item) => item.page === page);
   if (!note) throw new Error("Missing note: " + page);
@@ -47,13 +57,16 @@ export function noteByPage(page: SitePageId) {
 }
 
 export function noteMetadata(locale: SiteLocale, page: SitePageId) {
-  const content = noteByPage(page)[locale];
+  const note = noteByPage(page);
+  const content = note[locale];
   return pageMetadata({
     locale,
     path: pagePath(page),
     title: content.title + " | Notes · JJGo",
     description: content.summary,
-    image: locale === "ko" ? "/og.png" : "/og-en.png",
+    image: note.image,
+    imageWidth: 1200,
+    imageHeight: 800,
   });
 }
 
@@ -71,16 +84,27 @@ export function NotesPage({ locale }: { locale: SiteLocale }) {
           <p className="notes-notice">{text.notice}</p>
         </header>
         <div className="notes-list">
-          {notes.map((note, index) => (
+          {notesNewestFirst.map((note) => (
             <article className="notes-card" key={note.page}>
-              <div className="notes-card-number" aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </div>
+              <a
+                className="notes-card-image"
+                href={localizedSitePath(locale, pagePath(note.page))}
+                tabIndex={-1}
+                aria-hidden="true"
+              >
+                <img
+                  src={note.image}
+                  alt=""
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                />
+              </a>
               <div>
                 <div className="notes-meta">
                   <span>{note.category}</span>
                   <time dateTime={note.date}>
-                    {note.date.replaceAll("-", ".")}
+                    {formatNoteDate(note.date, locale)}
                   </time>
                   <span className="notes-sample">{text.sample}</span>
                 </div>
@@ -133,7 +157,7 @@ export function NotePage({
             "@id": PERSON_ID,
             name: locale === "ko" ? "이정주" : "Jungju Lee",
           },
-          image: absoluteUrl(locale === "ko" ? "/og.png" : "/og-en.png"),
+          image: absoluteUrl(note.image),
         }}
       />
       <article className="notes-shell notes-article">
@@ -147,13 +171,23 @@ export function NotePage({
         <header className="notes-article-header">
           <div className="notes-meta">
             <span>{note.category}</span>
-            <time dateTime={note.date}>{note.date.replaceAll("-", ".")}</time>
+            <time dateTime={note.date}>
+              {formatNoteDate(note.date, locale)}
+            </time>
             <span className="notes-sample">{text.sample}</span>
           </div>
           <h1>{content.title}</h1>
           <p className="notes-lead">{content.summary}</p>
           <p className="notes-notice">{text.sampleNotice}</p>
         </header>
+        <figure className="notes-cover">
+          <img
+            src={note.image}
+            alt={note.imageAlt[locale]}
+            width={1200}
+            height={800}
+          />
+        </figure>
         <div className="notes-prose">
           {content.sections.map((section) => (
             <section key={section.title}>
@@ -166,7 +200,7 @@ export function NotePage({
         </div>
         <aside className="notes-related" aria-label={text.more}>
           <h2>{text.more}</h2>
-          {notes
+          {notesNewestFirst
             .filter((item) => item.page !== page)
             .map((item) => (
               <a

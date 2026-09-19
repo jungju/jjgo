@@ -8,6 +8,8 @@ export type Note = {
   page: SitePageId;
   category: string;
   date: string;
+  image: string;
+  imageAlt: { ko: string; en: string };
   ko: NoteContent;
   en: NoteContent;
 };
@@ -15,7 +17,12 @@ export const notes: Note[] = [
   {
     page: "noteWorkflows",
     category: "AI NATIVE",
-    date: "2026-09-19",
+    date: "2026-06-06",
+    image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
+    imageAlt: {
+      ko: "벌집 위에서 함께 일하는 꿀벌들",
+      en: "Honeybees working together on a honeycomb",
+    },
     ko: {
       title: "AI Native는 일하는 방식에서 시작된다",
       summary:
@@ -76,7 +83,12 @@ export const notes: Note[] = [
   {
     page: "noteEvaluation",
     category: "AI & RAG",
-    date: "2026-09-19",
+    date: "2026-06-07",
+    image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
+    imageAlt: {
+      ko: "숲속에서 하나의 흐름으로 협연하는 사람과 로봇",
+      en: "People and robots performing together in a forest",
+    },
     ko: {
       title: "PoC 다음에 필요한 것은 평가 기준이다",
       summary:
@@ -137,7 +149,12 @@ export const notes: Note[] = [
   {
     page: "notePlatform",
     category: "PLATFORM & OPERATIONS",
-    date: "2026-09-19",
+    date: "2026-06-13",
+    image: "/a/generated/consulting/platform-beaver-dam-v4.webp",
+    imageAlt: {
+      ko: "비버가 만든 댐과 안정적으로 흐르는 물",
+      en: "A beaver dam shaping a steady flow of water",
+    },
     ko: {
       title: "플랫폼은 팀이 반복해서 걷는 길이다",
       summary:
@@ -196,3 +213,7 @@ export const notes: Note[] = [
     },
   },
 ];
+
+export const notesNewestFirst = [...notes].sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
