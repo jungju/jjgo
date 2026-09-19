@@ -40,7 +40,7 @@ export function HomePage({ locale }: { locale: SiteLocale }) {
             <div className="forest2-home-capability-grid">
               {text.capabilities.map((item) => (
                 <a
-                  key={item.href}
+                  key={item.number}
                   className="forest2-home-capability-card"
                   href={localizedSitePath(locale, item.href)}
                 >
