@@ -63,6 +63,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteEternalSunshine: {
+    path: "/notes/eternal-sunshine-memory",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteEvaluation: {
     path: "/notes/evaluate-before-you-scale",
     parent: "notes",

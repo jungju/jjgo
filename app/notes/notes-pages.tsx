@@ -21,7 +21,7 @@ const copy = {
     title: "만들고 운영하며 남기는 생각.",
     lead: "AI Native 조직, 제품 개발, 플랫폼 운영에 관한 메모를 모읍니다. 일하는 방식과 기술을 연결하는 질문에서 출발합니다.",
     sample: "샘플 글",
-    notice: "Notes를 소개하기 위해 준비한 샘플 글 3편입니다.",
+    notice: "샘플로 작성한 글에는 별도 표시가 있습니다.",
     read: "글 읽기",
     back: "Notes 목록",
     more: "다른 글도 읽어보세요",
@@ -32,7 +32,7 @@ const copy = {
     title: "Notes from building and operating.",
     lead: "Thoughts on AI Native organizations, product development, and platform operations. Starting with questions that connect technology to how we work.",
     sample: "Sample",
-    notice: "Three sample articles to introduce Notes.",
+    notice: "Sample articles are marked separately.",
     read: "Read note",
     back: "All notes",
     more: "Keep reading",
@@ -41,13 +41,26 @@ const copy = {
 };
 
 function formatNoteDate(date: string, locale: SiteLocale) {
-  return new Intl.DateTimeFormat(locale === "ko" ? "ko-KR" : "en-US", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    weekday: "short",
-    timeZone: "UTC",
-  }).format(new Date(date + "T00:00:00Z"));
+  const hasTime = date.includes("T");
+  return (
+    new Intl.DateTimeFormat(locale === "ko" ? "ko-KR" : "en-US", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      weekday: "short",
+      timeZone: "Asia/Seoul",
+      ...(hasTime
+        ? { hour: "numeric" as const, minute: "2-digit" as const, hour12: true }
+        : {}),
+    })
+      .formatToParts(new Date(hasTime ? date : date + "T00:00:00+09:00"))
+      .map((part) =>
+        locale === "ko" && part.type === "dayPeriod"
+          ? part.value.replace("AM", "오전").replace("PM", "오후")
+          : part.value,
+      )
+      .join("") + (hasTime ? " KST" : "")
+  );
 }
 
 export function noteByPage(page: SitePageId) {
@@ -106,7 +119,9 @@ export function NotesPage({ locale }: { locale: SiteLocale }) {
                   <time dateTime={note.date}>
                     {formatNoteDate(note.date, locale)}
                   </time>
-                  <span className="notes-sample">{text.sample}</span>
+                  {note.sample && (
+                    <span className="notes-sample">{text.sample}</span>
+                  )}
                 </div>
                 <h2>
                   <a href={localizedSitePath(locale, pagePath(note.page))}>
@@ -174,11 +189,11 @@ export function NotePage({
             <time dateTime={note.date}>
               {formatNoteDate(note.date, locale)}
             </time>
-            <span className="notes-sample">{text.sample}</span>
+            {note.sample && <span className="notes-sample">{text.sample}</span>}
           </div>
           <h1>{content.title}</h1>
           <p className="notes-lead">{content.summary}</p>
-          <p className="notes-notice">{text.sampleNotice}</p>
+          {note.sample && <p className="notes-notice">{text.sampleNotice}</p>}
         </header>
         <figure className="notes-cover">
           <img
@@ -191,7 +206,7 @@ export function NotePage({
         <div className="notes-prose">
           {content.sections.map((section) => (
             <section key={section.title}>
-              <h2>{section.title}</h2>
+              {section.title && <h2>{section.title}</h2>}
               {section.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

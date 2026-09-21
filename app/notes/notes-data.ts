@@ -1,4 +1,5 @@
 import type { SitePageId } from "../site-spec";
+import { eternalSunshineNote } from "./eternal-sunshine-content";
 export type NoteContent = {
   title: string;
   summary: string;
@@ -8,14 +9,17 @@ export type Note = {
   page: SitePageId;
   category: string;
   date: string;
+  sample: boolean;
   image: string;
   imageAlt: { ko: string; en: string };
   ko: NoteContent;
   en: NoteContent;
 };
 export const notes: Note[] = [
+  eternalSunshineNote,
   {
     page: "noteWorkflows",
+    sample: true,
     category: "AI NATIVE",
     date: "2026-06-06",
     image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
@@ -82,6 +86,7 @@ export const notes: Note[] = [
   },
   {
     page: "noteEvaluation",
+    sample: true,
     category: "AI & RAG",
     date: "2026-06-07",
     image: "/a/generated/consulting/ax-human-orchestration-v5.webp",
@@ -148,6 +153,7 @@ export const notes: Note[] = [
   },
   {
     page: "notePlatform",
+    sample: true,
     category: "PLATFORM & OPERATIONS",
     date: "2026-06-13",
     image: "/a/generated/consulting/platform-beaver-dam-v4.webp",

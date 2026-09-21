@@ -1068,11 +1068,11 @@ test("unifies consulting content and canonical URLs across former areas", async 
     }
   }
 });
-test("Notes samples have complete articles, metadata, and localized navigation", async () => {
+test("Notes have complete articles, metadata, and localized navigation", async () => {
   const postPages = Object.entries(sitePages).filter(
     ([, page]) => page.parent === "notes",
   );
-  assert.equal(postPages.length, 3);
+  assert.equal(postPages.length, 4);
   for (const locale of siteLocales) {
     const list = await readFile(
       new URL(outputRoute(locale, "/notes"), outputRoot),
@@ -1081,20 +1081,14 @@ test("Notes samples have complete articles, metadata, and localized navigation",
     const dates = elementTags(list, "time").map((tag) =>
       attribute(tag, "dateTime"),
     );
-    assert.equal(dates.length, 3);
+    assert.equal(dates.length, 4);
     assert.deepEqual(dates, [...dates].sort().reverse(), "newest notes first");
-    for (const date of dates) {
-      assert.match(date, /^2026-06-/);
-      assert.ok(
-        [0, 6].includes(new Date(date + "T00:00:00Z").getUTCDay()),
-        "weekend publication",
-      );
-    }
+    assert.equal(dates[0], "2026-09-20T20:00:00+09:00");
     assert.equal(
       matchingTags(list, "a", { class: "notes-card-image" }).length,
-      3,
+      4,
     );
-    for (const [, page] of postPages) {
+    for (const [id, page] of postPages) {
       assert.ok(
         matchingTags(list, "a", { href: localizedSitePath(locale, page.path) })
           .length,
@@ -1122,10 +1116,32 @@ test("Notes samples have complete articles, metadata, and localized navigation",
         article.image,
       );
 
-      assert.match(
-        visibleText(html),
-        locale === "ko" ? /샘플 글/ : /sample article/i,
-      );
+      if (id === "noteEternalSunshine") {
+        assert.equal(article.datePublished, "2026-09-20T20:00:00+09:00");
+        assert.equal(
+          matchingTags(html, "span", { class: "notes-sample" }).length,
+          0,
+        );
+        assert.match(visibleText(html), /(?:오후 8:00|8:00 PM) KST/);
+        assert.ok(elementTags(html, "p").length > 45, "complete essay");
+        if (locale === "ko") {
+          assert.match(
+            visibleText(html),
+            /서로를 좋아했던 이유는 남아 있었나 보다/,
+          );
+          assert.doesNotMatch(
+            visibleText(html),
+            /있을 법한 병원|VLOOKUP|환불|냉장고/,
+          );
+          assert.match(visibleText(html), /아무 관계도 없는 넷플릭스 비밀번호/);
+        }
+      } else {
+        assert.match(
+          visibleText(html),
+          locale === "ko" ? /샘플 글/ : /sample article/i,
+        );
+        assert.ok(elementTags(html, "h2").length >= 3);
+      }
       assert.ok(
         matchingTags(html, "a", {
           href: localizedSitePath(locale, "/notes"),
@@ -1137,7 +1153,6 @@ test("Notes samples have complete articles, metadata, and localized navigation",
         matchingTags(html, "a", { href: localizedSitePath(other, page.path) })
           .length,
       );
-      assert.ok(elementTags(html, "h2").length >= 3);
     }
   }
 });
