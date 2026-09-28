@@ -1083,6 +1083,8 @@ test("Notes have complete articles, metadata, and localized navigation", async (
     );
     assert.equal(dates.length, postPages.length);
     assert.deepEqual(dates, [...dates].sort().reverse(), "newest notes first");
+    assert.doesNotMatch(visibleText(list), /샘플 글|sample articles?/i);
+    assert.equal(matchingTags(list, "span", { class: "notes-sample" }).length, 0);
     for (const [, text] of list.matchAll(/<time\b[^>]*>([\s\S]*?)<\/time>/g)) {
       assert.doesNotMatch(text, /\d{1,2}:\d{2}|KST|AM|PM|오전|오후/);
     }
@@ -1097,6 +1099,8 @@ test("Notes have complete articles, metadata, and localized navigation", async (
       );
       const route = outputRoute(locale, page.path);
       const html = await readFile(new URL(route, outputRoot), "utf8");
+      assert.doesNotMatch(visibleText(html), /샘플 글|sample article/i);
+      assert.equal(matchingTags(html, "span", { class: "notes-sample" }).length, 0);
       for (const [, text] of html.matchAll(
         /<time\b[^>]*>([\s\S]*?)<\/time>/g,
       )) {
@@ -1125,10 +1129,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
 
       if (id === "noteEternalSunshine") {
         assert.equal(article.datePublished, "2026-09-20T20:00:00+09:00");
-        assert.equal(
-          matchingTags(html, "span", { class: "notes-sample" }).length,
-          0,
-        );
         const displayedDate = html.match(/<time\b[^>]*>([\s\S]*?)<\/time>/)[1];
         assert.match(
           displayedDate,
@@ -1147,10 +1147,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
           assert.match(visibleText(html), /아무 관계도 없는 넷플릭스 비밀번호/);
         }
       } else if (id === "noteArrival") {
-        assert.equal(
-          matchingTags(html, "span", { class: "notes-sample" }).length,
-          0,
-        );
         assert.equal(article.datePublished, "2026-09-28T21:56:00+09:00");
         assert.ok(
           elementTags(html, "p").length >= 28,
@@ -1167,10 +1163,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
           }).length,
         );
       } else {
-        assert.match(
-          visibleText(html),
-          locale === "ko" ? /샘플 글/ : /sample article/i,
-        );
         assert.ok(elementTags(html, "h2").length >= 3);
       }
       assert.ok(

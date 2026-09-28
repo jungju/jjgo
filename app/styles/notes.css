@@ -31,11 +31,6 @@
   line-height: 1.85;
   max-width: 740px;
 }
-.notes-notice {
-  color: var(--forest2-muted);
-  font-size: 0.8rem;
-  line-height: 1.7;
-}
 .notes-list {
   border-top: 1px solid rgba(220, 163, 71, 0.4);
 }
@@ -83,11 +78,6 @@
   color: var(--forest2-gold);
   letter-spacing: 0.07em;
   font-weight: 800;
-}
-.notes-sample {
-  border: 1px solid rgba(244, 241, 232, 0.22);
-  border-radius: 20px;
-  padding: 2px 9px;
 }
 .notes-card h2 {
   margin: 18px 0 12px;

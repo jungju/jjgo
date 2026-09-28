@@ -20,23 +20,17 @@ const copy = {
     eyebrow: "IDEAS · PRACTICE · LEARNING",
     title: "만들고 운영하며 남기는 생각.",
     lead: "AI Native 조직, 제품 개발, 플랫폼 운영에 관한 메모를 모읍니다. 일하는 방식과 기술을 연결하는 질문에서 출발합니다.",
-    sample: "샘플 글",
-    notice: "샘플로 작성한 글에는 별도 표시가 있습니다.",
     read: "글 읽기",
     back: "Notes 목록",
     more: "다른 글도 읽어보세요",
-    sampleNotice: "블로그 구성을 소개하기 위한 샘플 글입니다.",
   },
   en: {
     eyebrow: "IDEAS · PRACTICE · LEARNING",
     title: "Notes from building and operating.",
     lead: "Thoughts on AI Native organizations, product development, and platform operations. Starting with questions that connect technology to how we work.",
-    sample: "Sample",
-    notice: "Sample articles are marked separately.",
     read: "Read note",
     back: "All notes",
     more: "Keep reading",
-    sampleNotice: "A sample article prepared to introduce this blog.",
   },
 };
 
@@ -81,7 +75,6 @@ export function NotesPage({ locale }: { locale: SiteLocale }) {
             Notes<span>{text.title}</span>
           </h1>
           <p className="notes-lead">{text.lead}</p>
-          <p className="notes-notice">{text.notice}</p>
         </header>
         <div className="notes-list">
           {notesNewestFirst.map((note) => (
@@ -106,9 +99,6 @@ export function NotesPage({ locale }: { locale: SiteLocale }) {
                   <time dateTime={note.date}>
                     {formatNoteDate(note.date, locale)}
                   </time>
-                  {note.sample && (
-                    <span className="notes-sample">{text.sample}</span>
-                  )}
                 </div>
                 <h2>
                   <a href={localizedSitePath(locale, pagePath(note.page))}>
@@ -176,11 +166,9 @@ export function NotePage({
             <time dateTime={note.date}>
               {formatNoteDate(note.date, locale)}
             </time>
-            {note.sample && <span className="notes-sample">{text.sample}</span>}
           </div>
           <h1>{content.title}</h1>
           <p className="notes-lead">{content.summary}</p>
-          {note.sample && <p className="notes-notice">{text.sampleNotice}</p>}
         </header>
         <figure className="notes-cover">
           <img
