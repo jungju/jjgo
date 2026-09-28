@@ -1,8 +1,10 @@
 import type { SitePageId } from "../site-spec";
 import { eternalSunshineNote } from "./eternal-sunshine-content";
+import { arrivalNote } from "./arrival-content";
 export type NoteContent = {
   title: string;
   summary: string;
+  sources?: { label: string; href: string }[];
   sections: { title: string; paragraphs: string[] }[];
 };
 export type Note = {
@@ -16,6 +18,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  arrivalNote,
   eternalSunshineNote,
   {
     page: "noteWorkflows",

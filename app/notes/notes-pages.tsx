@@ -212,6 +212,18 @@ export function NotePage({
               ))}
             </section>
           ))}
+          {content.sources && (
+            <section aria-label={locale === "ko" ? "참고한 자료" : "Sources"}>
+              <h2>{locale === "ko" ? "참고한 자료" : "Sources"}</h2>
+              <ul>
+                {content.sources.map((source) => (
+                  <li key={source.href}>
+                    <a href={source.href}>{source.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
         <aside className="notes-related" aria-label={text.more}>
           <h2>{text.more}</h2>

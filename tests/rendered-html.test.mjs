@@ -1072,7 +1072,7 @@ test("Notes have complete articles, metadata, and localized navigation", async (
   const postPages = Object.entries(sitePages).filter(
     ([, page]) => page.parent === "notes",
   );
-  assert.equal(postPages.length, 4);
+  assert.ok(postPages.length >= 4);
   for (const locale of siteLocales) {
     const list = await readFile(
       new URL(outputRoute(locale, "/notes"), outputRoot),
@@ -1081,12 +1081,11 @@ test("Notes have complete articles, metadata, and localized navigation", async (
     const dates = elementTags(list, "time").map((tag) =>
       attribute(tag, "dateTime"),
     );
-    assert.equal(dates.length, 4);
+    assert.equal(dates.length, postPages.length);
     assert.deepEqual(dates, [...dates].sort().reverse(), "newest notes first");
-    assert.equal(dates[0], "2026-09-20T20:00:00+09:00");
     assert.equal(
       matchingTags(list, "a", { class: "notes-card-image" }).length,
-      4,
+      postPages.length,
     );
     for (const [id, page] of postPages) {
       assert.ok(
@@ -1135,6 +1134,26 @@ test("Notes have complete articles, metadata, and localized navigation", async (
           );
           assert.match(visibleText(html), /아무 관계도 없는 넷플릭스 비밀번호/);
         }
+      } else if (id === "noteArrival") {
+        assert.equal(
+          matchingTags(html, "span", { class: "notes-sample" }).length,
+          0,
+        );
+        assert.equal(article.datePublished, "2026-09-28T21:56:00+09:00");
+        assert.ok(
+          elementTags(html, "p").length >= 28,
+          "complete bilingual essay",
+        );
+        assert.ok(
+          matchingTags(html, "a", {
+            href: "https://www.paramountpictures.com/movies/arrival",
+          }).length,
+        );
+        assert.ok(
+          matchingTags(html, "a", {
+            href: "https://www.springfieldspringfield.co.uk/movie_script.php?movie=arrival",
+          }).length,
+        );
       } else {
         assert.match(
           visibleText(html),

@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteArrival: {
+    path: "/notes/arrival-one-question",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteWorkflows: {
     path: "/notes/ai-native-starts-with-work",
     parent: "notes",

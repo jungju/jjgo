@@ -1,0 +1,111 @@
+import type { Note } from "./notes-data";
+
+export const arrivalNote: Note = {
+  page: "noteArrival",
+  category: "AI & CINEMA",
+  date: "2026-09-28T21:56:00+09:00",
+  sample: false,
+  image: "/a/generated/notes/arrival-one-question.webp",
+  imageAlt: {
+    ko: "서로 다른 문서 두 장이 놓인 책상 너머, 원형 기호가 그려진 안개 낀 유리와 사람의 실루엣",
+    en: "Two different documents on a desk, with a circular ink glyph and a distant figure beyond misted glass",
+  },
+  ko: {
+    title: "《컨택트》의 어려운 질문은 고작 한 문장이었다",
+    summary:
+      "외계인에게 왜 왔느냐고 묻는 데 그렇게 많은 준비가 필요하다. 한국말을 잘하는 AI에게 일을 맡길 때도, 가끔은 그 준비를 건너뛰고 있는 것 같다.",
+    sections: [
+      {
+        title: "",
+        paragraphs: [
+          "※ 영화 《컨택트》의 초반 설정과 일부 장면을 다룹니다. 결말에 관한 내용은 없습니다.",
+          "《컨택트》에서 사람들이 외계인에게 알고 싶은 것은 간단하다. 왜 지구에 왔는가.",
+          "우주선까지 왔으니 물어볼 만하다. 방문 목적 정도는 알아야 차를 내줄지, 문을 잠글지 정할 수 있다.",
+          "그런데 언어학자 루이즈는 그 질문을 바로 던질 수 없다고 설명한다. 상대가 질문이라는 것을 이해하는지부터 알아야 한다. ‘너희’가 지금 앞에 있는 존재를 가리키는지, 지구에 온 이들 전체를 가리키는지도 맞춰야 한다. 어렵게 물어본 뒤에는 대답을 알아들을 말도 있어야 한다.",
+          "문장은 짧은데, 그 안에 들어 있는 약속은 짧지 않다.",
+          "나는 이 대목에서 조금 조급해지는 마음도 이해가 간다. 밖에서는 큰일이 벌어지고 있는데, 안에서는 아직 ‘너희’가 누구인지 따지고 있다. 회의에 있었다면 일단 물어보고 나서 생각하면 안 되느냐는 말이 목까지 올라왔을 것 같다.",
+          "그런데 상대가 대답을 해줬다고 생각해 보자.",
+          "그게 대답인지부터 어떻게 알지.",
+          "외계인과 대화할 때는 이 문제가 잘 보인다. 소리도 낯설고 글자도 낯설다. 아직 서로 모른다는 사실을 잊기 어렵다.",
+          "AI와 대화할 때는 좀 다르다. 한국말을 너무 잘한다.",
+          "‘네, 이해했습니다’라는 문장은 특히 사람을 안심시킨다. 내가 쓴 말보다 더 정돈된 말로 작업 내용을 되짚어주기도 한다. 그러면 이제 같은 것을 생각하고 있으리라고 믿고 싶어진다.",
+          "가령 AI에게 문서를 하나 주고 정리해 달라고 했다고 치자.",
+          "제목이 붙고, 긴 문장은 짧아지고, 중복된 설명은 사라진다. 보기 좋아졌다. 그런데 내가 기대한 일은 조금 달랐을 수도 있다. 앞에서는 금요일에 출시한다고 해놓고 뒤에서는 다음 달에 출시한다고 적힌 부분을 찾아주길 바랐을 수도 있다. 서로 다른 날짜가 보기 좋게 정리되어 돌아오면, 일을 다시 설명해야 한다.",
+          "AI는 분명 문서를 정리했다. 나도 분명 정리해 달라고 했다.",
+          "이렇게 양쪽 다 할 말을 했는데도 일이 어긋날 수 있다.",
+          "그렇다고 ‘정리’라는 단어를 쓰지 말자는 건 아니다. 매번 단어의 정의부터 쓰기 시작하면 일을 맡기는 데 하루가 다 갈 것 같다. 동료에게 커피를 사다 달라고 하면서 액체의 온도와 컵의 재질을 전부 지정하지는 않는다. 같이 일하며 생략해도 되는 부분을 알아가는 쪽에 가깝다.",
+          "다만 AI에게는 내가 무엇을 생략했는지 한번 볼 필요가 있겠다.",
+          "문서의 첫 두 문단만 먼저 정리해 달라고 해도 된다. 그 결과를 보면 내가 원하는 게 문장 손질인지, 내용 검토인지 설명하기가 쉬워진다. 말로는 한참 설명해야 할 차이가 실제 문단 두 개에서는 금방 보일 수 있다.",
+          "여기서 조금 민망한 순간도 생긴다. 내가 원한 게 무엇인지 나도 그제야 알게 되는 경우다.",
+          "‘이렇게 해달라는 건 아니었는데’까지는 알겠는데, 그러면 어떻게 해달라는 것이었는지 바로 말하기 어렵다. 막연히 마음에 들지 않았던 문서를 넘기면서 상대가 그 막연함까지 알아서 풀어주길 기대한 셈이다.",
+          "그럴 때 결과가 마음에 안 드는 이유를 전부 AI의 이해력으로 돌리기는 좀 찜찜하다.",
+          "물론 뜻을 맞췄다고 일이 끝나는 것도 아니다. 날짜가 어긋난 곳을 찾아달라는 요청을 이해했어도 놓칠 수 있다. 원하는 작업이 무엇인지 확인하는 일과, 그 작업을 제대로 했는지 확인하는 일은 둘 다 남는다. 외계인과의 대화가 모든 AI 문제를 설명해 주지는 않는다.",
+          "그래도 《컨택트》의 그 장면을 떠올리면 ‘이해했습니다’ 다음에 잠깐 멈추고 싶어진다. 설명을 더 길게 붙이기보다, 방금 이해한 것으로 작은 일 하나를 해보게 하고 싶다.",
+          "상대가 내 말을 알아들었는지 보려던 일이 내가 무슨 말을 했는지 알아보는 일이 될 수도 있겠다.",
+          "아까의 문서로 돌아가면, 먼저 물어볼 것은 이것일 것 같다.",
+          "두 군데 적힌 출시일 중 어느 쪽이 맞지?",
+          "그건 내가 확인해서 알려줘야 한다.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Paramount — Arrival",
+        href: "https://www.paramountpictures.com/movies/arrival",
+      },
+      {
+        label: "Arrival — scene transcript",
+        href: "https://www.springfieldspringfield.co.uk/movie_script.php?movie=arrival",
+      },
+    ],
+  },
+  en: {
+    title: "The difficult question in Arrival was only one sentence",
+    summary:
+      "Asking aliens why they came takes a surprising amount of preparation. Fluent AI can make it easy to skip that preparation when assigning work.",
+    sections: [
+      {
+        title: "",
+        paragraphs: [
+          "This essay discusses the premise and an early scene in Arrival. It does not reveal the ending.",
+          "In Arrival, what people want to know from the aliens is simple: why have they come to Earth?",
+          "Fair question. Their spacecraft have already arrived. You would at least like to know whether to put the kettle on or lock the door.",
+          "But the linguist Louise explains why they cannot ask it yet. First, they need to establish that the visitors understand what a question is. They need to distinguish between the beings in front of them and everyone who has arrived. And after all that, they need enough shared vocabulary to understand the answer.",
+          "A short sentence can contain a lot of things both sides need to agree on.",
+          "I can understand the impatience here. Something enormous is happening outside, and inside they are still working out what “you” means. If I were in that meeting, I suspect I would be close to asking whether we could just try the question first.",
+          "But suppose they did answer.",
+          "How would we even know it was an answer?",
+          "With aliens, the problem is visible. The sounds are unfamiliar. So is the writing. It is hard to forget how little you understand about each other.",
+          "Talking to AI feels different. Its Korean is very good.",
+          "“Yes, I understand” is a particularly reassuring sentence. Sometimes it restates the task more neatly than I put it. That makes it tempting to believe we now have the same thing in mind.",
+          "Suppose I give an AI a document and ask it to tidy it up.",
+          "It adds headings, shortens the sentences, and removes repetition. It looks better. But perhaps I wanted it to notice that one paragraph says we are launching on Friday while another says next month. If those conflicting dates come back beautifully formatted, I have to explain the task again.",
+          "The AI did tidy up the document. I did ask it to.",
+          "Both sides can do what they say and still miss each other.",
+          "That does not mean we should stop saying “tidy it up.” Defining every word would take the whole day. When I ask a colleague to get me a coffee, I do not specify the liquid temperature and the cup material. Working together is partly about learning what can be left unsaid.",
+          "With AI, though, it seems worth looking at what I have left unsaid.",
+          "I could ask it to work on just the first two paragraphs. Looking at that result might make it easier to explain whether I want a sentence edit or a review of the content. A difference that takes ages to explain in the abstract can become obvious in two paragraphs.",
+          "There is a slightly embarrassing possibility here: I may only then discover what I wanted.",
+          "I know that the result is not what I meant. Explaining what I did mean can be harder. Perhaps I handed over a document I vaguely disliked and expected the other side to untangle that vagueness too.",
+          "In that case, blaming the whole mismatch on the AI’s comprehension would leave me a little uneasy.",
+          "Agreeing on the task is not the end of the work, of course. It could understand that I want conflicting dates found and still miss one. Checking what task it is doing and checking whether it did that task properly both remain necessary. A conversation with aliens cannot explain every problem with AI.",
+          "Still, that scene in Arrival makes me want to pause after “I understand.” Instead of adding another long explanation, I would like to see it do one small thing with what it has understood.",
+          "Checking whether the other side understood me might turn into finding out what I meant.",
+          "Back at that document, there is probably a question to settle first.",
+          "Which of those two launch dates is right?",
+          "That is something I need to check and tell it.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "Paramount — Arrival",
+        href: "https://www.paramountpictures.com/movies/arrival",
+      },
+      {
+        label: "Arrival — scene transcript",
+        href: "https://www.springfieldspringfield.co.uk/movie_script.php?movie=arrival",
+      },
+    ],
+  },
+};
