@@ -41,26 +41,13 @@ const copy = {
 };
 
 function formatNoteDate(date: string, locale: SiteLocale) {
-  const hasTime = date.includes("T");
-  return (
-    new Intl.DateTimeFormat(locale === "ko" ? "ko-KR" : "en-US", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      weekday: "short",
-      timeZone: "Asia/Seoul",
-      ...(hasTime
-        ? { hour: "numeric" as const, minute: "2-digit" as const, hour12: true }
-        : {}),
-    })
-      .formatToParts(new Date(hasTime ? date : date + "T00:00:00+09:00"))
-      .map((part) =>
-        locale === "ko" && part.type === "dayPeriod"
-          ? part.value.replace("AM", "오전").replace("PM", "오후")
-          : part.value,
-      )
-      .join("") + (hasTime ? " KST" : "")
-  );
+  return new Intl.DateTimeFormat(locale === "ko" ? "ko-KR" : "en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+    timeZone: "Asia/Seoul",
+  }).format(new Date(date.includes("T") ? date : date + "T00:00:00+09:00"));
 }
 
 export function noteByPage(page: SitePageId) {

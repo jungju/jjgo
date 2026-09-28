@@ -1083,6 +1083,9 @@ test("Notes have complete articles, metadata, and localized navigation", async (
     );
     assert.equal(dates.length, postPages.length);
     assert.deepEqual(dates, [...dates].sort().reverse(), "newest notes first");
+    for (const [, text] of list.matchAll(/<time\b[^>]*>([\s\S]*?)<\/time>/g)) {
+      assert.doesNotMatch(text, /\d{1,2}:\d{2}|KST|AM|PM|오전|오후/);
+    }
     assert.equal(
       matchingTags(list, "a", { class: "notes-card-image" }).length,
       postPages.length,
@@ -1094,6 +1097,11 @@ test("Notes have complete articles, metadata, and localized navigation", async (
       );
       const route = outputRoute(locale, page.path);
       const html = await readFile(new URL(route, outputRoot), "utf8");
+      for (const [, text] of html.matchAll(
+        /<time\b[^>]*>([\s\S]*?)<\/time>/g,
+      )) {
+        assert.doesNotMatch(text, /\d{1,2}:\d{2}|KST|AM|PM|오전|오후/);
+      }
       const article = jsonLdNodes(parseJsonLd(html, route)).find(
         (node) => node["@type"] === "BlogPosting",
       );
@@ -1121,7 +1129,11 @@ test("Notes have complete articles, metadata, and localized navigation", async (
           matchingTags(html, "span", { class: "notes-sample" }).length,
           0,
         );
-        assert.match(visibleText(html), /(?:오후 8:00|8:00 PM) KST/);
+        const displayedDate = html.match(/<time\b[^>]*>([\s\S]*?)<\/time>/)[1];
+        assert.match(
+          displayedDate,
+          locale === "ko" ? /2026\. 09\. 20\./ : /09\/20\/2026/,
+        );
         assert.ok(elementTags(html, "p").length > 45, "complete essay");
         if (locale === "ko") {
           assert.match(
