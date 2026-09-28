@@ -1,6 +1,7 @@
 import type { SitePageId } from "../site-spec";
 import { eternalSunshineNote } from "./eternal-sunshine-content";
 import { arrivalNote } from "./arrival-content";
+import { lookalikeNote } from "./lookalike-content";
 export type NoteContent = {
   title: string;
   summary: string;
@@ -18,6 +19,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  lookalikeNote,
   arrivalNote,
   eternalSunshineNote,
   {

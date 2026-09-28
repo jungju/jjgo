@@ -1084,7 +1084,10 @@ test("Notes have complete articles, metadata, and localized navigation", async (
     assert.equal(dates.length, postPages.length);
     assert.deepEqual(dates, [...dates].sort().reverse(), "newest notes first");
     assert.doesNotMatch(visibleText(list), /샘플 글|sample articles?/i);
-    assert.equal(matchingTags(list, "span", { class: "notes-sample" }).length, 0);
+    assert.equal(
+      matchingTags(list, "span", { class: "notes-sample" }).length,
+      0,
+    );
     for (const [, text] of list.matchAll(/<time\b[^>]*>([\s\S]*?)<\/time>/g)) {
       assert.doesNotMatch(text, /\d{1,2}:\d{2}|KST|AM|PM|오전|오후/);
     }
@@ -1100,7 +1103,10 @@ test("Notes have complete articles, metadata, and localized navigation", async (
       const route = outputRoute(locale, page.path);
       const html = await readFile(new URL(route, outputRoot), "utf8");
       assert.doesNotMatch(visibleText(html), /샘플 글|sample article/i);
-      assert.equal(matchingTags(html, "span", { class: "notes-sample" }).length, 0);
+      assert.equal(
+        matchingTags(html, "span", { class: "notes-sample" }).length,
+        0,
+      );
       for (const [, text] of html.matchAll(
         /<time\b[^>]*>([\s\S]*?)<\/time>/g,
       )) {
@@ -1162,6 +1168,16 @@ test("Notes have complete articles, metadata, and localized navigation", async (
             href: "https://www.springfieldspringfield.co.uk/movie_script.php?movie=arrival",
           }).length,
         );
+      } else if (id === "noteLookalike") {
+        assert.equal(article.datePublished, "2026-09-29");
+        assert.ok(elementTags(html, "p").length >= 12, "complete essay");
+        for (const href of [
+          "https://news.hada.io/topic?id=34307",
+          "https://velog.io/@as123123/%ED%95%9C-%EA%B8%80%EC%9E%90%EB%A7%8C-%EB%B0%94%EA%BE%BC-%EA%B0%80%EC%A7%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%BD%94%EB%93%9C%EB%A1%9C-%EA%B0%80%EB%A0%A4%EB%82%B4%EA%B8%B0-%ED%8E%B8%EC%A7%91-%EA%B1%B0%EB%A6%AC%EC%99%80-%EC%88%AB%EC%9E%90-%EC%B9%98%ED%99%98-%EC%A0%95%EA%B7%9C%ED%99%94",
+          "https://jusopin.com/check",
+        ]) {
+          assert.ok(matchingTags(html, "a", { href }).length, href);
+        }
       } else {
         assert.ok(elementTags(html, "h2").length >= 3);
       }
