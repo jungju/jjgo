@@ -57,12 +57,18 @@ collect는 수집기만 시험한다. daily는 자료를 수집하고 RUNNING으
   "kind": "article",
   "slug": "article-slug",
   "stage": "DRAFTED",
-  "evidence": { "sources": [], "hypothesis": "검증할 구체적 가설" },
+  "evidence": {
+    "runId": "daily 실행이 반환한 ID",
+    "sources": [],
+    "hypothesis": "검증할 구체적 가설"
+  },
   "reevaluateOn": "YYYY-MM-DD"
 }
 ```
 
 kind는 article/improvement/distribution, 단계는 SELECTED/DRAFTED/VERIFIED/PUSHED/DEPLOYED/BLOCKED다. DEPLOYED에는 실제 commit, deploymentUrl, publicUrl, verifiedAt가 필요하다. 단순 문자열 채우기가 증거 확인을 대신하지 않는다. 같은 id를 갱신하며 새 작업으로 중복 등록하지 않는다.
+
+일일 작업에는 evidence.runId로 해당 실행을 연결한다. 다른 실행이나 과거 배포를 오늘의 완료 증거로 사용할 수 없다. 기존 작업의 ID·종류·slug·실행 연결은 변경하지 않으며 재평가 때도 원래 증거를 유지한다. 완료된 일일 실행은 다시 종료 처리하지 않는다. 일일 종료는 기존 수집 보고서·출처 상태에 결과 증거를 추가해 보존한다.
 
 일일 종료 JSON은 status, research(출처·조사 결과), decision(이유), model(실제 확인 또는 NOT_VERIFIED), workId(성공 시)를 담는다. `--mode finish --run-id ID --evidence-file 절대경로`로 종료한다. SUCCEEDED는 배포 증거가 있는 작업을 요구한다. 작업 불필요는 NO_CHANGE, 인증 등 외부 선행 조건은 BLOCKED, 실행 오류는 FAILED다.
 

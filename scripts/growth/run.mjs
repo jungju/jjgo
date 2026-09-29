@@ -7,6 +7,7 @@ import {
   startRun,
   snapshot,
   finishRun,
+  finishDailyRun,
   recordWork,
 } from "./state.mjs";
 import { collectPosthog } from "./collect-posthog.mjs";
@@ -36,20 +37,7 @@ try {
     if (!values["evidence-file"] || !values["run-id"])
       throw new GrowthError("RUN_AND_EVIDENCE_REQUIRED");
     const evidence = JSON.parse(readFileSync(values["evidence-file"], "utf8"));
-    if (!evidence.research || !evidence.decision || !evidence.model)
-      throw new GrowthError("RESEARCH_DECISION_MODEL_REQUIRED");
-    const run = db
-      .prepare("SELECT * FROM runs WHERE id=?")
-      .get(values["run-id"]);
-    if (!run || run.mode !== "daily")
-      throw new GrowthError("DAILY_RUN_NOT_FOUND");
-    if (evidence.status === "SUCCEEDED") {
-      const work = db
-        .prepare("SELECT * FROM work WHERE id=? AND stage='DEPLOYED'")
-        .get(evidence.workId || "");
-      if (!work) throw new GrowthError("DEPLOYED_WORK_REQUIRED");
-    }
-    finishRun(db, values["run-id"], evidence.status, evidence);
+    finishDailyRun(db, values["run-id"], evidence);
     console.log(
       JSON.stringify({ status: evidence.status, runId: values["run-id"] }),
     );

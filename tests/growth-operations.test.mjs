@@ -18,6 +18,7 @@ import {
   acquireLock,
   startRun,
   finishRun,
+  finishDailyRun,
   recordWork,
 } from "../scripts/growth/state.mjs";
 import { inspectHtml } from "../scripts/growth/check-site.mjs";
@@ -235,4 +236,77 @@ test("HTML audit detects missing metadata and wrong canonical without executing 
   assert.ok(page.issues.includes("CANONICAL_ORIGIN_MISMATCH"));
   assert.ok(page.issues.includes("DESCRIPTION_MISSING"));
   assert.deepEqual(page.links, ["https://jjgo.io/notes/"]);
+});
+
+test("daily completion rejects unrelated deployments and preserves collection evidence", (t) => {
+  let db;
+  db = openState(temporary(t, () => db?.close()));
+  const runId = startRun(db, "2026-09-30", "daily");
+  db.prepare("UPDATE runs SET evidence=? WHERE id=?").run(
+    JSON.stringify({
+      report: "original-report.md",
+      sources: [{ source: "posthog", status: "OK" }],
+    }),
+    runId,
+  );
+  const proof = {
+    commit: "a".repeat(40),
+    deploymentUrl: "https://github.com/jungju/jjgo/actions/runs/1",
+    publicUrl: "https://jjgo.io/notes/",
+    verifiedAt: new Date().toISOString(),
+  };
+  recordWork(db, {
+    id: "old",
+    day: "2026-09-29",
+    kind: "improvement",
+    slug: "old",
+    stage: "DEPLOYED",
+    evidence: proof,
+  });
+  const evidence = {
+    status: "SUCCEEDED",
+    research: ["source"],
+    decision: "fix",
+    model: { model: "gpt-6-luna" },
+    workId: "old",
+  };
+  assert.throws(() => finishDailyRun(db, runId, evidence), /WORK_RUN_MISMATCH/);
+  assert.equal(
+    db.prepare("SELECT status FROM runs WHERE id=?").get(runId).status,
+    "RUNNING",
+  );
+  const current = {
+    id: "current",
+    day: "2026-09-30",
+    kind: "improvement",
+    slug: "current",
+    stage: "DEPLOYED",
+    evidence: { ...proof, runId },
+  };
+  recordWork(db, current);
+  finishDailyRun(db, runId, { ...evidence, workId: "current" });
+  const finished = JSON.parse(
+    db.prepare("SELECT evidence FROM runs WHERE id=?").get(runId).evidence,
+  );
+  assert.equal(finished.report, "original-report.md");
+  assert.equal(finished.sources[0].source, "posthog");
+  assert.throws(
+    () => finishDailyRun(db, runId, { ...evidence, status: "NO_CHANGE" }),
+    /ALREADY_FINISHED/,
+  );
+  assert.doesNotThrow(() =>
+    recordWork(db, { ...current, reevaluateOn: "2026-10-28" }),
+  );
+  assert.throws(
+    () => recordWork(db, { ...current, stage: "DRAFTED" }),
+    /CANNOT_REGRESS/,
+  );
+  assert.throws(
+    () => recordWork(db, { ...current, slug: "different" }),
+    /IDENTITY_MISMATCH/,
+  );
+  assert.throws(
+    () => recordWork(db, { ...current, evidence: proof }),
+    /WORK_RUN_IMMUTABLE/,
+  );
 });

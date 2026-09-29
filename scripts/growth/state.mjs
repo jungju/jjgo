@@ -79,12 +79,33 @@ export function snapshot(db, id, value) {
 export function finishRun(db, id, status, evidence) {
   if (!["SUCCEEDED", "NO_CHANGE", "BLOCKED", "FAILED"].includes(status))
     throw new GrowthError("INVALID_RUN_STATUS");
+  const existing = db.prepare("SELECT evidence FROM runs WHERE id=?").get(id);
+  if (!existing) throw new GrowthError("RUN_NOT_FOUND");
   db.prepare("UPDATE runs SET status=?, ended_at=?, evidence=? WHERE id=?").run(
     status,
     new Date().toISOString(),
-    JSON.stringify(evidence),
+    JSON.stringify({ ...JSON.parse(existing.evidence), ...evidence }),
     id,
   );
+}
+export function finishDailyRun(db, id, evidence) {
+  const run = db
+    .prepare("SELECT * FROM runs WHERE id=? AND mode='daily'")
+    .get(id);
+  if (!run) throw new GrowthError("DAILY_RUN_NOT_FOUND");
+  if (["SUCCEEDED", "NO_CHANGE"].includes(run.status))
+    throw new GrowthError("DAILY_RUN_ALREADY_FINISHED");
+  if (!evidence.research || !evidence.decision || !evidence.model)
+    throw new GrowthError("RESEARCH_DECISION_MODEL_REQUIRED");
+  if (evidence.status === "SUCCEEDED") {
+    const work = db
+      .prepare("SELECT * FROM work WHERE id=? AND stage='DEPLOYED'")
+      .get(evidence.workId || "");
+    if (!work) throw new GrowthError("DEPLOYED_WORK_REQUIRED");
+    if (JSON.parse(work.evidence).runId !== id)
+      throw new GrowthError("WORK_RUN_MISMATCH");
+  }
+  finishRun(db, id, evidence.status, evidence);
 }
 export function recordWork(db, work) {
   if (
@@ -101,6 +122,35 @@ export function recordWork(db, work) {
     ].includes(work.stage)
   )
     throw new GrowthError("INVALID_WORK");
+  const existing = db.prepare("SELECT * FROM work WHERE id=?").get(work.id);
+  if (
+    existing &&
+    (existing.kind !== work.kind ||
+      existing.slug !== (work.slug || null) ||
+      existing.day !== work.day)
+  )
+    throw new GrowthError("WORK_IDENTITY_MISMATCH");
+  if (existing?.stage === "DEPLOYED" && work.stage !== "DEPLOYED")
+    throw new GrowthError("DEPLOYED_WORK_CANNOT_REGRESS");
+  const previousRunId = existing
+    ? JSON.parse(existing.evidence).runId
+    : undefined;
+  if (
+    existing &&
+    (previousRunId || existing.stage === "DEPLOYED") &&
+    previousRunId !== work.evidence?.runId
+  )
+    throw new GrowthError("WORK_RUN_IMMUTABLE");
+  if (
+    work.evidence?.runId &&
+    work.evidence.runId !== previousRunId &&
+    !db
+      .prepare(
+        "SELECT id FROM runs WHERE id=? AND mode='daily' AND status NOT IN ('SUCCEEDED','NO_CHANGE')",
+      )
+      .get(work.evidence.runId)
+  )
+    throw new GrowthError("ACTIVE_WORK_RUN_REQUIRED");
   if (
     work.stage === "DEPLOYED" &&
     (!work.evidence?.commit ||
