@@ -4,11 +4,12 @@
 
 매일 05:00 Asia/Seoul에 상태·방문·검색·동향을 확인하고 근거 있는 작업 하나를 실행한다. 기본 모델은 gpt-6-luna, medium이다. 모델 이름을 프롬프트에 쓰는 것만으로 적용됐다고 보고하지 않는다. 실제 실행 메타데이터로 확인하며 미확인 상태는 그대로 기록한다.
 
-신규 글은 주 3편 이내, 한·영 한 쌍을 1편으로 센다. 좋은 주제가 없으면 기존 글·링크·검색·RSS를 개선하거나 NO_CHANGE로 끝낸다. 근거 없이 글을 늘리거나 경험·수치·인용을 만들지 않는다. 공개 문구는 editorial-harness, URL은 site-architecture, 코드는 로컬 Next.js 가이드를 따른다.
+신규 글은 한국 시간 월요일~일요일 주 3편 이내, 한·영 한 쌍을 1편으로 센다. 작업 DB뿐 아니라 `notes-data`에 등록된 기존 공개 글의 발행일도 함께 확인해 구축 이전 발행을 누락하지 않는다. 좋은 주제가 없으면 기존 글·링크·검색·RSS를 개선하거나 NO_CHANGE로 끝낸다. 근거 없이 글을 늘리거나 경험·수치·인용을 만들지 않는다. 공개 문구는 editorial-harness, URL은 site-architecture, 코드는 로컬 Next.js 가이드를 따른다.
 
 ## 환경
 
 - 저장소 기준: `C:/Users/jeong/OneDrive/문서/ChatGPT/jjgo-io`.
+- 현재 자동 운영 checkout: `C:/Users/jeong/.codex/worktrees/jjgo-growth-ops/jjgo-io`. 기존 주 checkout의 변경과 분리한다. 진행 중 작업이 있으면 동시 수정하지 않는다.
 - 비밀 설정 기준: 위 저장소의 `.env`. 관리 키는 공개 변수나 산출물에 포함하지 않는다.
 - 운영 데이터 기본: `%LOCALAPPDATA%/JJGo/growth`, Git과 정적 배포 밖.
 - Node 22.13 이상, 잠긴 npm 의존성, GitHub 인증, 웹 검색·이미지·브라우저 도구가 필요하다.
@@ -76,3 +77,9 @@ article_engaged는 활성 전경 30초와 본문 절반 노출을 만족한 세�
 일반 작업 목표 20분, 발행 목표 60분. 검색 목표 상한 6회, 원문 심층 확인 5개. API 일시 오류 재시도 2회, 같은 빌드 수리 2회 후 원인을 남긴다. 이 값은 실행 정책이며 플랫폼의 강제 과금 제한이 아니다. 실제 비용을 관측할 수 없으면 미확인으로 보고한다. 상위 모델로 자동 변경하지 않는다.
 
 발행·개선 완료, 장애, 인증 만료, 사용자 조치가 필요한 경우만 결과를 알린다. 완료 URL·배포 증거·미확인 사항을 짧게 보고한다. 데이터가 변하지 않은 점검은 조용히 종료한다.
+
+## 운영 백업과 소개 초안
+
+일요일에는 `node scripts/growth/backup.mjs --env <절대 .env 경로>`로 SQLite 백업을 생성한다. 스크립트는 백업 파일을 다시 열어 quick_check와 실행 행 수를 확인한다. 자동으로 오래된 자료를 삭제하지 않는다. 90일 보존 검토는 별도 작업으로 기록한다.
+
+`node scripts/growth/distribution.mjs --env <절대 .env 경로> --input <JSON 경로>`는 소개 초안과 UTM만 생성한다. 입력은 workId, slug, drafts 배열이며 각 초안은 locale, source, medium, publicUrl, text를 가진다. 실제 게시 API는 호출하지 않는다. 출력은 운영 폴더의 distribution 디렉터리다.

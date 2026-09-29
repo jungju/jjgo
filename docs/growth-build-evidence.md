@@ -30,3 +30,12 @@
 - gpt-6-luna/medium 실제 실행 및 기존 예약 05:00 전환.
 - 수동·자연 예약 각 3회, 14/28일 성과 검토. 미래 실행을 현재 완료로 표시하지 않음.
 - 외부 채널은 DRAFT_ONLY. 게시된 것처럼 보고하지 않음.
+
+## 후속 확인
+
+- 1차 배포 커밋: `63e2e0d299fa68b5b5f80299aa580eb4c6dd867b`.
+- [Pages 실행 36505602115](https://github.com/jungju/jjgo/actions/runs/36505602115): success.
+- 공개 `/notes/feed.xml`, `/en/notes/feed.xml`: HTTP 200, 각 공개 글 3개. 공개 Notes 한·영/390·1440 브라우저 확인 통과.
+- 모델 시험 1: 기존 예약 대상 채팅의 실제 turn_context에서 model=gpt-6-luna, effort=medium 확인. turn ID `01a0eaab-294c-7252-9218-cca71b3e94ac`, 읽기 전용 collect 완료. PostHog OK / site 26개 OK / GSC 인증 미설정. 모델 자신은 정확한 변형을 확인하지 못한다고 보고했지만 호출자 측 세션 기록으로 검증함.
+- 기존 예약 ID `jjgo`를 `JJGo 매일 성장 운영`, 매일 05:00으로 갱신. 기존 대상 채팅 유지. 호스트 시간대 Korea Standard Time 확인. 자연 예약 실행의 모델 적용 여부는 다음 실행에서 다시 검증해야 함.
+- 기존 공개 글 unknown-or-lookalike의 LinkedIn 한·영, GeekNews 소개 초안과 UTM을 운영 폴더에 생성. 세 건 모두 DRAFT_ONLY, 실제 게시 없음.
