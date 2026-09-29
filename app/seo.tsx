@@ -67,6 +67,12 @@ export function pageMetadata({
     publisher: locale === "ko" ? "이정주" : "Jungju Lee",
     alternates: {
       canonical,
+      types: {
+        "application/rss+xml": [
+          { url: "/notes/feed.xml", title: "JJGo Notes — 한국어" },
+          { url: "/en/notes/feed.xml", title: "JJGo Notes — English" },
+        ],
+      },
       languages: {
         "ko-KR": korean,
         en: english,

@@ -16,14 +16,6 @@ export const metadata: Metadata = {
   creator: "이정주",
   publisher: "이정주",
   category: "technology",
-  alternates: {
-    types: {
-      "application/rss+xml": [
-        { url: "/notes/feed.xml", title: "JJGo Notes — 한국어" },
-        { url: "/en/notes/feed.xml", title: "JJGo Notes — English" },
-      ],
-    },
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
