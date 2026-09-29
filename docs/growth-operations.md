@@ -22,6 +22,8 @@
 
 ## 실행과 상태
 
+예약 작업은 먼저 `node scripts/growth/verify-model.mjs`를 실행한다. 현재 CODEX_THREAD_ID의 세션 메타데이터만 읽어 실제 모델과 추론 수준을 확인한다. VERIFIED가 아니면 운영 수정·발행을 시작하지 않고 모델 설정 오류를 알린다. 수동 구축 작업의 다른 모델 사용과 예약 모델 검증을 혼동하지 않는다. 출력 JSON은 일일 종료 증거의 model 항목에 보관한다.
+
 ```powershell
 node scripts/growth/run.mjs --env 'C:/Users/jeong/OneDrive/문서/ChatGPT/jjgo-io/.env' --mode collect
 node scripts/growth/run.mjs --env 'C:/Users/jeong/OneDrive/문서/ChatGPT/jjgo-io/.env' --mode daily

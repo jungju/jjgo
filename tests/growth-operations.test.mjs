@@ -21,6 +21,7 @@ import {
   recordWork,
 } from "../scripts/growth/state.mjs";
 import { inspectHtml } from "../scripts/growth/check-site.mjs";
+import { readRuntimeModel } from "../scripts/growth/verify-model.mjs";
 
 function temporary(t, beforeCleanup = () => {}) {
   const dir = mkdtempSync(join(tmpdir(), "jjgo-growth-"));
@@ -30,6 +31,33 @@ function temporary(t, beforeCleanup = () => {}) {
   });
   return dir;
 }
+
+test("runtime model evidence belongs to the current thread and latest turn", async (t) => {
+  const file = join(temporary(t), "session.jsonl");
+  const records = [
+    { type: "session_meta", payload: { id: "thread-a" } },
+    {
+      type: "turn_context",
+      timestamp: "2026-09-29T01:00:00Z",
+      payload: { turn_id: "first", model: "other", effort: "high" },
+    },
+    { type: "response_item", payload: { text: "private-message" } },
+    {
+      type: "turn_context",
+      timestamp: "2026-09-29T02:00:00Z",
+      payload: { turn_id: "last", model: "gpt-6-luna", effort: "medium" },
+    },
+  ];
+  writeFileSync(file, records.map((r) => JSON.stringify(r)).join("\n"));
+  const result = await readRuntimeModel(file, "thread-a");
+  assert.equal(result.model, "gpt-6-luna");
+  assert.equal(result.turnId, "last");
+  assert.doesNotMatch(JSON.stringify(result), /private-message/);
+  await assert.rejects(
+    () => readRuntimeModel(file, "thread-b"),
+    /RUNTIME_THREAD_MISMATCH/,
+  );
+});
 test("KST midnight excludes current partial day, GSC uses Pacific dates", () => {
   const p = periods(new Date("2026-09-28T15:00:00Z"));
   assert.equal(p.day, "2026-09-29");
