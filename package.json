@@ -15,8 +15,8 @@
     "test": "npm run build && npm run test:unit",
     "lint": "eslint . --max-warnings 0",
     "test:unit": "node --test tests/*.test.mjs",
-    "format": "npx --yes prettier@3.9.6 --write app tests/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml",
-    "format:check": "npx --yes prettier@3.9.6 --check app tests/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml"
+    "format": "npx --yes prettier@3.9.6 --write --end-of-line auto app tests/*.mjs scripts/growth/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml",
+    "format:check": "npx --yes prettier@3.9.6 --check --end-of-line auto app tests/*.mjs scripts/growth/*.mjs docs README.md design-qa.md *.ts *.mjs *.json .github/workflows/pages.yml"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
