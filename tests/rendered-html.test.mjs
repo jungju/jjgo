@@ -956,7 +956,9 @@ test("every internal destination and local image resolves in the export", async 
       const target =
         destination.pathname === "/"
           ? "index.html"
-          : `${destination.pathname.replace(/^\//, "").replace(/\/$/, "")}/index.html`;
+          : /\.(xml|txt|pdf)$/.test(destination.pathname)
+            ? destination.pathname.replace(/^\//, "")
+            : `${destination.pathname.replace(/^\//, "").replace(/\/$/, "")}/index.html`;
       await access(new URL(target, outputRoot));
       if (destination.hash) {
         const targetHtml =

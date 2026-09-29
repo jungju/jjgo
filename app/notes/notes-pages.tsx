@@ -75,6 +75,11 @@ export function NotesPage({ locale }: { locale: SiteLocale }) {
             Notes<span>{text.title}</span>
           </h1>
           <p className="notes-lead">{text.lead}</p>
+          <a href={locale === "ko" ? "/notes/feed.xml" : "/en/notes/feed.xml"}>
+            {locale === "ko"
+              ? "RSS로 새 글 받아보기"
+              : "Follow new articles via RSS"}
+          </a>
         </header>
         <div className="notes-list">
           {notesNewestFirst.map((note) => (
