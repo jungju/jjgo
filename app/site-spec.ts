@@ -69,6 +69,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteOnDeviceAi: {
+    path: "/notes/on-device-ai-targets",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteWorkflows: {
     path: "/notes/ai-native-starts-with-work",
     parent: "notes",

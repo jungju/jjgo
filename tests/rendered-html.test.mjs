@@ -1180,6 +1180,19 @@ test("Notes have complete articles, metadata, and localized navigation", async (
         ]) {
           assert.ok(matchingTags(html, "a", { href }).length, href);
         }
+      } else if (id === "noteOnDeviceAi") {
+        assert.equal(article.datePublished, "2026-09-30");
+        assert.ok(elementTags(html, "p").length >= 9, "complete essay");
+        assert.ok(
+          matchingTags(html, "a", {
+            href: "https://news.hada.io/topic?id=34463",
+          }).length,
+        );
+        assert.ok(
+          matchingTags(html, "a", {
+            href: "https://github.com/nobodywho-ooo/nobodywho",
+          }).length,
+        );
       } else {
         assert.ok(elementTags(html, "h2").length >= 3);
       }
