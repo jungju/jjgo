@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteConnectedState: {
+    path: "/notes/connected-is-not-caught-up",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteSingleFileOwnership: {
     path: "/notes/single-file-database-ownership",
     parent: "notes",

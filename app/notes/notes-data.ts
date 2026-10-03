@@ -1,4 +1,5 @@
 import type { SitePageId } from "../site-spec";
+import { connectedStateNote } from "./connected-is-not-caught-up-content";
 import { eternalSunshineNote } from "./eternal-sunshine-content";
 import { arrivalNote } from "./arrival-content";
 import { lookalikeNote } from "./lookalike-content";
@@ -23,6 +24,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  connectedStateNote,
   singleFileOwnershipNote,
   waitingRequestsNote,
   reviewOrderNote,
