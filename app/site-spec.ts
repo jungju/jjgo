@@ -57,6 +57,24 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSingleFileOwnership: {
+    path: "/notes/single-file-database-ownership",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
+  noteWaitingRequests: {
+    path: "/notes/idle-cpu-waiting-requests",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
+  noteReviewOrder: {
+    path: "/notes/review-order-is-not-exemption",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteArrival: {
     path: "/notes/arrival-one-question",
     parent: "notes",

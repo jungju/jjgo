@@ -3,6 +3,9 @@ import { eternalSunshineNote } from "./eternal-sunshine-content";
 import { arrivalNote } from "./arrival-content";
 import { lookalikeNote } from "./lookalike-content";
 import { onDeviceAiNote } from "./on-device-ai-content";
+import { singleFileOwnershipNote } from "./single-file-database-ownership-content";
+import { waitingRequestsNote } from "./idle-cpu-waiting-requests-content";
+import { reviewOrderNote } from "./review-order-is-not-exemption-content";
 export type NoteContent = {
   title: string;
   summary: string;
@@ -20,6 +23,9 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  singleFileOwnershipNote,
+  waitingRequestsNote,
+  reviewOrderNote,
   onDeviceAiNote,
   lookalikeNote,
   arrivalNote,
