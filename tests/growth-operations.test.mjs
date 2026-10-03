@@ -267,7 +267,7 @@ test("daily completion rejects unrelated deployments and preserves collection ev
     status: "SUCCEEDED",
     research: ["source"],
     decision: "fix",
-    model: { model: "gpt-6-luna" },
+    model: { status: "VERIFIED", model: "gpt-6.1-sol", effort: "medium" },
     workId: "old",
   };
   assert.throws(() => finishDailyRun(db, runId, evidence), /WORK_RUN_MISMATCH/);
@@ -284,7 +284,32 @@ test("daily completion rejects unrelated deployments and preserves collection ev
     evidence: { ...proof, runId },
   };
   recordWork(db, current);
-  finishDailyRun(db, runId, { ...evidence, workId: "current" });
+  assert.throws(
+    () => finishDailyRun(db, runId, { ...evidence, workId: "current" }),
+    /DAILY_ARTICLE_PUBLICATION_REQUIRED/,
+  );
+  current.id = "article";
+  current.kind = "article";
+  recordWork(db, current);
+  assert.throws(
+    () =>
+      finishDailyRun(db, runId, {
+        ...evidence,
+        workId: "article",
+        model: { status: "VERIFIED", model: "gpt-6-luna", effort: "medium" },
+      }),
+    /WRITING_MODEL_VERIFICATION_REQUIRED/,
+  );
+  assert.throws(
+    () =>
+      finishDailyRun(db, runId, {
+        ...evidence,
+        workId: "article",
+        model: { status: "VERIFIED", model: "gpt-6.1-sol", effort: "high" },
+      }),
+    /WRITING_MODEL_VERIFICATION_REQUIRED/,
+  );
+  finishDailyRun(db, runId, { ...evidence, workId: "article" });
   const finished = JSON.parse(
     db.prepare("SELECT evidence FROM runs WHERE id=?").get(runId).evidence,
   );
@@ -308,5 +333,61 @@ test("daily completion rejects unrelated deployments and preserves collection ev
   assert.throws(
     () => recordWork(db, { ...current, evidence: proof }),
     /WORK_RUN_IMMUTABLE/,
+  );
+});
+
+test("NO_CHANGE requires an article published that same day", (t) => {
+  let db;
+  db = openState(temporary(t, () => db?.close()));
+  const runId = startRun(db, "2026-10-03", "daily");
+  const evidence = {
+    status: "NO_CHANGE",
+    research: ["checked sources"],
+    decision: "weekly limit reached",
+    model: { status: "VERIFIED", model: "gpt-6.1-sol", effort: "medium" },
+  };
+  assert.throws(
+    () => finishDailyRun(db, runId, evidence),
+    /DAILY_ARTICLE_NOT_PUBLISHED/,
+  );
+  assert.equal(
+    db.prepare("SELECT status FROM runs WHERE id=?").get(runId).status,
+    "RUNNING",
+  );
+  const article = {
+    id: "previous-day",
+    day: "2026-10-02",
+    kind: "article",
+    slug: "previous-day",
+    stage: "DEPLOYED",
+    evidence: {
+      commit: "a".repeat(40),
+      deploymentUrl: "https://github.com/jungju/jjgo/actions/runs/1",
+      publicUrl: "https://jjgo.io/notes/previous-day/",
+      verifiedAt: "2026-10-02T00:00:00Z",
+    },
+  };
+  recordWork(db, article);
+  assert.throws(
+    () => finishDailyRun(db, runId, evidence),
+    /DAILY_ARTICLE_NOT_PUBLISHED/,
+  );
+  recordWork(db, {
+    ...article,
+    id: "today",
+    day: "2026-10-03",
+    slug: "today",
+    evidence: {
+      ...article.evidence,
+      publicUrl: "https://jjgo.io/notes/today/",
+    },
+  });
+  finishDailyRun(db, runId, {
+    ...evidence,
+    decision: "today's article is already published; skip the duplicate",
+  });
+  assert.equal(
+    db.prepare("SELECT status FROM runs WHERE id=?").get(runId).status,
+    "NO_CHANGE",
   );
 });

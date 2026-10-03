@@ -7,6 +7,9 @@ import { parseArgs } from "node:util";
 import { pathToFileURL } from "node:url";
 import { GrowthError, safeError } from "./config.mjs";
 
+export const WRITING_MODEL = "gpt-6.1-sol";
+export const WRITING_EFFORT = "medium";
+
 export async function readRuntimeModel(file, threadId) {
   let session, context, timestamp;
   for await (const line of createInterface({
@@ -45,8 +48,8 @@ if (
   try {
     const { values } = parseArgs({
       options: {
-        model: { type: "string", default: "gpt-6-luna" },
-        effort: { type: "string", default: "medium" },
+        model: { type: "string", default: WRITING_MODEL },
+        effort: { type: "string", default: WRITING_EFFORT },
       },
     });
     const threadId = process.env.CODEX_THREAD_ID;

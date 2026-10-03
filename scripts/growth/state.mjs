@@ -9,6 +9,7 @@ import {
 import { join } from "node:path";
 import { randomUUID } from "node:crypto";
 import { GrowthError } from "./config.mjs";
+import { WRITING_MODEL, WRITING_EFFORT } from "./verify-model.mjs";
 
 export function openState(dataDir) {
   mkdirSync(dataDir, { recursive: true });
@@ -97,6 +98,13 @@ export function finishDailyRun(db, id, evidence) {
     throw new GrowthError("DAILY_RUN_ALREADY_FINISHED");
   if (!evidence.research || !evidence.decision || !evidence.model)
     throw new GrowthError("RESEARCH_DECISION_MODEL_REQUIRED");
+  if (
+    ["SUCCEEDED", "NO_CHANGE"].includes(evidence.status) &&
+    (evidence.model.status !== "VERIFIED" ||
+      evidence.model.model !== WRITING_MODEL ||
+      evidence.model.effort !== WRITING_EFFORT)
+  )
+    throw new GrowthError("WRITING_MODEL_VERIFICATION_REQUIRED");
   if (evidence.status === "SUCCEEDED") {
     const work = db
       .prepare("SELECT * FROM work WHERE id=? AND stage='DEPLOYED'")
@@ -104,7 +112,18 @@ export function finishDailyRun(db, id, evidence) {
     if (!work) throw new GrowthError("DEPLOYED_WORK_REQUIRED");
     if (JSON.parse(work.evidence).runId !== id)
       throw new GrowthError("WORK_RUN_MISMATCH");
+    if (work.kind !== "article" || work.day !== run.day)
+      throw new GrowthError("DAILY_ARTICLE_PUBLICATION_REQUIRED");
   }
+  if (
+    evidence.status === "NO_CHANGE" &&
+    !db
+      .prepare(
+        "SELECT id FROM work WHERE day=? AND kind='article' AND stage='DEPLOYED'",
+      )
+      .get(run.day)
+  )
+    throw new GrowthError("DAILY_ARTICLE_NOT_PUBLISHED");
   finishRun(db, id, evidence.status, evidence);
 }
 export function recordWork(db, work) {
