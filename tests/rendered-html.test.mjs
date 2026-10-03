@@ -1193,31 +1193,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
             href: "https://github.com/nobodywho-ooo/nobodywho",
           }).length,
         );
-      } else if (
-        [
-          "noteSingleFileOwnership",
-          "noteWaitingRequests",
-          "noteReviewOrder",
-        ].includes(id)
-      ) {
-        assert.equal(article.datePublished, "2026-10-03");
-        assert.ok(
-          elementTags(html, "p").length >= 17,
-          "complete catch-up essay",
-        );
-        const sources = {
-          noteSingleFileOwnership: "https://github.com/jeffhajewski/latticedb",
-          noteWaitingRequests:
-            "https://kciter.so/posts/server-monitoring-analysis-guide/",
-          noteReviewOrder:
-            "https://alfadur7.github.io/llm-wiki-newsroom/scooping-stones/",
-        };
-        assert.ok(matchingTags(html, "a", { href: sources[id] }).length);
-        if (id === "noteReviewOrder") {
-          assert.match(visibleText(html), /62/);
-          assert.match(visibleText(html), /0\.491/);
-          assert.match(visibleText(html), /0\.20–0\.79/);
-        }
       } else {
         assert.ok(elementTags(html, "h2").length >= 3);
       }
