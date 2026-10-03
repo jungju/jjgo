@@ -1174,7 +1174,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
         assert.equal(article.datePublished, "2026-09-29");
         assert.ok(elementTags(html, "p").length >= 12, "complete essay");
         for (const href of [
-          "https://news.hada.io/topic?id=34307",
           "https://velog.io/@as123123/%ED%95%9C-%EA%B8%80%EC%9E%90%EB%A7%8C-%EB%B0%94%EA%BE%BC-%EA%B0%80%EC%A7%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%BD%94%EB%93%9C%EB%A1%9C-%EA%B0%80%EB%A0%A4%EB%82%B4%EA%B8%B0-%ED%8E%B8%EC%A7%91-%EA%B1%B0%EB%A6%AC%EC%99%80-%EC%88%AB%EC%9E%90-%EC%B9%98%ED%99%98-%EC%A0%95%EA%B7%9C%ED%99%94",
           "https://jusopin.com/check",
         ]) {
@@ -1183,11 +1182,6 @@ test("Notes have complete articles, metadata, and localized navigation", async (
       } else if (id === "noteOnDeviceAi") {
         assert.equal(article.datePublished, "2026-09-30");
         assert.ok(elementTags(html, "p").length >= 9, "complete essay");
-        assert.ok(
-          matchingTags(html, "a", {
-            href: "https://news.hada.io/topic?id=34463",
-          }).length,
-        );
         assert.ok(
           matchingTags(html, "a", {
             href: "https://github.com/nobodywho-ooo/nobodywho",

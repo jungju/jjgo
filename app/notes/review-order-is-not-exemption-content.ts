@@ -16,10 +16,6 @@ export const reviewOrderNote: Note = {
       "Jev를 활용한 위키 실험을 읽고, 검토 순서를 정하는 점수가 검토를 생략할 근거가 되려면 무엇을 확인해야 할지 생각했다.",
     sources: [
       {
-        label: "GeekNews · Jev와 LLM Wiki 검토",
-        href: "https://news.hada.io/topic?go=comments&id=34483",
-      },
-      {
         label: "LLM Wiki Newsroom · 공개 실험과 한계",
         href: "https://alfadur7.github.io/llm-wiki-newsroom/scooping-stones/",
       },
@@ -29,7 +25,7 @@ export const reviewOrderNote: Note = {
         title: "트레이가 두 개 생겼다",
         paragraphs: [
           "검토할 초안이 책상에 쌓여 있다고 해보자. 점수가 낮은 글을 왼쪽 트레이로 옮기면 오늘 무엇부터 읽을지는 정해진다. 오른쪽 트레이의 글이 맞다는 사실은 아직 하나도 생기지 않았다.",
-          "GeekNews에서 소개한 Jev 위키 실험을 읽으며 걸린 부분이 이것이다. 검토 순서를 잘 정하는 일과 검토할 글의 수를 줄이는 일은 얼마나 가까울까.",
+          "Jev 위키 실험을 읽으며 걸린 부분이 이것이다. 검토 순서를 잘 정하는 일과 검토할 글의 수를 줄이는 일은 얼마나 가까울까.",
           "원문의 현재 작성 파이프라인 표본은 62페이지다. critical 또는 high 결함이 하나 이상인 페이지는 4개였고, Jev 순위의 AUC는 0.491, 95% 신뢰구간은 0.20–0.79였다. 오래된 글을 섞으면 다른 수치가 나오므로 두 집단을 구분해야 한다.",
           "판정은 사람의 정답표가 아니라 AI 검토자들이 만든 것이고, 비공개 위키 수치는 외부에서 확인할 수 없다. 이 작은 공개 실험을 Jev 전체의 성능 판정으로 확대할 수는 없다.",
           "그래서 여기서는 모델의 좋고 나쁨보다, 그 점수로 어떤 일을 생략하려는지를 생각해보고 싶다.",
@@ -65,10 +61,6 @@ export const reviewOrderNote: Note = {
       "A Jev wiki experiment raises a practical question: what evidence turns a review ranking into permission to skip a draft?",
     sources: [
       {
-        label: "GeekNews · Jev and LLM Wiki review",
-        href: "https://news.hada.io/topic?go=comments&id=34483",
-      },
-      {
         label: "LLM Wiki Newsroom · Public experiment and limits",
         href: "https://alfadur7.github.io/llm-wiki-newsroom/scooping-stones/",
       },
@@ -78,7 +70,7 @@ export const reviewOrderNote: Note = {
         title: "Now there are two trays",
         paragraphs: [
           "Imagine a desk covered in drafts awaiting review. Move the lowest-scoring ones to the left tray and you have decided where to start today. You have not learned anything new about the accuracy of the drafts on the right.",
-          "That distinction stayed with me while reading the Jev wiki experiment linked on GeekNews. How far is a useful reading order from a smaller review workload?",
+          "That distinction stayed with me while reading the Jev wiki experiment. How far is a useful reading order from a smaller review workload?",
           "In the source’s current-pipeline sample, 4 of 62 pages had at least one critical or high defect. Jev’s ranking had an AUC of 0.491, with a 95% confidence interval of 0.20–0.79. Including older pages changes the picture, so the cohorts matter.",
           "The labels came from AI reviewers, not human ground truth, and the private-wiki measurements are not externally verifiable. This small public experiment cannot settle Jev’s general performance.",
           "I want to follow a narrower question: what work are we proposing to omit because of the score?",

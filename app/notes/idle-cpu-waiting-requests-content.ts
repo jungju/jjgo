@@ -16,10 +16,6 @@ export const waitingRequestsNote: Note = {
       "서버가 한가해 보이는데 응답은 늦다. 가상의 주문 요청을 따라가며 DB 연결을 빌리는 시간과 돌려주는 시간을 나눠 본다.",
     sources: [
       {
-        label: "GeekNews · 서버 모니터링 분석 가이드",
-        href: "https://news.hada.io/topic?id=34478",
-      },
-      {
         label: "kciter · 서버 모니터링 분석 가이드",
         href: "https://kciter.so/posts/server-monitoring-analysis-guide/",
       },
@@ -33,7 +29,7 @@ export const waitingRequestsNote: Note = {
         title: "안에서는 조용한데",
         paragraphs: [
           "CPU 그래프는 한가하다. 그런데 주문 버튼을 누른 사람은 다음 화면을 보지 못한다. 이 상황을 가정하면 ‘서버가 바쁘지 않은데 왜 늦지?’라는 질문부터 조금 이상해진다. 계산하지 않고 기다리는 시간도 있으니까.",
-          "GeekNews에서 읽은 서버 모니터링 가이드는 커넥션 풀이 말랐을 때 연결 수부터 늘리지 말고, 왜 반납이 늦어졌는지 보라고 한다. 느린 DB에 동시 작업을 더 얹으면 오히려 상황이 나빠질 수 있다는 설명이다.",
+          "서버 모니터링 가이드는 커넥션 풀이 말랐을 때 연결 수부터 늘리지 말고, 왜 반납이 늦어졌는지 보라고 한다. 느린 DB에 동시 작업을 더 얹으면 오히려 상황이 나빠질 수 있다는 설명이다.",
           "이 지점에서 가상의 주문 API 하나를 따라가 보고 싶어졌다. DB 연결을 빌리고, 주문을 저장하고, 배송 서비스에 알린 뒤 응답하는 프로그램이라고 해보자.",
           "사용자는 이 과정을 한 번의 기다림으로 겪는다. 서버 쪽에서는 그 시간을 여러 칸으로 나눌 수 있다. 요청이 들어온 때, 연결을 빌리려 한 때, 실제로 빌린 때, DB 작업이 끝난 때, 연결을 돌려준 때.",
           "지금은 어느 칸에 시간이 쌓이고 있을까.",
@@ -69,10 +65,6 @@ export const waitingRequestsNote: Note = {
       "An imagined order request shows why waiting for a database connection and holding one need separate clocks.",
     sources: [
       {
-        label: "GeekNews · Server monitoring analysis guide",
-        href: "https://news.hada.io/topic?id=34478",
-      },
-      {
         label: "kciter · Server monitoring analysis guide",
         href: "https://kciter.so/posts/server-monitoring-analysis-guide/",
       },
@@ -86,7 +78,7 @@ export const waitingRequestsNote: Note = {
         title: "Quiet inside",
         paragraphs: [
           "The CPU graph looks quiet. Someone presses the order button and never gets to the next screen. In this hypothetical situation, ‘Why is it slow when the server is not busy?’ already needs a better definition of busy. Waiting takes time without doing much computation.",
-          "The monitoring guide linked on GeekNews asks why database connections are being returned slowly before increasing the pool size. Adding concurrent work to an already slow database can make matters worse.",
+          "The server monitoring guide asks why database connections are being returned slowly before increasing the pool size. Adding concurrent work to an already slow database can make matters worse.",
           "That detail makes me want to follow one imaginary order API. It borrows a database connection, saves an order, notifies a delivery service and sends a response.",
           "The customer experiences one wait. Inside the application, we can give it several timestamps: request arrival, connection requested, connection acquired, database work finished, connection returned.",
           "Which gap is growing?",

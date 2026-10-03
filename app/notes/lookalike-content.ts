@@ -19,7 +19,7 @@ export const lookalikeNote: Note = {
         title: "",
         paragraphs: [
           "‘kbstar.com’과 ‘kb5tar.com’을 나란히 놓으면 다른 주소라는 걸 안다. 그런데 문자를 받고 누르기 직전에도 알아챌 수 있을까. 숫자 5가 소문자 s처럼 보이는 순간, 주소는 글자보다 모양으로 읽힌다.",
-          "GeekNews에 주소핀의 도메인 판별기를 만든 글이 올라왔다. 공식 사이트 목록을 늘어놓기보다, 이미 손에 들어온 주소가 진짜인지 확인하고 싶다는 데서 출발한다.",
+          "주소핀의 도메인 판별기를 만든 글은 공식 사이트 목록을 늘어놓기보다, 이미 손에 들어온 주소가 진짜인지 확인하고 싶다는 데서 출발한다.",
           "판별기는 입력된 주소에 직접 접속하지 않는다. 호스트 이름을 정리하고 공개된 공식 도메인 목록과 비교한다. 이름이 비슷하면 유사 주소로 알려주고, 신고된 주소와 맞으면 피싱으로 분류한다. 목록에 없고 비슷한 주소도 찾지 못하면 ‘모름’에 남긴다.",
           "여기서 중요한 건 레벤슈타인 거리보다 결과의 이름이다. 편집 거리는 두 문자열이 몇 글자 차이인지 알려준다. 하지만 그 숫자만으로 가짜 사이트라고 확정할 수는 없다. 비슷하다는 건 한 번 더 살펴볼 이유이지, 판결문은 아니다.",
           "그래서 ‘목록에 없다’와 ‘공식 주소를 흉내 낸 것 같다’를 나눈다. 전자는 가진 목록의 범위에 관한 말이고, 후자는 입력한 주소에서 발견한 신호에 관한 말이다. 둘을 한데 묶어 “위험합니다”라고 하면 모르는 것을 아는 척하게 된다.",
@@ -35,7 +35,6 @@ export const lookalikeNote: Note = {
       },
     ],
     sources: [
-      { label: "GeekNews 글", href: "https://news.hada.io/topic?id=34307" },
       {
         label: "저자의 원문",
         href: "https://velog.io/@as123123/%ED%95%9C-%EA%B8%80%EC%9E%90%EB%A7%8C-%EB%B0%94%EA%BE%BC-%EA%B0%80%EC%A7%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%BD%94%EB%93%9C%EB%A1%9C-%EA%B0%80%EB%A0%A4%EB%82%B4%EA%B8%B0-%ED%8E%B8%EC%A7%91-%EA%B1%B0%EB%A6%AC%EC%99%80-%EC%88%AB%EC%9E%90-%EC%B9%98%ED%99%98-%EC%A0%95%EA%B7%9C%ED%99%94",
@@ -52,7 +51,7 @@ export const lookalikeNote: Note = {
         title: "",
         paragraphs: [
           "Put ‘kbstar.com’ beside ‘kb5tar.com’ and the difference is clear. But would you catch it just before tapping a link in a text message? When the number 5 looks like a lowercase s, we read the address as a shape before we read it character by character.",
-          "I found a GeekNews post about a domain checker built for Jusopin. At first I thought it was mainly a neatly organized directory of official websites. The article begins somewhere else: with a person who already has an address and wants to know if it is the real one.",
+          "I read an article about a domain checker built for Jusopin. At first I thought it was mainly a neatly organized directory of official websites. The article begins somewhere else: with a person who already has an address and wants to know if it is the real one.",
           "The checker does not connect to the submitted address. It normalizes the host name and compares it with a list of official domains. A similar name is marked as a lookalike; a reported address is classified as phishing. If it is missing from the list and no similar address turns up, the result stays unknown.",
           "The useful detail here is the name of each result, more than the edit distance. That distance tells you how many characters differ. It cannot, by itself, prove that a site is fake. Similarity is a reason to look again, not a verdict.",
           "So the checker separates ‘not on the list’ from ‘looks like an official address’. The first says something about the reach of its list. The second says something about a signal in the submitted address. Roll both into ‘dangerous’ and the system starts pretending it knows more than it does.",
@@ -68,10 +67,6 @@ export const lookalikeNote: Note = {
       },
     ],
     sources: [
-      {
-        label: "GeekNews discussion",
-        href: "https://news.hada.io/topic?id=34307",
-      },
       {
         label: "Original article",
         href: "https://velog.io/@as123123/%ED%95%9C-%EA%B8%80%EC%9E%90%EB%A7%8C-%EB%B0%94%EA%BE%BC-%EA%B0%80%EC%A7%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%BD%94%EB%93%9C%EB%A1%9C-%EA%B0%80%EB%A0%A4%EB%82%B4%EA%B8%B0-%ED%8E%B8%EC%A7%91-%EA%B1%B0%EB%A6%AC%EC%99%80-%EC%88%AB%EC%9E%90-%EC%B9%98%ED%99%98-%EC%A0%95%EA%B7%9C%ED%99%94",

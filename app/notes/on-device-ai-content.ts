@@ -19,7 +19,7 @@ export const onDeviceAiNote: Note = {
         title: "",
         paragraphs: [
           "앱에 AI를 넣을 때는 어떤 모델을 쓸지부터 고르고 싶어진다. 그보다 먼저 정해야 할 게 있다. 앱이 어디에서 돌아가야 하는가.",
-          "브라우저인지, 휴대전화인지, 데스크톱인지에 따라 붙일 수 있는 런타임과 모델이 달라진다. GeekNews에서 소개한 NobodyWho는 앱과 게임 안에서 LLM을 로컬 실행하는 추론 엔진이다. 프로젝트 README는 Flutter, Python, Godot, Kotlin, Swift, React Native 바인딩을 안내한다.",
+          "브라우저인지, 휴대전화인지, 데스크톱인지에 따라 붙일 수 있는 런타임과 모델이 달라진다. NobodyWho는 앱과 게임 안에서 LLM을 로컬 실행하는 추론 엔진이다. 프로젝트 README는 Flutter, Python, Godot, Kotlin, Swift, React Native 바인딩을 안내한다.",
           "‘어떤 기기에서나’라는 소개 문구만 보고 배포 범위를 정하면 곤란하다. README에는 웹 내보내기가 없고 Windows ARM64도 아직 지원하지 않는다고 적혀 있다. Godot 바인딩은 iOS 내보내기를 지원하지 않아 iOS 앱에는 다른 바인딩이 필요하다.",
           "메모리도 모델 파일 크기만 보면 안 된다. 프로젝트 문서는 데스크톱에서 모델 파일의 약 1.5배에 해당하는 여유 RAM을, 이미 바쁜 기기라면 2배를 대략적인 기준으로 든다. 모바일은 모델 파일의 약 2배를 안내한다. 어디까지나 프로젝트가 적은 경험칙이지, 특정 앱에서 측정한 성능 결과는 아니다.",
           "모델을 처음 불러올 때의 네트워크도 확인해야 한다. README는 Hugging Face나 URL에서 모델을 내려받고 첫 사용 때 캐시할 수 있다고 설명한다. 추론을 기기 안에서 하더라도 설치 직후 모델 파일이 없다면 내려받을 경로와 실패 안내가 필요하다.",
@@ -30,10 +30,6 @@ export const onDeviceAiNote: Note = {
       },
     ],
     sources: [
-      {
-        label: "GeekNews 소개",
-        href: "https://news.hada.io/topic?id=34463",
-      },
       {
         label: "NobodyWho 프로젝트 README",
         href: "https://github.com/nobodywho-ooo/nobodywho",
@@ -49,7 +45,7 @@ export const onDeviceAiNote: Note = {
         title: "",
         paragraphs: [
           "When adding AI to an app, it is tempting to start by picking a model. First answer a different question: where does the app need to run?",
-          "The runtime and models available to you change between a browser, a phone, and a desktop. NobodyWho, introduced on GeekNews, is an inference engine for running LLMs locally in apps and games. Its README lists bindings for Flutter, Python, Godot, Kotlin, Swift, and React Native.",
+          "The runtime and models available to you change between a browser, a phone, and a desktop. NobodyWho is an inference engine for running LLMs locally in apps and games. Its README lists bindings for Flutter, Python, Godot, Kotlin, Swift, and React Native.",
           "The phrase ‘on any device’ is not enough to set a release plan. The README says there is no web export and Windows ARM64 is not supported yet. The Godot binding does not export to iOS, so an iOS app needs a different binding.",
           "Memory is more than the model file size. The project gives a rough desktop guide of about 1.5 times the model file in free RAM, or twice that on a busy machine. For mobile it suggests around twice the model file size. These are maintainer rules of thumb, not performance results for a particular app.",
           "Check the network path for the first model load too. The README says models can be downloaded from Hugging Face or a URL and cached on first use. Inference may run on-device, but if the model is not already installed, the product still needs a download path and a clear failure state.",
@@ -60,7 +56,6 @@ export const onDeviceAiNote: Note = {
       },
     ],
     sources: [
-      { label: "GeekNews item", href: "https://news.hada.io/topic?id=34463" },
       {
         label: "NobodyWho project README",
         href: "https://github.com/nobodywho-ooo/nobodywho",

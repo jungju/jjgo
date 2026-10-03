@@ -16,10 +16,6 @@ export const singleFileOwnershipNote: Note = {
       "LatticeDB의 한 파일에 그래프와 검색을 모으면 편해진다. 그 파일을 누가 열고, 어디까지 함께 바꾸고, 어떻게 되살릴지는 여전히 남는다.",
     sources: [
       {
-        label: "GeekNews · LatticeDB",
-        href: "https://news.hada.io/topic?id=34517",
-      },
-      {
         label: "LatticeDB · README와 운영 범위",
         href: "https://github.com/jeffhajewski/latticedb",
       },
@@ -29,7 +25,7 @@ export const singleFileOwnershipNote: Note = {
         title: "상자가 줄면 이삿짐은 가벼워진다",
         paragraphs: [
           "문서 하나를 고쳤는데 검색에는 옛 문장이 나온다면, 어디를 열어봐야 할까. 본문을 담은 곳, 벡터를 담은 곳, 문서끼리 연결해 둔 곳. 이사를 끝냈는데 주소 변경은 아직 남아 있는 느낌이다.",
-          "GeekNews에서 LatticeDB를 보고 눈에 들어온 건 ‘한 파일’이라는 말이었다. README는 그래프, 벡터 검색, 전문 검색을 한 저장소에서 다루는 임베디드 DB라고 설명한다. 별도 DB 서버를 띄우지 않는 로컬 도구를 생각하면 매력적인 모양이다.",
+          "LatticeDB 설명에서 눈에 들어온 건 ‘한 파일’이라는 말이었다. README는 그래프, 벡터 검색, 전문 검색을 한 저장소에서 다루는 임베디드 DB라고 설명한다. 별도 DB 서버를 띄우지 않는 로컬 도구를 생각하면 매력적인 모양이다.",
           "가령 개인 자료 검색 앱을 만든다고 해보자. 문서에 작성자를 연결하고, 문단을 검색하고, 검색 결과에서 원문으로 돌아간다. 이 예에서는 파일 수보다 문서의 버전을 맞추는 일이 더 신경 쓰인다.",
           "본문을 고친 뒤 임베딩 생성이 실패했다. 화면은 새 문장을 보여주는데 검색은 전날 문장을 찾는다. 저장소가 나뉘어 있다면 무엇이 끝났고 무엇이 남았는지 따로 표시해야 한다.",
           "한곳에 모으면 그 조율을 줄일 여지가 있다. 그래도 어떤 변경을 함께 확정할지는 앱이 정해야 한다. 새 임베딩을 준비할 때까지 기존 버전을 보여줄지, 수정 중이라고 표시할지. 같은 파일에 있다는 이유만으로 이 선택이 정해지지는 않는다.",
@@ -65,10 +61,6 @@ export const singleFileOwnershipNote: Note = {
       "LatticeDB brings graph and search into one file. Ownership, update boundaries and a tested way back still need a place in the application.",
     sources: [
       {
-        label: "GeekNews · LatticeDB",
-        href: "https://news.hada.io/topic?id=34517",
-      },
-      {
         label: "LatticeDB · README and operational scope",
         href: "https://github.com/jeffhajewski/latticedb",
       },
@@ -78,7 +70,7 @@ export const singleFileOwnershipNote: Note = {
         title: "Fewer boxes to move",
         paragraphs: [
           "You edit a document, but search still returns its old wording. Where do you look? The document store, the vector store, the place that holds its relationships? It feels like finishing a move while your mail keeps going to the old address.",
-          "The phrase that caught my attention in the GeekNews item about LatticeDB was ‘one file.’ Its README describes an embedded database combining a graph, vector search and full-text search. That is an appealing shape for a local application.",
+          "The phrase that caught my attention in the LatticeDB README was ‘one file.’ Its README describes an embedded database combining a graph, vector search and full-text search. That is an appealing shape for a local application.",
           "Imagine a personal research app. Authors connect to documents, paragraphs are searchable, and results lead back to the original. In this example, keeping versions together matters more than the number of files.",
           "An edit saves, then embedding generation fails. The reader sees the new wording while search retrieves yesterday’s paragraph. Separate stores leave the application tracking which step finished and which one is still waiting.",
           "Bringing the data together offers a chance to reduce that coordination. The app must still choose what becomes visible together. Keep the previous version until the new embedding is ready? Show the edit as pending? Sharing a file does not make that decision.",
