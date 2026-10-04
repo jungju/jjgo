@@ -1,4 +1,5 @@
 import type { SitePageId } from "../site-spec";
+import { missingFieldNote } from "./missing-field-is-not-deletion-content";
 import { connectedStateNote } from "./connected-is-not-caught-up-content";
 import { eternalSunshineNote } from "./eternal-sunshine-content";
 import { arrivalNote } from "./arrival-content";
@@ -24,6 +25,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  missingFieldNote,
   connectedStateNote,
   singleFileOwnershipNote,
   waitingRequestsNote,
