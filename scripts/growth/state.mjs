@@ -119,7 +119,7 @@ export function finishDailyRun(db, id, evidence) {
     evidence.status === "NO_CHANGE" &&
     !db
       .prepare(
-        "SELECT id FROM work WHERE day=? AND kind='article' AND stage='DEPLOYED'",
+        "SELECT id FROM work WHERE COALESCE(json_extract(evidence, '$.publicationDay'), day)=? AND kind='article' AND stage='DEPLOYED'",
       )
       .get(run.day)
   )
@@ -127,6 +127,15 @@ export function finishDailyRun(db, id, evidence) {
   finishRun(db, id, evidence.status, evidence);
 }
 export function recordWork(db, work) {
+  const publicationDay = work.evidence?.publicationDay;
+  if (
+    publicationDay &&
+    (!/^\d{4}-\d{2}-\d{2}$/.test(publicationDay) ||
+      !Number.isFinite(Date.parse(publicationDay)) ||
+      new Date(publicationDay).toISOString().slice(0, 10) !== publicationDay ||
+      publicationDay < work.day)
+  )
+    throw new GrowthError("INVALID_PUBLICATION_DAY");
   if (
     !work.id ||
     !work.day ||

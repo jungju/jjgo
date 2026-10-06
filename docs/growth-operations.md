@@ -68,6 +68,8 @@ collect는 수집기만 시험한다. daily는 자료를 수집하고 RUNNING으
 
 kind는 article/improvement/distribution, 단계는 SELECTED/DRAFTED/VERIFIED/PUSHED/DEPLOYED/BLOCKED다. DEPLOYED에는 실제 commit, deploymentUrl, publicUrl, verifiedAt가 필요하다. 단순 문자열 채우기가 증거 확인을 대신하지 않는다. 같은 id를 갱신하며 새 작업으로 중복 등록하지 않는다.
 
+배포 장애로 공개일이 작성일을 넘긴 글은 기존 작업의 day와 runId를 보존하고, 공개 Notes 날짜를 실제 발행일로 맞춘다. 검증한 발행일을 evidence.publicationDay에 남긴다. 당일 중복 판단은 이 날짜를 우선하며, 없는 과거 기록은 day를 사용한다. 지연 발행을 마친 날에는 같은 글을 새 작업으로 다시 등록하거나 별도 글을 중복 발행하지 않는다.
+
 일일 작업에는 evidence.runId로 해당 실행을 연결한다. 다른 실행이나 과거 배포를 오늘의 완료 증거로 사용할 수 없다. 기존 작업의 ID·종류·slug·실행 연결은 변경하지 않으며 재평가 때도 원래 증거를 유지한다. 완료된 일일 실행은 다시 종료 처리하지 않는다. 일일 종료는 기존 수집 보고서·출처 상태에 결과 증거를 추가해 보존한다.
 
 일일 종료 JSON은 status, research(출처·조사 결과), decision(이유), model(실제 확인 또는 NOT_VERIFIED), workId(성공 시)를 담는다. `--mode finish --run-id ID --evidence-file 절대경로`로 종료한다. SUCCEEDED는 해당 실행에 연결된 신규 글의 배포 증거를 요구한다. NO_CHANGE는 당일 글이 이미 발행돼 중복 실행을 생략할 때만 사용하며 같은 날짜의 글 발행 증거를 연결한다. 후보 부족·기존 주간 한도·점검만 수행한 상태는 글 작성 완료가 아니다. 인증 등 외부 선행 조건은 BLOCKED, 실행 오류는 FAILED다.

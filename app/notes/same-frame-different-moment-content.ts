@@ -3,7 +3,7 @@ import type { Note } from "./notes-data";
 export const sameFrameNote: Note = {
   page: "noteSameFrame",
   category: "DATA & AI",
-  date: "2026-10-06",
+  date: "2026-10-07",
   sample: false,
   image: "/a/generated/notes/same-frame-different-moment.webp",
   imageAlt: {

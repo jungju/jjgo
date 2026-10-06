@@ -391,3 +391,51 @@ test("NO_CHANGE requires an article published that same day", (t) => {
     "NO_CHANGE",
   );
 });
+test("a delayed publication counts on its actual day only after deployment", (t) => {
+  let db;
+  db = openState(temporary(t, () => db?.close()));
+  const runId = startRun(db, "2026-10-07", "daily");
+  const proof = {
+    status: "NO_CHANGE",
+    research: ["verified recovery"],
+    decision: "skip duplicate",
+    model: { status: "VERIFIED", model: "gpt-6.1-sol", effort: "medium" },
+  };
+  const work = {
+    id: "delayed",
+    day: "2026-10-06",
+    kind: "article",
+    slug: "delayed",
+    stage: "PUSHED",
+    evidence: {
+      publicationDay: "2026-10-07",
+      commit: "b".repeat(40),
+      deploymentUrl: "https://github.com/jungju/jjgo/actions/runs/2",
+      publicUrl: "https://jjgo.io/notes/delayed/",
+      verifiedAt: "2026-10-07T00:00:00Z",
+    },
+  };
+  assert.throws(
+    () =>
+      recordWork(db, {
+        ...work,
+        evidence: { ...work.evidence, publicationDay: "2026-10-05" },
+      }),
+    /INVALID_PUBLICATION_DAY/,
+  );
+  recordWork(db, work);
+  assert.throws(
+    () => finishDailyRun(db, runId, proof),
+    /DAILY_ARTICLE_NOT_PUBLISHED/,
+  );
+  recordWork(db, { ...work, stage: "DEPLOYED" });
+  finishDailyRun(db, runId, proof);
+  assert.equal(
+    db.prepare("SELECT status FROM runs WHERE id=?").get(runId).status,
+    "NO_CHANGE",
+  );
+  assert.equal(
+    db.prepare("SELECT day FROM work WHERE id=?").get(work.id).day,
+    "2026-10-06",
+  );
+});
