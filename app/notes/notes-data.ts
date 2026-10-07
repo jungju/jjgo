@@ -1,4 +1,5 @@
 import type { SitePageId } from "../site-spec";
+import { privateMemoryNote } from "./shared-server-private-memory-content";
 import { sameFrameNote } from "./same-frame-different-moment-content";
 import { missingFieldNote } from "./missing-field-is-not-deletion-content";
 import { connectedStateNote } from "./connected-is-not-caught-up-content";
@@ -26,6 +27,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  privateMemoryNote,
   sameFrameNote,
   missingFieldNote,
   connectedStateNote,
