@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteZeroShape: {
+    path: "/notes/zero-shape-same-character",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   notePrivateMemory: {
     path: "/notes/shared-server-private-memory",
     parent: "notes",
