@@ -1,4 +1,5 @@
 import type { SitePageId } from "../site-spec";
+import { lastPageNote } from "./last-page-is-not-agreement-content";
 import { zeroShapeNote } from "./zero-shape-same-character-content";
 import { privateMemoryNote } from "./shared-server-private-memory-content";
 import { sameFrameNote } from "./same-frame-different-moment-content";
@@ -28,6 +29,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  lastPageNote,
   zeroShapeNote,
   privateMemoryNote,
   sameFrameNote,
