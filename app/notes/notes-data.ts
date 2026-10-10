@@ -1,3 +1,4 @@
+import { gpuFreeTestNote } from "./gpu-free-test-what-it-proves-content";
 import type { SitePageId } from "../site-spec";
 import { lastPageNote } from "./last-page-is-not-agreement-content";
 import { zeroShapeNote } from "./zero-shape-same-character-content";
@@ -29,6 +30,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  gpuFreeTestNote,
   lastPageNote,
   zeroShapeNote,
   privateMemoryNote,
