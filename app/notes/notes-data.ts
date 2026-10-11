@@ -1,3 +1,4 @@
+import { approvalVersionNote } from "./approval-needs-a-version-content";
 import { gpuFreeTestNote } from "./gpu-free-test-what-it-proves-content";
 import type { SitePageId } from "../site-spec";
 import { lastPageNote } from "./last-page-is-not-agreement-content";
@@ -30,6 +31,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  approvalVersionNote,
   gpuFreeTestNote,
   lastPageNote,
   zeroShapeNote,

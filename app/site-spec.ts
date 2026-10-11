@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteApprovalVersion: {
+    path: "/notes/approval-needs-a-version",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteGpuFreeTest: {
     path: "/notes/gpu-free-test-what-it-proves",
     parent: "notes",
