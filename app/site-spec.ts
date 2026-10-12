@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteUnknownName: {
+    path: "/notes/searching-before-knowing-the-name",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteApprovalVersion: {
     path: "/notes/approval-needs-a-version",
     parent: "notes",

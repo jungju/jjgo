@@ -1,3 +1,4 @@
+import { unknownNameNote } from "./searching-before-knowing-the-name-content";
 import { approvalVersionNote } from "./approval-needs-a-version-content";
 import { gpuFreeTestNote } from "./gpu-free-test-what-it-proves-content";
 import type { SitePageId } from "../site-spec";
@@ -31,6 +32,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  unknownNameNote,
   approvalVersionNote,
   gpuFreeTestNote,
   lastPageNote,
