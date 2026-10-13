@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  notePueEnergy: {
+    path: "/notes/pue-and-the-energy-bill",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteUnknownName: {
     path: "/notes/searching-before-knowing-the-name",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { pueEnergyNote } from "./pue-and-the-energy-bill-content";
 import { unknownNameNote } from "./searching-before-knowing-the-name-content";
 import { approvalVersionNote } from "./approval-needs-a-version-content";
 import { gpuFreeTestNote } from "./gpu-free-test-what-it-proves-content";
@@ -32,6 +33,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  pueEnergyNote,
   unknownNameNote,
   approvalVersionNote,
   gpuFreeTestNote,
