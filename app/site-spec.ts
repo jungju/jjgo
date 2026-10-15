@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteReferenceDate: {
+    path: "/notes/the-reference-image-does-not-set-the-date",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   notePlacementHallway: {
     path: "/notes/the-placement-plan-has-no-hallway",
     parent: "notes",

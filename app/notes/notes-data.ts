@@ -1,3 +1,4 @@
+import { referenceDateNote } from "./the-reference-image-does-not-set-the-date-content";
 import { placementHallwayNote } from "./the-placement-plan-has-no-hallway-content";
 import { pueEnergyNote } from "./pue-and-the-energy-bill-content";
 import { unknownNameNote } from "./searching-before-knowing-the-name-content";
@@ -34,6 +35,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  referenceDateNote,
   placementHallwayNote,
   pueEnergyNote,
   unknownNameNote,
