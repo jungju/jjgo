@@ -1,3 +1,4 @@
+import { placementHallwayNote } from "./the-placement-plan-has-no-hallway-content";
 import { pueEnergyNote } from "./pue-and-the-energy-bill-content";
 import { unknownNameNote } from "./searching-before-knowing-the-name-content";
 import { approvalVersionNote } from "./approval-needs-a-version-content";
@@ -33,6 +34,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  placementHallwayNote,
   pueEnergyNote,
   unknownNameNote,
   approvalVersionNote,
