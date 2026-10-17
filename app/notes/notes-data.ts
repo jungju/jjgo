@@ -1,3 +1,4 @@
+import { persistentFixNote } from "./before-a-fix-becomes-a-rule-content";
 import { referenceDateNote } from "./the-reference-image-does-not-set-the-date-content";
 import { placementHallwayNote } from "./the-placement-plan-has-no-hallway-content";
 import { pueEnergyNote } from "./pue-and-the-energy-bill-content";
@@ -35,6 +36,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  persistentFixNote,
   referenceDateNote,
   placementHallwayNote,
   pueEnergyNote,

@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  notePersistentFix: {
+    path: "/notes/before-a-fix-becomes-a-rule",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteReferenceDate: {
     path: "/notes/the-reference-image-does-not-set-the-date",
     parent: "notes",
