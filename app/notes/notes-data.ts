@@ -1,3 +1,4 @@
+import { mathSupportNote } from "./even-a-mathematics-company-needs-support-content";
 import { moreComputeNote } from "./what-would-more-compute-change-content";
 import { persistentFixNote } from "./before-a-fix-becomes-a-rule-content";
 import { referenceDateNote } from "./the-reference-image-does-not-set-the-date-content";
@@ -37,6 +38,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  mathSupportNote,
   moreComputeNote,
   persistentFixNote,
   referenceDateNote,

@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteMathSupport: {
+    path: "/notes/even-a-mathematics-company-needs-support",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteMoreCompute: {
     path: "/notes/what-would-more-compute-change",
     parent: "notes",
