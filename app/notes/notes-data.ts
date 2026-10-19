@@ -1,3 +1,4 @@
+import { intermediateOverflowNote } from "./the-answer-fits-but-the-product-overflows-content";
 import { mathSupportNote } from "./even-a-mathematics-company-needs-support-content";
 import { moreComputeNote } from "./what-would-more-compute-change-content";
 import { persistentFixNote } from "./before-a-fix-becomes-a-rule-content";
@@ -38,6 +39,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  intermediateOverflowNote,
   mathSupportNote,
   moreComputeNote,
   persistentFixNote,
