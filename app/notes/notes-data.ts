@@ -1,3 +1,4 @@
+import { sixthClickNote } from "./the-sixth-click-in-the-diagram-content";
 import { intermediateOverflowNote } from "./the-answer-fits-but-the-product-overflows-content";
 import { mathSupportNote } from "./even-a-mathematics-company-needs-support-content";
 import { moreComputeNote } from "./what-would-more-compute-change-content";
@@ -39,6 +40,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  sixthClickNote,
   intermediateOverflowNote,
   mathSupportNote,
   moreComputeNote,

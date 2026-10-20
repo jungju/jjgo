@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSixthClick: {
+    path: "/notes/the-sixth-click-in-the-diagram",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteIntermediateOverflow: {
     path: "/notes/the-answer-fits-but-the-product-overflows",
     parent: "notes",
