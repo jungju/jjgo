@@ -1,3 +1,4 @@
+import { movingChartNote } from "./the-document-stayed-the-chart-moved-on-content";
 import { sixthClickNote } from "./the-sixth-click-in-the-diagram-content";
 import { intermediateOverflowNote } from "./the-answer-fits-but-the-product-overflows-content";
 import { mathSupportNote } from "./even-a-mathematics-company-needs-support-content";
@@ -40,6 +41,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  movingChartNote,
   sixthClickNote,
   intermediateOverflowNote,
   mathSupportNote,
