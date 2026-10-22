@@ -1,3 +1,4 @@
+import { copiedRandomNote } from "./copying-numbers-not-yet-drawn-content";
 import { movingChartNote } from "./the-document-stayed-the-chart-moved-on-content";
 import { sixthClickNote } from "./the-sixth-click-in-the-diagram-content";
 import { intermediateOverflowNote } from "./the-answer-fits-but-the-product-overflows-content";
@@ -35,12 +36,14 @@ export type Note = {
   category: string;
   date: string;
   sample: boolean;
+  relatedPages?: SitePageId[];
   image: string;
   imageAlt: { ko: string; en: string };
   ko: NoteContent;
   en: NoteContent;
 };
 export const notes: Note[] = [
+  copiedRandomNote,
   movingChartNote,
   sixthClickNote,
   intermediateOverflowNote,

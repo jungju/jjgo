@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteCopiedRandom: {
+    path: "/notes/copying-numbers-not-yet-drawn",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteMovingChart: {
     path: "/notes/the-document-stayed-the-chart-moved-on",
     parent: "notes",

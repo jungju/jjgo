@@ -131,6 +131,15 @@ export function NotePage({
   const note = noteByPage(page);
   const content = note[locale];
   const text = copy[locale];
+  const relatedNotes = notesNewestFirst.filter((item) => item.page !== page);
+  if (note.relatedPages) {
+    const priorities = note.relatedPages;
+    const rank = (id: SitePageId) => {
+      const index = priorities.indexOf(id);
+      return index === -1 ? priorities.length : index;
+    };
+    relatedNotes.sort((a, b) => rank(a.page) - rank(b.page));
+  }
   return (
     <SiteLayout
       locale={locale}
@@ -207,17 +216,15 @@ export function NotePage({
         </div>
         <aside className="notes-related" aria-label={text.more}>
           <h2>{text.more}</h2>
-          {notesNewestFirst
-            .filter((item) => item.page !== page)
-            .map((item) => (
-              <a
-                key={item.page}
-                href={localizedSitePath(locale, pagePath(item.page))}
-              >
-                {item[locale].title}
-                <ArrowRight size={18} aria-hidden="true" />
-              </a>
-            ))}
+          {relatedNotes.map((item) => (
+            <a
+              key={item.page}
+              href={localizedSitePath(locale, pagePath(item.page))}
+            >
+              {item[locale].title}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          ))}
         </aside>
       </article>
     </SiteLayout>

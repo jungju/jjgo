@@ -5,6 +5,7 @@ export const lookalikeNote: Note = {
   category: "AI & PRACTICE",
   date: "2026-09-29",
   sample: false,
+  relatedPages: ["noteZeroShape"],
   image: "/a/generated/notes/unknown-or-lookalike.webp",
   imageAlt: {
     ko: "서로 비슷하지만 한 기호가 다른 주소 조각 두 장을 돋보기로 살펴보는 손",
