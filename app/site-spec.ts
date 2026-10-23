@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteJoinRevenue: {
+    path: "/notes/revenue-grew-after-the-join",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteCopiedRandom: {
     path: "/notes/copying-numbers-not-yet-drawn",
     parent: "notes",

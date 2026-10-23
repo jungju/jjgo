@@ -1,3 +1,4 @@
+import { joinRevenueNote } from "./revenue-grew-after-the-join-content";
 import { copiedRandomNote } from "./copying-numbers-not-yet-drawn-content";
 import { movingChartNote } from "./the-document-stayed-the-chart-moved-on-content";
 import { sixthClickNote } from "./the-sixth-click-in-the-diagram-content";
@@ -43,6 +44,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  joinRevenueNote,
   copiedRandomNote,
   movingChartNote,
   sixthClickNote,
