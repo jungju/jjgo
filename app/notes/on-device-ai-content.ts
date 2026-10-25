@@ -5,6 +5,7 @@ export const onDeviceAiNote: Note = {
   category: "AI & PRODUCT",
   date: "2026-09-30",
   sample: false,
+  relatedPages: ["notePhotoSelection"],
   image: "/a/generated/notes/on-device-ai-targets.webp",
   imageAlt: {
     ko: "서로 다른 모바일 기기와 노트북 앞에 놓인 작은 모델 칩과 메모리 블록",
