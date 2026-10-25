@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteHighlightCondition: {
+    path: "/notes/the-condition-outside-the-highlight",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   notePhotoSelection: {
     path: "/notes/finding-a-photo-and-hanging-it",
     parent: "notes",

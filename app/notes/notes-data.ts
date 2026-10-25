@@ -1,3 +1,4 @@
+import { highlightConditionNote } from "./the-condition-outside-the-highlight-content";
 import { photoSelectionNote } from "./finding-a-photo-and-hanging-it-content";
 import { joinRevenueNote } from "./revenue-grew-after-the-join-content";
 import { copiedRandomNote } from "./copying-numbers-not-yet-drawn-content";
@@ -45,6 +46,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  highlightConditionNote,
   photoSelectionNote,
   joinRevenueNote,
   copiedRandomNote,
