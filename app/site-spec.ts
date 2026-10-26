@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSharedWindow: {
+    path: "/notes/whose-computer-is-that-window-on",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteHighlightCondition: {
     path: "/notes/the-condition-outside-the-highlight",
     parent: "notes",

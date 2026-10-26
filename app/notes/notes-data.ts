@@ -1,3 +1,4 @@
+import { sharedWindowNote } from "./whose-computer-is-that-window-on-content";
 import { highlightConditionNote } from "./the-condition-outside-the-highlight-content";
 import { photoSelectionNote } from "./finding-a-photo-and-hanging-it-content";
 import { joinRevenueNote } from "./revenue-grew-after-the-join-content";
@@ -46,6 +47,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  sharedWindowNote,
   highlightConditionNote,
   photoSelectionNote,
   joinRevenueNote,
