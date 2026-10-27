@@ -1,3 +1,4 @@
+import { cloneContractNote } from "./the-copied-date-came-back-as-text-content";
 import { sharedWindowNote } from "./whose-computer-is-that-window-on-content";
 import { highlightConditionNote } from "./the-condition-outside-the-highlight-content";
 import { photoSelectionNote } from "./finding-a-photo-and-hanging-it-content";
@@ -47,6 +48,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  cloneContractNote,
   sharedWindowNote,
   highlightConditionNote,
   photoSelectionNote,

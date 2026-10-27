@@ -75,7 +75,7 @@ export const eternalSunshineNote: Note = {
     ],
   },
   en: {
-    title: "The technology I envy in Eternal Sunshine",
+    title: "The technology I envy in Eternal Sunshine of the Spotless Mind",
     summary:
       "Forget your ex and keep everything else intact? Working with AI has given me a new appreciation for a fictional memory-erasure company.",
     sections: [
