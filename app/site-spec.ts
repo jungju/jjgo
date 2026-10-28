@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSocialNetworkRefresh: {
+    path: "/notes/the-last-refresh-in-the-social-network",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteCloneContract: {
     path: "/notes/the-copied-date-came-back-as-text",
     parent: "notes",
