@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSmoothMotion: {
+    path: "/notes/smooth-motion-a-moment-behind",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteSocialNetworkRefresh: {
     path: "/notes/the-last-refresh-in-the-social-network",
     parent: "notes",

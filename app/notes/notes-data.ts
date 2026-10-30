@@ -1,3 +1,4 @@
+import { smoothMotionNote } from "./smooth-motion-a-moment-behind-content";
 import { socialNetworkRefreshNote } from "./the-last-refresh-in-the-social-network-content";
 import { cloneContractNote } from "./the-copied-date-came-back-as-text-content";
 import { sharedWindowNote } from "./whose-computer-is-that-window-on-content";
@@ -49,6 +50,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  smoothMotionNote,
   socialNetworkRefreshNote,
   cloneContractNote,
   sharedWindowNote,
