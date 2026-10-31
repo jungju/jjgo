@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteBackwardBookmark: {
+    path: "/notes/a-bookmark-can-move-backwards",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteSmoothMotion: {
     path: "/notes/smooth-motion-a-moment-behind",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { backwardBookmarkNote } from "./a-bookmark-can-move-backwards-content";
 import { smoothMotionNote } from "./smooth-motion-a-moment-behind-content";
 import { socialNetworkRefreshNote } from "./the-last-refresh-in-the-social-network-content";
 import { cloneContractNote } from "./the-copied-date-came-back-as-text-content";
@@ -50,6 +51,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  backwardBookmarkNote,
   smoothMotionNote,
   socialNetworkRefreshNote,
   cloneContractNote,
