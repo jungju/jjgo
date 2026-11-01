@@ -1,3 +1,4 @@
+import { tvWayBackNote } from "./leave-a-way-back-on-the-tv-content";
 import { backwardBookmarkNote } from "./a-bookmark-can-move-backwards-content";
 import { smoothMotionNote } from "./smooth-motion-a-moment-behind-content";
 import { socialNetworkRefreshNote } from "./the-last-refresh-in-the-social-network-content";
@@ -51,6 +52,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  tvWayBackNote,
   backwardBookmarkNote,
   smoothMotionNote,
   socialNetworkRefreshNote,

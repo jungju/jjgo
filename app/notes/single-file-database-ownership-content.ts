@@ -11,7 +11,7 @@ export const singleFileOwnershipNote: Note = {
     en: "A transparent cabinet of connected document cards, a brass key and a smaller backup box",
   },
   ko: {
-    title: "파일은 하나인데, 누가 닫아야 할까",
+    title: "LatticeDB의 파일은 하나인데, 누가 닫아야 할까",
     summary:
       "LatticeDB의 한 파일에 그래프와 검색을 모으면 편해진다. 그 파일을 누가 열고, 어디까지 함께 바꾸고, 어떻게 되살릴지는 여전히 남는다.",
     sources: [
@@ -56,7 +56,7 @@ export const singleFileOwnershipNote: Note = {
     ],
   },
   en: {
-    title: "One database file, but who closes it?",
+    title: "LatticeDB: one database file, but who closes it?",
     summary:
       "LatticeDB brings graph and search into one file. Ownership, update boundaries and a tested way back still need a place in the application.",
     sources: [

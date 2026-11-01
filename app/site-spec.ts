@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteTvWayBack: {
+    path: "/notes/leave-a-way-back-on-the-tv",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteBackwardBookmark: {
     path: "/notes/a-bookmark-can-move-backwards",
     parent: "notes",
