@@ -1,3 +1,4 @@
+import { martianHarvestNote } from "./the-potato-for-the-next-harvest-content";
 import { tvWayBackNote } from "./leave-a-way-back-on-the-tv-content";
 import { backwardBookmarkNote } from "./a-bookmark-can-move-backwards-content";
 import { smoothMotionNote } from "./smooth-motion-a-moment-behind-content";
@@ -52,6 +53,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  martianHarvestNote,
   tvWayBackNote,
   backwardBookmarkNote,
   smoothMotionNote,

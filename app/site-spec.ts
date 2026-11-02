@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteMartianHarvest: {
+    path: "/notes/the-potato-for-the-next-harvest",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteTvWayBack: {
     path: "/notes/leave-a-way-back-on-the-tv",
     parent: "notes",
