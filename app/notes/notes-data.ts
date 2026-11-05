@@ -1,3 +1,4 @@
+import { softWrapCopyNote } from "./copying-a-soft-wrapped-line-content";
 import { bookMentionsNote } from "./four-mentions-one-recommendation-content";
 import { martianHarvestNote } from "./the-potato-for-the-next-harvest-content";
 import { tvWayBackNote } from "./leave-a-way-back-on-the-tv-content";
@@ -54,6 +55,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  softWrapCopyNote,
   bookMentionsNote,
   martianHarvestNote,
   tvWayBackNote,

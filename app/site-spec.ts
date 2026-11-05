@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteSoftWrapCopy: {
+    path: "/notes/copying-a-soft-wrapped-line",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteBookMentions: {
     path: "/notes/four-mentions-one-recommendation",
     parent: "notes",
