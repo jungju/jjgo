@@ -57,6 +57,12 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteOctoberDate: {
+    path: "/notes/which-date-counts-as-october",
+    parent: "notes",
+    nav: "notes",
+    identity: { ko: "Notes", en: "Notes" },
+  },
   noteSoftWrapCopy: {
     path: "/notes/copying-a-soft-wrapped-line",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { octoberDateNote } from "./which-date-counts-as-october-content";
 import { softWrapCopyNote } from "./copying-a-soft-wrapped-line-content";
 import { bookMentionsNote } from "./four-mentions-one-recommendation-content";
 import { martianHarvestNote } from "./the-potato-for-the-next-harvest-content";
@@ -55,6 +56,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  octoberDateNote,
   softWrapCopyNote,
   bookMentionsNote,
   martianHarvestNote,
