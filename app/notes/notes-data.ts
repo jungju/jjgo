@@ -1,3 +1,4 @@
+import { formAfterErrorNote } from "./the-form-after-an-error-content";
 import { octoberDateNote } from "./which-date-counts-as-october-content";
 import { softWrapCopyNote } from "./copying-a-soft-wrapped-line-content";
 import { bookMentionsNote } from "./four-mentions-one-recommendation-content";
@@ -56,6 +57,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  formAfterErrorNote,
   octoberDateNote,
   softWrapCopyNote,
   bookMentionsNote,
