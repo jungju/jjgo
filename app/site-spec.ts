@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteQueryCharacters: {
+    path: "/notes/keeping-the-query-together",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteFormAfterError: {
     path: "/notes/the-form-after-an-error",
     parent: "notes",

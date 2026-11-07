@@ -1,3 +1,4 @@
+import { queryCharactersNote } from "./keeping-the-query-together-content";
 import { formAfterErrorNote } from "./the-form-after-an-error-content";
 import { octoberDateNote } from "./which-date-counts-as-october-content";
 import { softWrapCopyNote } from "./copying-a-soft-wrapped-line-content";
@@ -57,6 +58,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  queryCharactersNote,
   formAfterErrorNote,
   octoberDateNote,
   softWrapCopyNote,
