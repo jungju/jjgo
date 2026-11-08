@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteOldCommentTask: {
+    path: "/notes/the-task-in-the-old-comment",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteQueryCharacters: {
     path: "/notes/keeping-the-query-together",
     parent: "notes",
