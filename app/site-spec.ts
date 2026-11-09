@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteQuotationRule: {
+    path: "/notes/who-recalculates-the-quotation",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteOldCommentTask: {
     path: "/notes/the-task-in-the-old-comment",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { quotationRuleNote } from "./who-recalculates-the-quotation-content";
 import { oldCommentTaskNote } from "./the-task-in-the-old-comment-content";
 import { queryCharactersNote } from "./keeping-the-query-together-content";
 import { formAfterErrorNote } from "./the-form-after-an-error-content";
@@ -59,6 +60,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  quotationRuleNote,
   oldCommentTaskNote,
   queryCharactersNote,
   formAfterErrorNote,
