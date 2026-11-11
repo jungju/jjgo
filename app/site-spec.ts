@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteHeightOrigin: {
+    path: "/notes/where-the-thirty-metres-came-from",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteQuotationRule: {
     path: "/notes/who-recalculates-the-quotation",
     parent: "notes",
