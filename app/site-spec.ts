@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteChangingTarget: {
+    path: "/notes/the-second-row-is-not-the-same-document",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteHeightOrigin: {
     path: "/notes/where-the-thirty-metres-came-from",
     parent: "notes",
