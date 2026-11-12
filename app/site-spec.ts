@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteParasiteRain: {
+    path: "/notes/parasite-after-the-rain",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteChangingTarget: {
     path: "/notes/the-second-row-is-not-the-same-document",
     parent: "notes",
