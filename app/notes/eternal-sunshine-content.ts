@@ -14,12 +14,18 @@ export const eternalSunshineNote: Note = {
     title: "《이터널 선샤인》을 보다가 엉뚱한 기술력이 부러워졌다",
     summary:
       "전 애인만 잊고 나머지는 멀쩡하다니. AI 모델을 만지다 보니 기억 삭제 회사의 기술력이 새삼 대단해 보였다.",
+    sources: [
+      {
+        label: "Focus Features · 라쿠나가 나오는 영화 줄거리",
+        href: "https://www.focusfeatures.com/article/focus-features-20th-anniversary_eternal-sunshine-o",
+      },
+    ],
     sections: [
       {
         title: "",
         paragraphs: [
           "※ 영화 《이터널 선샤인》의 스포일러가 있습니다.",
-          "《이터널 선샤인》에는 헤어진 연인의 기억을 지워주는 회사가 나온다. 클레멘타인이 먼저 조엘을 지우고, 그 사실을 알게 된 조엘도 그녀에 대한 기억을 지우러 간다.",
+          "《이터널 선샤인》에는 헤어진 연인의 기억을 지워주는 라쿠나(Lacuna)라는 회사가 나온다. 클레멘타인이 먼저 조엘을 지우고, 그 사실을 알게 된 조엘도 그녀에 대한 기억을 지우러 간다.",
           "처음에는 그 설정이 슬펐다. 얼마나 괴로우면 함께 보낸 시간까지 없애고 싶을까.",
           "그런데 AI 모델을 만지다 보니 다른 부분이 눈에 들어온다.",
           "그 사람만 지웠는데 다른 건 멀쩡하네?",
@@ -78,12 +84,18 @@ export const eternalSunshineNote: Note = {
     title: "The technology I envy in Eternal Sunshine of the Spotless Mind",
     summary:
       "Forget your ex and keep everything else intact? Working with AI has given me a new appreciation for a fictional memory-erasure company.",
+    sources: [
+      {
+        label: "Focus Features · The film synopsis and Lacuna",
+        href: "https://www.focusfeatures.com/article/focus-features-20th-anniversary_eternal-sunshine-o",
+      },
+    ],
     sections: [
       {
         title: "",
         paragraphs: [
           "Spoilers for Eternal Sunshine of the Spotless Mind.",
-          "In Eternal Sunshine of the Spotless Mind, a company erases memories of former lovers. Clementine erases Joel first. When he finds out, he goes in to have his memories of her removed too.",
+          "In Eternal Sunshine of the Spotless Mind, a company called Lacuna erases memories of former lovers. Clementine erases Joel first. When he finds out, he goes in to have his memories of her removed too.",
           "At first, I found the premise sad. How much must it hurt to want to lose all that time together?",
           "But after working with AI models, something else caught my attention.",
           "They removed just that person, and everything else still works?",

@@ -1,3 +1,4 @@
+import { errorUrlNote } from "./the-url-that-came-with-the-error-content";
 import { parasiteRainNote } from "./parasite-after-the-rain-content";
 import { changingTargetNote } from "./the-second-row-is-not-the-same-document-content";
 import { heightOriginNote } from "./where-the-thirty-metres-came-from-content";
@@ -63,6 +64,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  errorUrlNote,
   parasiteRainNote,
   changingTargetNote,
   heightOriginNote,

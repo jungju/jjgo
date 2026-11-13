@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteErrorUrl: {
+    path: "/notes/the-url-that-came-with-the-error",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteParasiteRain: {
     path: "/notes/parasite-after-the-rain",
     parent: "notes",
