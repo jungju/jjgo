@@ -1,3 +1,4 @@
+import { averageSpikeNote } from "./the-spike-inside-the-average-content";
 import { errorUrlNote } from "./the-url-that-came-with-the-error-content";
 import { parasiteRainNote } from "./parasite-after-the-rain-content";
 import { changingTargetNote } from "./the-second-row-is-not-the-same-document-content";
@@ -64,6 +65,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  averageSpikeNote,
   errorUrlNote,
   parasiteRainNote,
   changingTargetNote,

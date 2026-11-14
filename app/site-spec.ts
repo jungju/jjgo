@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteAverageSpike: {
+    path: "/notes/the-spike-inside-the-average",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteErrorUrl: {
     path: "/notes/the-url-that-came-with-the-error",
     parent: "notes",
