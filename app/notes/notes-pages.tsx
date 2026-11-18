@@ -14,6 +14,7 @@ import {
   PERSON_ID,
 } from "../seo";
 import { notes, notesNewestFirst } from "./notes-data";
+import { getRelatedNotes } from "./related-notes";
 
 const copy = {
   ko: {
@@ -131,15 +132,7 @@ export function NotePage({
   const note = noteByPage(page);
   const content = note[locale];
   const text = copy[locale];
-  const relatedNotes = notesNewestFirst.filter((item) => item.page !== page);
-  if (note.relatedPages) {
-    const priorities = note.relatedPages;
-    const rank = (id: SitePageId) => {
-      const index = priorities.indexOf(id);
-      return index === -1 ? priorities.length : index;
-    };
-    relatedNotes.sort((a, b) => rank(a.page) - rank(b.page));
-  }
+  const relatedNotes = getRelatedNotes(note, notesNewestFirst);
   return (
     <SiteLayout
       locale={locale}
@@ -214,18 +207,27 @@ export function NotePage({
             </section>
           )}
         </div>
-        <aside className="notes-related" aria-label={text.more}>
-          <h2>{text.more}</h2>
-          {relatedNotes.map((item) => (
-            <a
-              key={item.page}
-              href={localizedSitePath(locale, pagePath(item.page))}
-            >
-              {item[locale].title}
-              <ArrowRight size={18} aria-hidden="true" />
-            </a>
-          ))}
-        </aside>
+        {relatedNotes.length > 0 && (
+          <aside className="notes-related" aria-label={text.more}>
+            <h2>{text.more}</h2>
+            {relatedNotes.map((item) => (
+              <a
+                key={item.page}
+                href={localizedSitePath(locale, pagePath(item.page))}
+              >
+                {item[locale].title}
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            ))}
+          </aside>
+        )}
+        <a
+          className="notes-back"
+          href={localizedSitePath(locale, pagePath("notes"))}
+        >
+          <ArrowLeft size={17} aria-hidden="true" />
+          {text.back}
+        </a>
       </article>
     </SiteLayout>
   );

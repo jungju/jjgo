@@ -5,6 +5,7 @@ export const singleFileOwnershipNote: Note = {
   category: "DATA & OPERATIONS",
   date: "2026-10-03",
   sample: false,
+  relatedPages: ["noteSharedWindow", "noteConnectedState", "noteMissingField"],
   image: "/a/generated/notes/single-file-database-ownership.webp",
   imageAlt: {
     ko: "실로 연결된 문서 카드가 든 투명한 보관함과 황동 열쇠, 뒤편의 작은 백업 상자",

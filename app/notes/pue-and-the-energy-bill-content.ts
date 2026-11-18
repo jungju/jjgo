@@ -5,15 +5,16 @@ export const pueEnergyNote: Note = {
   category: "SYSTEMS & ENERGY",
   date: "2026-10-14",
   sample: false,
+  relatedPages: ["noteJoinRevenue", "noteAverageSpike", "noteMovingChart"],
   image: "/a/generated/notes/pue-and-the-energy-bill.webp",
   imageAlt: {
     ko: "작은 서버와 냉각 팬, 케이블로 연결된 황동 계기 옆에 놓인 종이",
     en: "Paper sheets beside a miniature server, cooling fan, and brass meter connected by a cable",
   },
   ko: {
-    title: "PUE 옆에 전력량도 적어두기",
+    title: "PUE 계산: 비율이 낮아져도 전력량은 늘 수 있다",
     summary:
-      "효율을 나타내는 비율이 내려갔을 때, 나누기 전의 두 숫자도 같이 보고 싶어졌다.",
+      "PUE를 계산할 때 나누는 두 전력량은 무엇일까. 1의 의미와, 비율이 낮아져도 총 전력량은 늘 수 있는 가상 보고서를 함께 읽는다.",
     sources: [
       {
         label: "미국 에너지부 — PUE의 정의와 냉각 시스템",
@@ -31,13 +32,14 @@ export const pueEnergyNote: Note = {
           "데이터센터 효율 보고서를 받았다고 해보자. 첫 장에 PUE가 1.30에서 1.17로 내려갔다고 적혀 있다. 숫자만 보면 뭔가 잘된 것 같다. 다음 장을 넘겼더니 총 전력량은 늘었다.",
           "어느 쪽을 잘못 읽은 걸까.",
           "PUE를 설명하는 미국 에너지부 자료를 다시 보면 계산은 분명하다. 시설 전체가 한 해 동안 쓴 전력량을 같은 해 IT 장비가 쓴 전력량으로 나눈다. kWh를 kWh로 나누니 결과에는 단위도 없다.",
+          "PUE가 1이라는 것은 이 계산에서 시설 전체와 IT 장비의 전력량이 같다는 뜻이다. 같은 측정 범위 안에서 냉각과 전력설비 같은 지원 장비의 추가 소비가 없는 이론적인 최솟값이다. 서버가 전기를 쓰지 않는다는 뜻은 아니다.",
           "나누고 나면 숫자 하나라 편하다. 다만 나누기 전에는 두 숫자였다.",
           "IEA 4E가 공개한 액체냉각 보고서 소개도 이 지표를 읽을 때의 한계를 짚는다. 액체냉각으로 얻는 효율 개선을 PUE가 충분히 드러내지 못할 수 있다는 설명이다. 소개문만 확인했으며, 보고서 안의 개별 절감률이나 특정 설비의 운전 조건을 여기서 평가하려는 것은 아니다.",
           "그 설명을 읽고 비율 옆에 계산 전 숫자를 다시 써보고 싶어졌다.",
         ],
       },
       {
-        title: "나누기 전에 있었던 것",
+        title: "PUE를 계산하기 전의 두 숫자",
         paragraphs: [
           "실제 설비와 관계없는 작은 가상 숫자를 놓아보자. 첫해 IT 장비가 1,000kWh를 쓰고, 냉각과 전력설비 등 나머지가 300kWh를 썼다. 전체는 1,300kWh, PUE는 1.30이다.",
           "다음 해에는 IT 장비가 1,200kWh, 나머지가 200kWh를 썼다고 하자. 전체는 1,400kWh다. 1,400을 1,200으로 나누면 약 1.17이 된다.",
@@ -62,9 +64,9 @@ export const pueEnergyNote: Note = {
     ],
   },
   en: {
-    title: "Put energy use beside PUE",
+    title: "Calculating PUE: a lower ratio can still mean more energy",
     summary:
-      "When an efficiency ratio falls, I would like to see the two numbers that existed before the division.",
+      "What does a PUE of 1 mean? A hypothetical report puts the PUE formula beside its facility and IT energy figures, showing how a lower ratio can accompany higher total energy use.",
     sources: [
       {
         label: "US Department of Energy — PUE and cooling systems",
@@ -82,13 +84,14 @@ export const pueEnergyNote: Note = {
           "Suppose a data center efficiency report arrives. Its first page says PUE fell from 1.30 to 1.17. That looks like progress. On the next page, total energy use has increased.",
           "Which page did we misread?",
           "The US Department of Energy’s explanation gives a clear calculation: total annual facility energy divided by annual IT equipment energy. Dividing kWh by kWh leaves a dimensionless ratio.",
+          "A PUE of 1 means the facility total equals the IT equipment energy use in that calculation. It is the theoretical minimum, with no additional energy consumed by support equipment such as cooling and power systems inside the same measurement boundary. It does not mean the servers use no electricity.",
           "One number is convenient. Before the division, though, there were two.",
           "IEA 4E’s public overview of its liquid-cooling report also identifies a limitation: PUE can understate efficiency gains from liquid cooling. I have read the overview, and am not evaluating individual savings estimates or the operating conditions of a particular installation here.",
           "It made me want to put the original quantities back beside the ratio.",
         ],
       },
       {
-        title: "Before the division",
+        title: "The two energy figures in the PUE calculation",
         paragraphs: [
           "Take small, invented quantities unrelated to any real installation. In the first year, IT equipment uses 1,000kWh and cooling, power infrastructure, and other non-IT loads use 300kWh. Total energy is 1,300kWh. PUE is 1.30.",
           "In the next year, suppose IT uses 1,200kWh and the rest uses 200kWh. The total is 1,400kWh. Divide 1,400 by 1,200 and the result rounds to 1.17.",

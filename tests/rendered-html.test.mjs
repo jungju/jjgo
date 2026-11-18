@@ -16,6 +16,47 @@ const projectRoot = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 const siteOrigin = "https://jjgo.io";
 
+test("article recommendations stay bounded and the full archive remains accessible", async () => {
+  for (const route of staticHtmlRoutes().filter((path) =>
+    /^(?:en\/)?notes\/[^/]+\/index\.html$/.test(path),
+  )) {
+    const html = await readFile(new URL(route, outputRoot), "utf8");
+    const recommendations =
+      html.match(/<aside[^>]*class="notes-related"[\s\S]*?<\/aside>/)?.[0] ??
+      "";
+    const links = [...recommendations.matchAll(/href="([^"]+)"/g)].map(
+      (match) => match[1],
+    );
+    assert.ok(
+      links.length <= 3,
+      `${route}: recommendations should not become the archive`,
+    );
+    assert.equal(
+      new Set(links).size,
+      links.length,
+      `${route}: duplicated recommendation`,
+    );
+    const index = route.startsWith("en/") ? "/en/notes" : "/notes";
+    assert.ok(
+      !links.includes(index),
+      `${route}: archive links must not count as related-article clicks`,
+    );
+    assert.ok(
+      html.includes(`href="${index}"`),
+      `${route}: full archive remains reachable`,
+    );
+    if (route.includes("pue-and-the-energy-bill")) {
+      assert.equal(links.length, 3);
+      assert.ok(
+        links.some((link) =>
+          link.endsWith("/notes/revenue-grew-after-the-join"),
+        ),
+      );
+      assert.ok(html.includes("PUE"));
+    }
+  }
+});
+
 const routes = staticHtmlRoutes();
 const canonicalPageIds = Object.keys(sitePages).filter(
   (page) =>
