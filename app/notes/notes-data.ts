@@ -1,3 +1,4 @@
+import { wikiSourceNote } from "./the-source-beside-the-summary-content";
 import { distinctFramesNote } from "./sixty-fps-thirty-distinct-frames-content";
 import { averageSpikeNote } from "./the-spike-inside-the-average-content";
 import { errorUrlNote } from "./the-url-that-came-with-the-error-content";
@@ -66,6 +67,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  wikiSourceNote,
   distinctFramesNote,
   averageSpikeNote,
   errorUrlNote,

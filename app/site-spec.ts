@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteWikiSource: {
+    path: "/notes/the-source-beside-the-summary",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteDistinctFrames: {
     path: "/notes/sixty-fps-thirty-distinct-frames",
     parent: "notes",
