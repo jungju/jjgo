@@ -14,6 +14,7 @@
 - 현재 자동 운영 checkout: `C:/Users/jeong/.codex/worktrees/jjgo-growth-ops/jjgo-io`. 기존 주 checkout의 변경과 분리한다. 진행 중 작업이 있으면 동시 수정하지 않는다.
 - 비밀 설정 기준: 위 저장소의 `.env`. 관리 키는 공개 변수나 산출물에 포함하지 않는다.
 - 운영 데이터 기본: `%LOCALAPPDATA%/JJGo/growth`, Git과 정적 배포 밖.
+- 현재 `.env`의 `JJGO_GROWTH_DATA_DIR`는 `C:/Users/jeong/AppData/Local/JJGo/growth`로 고정한다. Windows 앱 전용 파일 가상화 때문에 도구마다 같은 AppData 경로를 다르게 볼 수 있으므로, 운영 JSON·보고서는 수집기를 실행하는 Node/PowerShell 환경에서 저장하고 그 환경에서 존재·읽기를 확인한다. 2026-11-18 이전 앱의 LocalCache에서 원본을 찾아 DB 테이블 해시까지 대조해 복구했다. 경로가 바뀌었다고 빈 DB나 새 인증키를 자동 생성하지 않는다.
 - Node 22.13 이상, 잠긴 npm 의존성, GitHub 인증, 웹 검색·이미지·브라우저 도구가 필요하다.
 - PostHog: 560419 / https://us.posthog.com / 조회 전용 키.
 - GSC: sc-domain:jjgo.io, page 정규식으로 HTTPS jjgo.io만 포함한다. 브라우저 로그인은 API 인증을 대신하지 않는다.
