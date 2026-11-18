@@ -1,3 +1,4 @@
+import { distinctFramesNote } from "./sixty-fps-thirty-distinct-frames-content";
 import { averageSpikeNote } from "./the-spike-inside-the-average-content";
 import { errorUrlNote } from "./the-url-that-came-with-the-error-content";
 import { parasiteRainNote } from "./parasite-after-the-rain-content";
@@ -65,6 +66,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  distinctFramesNote,
   averageSpikeNote,
   errorUrlNote,
   parasiteRainNote,

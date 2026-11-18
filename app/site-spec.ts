@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteDistinctFrames: {
+    path: "/notes/sixty-fps-thirty-distinct-frames",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteAverageSpike: {
     path: "/notes/the-spike-inside-the-average",
     parent: "notes",
