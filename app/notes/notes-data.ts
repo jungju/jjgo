@@ -1,3 +1,4 @@
+import { zeroChecksNote } from "./zero-errors-zero-checks-content";
 import { wikiSourceNote } from "./the-source-beside-the-summary-content";
 import { distinctFramesNote } from "./sixty-fps-thirty-distinct-frames-content";
 import { averageSpikeNote } from "./the-spike-inside-the-average-content";
@@ -67,6 +68,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  zeroChecksNote,
   wikiSourceNote,
   distinctFramesNote,
   averageSpikeNote,

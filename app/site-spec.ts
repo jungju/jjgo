@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteZeroChecks: {
+    path: "/notes/zero-errors-zero-checks",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteWikiSource: {
     path: "/notes/the-source-beside-the-summary",
     parent: "notes",
