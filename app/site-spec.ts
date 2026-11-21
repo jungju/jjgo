@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  notePlanContext: {
+    path: "/notes/the-data-behind-a-query-plan",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteZeroChecks: {
     path: "/notes/zero-errors-zero-checks",
     parent: "notes",

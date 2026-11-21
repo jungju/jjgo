@@ -1,3 +1,4 @@
+import { planContextNote } from "./the-data-behind-a-query-plan-content";
 import { zeroChecksNote } from "./zero-errors-zero-checks-content";
 import { wikiSourceNote } from "./the-source-beside-the-summary-content";
 import { distinctFramesNote } from "./sixty-fps-thirty-distinct-frames-content";
@@ -68,6 +69,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  planContextNote,
   zeroChecksNote,
   wikiSourceNote,
   distinctFramesNote,
