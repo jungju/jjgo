@@ -4,9 +4,9 @@ import { pageMetadata } from "../seo";
 export const metadata = pageMetadata({
   locale: "en",
   path: "/",
-  title: "Jungju Lee | AI Native Consulting | JJGo",
+  title: "Enterprise AI Consulting · RAG Prototypes and Evaluation | JJGo",
   description:
-    "Becoming AI Native means defining ownership, validating AI against real work, and building the foundation to operate reliably. We shape the changes that fit your organization’s current stage.",
+    "Build a RAG proof of concept around a real workflow. Evaluate retrieval and AI answers, then use the results to plan the next stage of development and rollout.",
   image: "/og-en.png",
 });
 

@@ -569,8 +569,8 @@ test("exports matching Korean and English navigation", async () => {
 
   assert.match(koreanHome, /href="\/en\/"/);
   assert.match(englishHome, /href="\/"/);
-  assert.match(englishHome, /Build teams that work with AI/);
-  assert.match(englishHome, /Deliver products that work\./);
+  assert.match(englishHome, /Start your AI transformation/);
+  assert.match(englishHome, /with one real workflow\./);
   assert.match(englishConsulting, /AI Native Consulting/);
   assert.match(englishConsulting, /href="\/consulting"/);
   assert.match(englishConsulting, /forest2-brand-section[^>]*>AI Native/);
@@ -594,7 +594,7 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(englishAiSlop, /The Place Where the Wind Returns/);
 });
 
-test("keeps the home hero focused without the legacy summary cards", async () => {
+test("focuses the home hero on AX and keeps creative projects in Works", async () => {
   const [koreanHome, englishHome] = await Promise.all([
     readFile(new URL(outputRoute("ko", "/"), outputRoot), "utf8"),
     readFile(new URL(outputRoute("en", "/"), outputRoot), "utf8"),
@@ -612,6 +612,15 @@ test("keeps the home hero focused without the legacy summary cards", async () =>
     assert.match(home, /id="home-capabilities"/);
     assert.match(home, /href="#home-capabilities"/);
     assert.match(home, /class="forest2-home-expansion"/);
+    assert.equal(
+      matchingTags(home, "a", { class: "home-contact-link" }).filter((tag) =>
+        attribute(tag, "href")?.startsWith(
+          "mailto:leejungju.go@gmail.com?subject=",
+        ),
+      ).length,
+      2,
+    );
+    assert.doesNotMatch(visibleText(home), /AI Slop|OKGo|Roblox/);
   }
 });
 
@@ -628,15 +637,15 @@ test("presents AX and RAG through real work, evaluation, and orchestration", asy
   const koreanAxText = visibleText(koreanAx);
   const englishAxText = visibleText(englishAx);
 
-  assert.match(koreanHomeText, /AI NATIVE CONSULTING/);
+  assert.match(koreanHomeText, /기업 AX 컨설팅/);
   assert.match(
     koreanHomeText,
-    /함께 일하는 방식[\s\S]*실제 업무에서 검증[\s\S]*지속해서 운영할 기반/,
+    /업무 시나리오와 평가셋[\s\S]*RAG PoC와 평가 리포트[\s\S]*운영 전환 계획/,
   );
-  assert.match(englishHomeText, /AI NATIVE CONSULTING/);
+  assert.match(englishHomeText, /Enterprise AI Consulting/);
   assert.match(
     englishHomeText,
-    /Work together with AI[\s\S]*Validate against real work[\s\S]*Build for ongoing operation/,
+    /Workflow and evaluation set[\s\S]*RAG proof of concept and report[\s\S]*Plan for production/,
   );
   assert.match(koreanAxText, /AI Native 컨설팅/);
   assert.match(
