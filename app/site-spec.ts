@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteClearFocus: {
+    path: "/notes/after-the-clear-button-disappears",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   notePlanContext: {
     path: "/notes/the-data-behind-a-query-plan",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { clearFocusNote } from "./after-the-clear-button-disappears-content";
 import { planContextNote } from "./the-data-behind-a-query-plan-content";
 import { zeroChecksNote } from "./zero-errors-zero-checks-content";
 import { wikiSourceNote } from "./the-source-beside-the-summary-content";
@@ -69,6 +70,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  clearFocusNote,
   planContextNote,
   zeroChecksNote,
   wikiSourceNote,

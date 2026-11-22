@@ -11,9 +11,9 @@ export const zeroShapeNote: Note = {
     en: "Two green oval paper shapes with a dot and a diagonal stroke beside a magnifying glass",
   },
   ko: {
-    title: "0에 점을 찍어도, 소스는 그대로다",
+    title: "D2Coding의 0, 빗금을 점으로 바꿔도 소스는 그대로다",
     summary:
-      "D2Coding의 숫자 0 모양 선택 기능을 보며 생각한 것. 코드를 읽는 눈을 돕는 작은 표시와, 같은 화면을 다시 만드는 데 필요한 조건에 관한 메모.",
+      "D2Coding은 빗금 있는 0을 점 있는 0으로 고르는 cv01·ss01 옵션을 제공한다. 저장된 문자와 화면 모양, 앱 설정을 나눠 보는 글.",
     sources: [
       {
         label: "NAVER · D2Coding 공식 저장소",
@@ -64,9 +64,9 @@ export const zeroShapeNote: Note = {
     ],
   },
   en: {
-    title: "A different zero, the same source character",
+    title: "D2Coding’s zero: a different mark, the same source character",
     summary:
-      "D2Coding’s alternative zero shape raises a small question about reading code—and the settings needed to reproduce what someone sees.",
+      "D2Coding offers a dotted alternative to its slashed zero through cv01 or ss01. The stored character stays zero; the app’s font settings determine its appearance.",
     sources: [
       {
         label: "NAVER · Official D2Coding repository",
