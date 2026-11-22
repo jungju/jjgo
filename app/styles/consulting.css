@@ -1,3 +1,12 @@
+/* Allo 1.0.3 Latin subset. License: /a/fonts/Allo-OFL.txt */
+@font-face {
+  font-family: Allo;
+  src: url(/a/fonts/AlloVariable-Latin.woff2) format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+}
+
 .forest2-method-frame {
   position: relative;
 }
@@ -484,6 +493,17 @@
   font-weight: 400;
 }
 
+.forest2-consulting-detail-hero h1:lang(en),
+.rag-demo-scores dd {
+  font-family: Allo, var(--forest2-font-body);
+  font-optical-sizing: auto;
+  font-variation-settings: "ROND" 12;
+}
+
+.forest2-consulting-detail-hero h1:lang(en) {
+  font-weight: 670;
+}
+
 .forest2-consulting-detail-copy > span {
   display: block;
   max-width: 470px;
@@ -867,6 +887,7 @@
   color: var(--forest2-gold);
   font-size: 1.65rem;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .rag-demo-documents {
@@ -1102,6 +1123,17 @@
 
   .forest2-consulting-metrics dd {
     margin-top: 14px;
+  }
+
+  .forest2-consulting-detail-hero h1:lang(en),
+  .rag-demo-scores dd {
+    font-family: Allo, var(--forest2-font-body);
+    font-optical-sizing: auto;
+    font-variation-settings: "ROND" 12;
+  }
+
+  .forest2-consulting-detail-hero h1:lang(en) {
+    font-weight: 670;
   }
 
   .forest2-consulting-detail-copy > span {
