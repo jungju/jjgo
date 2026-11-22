@@ -4,9 +4,9 @@ import { pageMetadata } from "../../seo";
 export const metadata = pageMetadata({
   locale: "en",
   path: "/consulting",
-  title: "AI Native Consulting | JJGo",
+  title: "Enterprise AI Consulting · RAG Evaluation Demo | JJGo",
   description:
-    "Connect how teams work, AI and RAG services, and platform operations so AI delivers practical outcomes.",
+    "Build a RAG prototype, evaluate evidence and answers, and plan a rollout. See an evaluation report demo based on fictional sample documents.",
   image: "/og-en.png",
 });
 

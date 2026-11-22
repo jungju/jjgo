@@ -22,16 +22,16 @@ export type ConsultingService = {
 export const aiNativeConsulting: ConsultingService = {
   slug: "ai-native",
   number: "01",
-  english: "AI NATIVE CONSULTING",
+  english: "JJGo · AI NATIVE CONSULTING",
   title: "AI Native",
   shortTitle: "AI Native",
   summary:
-    "조직의 일하는 방식부터 AI·RAG 서비스와 플랫폼 운영까지, AI가 실제 성과로 이어지는 구조를 만듭니다.",
-  detailTitle: "AI Native 컨설팅",
+    "한 가지 실제 업무로 RAG PoC를 구축하고, 검색과 AI 답변 품질을 평가해 다음 개발과 운영을 결정합니다.",
+  detailTitle: "기업 AX 컨설팅",
   detailSummary:
-    "사람과 AI가 함께 일하는 방식을 설계하고, 실제 업무로 검증한 AI 서비스를 안정적으로 운영합니다. 조직·제품·플랫폼을 하나의 실행 흐름으로 연결합니다.",
+    "사내 문서 검색이나 견적 검토처럼 반복되는 업무를 하나 고릅니다. 실제 질문과 문서로 RAG PoC를 검증하고, 평가 결과를 바탕으로 운영에 필요한 조건을 정리합니다.",
   image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
-  keywords: ["조직과 업무", "AI · RAG · 에이전트", "플랫폼과 운영"],
+  keywords: ["업무 시나리오", "RAG PoC · 품질 평가", "운영 전환"],
   proofTitle: "조직의 변화가 제품과 운영으로 이어지도록.",
   proofBody:
     "AI Native는 도구 도입만으로 완성되지 않습니다. 역할과 검토 책임을 정하고, 현장 업무로 AI 품질을 검증하며, 배포와 운영을 반복할 기반이 함께 필요합니다. 제품 개발과 AI 제품화, 클라우드 플랫폼 운영 경험을 연결해 팀이 지속해서 실행할 수 있는 구조를 만듭니다.",
@@ -102,16 +102,16 @@ export const aiNativeConsulting: ConsultingService = {
   ],
   outcomes: [
     {
-      title: "AI Native 운영 모델",
-      body: "활용 원칙, 역할과 책임, 데이터 경계, 승인·검토 기준과 우선순위를 정리한 실행 로드맵.",
+      title: "업무 시나리오와 평가셋",
+      body: "현업 질문, 기준 문서, 예외 상황을 모아 검색·답변 품질, 비용, 응답 시간을 평가할 기준을 정합니다.",
     },
     {
-      title: "검증된 업무 흐름과 평가셋",
-      body: "실제 업무 시나리오, 품질·비용·속도 기준, AI·RAG·에이전트 구성과 재사용 가능한 업무 플레이북.",
+      title: "RAG PoC와 평가 리포트",
+      body: "시제품과 함께 근거 문서를 찾았는지, 답변이 근거에 맞는지, 실패한 질문은 무엇인지 정리합니다.",
     },
     {
-      title: "반복 가능한 개발·운영 기반",
-      body: "참조 아키텍처, 개발·배포 자동화, 관찰 가능성, 장애 대응과 비용 관리 기준을 갖춘 운영 경로.",
+      title: "운영 전환 계획",
+      body: "데이터 접근 권한, 담당자 검토, 배포 후 품질 모니터링 등 운영 전에 해결할 항목을 정리합니다.",
     },
   ],
   process: [

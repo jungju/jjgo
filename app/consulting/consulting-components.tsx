@@ -3,6 +3,7 @@ import type { SiteLocale } from "../site-spec";
 import { SiteLayout } from "../site-layout";
 import type { ConsultingService } from "./consulting-data";
 import { DevelopmentStages } from "./development-stages";
+import { RagEvaluationDemo } from "./rag-evaluation-demo";
 
 export function ConsultingDetail({
   service,
@@ -15,42 +16,32 @@ export function ConsultingDetail({
     locale === "ko"
       ? {
           topics: "핵심 주제",
-          contact: "상담 문의",
-          outcomesLink: "결과 보기",
+          contact: "AX 상담 문의",
+          outcomesLink: "제공 산출물 보기",
+          demoLink: "RAG 평가 리포트 데모 보기",
           expertise: "어디까지 함께하는가",
           outcomes: "무엇을 함께 만드는가",
           situations: "언제 필요한가",
           process: "어떻게 진행하는가",
           note: "상황에 따라 범위와 기간을 조정합니다.",
-          ctaTitle: (
-            <>
-              정답을 제시하기보다
-              <br />
-              함께 실행할 구조를 만듭니다.
-            </>
-          ),
+          ctaTitle: "검증하고 싶은 업무가 있나요?",
           ctaBody:
-            "현재 상황과 해결하고 싶은 문제를 알려주시면 가장 적합한 시작점을 함께 찾겠습니다.",
+            "줄이고 싶은 반복 업무와 지금 사용하는 문서나 시스템을 알려주세요. 무엇을 먼저 검증할 수 있을지 함께 살펴봅니다.",
           cta: "상담 문의하기",
         }
       : {
           topics: "Core topics",
-          contact: "Start a conversation",
-          outcomesLink: "See outcomes",
+          contact: "Discuss an AI project",
+          outcomesLink: "See what you’ll get",
+          demoLink: "View the RAG evaluation demo",
           expertise: "How I can help",
           outcomes: "What we build together",
           situations: "When to start",
           process: "How we work",
           note: "Scope and timeline are adjusted to your context.",
-          ctaTitle: (
-            <>
-              More than an answer,
-              <br />
-              build a system your team can run.
-            </>
-          ),
+          ctaTitle: "Have a workflow to test?",
           ctaBody:
-            "Share your current situation and the problem you want to solve. We’ll identify the strongest place to begin.",
+            "Tell me which recurring task you want to reduce and what documents or systems you use today. We can identify what to test first.",
           cta: "Send an email",
         };
 
@@ -94,6 +85,27 @@ export function ConsultingDetail({
             </figure>
           </header>
 
+          <section className="forest2-consulting-detail-section" id="outcomes">
+            <header>
+              <p>WHAT YOU GET</p>
+              <h2>{ui.outcomes}</h2>
+            </header>
+            <div className="forest2-consulting-outcomes">
+              {service.outcomes.map((outcome) => (
+                <article key={outcome.title}>
+                  <h3>{outcome.title}</h3>
+                  <p>{outcome.body}</p>
+                </article>
+              ))}
+            </div>
+            <a className="rag-demo-link" href="#rag-evaluation-demo">
+              {ui.demoLink}
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          </section>
+
+          <RagEvaluationDemo locale={locale} />
+
           <section className="forest2-consulting-proof" id="evidence">
             <div className="forest2-consulting-proof-copy">
               <p>WHY JJGO</p>
@@ -129,21 +141,6 @@ export function ConsultingDetail({
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="forest2-consulting-detail-section" id="outcomes">
-            <header>
-              <p>WHAT YOU GET</p>
-              <h2>{ui.outcomes}</h2>
-            </header>
-            <div className="forest2-consulting-outcomes">
-              {service.outcomes.map((outcome) => (
-                <article key={outcome.title}>
-                  <h3>{outcome.title}</h3>
-                  <p>{outcome.body}</p>
                 </article>
               ))}
             </div>

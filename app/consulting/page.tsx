@@ -4,9 +4,9 @@ import { pageMetadata } from "../seo";
 export const metadata = pageMetadata({
   locale: "ko",
   path: "/consulting",
-  title: "AI Native 컨설팅 | JJGo",
+  title: "기업 AX 컨설팅 · RAG PoC와 평가 리포트 | JJGo",
   description:
-    "조직의 일하는 방식부터 AI·RAG 서비스와 플랫폼 운영까지, AI가 실제 성과로 이어지는 구조를 만듭니다.",
+    "업무 시나리오와 평가셋, RAG PoC와 평가 리포트, 운영 전환 계획을 함께 만듭니다. 가상 샘플 문서를 사용한 RAG 평가 데모를 볼 수 있습니다.",
   image: "/og.png",
 });
 

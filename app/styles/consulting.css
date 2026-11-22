@@ -812,6 +812,123 @@
   line-height: 1.72;
 }
 
+.rag-demo > header > span,
+.rag-demo-method,
+.rag-demo-finding {
+  display: block;
+  max-width: 74ch;
+  color: var(--forest2-muted);
+}
+
+.rag-demo > header > span {
+  margin-top: 12px;
+}
+
+.rag-demo-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  color: var(--forest2-gold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.rag-demo-scores,
+.rag-demo-cases {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rag-demo-scores {
+  max-width: 640px;
+  margin: 0;
+}
+
+.rag-demo-scores > div,
+.rag-demo-cases > article,
+.rag-demo-documents {
+  min-width: 0;
+  padding: clamp(16px, 2.6vw, 24px);
+  border: 1px solid var(--forest2-line);
+  border-radius: var(--forest2-card-radius);
+  background: var(--forest2-surface);
+}
+
+.rag-demo-scores dt,
+.rag-demo-cases dt {
+  color: var(--forest2-muted);
+}
+
+.rag-demo-scores dd {
+  margin: 5px 0 0;
+  color: var(--forest2-gold);
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.rag-demo-documents {
+  margin-top: 16px;
+  padding-block: 0;
+}
+
+.rag-demo-documents summary {
+  min-height: 44px;
+  padding-block: 12px;
+  color: var(--forest2-cream);
+  cursor: pointer;
+}
+
+.rag-demo-documents ul {
+  display: grid;
+  gap: 8px;
+  margin-block: 0 16px;
+  padding-inline-start: 20px;
+}
+
+.rag-demo-examples-title {
+  margin: 26px 0 12px;
+  font-size: 1.25rem;
+}
+
+.rag-demo-cases h4 {
+  margin: 6px 0 0;
+  font-size: 1rem;
+}
+
+.rag-demo-cases p {
+  margin: 12px 0 0;
+  color: var(--forest2-muted);
+}
+
+.rag-demo-cases .rag-demo-verdict {
+  margin: 0;
+  color: var(--forest2-gold);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.rag-demo-cases dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+}
+
+.rag-demo-cases dd {
+  margin: 0;
+  color: var(--forest2-cream);
+}
+
+@media (max-width: 680px) {
+  .rag-demo-cases {
+    grid-template-columns: 1fr;
+  }
+}
+
 .forest2-consulting-process {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

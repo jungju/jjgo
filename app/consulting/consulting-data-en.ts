@@ -3,19 +3,19 @@ import type { ConsultingService } from "./consulting-data";
 export const aiNativeConsultingEn: ConsultingService = {
   slug: "ai-native",
   number: "01",
-  english: "AI NATIVE CONSULTING",
+  english: "JJGo · AI NATIVE CONSULTING",
   title: "AI Native",
   shortTitle: "AI Native",
   summary:
-    "Connect how teams work, AI and RAG services, and platform operations so AI delivers practical outcomes.",
-  detailTitle: "AI Native Consulting",
+    "Build a RAG proof of concept around one real workflow, evaluate retrieval and answers, and plan what to build and operate next.",
+  detailTitle: "Enterprise AI Consulting",
   detailSummary:
-    "Design how people and AI work together, validate services against real work, and build the foundation to operate them reliably. Connect organization, product, and platform in one delivery flow.",
+    "Choose a recurring workflow such as internal document search or quote review. We build a RAG prototype and test it with real questions and documents, then use the results to define what it will take to run.",
   image: "/a/generated/consulting/ai-native-honeybees-v3.webp",
   keywords: [
-    "Organization & workflows",
-    "AI · RAG · Agents",
-    "Platform & operations",
+    "Workflow design",
+    "RAG prototype & evaluation",
+    "Production planning",
   ],
   proofTitle: "Connect organizational change to products and operations.",
   proofBody:
@@ -89,16 +89,16 @@ export const aiNativeConsultingEn: ConsultingService = {
   ],
   outcomes: [
     {
-      title: "AI Native operating model",
-      body: "An actionable roadmap covering principles, roles, data boundaries, approval and review criteria, and priorities.",
+      title: "Workflow and evaluation set",
+      body: "Gather real questions, reference documents, and edge cases. Agree on how to judge retrieval and answers, response time, and cost.",
     },
     {
-      title: "Validated workflows & evaluation sets",
-      body: "Real-work scenarios, quality, cost, and latency criteria, AI and RAG configurations, agent flows, and reusable playbooks.",
+      title: "RAG proof of concept and report",
+      body: "Get a prototype and a report showing which questions retrieved relevant evidence, which answers it supported, and where it failed.",
     },
     {
-      title: "Repeatable delivery & operations",
-      body: "Reference architecture, development and deployment automation, observability, incident response, and cost management.",
+      title: "Plan for production",
+      body: "Identify what needs to be in place before rollout, including data access, human review, and ongoing quality monitoring.",
     },
   ],
   process: [

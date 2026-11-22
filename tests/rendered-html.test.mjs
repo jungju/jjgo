@@ -571,7 +571,7 @@ test("exports matching Korean and English navigation", async () => {
   assert.match(englishHome, /href="\/"/);
   assert.match(englishHome, /Start your AI transformation/);
   assert.match(englishHome, /with one real workflow\./);
-  assert.match(englishConsulting, /AI Native Consulting/);
+  assert.match(englishConsulting, /Enterprise AI Consulting/);
   assert.match(englishConsulting, /href="\/consulting"/);
   assert.match(englishConsulting, /forest2-brand-section[^>]*>AI Native/);
   assert.match(koreanRoblox, /forest2-brand-section[^>]*>Roblox/);
@@ -647,12 +647,12 @@ test("presents AX and RAG through real work, evaluation, and orchestration", asy
     englishHomeText,
     /Workflow and evaluation set[\s\S]*RAG proof of concept and report[\s\S]*Plan for production/,
   );
-  assert.match(koreanAxText, /AI Native 컨설팅/);
+  assert.match(koreanAxText, /기업 AX 컨설팅/);
   assert.match(
     koreanAxText,
     /조직과 업무 설계[\s\S]*현장 업무와 평가 기준[\s\S]*AI·RAG와 에이전트 구현[\s\S]*개발자 플랫폼과 자동화[\s\S]*품질과 운영 거버넌스/,
   );
-  assert.match(englishAxText, /AI Native Consulting/);
+  assert.match(englishAxText, /Enterprise AI Consulting/);
   assert.match(
     englishAxText,
     /Organization & Workflow Design[\s\S]*Real Work & Evaluation[\s\S]*AI, RAG & Agent Delivery[\s\S]*Developer Platform & Automation[\s\S]*Quality & Operational Governance/,
@@ -1113,6 +1113,31 @@ test("unifies consulting content and canonical URLs across former areas", async 
         publicUrl(locale, "/consulting"),
       );
       assert.ok(matchingTags(html, "a", { href: "#outcomes" }).length);
+      assert.match(
+        visibleText(html),
+        locale === "ko" ? /제공 산출물 보기/ : /See what you’ll get/,
+      );
+      assert.ok(
+        matchingTags(html, "a", { href: "#rag-evaluation-demo" }).length,
+      );
+      const demo = html.match(
+        /<section\b[^>]*id="rag-evaluation-demo"[^>]*>[\s\S]*?<\/section>/,
+      )?.[0];
+      assert.ok(demo, route);
+      const demoText = visibleText(demo);
+      assert.match(
+        demoText,
+        locale === "ko"
+          ? /데모 · 가상 샘플 문서/
+          : /Demo · Fictional sample documents/,
+      );
+      assert.match(demoText, /2\s*\/\s*3[\s\S]*3\s*\/\s*4/);
+      assert.match(
+        demoText,
+        locale === "ko"
+          ? /검색 누락[\s\S]*적절한 답변 보류/
+          : /Retrieval miss[\s\S]*Appropriate abstention/,
+      );
       assert.ok(
         matchingTags(html, "a", { href: "mailto:leejungju.go@gmail.com" })
           .length,

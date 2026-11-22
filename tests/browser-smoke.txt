@@ -88,7 +88,7 @@ async (page) => {
       check(await page.locator("html").getAttribute("lang") === (locale === "ko" ? "en" : "ko"), `${locale}: language navigation`);
     }
     await page.goto(origin + "/consulting/ax/");
-    await page.getByRole("link", { name: "결과 보기", exact: true }).click();
+    await page.getByRole("link", { name: "제공 산출물 보기", exact: true }).click();
     check(page.url().endsWith("#outcomes"), "consulting outcomes anchor");
     await page.goto(origin + "/");
     await page.keyboard.press("Tab");
