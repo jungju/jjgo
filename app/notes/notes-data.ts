@@ -1,3 +1,4 @@
+import { fileFingerprintNote } from "./same-text-different-fingerprint-content";
 import { clearFocusNote } from "./after-the-clear-button-disappears-content";
 import { planContextNote } from "./the-data-behind-a-query-plan-content";
 import { zeroChecksNote } from "./zero-errors-zero-checks-content";
@@ -70,6 +71,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  fileFingerprintNote,
   clearFocusNote,
   planContextNote,
   zeroChecksNote,

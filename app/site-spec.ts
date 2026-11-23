@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteFileFingerprint: {
+    path: "/notes/same-text-different-fingerprint",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteClearFocus: {
     path: "/notes/after-the-clear-button-disappears",
     parent: "notes",
