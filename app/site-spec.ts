@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteDomTimer: {
+    path: "/notes/when-the-dom-timer-stops",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteFileFingerprint: {
     path: "/notes/same-text-different-fingerprint",
     parent: "notes",

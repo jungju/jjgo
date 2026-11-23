@@ -1,3 +1,4 @@
+import { domTimerNote } from "./when-the-dom-timer-stops-content";
 import { fileFingerprintNote } from "./same-text-different-fingerprint-content";
 import { clearFocusNote } from "./after-the-clear-button-disappears-content";
 import { planContextNote } from "./the-data-behind-a-query-plan-content";
@@ -71,6 +72,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  domTimerNote,
   fileFingerprintNote,
   clearFocusNote,
   planContextNote,
