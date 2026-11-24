@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteFileReady: {
+    path: "/notes/a-file-can-exist-before-it-is-ready",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteDomTimer: {
     path: "/notes/when-the-dom-timer-stops",
     parent: "notes",

@@ -1,3 +1,4 @@
+import { fileReadyNote } from "./a-file-can-exist-before-it-is-ready-content";
 import { domTimerNote } from "./when-the-dom-timer-stops-content";
 import { fileFingerprintNote } from "./same-text-different-fingerprint-content";
 import { clearFocusNote } from "./after-the-clear-button-disappears-content";
@@ -72,6 +73,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  fileReadyNote,
   domTimerNote,
   fileFingerprintNote,
   clearFocusNote,
