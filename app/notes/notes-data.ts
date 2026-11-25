@@ -1,3 +1,4 @@
+import { replyAccountNote } from "./one-inbox-separate-senders-content";
 import { fileReadyNote } from "./a-file-can-exist-before-it-is-ready-content";
 import { domTimerNote } from "./when-the-dom-timer-stops-content";
 import { fileFingerprintNote } from "./same-text-different-fingerprint-content";
@@ -73,6 +74,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  replyAccountNote,
   fileReadyNote,
   domTimerNote,
   fileFingerprintNote,
