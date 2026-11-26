@@ -57,6 +57,15 @@ export const sitePages = {
     nav: "notes",
     identity: { ko: "Notes", en: "Notes" },
   },
+  noteFirstExport: {
+    path: "/notes/the-first-export-after-the-window-opens",
+    parent: "notes",
+    nav: "notes",
+    identity: {
+      ko: "Notes",
+      en: "Notes",
+    },
+  },
   noteReplyAccount: {
     path: "/notes/one-inbox-separate-senders",
     parent: "notes",

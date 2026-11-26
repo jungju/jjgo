@@ -1,3 +1,4 @@
+import { firstExportNote } from "./the-first-export-after-the-window-opens-content";
 import { replyAccountNote } from "./one-inbox-separate-senders-content";
 import { fileReadyNote } from "./a-file-can-exist-before-it-is-ready-content";
 import { domTimerNote } from "./when-the-dom-timer-stops-content";
@@ -74,6 +75,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  firstExportNote,
   replyAccountNote,
   fileReadyNote,
   domTimerNote,
