@@ -1,3 +1,4 @@
+import { emojiLengthNote } from "./one-emoji-two-code-units-content";
 import { firstExportNote } from "./the-first-export-after-the-window-opens-content";
 import { replyAccountNote } from "./one-inbox-separate-senders-content";
 import { fileReadyNote } from "./a-file-can-exist-before-it-is-ready-content";
@@ -75,6 +76,7 @@ export type Note = {
   en: NoteContent;
 };
 export const notes: Note[] = [
+  emojiLengthNote,
   firstExportNote,
   replyAccountNote,
   fileReadyNote,
